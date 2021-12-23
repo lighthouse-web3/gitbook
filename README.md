@@ -18,5 +18,5 @@ Lighthouse is a permanent decentralized file storage protocol that allows the ab
 * Pay once and store forever cost model is a pretty new storage cost model which is different from existing protocols&#x20;
 * Our mechanism involves staking, accruing fees, and interest on the storage cost paid by the user which overall leads to a lower fee than the current alternative like Arweave.&#x20;
 * Smart contracts run on popular chains like polygon, Ethereum, etc. hence direct integration with existing dapps of these ecosystems
-* IPFS and Filecoin are the popular blockchain storage protocols and hence Lighthouse will be very compatible with the existing stack for projects to migrate to
+* IPFS and Filecoin are popular blockchain storage protocols and hence Lighthouse will be very compatible with the existing stack for projects to migrate to
 
