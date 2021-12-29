@@ -2,7 +2,9 @@
 
 
 
-Deploy file to the Lighthouse
+Used to deploy a file to Lighthouse. Use this function after the Get Quote function to get fee details and prepare file to be sent.&#x20;
+
+CID returned by quote function needs to be sent here.
 
 ```javascript
 /**
