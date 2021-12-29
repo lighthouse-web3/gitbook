@@ -1,6 +1,6 @@
 # Overview
 
-Lighthouse can be used in any node.js project using our npm package. Easy to&#x20;
+Lighthouse can be used in any node.js project using our npm package. Easy to use in any project
 
 **Installation**
 
