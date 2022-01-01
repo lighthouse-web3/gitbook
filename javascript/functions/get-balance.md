@@ -6,13 +6,13 @@ This method returns the current balance of your wallet. Your wallet needs to hav
 
 ```javascript
 /** 
- * @param {number} publicKey wallet's public key.
+ * @param {string} publicKey wallet's public key.
  * @return {object} balance of the wallet key
 */
 const lighthouse = require('lighthouse-web3');
-const balance = await lighthouse.get_balance(0x1Ec09D4B3Cb565b7CCe2eEAf71CC90c9b46c5c26);
+const balance = await lighthouse.get_balance("0x1Ec09D4B3Cb565b7CCe2eEAf71CC90c9b46c5c26");
 
 /* Returns: wallet balance in wei
-    { data: '242235976400000000' } 
+    { data: 242235976400000000 } 
 */
 ```
