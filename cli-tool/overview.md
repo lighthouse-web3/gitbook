@@ -25,5 +25,27 @@ The following commands are available with the lighthouse cli tool
 7. status - Get metadata of a file CID
 8. get-uploads - Get details of files uploaded
 
-![](../.gitbook/assets/cli-screenshot.png)
+![](../.gitbook/assets/cli-home.png)
 
+### **Change Network**
+
+The following networks are supported currently -&#x20;
+
+1. Polygon mainnet (polygon)
+2. Mumbai testnet (polygon-testnet)
+3. Fantom (fantom)
+4. Fantom Testnet (fantom-testnet)
+5. Binance (binance)
+6. Binance Testnet (binance-testnet)
+
+To switch to a mainnet network, use the following command as example -&#x20;
+
+```
+lighthouse-web3 --network polygon
+```
+
+To switch to a testnet network, use the following command as example -&#x20;
+
+```
+lighthouse-web3 --network fantom-testnet
+```
