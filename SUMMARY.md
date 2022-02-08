@@ -6,12 +6,14 @@
 
 * [Overview](cli-tool/overview.md)
 * [CLI Commands](cli-tool/cli-commands/README.md)
+  * [wallet](cli-tool/cli-commands/wallet.md)
   * [create-wallet](cli-tool/cli-commands/create-wallet.md)
   * [import-wallet](cli-tool/cli-commands/import-wallet.md)
   * [wallet-forget](cli-tool/cli-commands/wallet-forget.md)
   * [balance](cli-tool/cli-commands/balance.md)
   * [deploy](cli-tool/cli-commands/deploy.md)
   * [status](cli-tool/cli-commands/status.md)
+  * [get-uploads](cli-tool/cli-commands/get-uploads.md)
   * [help](cli-tool/cli-commands/help.md)
 
 ## Javascript
