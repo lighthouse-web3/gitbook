@@ -8,6 +8,8 @@ Get a quote for the file to be uploaded and prepare it to be pushed to the Light
 /**
     * @param {string} path path to file.
     * @param {string} publicKey wallet's public key.
+    * @param {string} chain blockchain network to use [polygon, fantom, binance] default: polygon.
+    * @param {string} network [mainnet, testnet] default: testnet.
     * @return {object} containing quote details.
 */
 
@@ -16,13 +18,19 @@ const quote = await lighthouse.get_quote('/home/cosmos/Desktop/wow.jpg', '0x1Ec0
 
 /* Returns: Example
     {
-      cost: 0.0005880506906630162,
-      current_balance: '242235976400000000',
-      gasFee: 98593,
-      file_size: 239214,
-      mime_type: 'image/jpeg',
-      file_name: 'adiyogi.jpg',
-      ipfs_hash: 'bafkreia4ruswe7ghckleh3lmpujo5asrnd7hrtu5r23zjk2robpcoend34'
-    } 
+      meta_data: [
+        {
+          file_size: 15184,
+          mime_type: 'image/svg+xml',
+          file_name: 'motoko.svg',
+          cid: 'bafkreiefxy4xbf34rivlekencrtucworpv5jgnyrmkcpniclgjwk5m4jla',
+          cost: 0.00003131709844931087
+        }
+      ],
+      gasFee: 98615,
+      current_balance: BigNumber { _hex: '0x0114adbf8b71926f9b', _isBigNumber: true },
+      total_size: 15184,
+      total_cost: 0.00003131709844931087
+    }
 */
 ```

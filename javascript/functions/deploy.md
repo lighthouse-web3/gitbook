@@ -9,21 +9,21 @@ CID returned by quote function needs to be sent here.
 ```javascript
 /**
  * @param {string} path path to file.
- * @param {string} privateKey wallet's private key used to execute transaction.
+ * @param {object} signer a signer used to execute transaction.
  * @param {string} cid cid to push on network.
+ * @param {boolean} cli if using cli tool to deploy file.
+ * @param {string} chain blockchain network to use [polygon, fantom, binance] default: polygon.
+ * @param {string} network [mainnet, testnet] default: testnet.
  * @return {object} containing storage transaction details.
  */
 
 const lighthouse = require('lighthouse-web3');
-const deploy = await lighthouse.deploy('/home/cosmos/Desktop/wow.jpg', '0xd7f1e7ccf6e3620327d3b29c57018d076305148eec487c57d8121beac0067895', 'bafkreia4ruswe7ghckleh3lmpujo5asrnd7hrtu5r23zjk2robpcoend34'); // path, private_key, cid
+const deploy = await lighthouse.deploy('/home/cosmos/Desktop/wow.jpg', signer, false, "fantom", "testnet"); // path, signer, cid, cli, chain, network
 
 /* Returns:
     {
-      cid: '...', //cid of file
-      providers: [
-        '...'
-      ],
-      tx: { // tx details
+      cid: ['...'], //cid of file
+      txObj: { // tx details
         ...
       }
     }
