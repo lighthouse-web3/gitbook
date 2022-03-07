@@ -8,13 +8,12 @@ Get a quote for the file to be uploaded and prepare it to be pushed to the Light
 /**
     * @param {string} path path to file.
     * @param {string} publicKey wallet's public key.
-    * @param {string} chain blockchain network to use [polygon, fantom, binance] default: polygon.
-    * @param {string} network [mainnet, testnet] default: testnet.
+    * @param {string} network polygon, fantom, binance-testnet default: polygon.
     * @return {object} containing quote details.
 */
 
 const lighthouse = require('lighthouse-web3');
-const quote = await lighthouse.get_quote('/home/cosmos/Desktop/wow.jpg', '0x1Ec09D4B3Cb565b7CCe2eEAf71CC90c9b46c5c26')
+const quote = await lighthouse.getQuote('/home/cosmos/Desktop/wow.jpg', '0x1Ec09D4B3Cb565b7CCe2eEAf71CC90c9b46c5c26')
 
 /* Returns: Example
     {

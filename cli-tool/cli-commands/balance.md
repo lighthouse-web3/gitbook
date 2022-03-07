@@ -1,9 +1,9 @@
 # balance
 
-This command returns the current Matic balance of your wallet. Your wallet needs to have Matic tokens to store your files using the Lighthouse protocol
+This command returns the current balance of your wallet. Your wallet needs to have have Matic/FTM/BNB or other chain tokens to store your files using the Lighthouse protocol.
 
 ```
 lighthouse-web3 balance
 ```
 
-Returns the Matic balance of the imported wallet public key.
+Returns the balance of the imported wallet on selected network default polygon.
