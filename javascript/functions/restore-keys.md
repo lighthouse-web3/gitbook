@@ -11,7 +11,7 @@ Create new private-key encryption using private-key and new password
  * @return {object} containing encrypted private key and input keys
 */
 const lighthouse = require('lighthouse-web3');
-const wallet = await lighthouse.restore_keys('0xd7f1e7ccf6e3620327d3b29c57018d076305148eec487c57d8121beac0067895', 'bazooka')
+const wallet = await lighthouse.restoreKeys('0xd7f1e7ccf6e3620327d3b29c57018d076305148eec487c57d8121beac0067895', 'bazooka')
 
 /* Returns: wallet object
     {

@@ -1,13 +1,13 @@
 # Create Wallet
 
-Creates a new wallet to be used on EVM chains like polygon, eth, bsc, etc.
+Creates a new wallet to be used on EVM chains like polygon, ftm, bsc, optimism etc.
 
 ```javascript
 /* Parameters:
     password - a password to encrypt private key */
 
 const lighthouse = require('lighthouse-web3');
-const wallet = await lighthouse.create_wallet("bazooka"); // password is parameter here
+const wallet = await lighthouse.createWallet("bazooka"); // password is parameter here
 
 /* Returns: wallet object
     {
