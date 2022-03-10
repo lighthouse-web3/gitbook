@@ -13,7 +13,7 @@ Get a quote for the file to be uploaded and prepare it to be pushed to the Light
 */
 
 const lighthouse = require('lighthouse-web3');
-const quote = await lighthouse.getQuote('/home/cosmos/Desktop/wow.jpg', '0x1Ec09D4B3Cb565b7CCe2eEAf71CC90c9b46c5c26')
+const quote = await lighthouse.getQuote('/home/cosmos/Desktop/wow.jpg', '0x1Ec09D4B3Cb565b7CCe2eEAf71CC90c9b46c5c26', 'fantom')
 
 /* Returns: Example
     {
