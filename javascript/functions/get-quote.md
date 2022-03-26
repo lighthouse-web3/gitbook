@@ -21,13 +21,11 @@ const quote = await lighthouse.getQuote('/home/cosmos/Desktop/wow.jpg', '0x1Ec09
         {
           file_size: 15184,
           mime_type: 'image/svg+xml',
-          file_name: 'motoko.svg',
-          cid: 'bafkreiefxy4xbf34rivlekencrtucworpv5jgnyrmkcpniclgjwk5m4jla',
-          cost: 0.00003131709844931087
+          file_name: 'motoko.svg'
         }
       ],
-      gasFee: 98615,
-      current_balance: BigNumber { _hex: '0x0114adbf8b71926f9b', _isBigNumber: true },
+      dataLimit: 1,
+      dataUsed: 0.5,
       total_size: 15184,
       total_cost: 0.00003131709844931087
     }
