@@ -13,7 +13,10 @@ This method returns the current balance of your wallet. Your wallet needs to hav
 const lighthouse = require('lighthouse-web3');
 const balance = await lighthouse.getBalance('0x1Ec09D4B3Cb565b7CCe2eEAf71CC90c9b46c5c26', 'polygon');
 
-/* Returns: wallet balance in ether
-    0.000329323900000002
+/* Returns: data limit and data used by a user in GB
+    {
+        dataLimit: 1,
+        dataUsed: 0
+    }
 */
 ```

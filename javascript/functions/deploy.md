@@ -9,23 +9,19 @@ CID returned by quote function needs to be sent here.
 ```javascript
 /**
  * @param {string} path path to file.
- * @param {object} signer a signer used to execute transaction.
- * @param {string} cid cid to push on network.
- * @param {boolean} cli if using cli tool to deploy file.
- * @param {string} network polygon, fantom, binance-testnet default: polygon.
+ * @param {string} apiKey your apiKey.
  * @param {string} publicKey wallet's public key.
- * @return {object} containing storage transaction details.
+ * @return {object} containing storage details.
  */
 
 const lighthouse = require('lighthouse-web3');
-const deploy = await lighthouse.deploy('/home/cosmos/Desktop/wow.jpg', signer, false, signedMessage, publicKey, "fantom"); // path, signer, cid, cli, chain, network
+const deploy = await lighthouse.deploy('/home/cosmos/Desktop/wow.jpg', publicKey, apiKey); // path, apiKey, publicKey
 
 /* Returns:
     {
-      cid: ['...'], //cid of file
-      txObj: { // tx details
-        ...
-      }
+      Hash: "bafkreia4ruswe7ghckleh3lmpujo5asrnd7hrtu5r23zjk2robpcoend34", //cid of file
+      Name: "cosmos",
+      Size: 1234
     }
 */
 ```
