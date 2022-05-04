@@ -7,13 +7,15 @@ This method returns the current balance of your wallet. Your wallet needs to hav
 ```javascript
 /** 
  * @param {string} publicKey wallet's public key.
- * @param {string} network polygon, fantom, binance-testnet default: polygon.
  * @return {object} balance of the wallet in ether
 */
 const lighthouse = require('lighthouse-web3');
-const balance = await lighthouse.getBalance('0x1Ec09D4B3Cb565b7CCe2eEAf71CC90c9b46c5c26', 'polygon');
+const balance = await lighthouse.getBalance('0xA3C960B3BA29367ecBCAf1430452C6cd7516F588');
 
-/* Returns: wallet balance in ether
-    0.000329323900000002
+/* Returns: data used and data limit
+    { 
+      dataLimit: 1073741824,
+      dataUsed: 0 
+    }
 */
 ```
