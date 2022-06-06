@@ -21,6 +21,7 @@
 * [Overview](javascript/overview.md)
 * [Code Examples](javascript/code-examples/README.md)
   * [Browser](javascript/code-examples/browser.md)
+  * [NodeJS](javascript/code-examples/nodejs.md)
 * [Functions](javascript/functions/README.md)
   * [Create Wallet](javascript/functions/create-wallet.md)
   * [Get Quote](javascript/functions/get-quote.md)
