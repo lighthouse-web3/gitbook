@@ -1,4 +1,5 @@
-## Browser
+# Node JS
+
 Pushing file to lighthouse node using nodejs.
 
 ```javascript
