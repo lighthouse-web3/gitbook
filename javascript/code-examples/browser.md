@@ -1,4 +1,5 @@
-## Browser
+# Browser
+
 Pushing file to lighthouse node from browser.
 
 ```javascript
