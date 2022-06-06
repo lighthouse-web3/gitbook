@@ -14,6 +14,7 @@
   * [deploy](cli-tool/cli-commands/deploy.md)
   * [status](cli-tool/cli-commands/status.md)
   * [get-uploads](cli-tool/cli-commands/get-uploads.md)
+  * [api-key](cli-tool/cli-commands/api-key.md)
   * [help](cli-tool/cli-commands/help.md)
 
 ## Javascript
