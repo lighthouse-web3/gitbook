@@ -18,9 +18,9 @@ const deploy = await lighthouse.deploy('/home/cosmos/Desktop/wow.jpg', apiKey); 
 
 /* Returns:
     {
-      cid: "QmYjsW76L3UQLXZzYdKyg1p9Qoof6HVo1BPCbS1SSDQoDX",
-      Name: "testImage1.svg"
-      size: 15370
+      Hash: "QmYjsW76L3UQLXZzYdKyg1p9Qoof6HVo1BPCbS1SSDQoDX",
+      Name: "testImage1.svg",
+      Size: 15370
     }
 */
 ```
