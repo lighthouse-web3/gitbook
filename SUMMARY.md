@@ -22,14 +22,15 @@
 * [Overview](javascript/overview.md)
 * [Code Examples](javascript/code-examples/README.md)
   * [Browser](javascript/code-examples/browser.md)
+  * [Browser Encryption Upload](javascript/code-examples/browser-with-encryption.md)
+  * [Browser Decrypt File](javascript/code-examples/decrypt-file.md)
   * [NodeJS](javascript/code-examples/nodejs.md)
 * [Functions](javascript/functions/README.md)
   * [Create Wallet](javascript/functions/create-wallet.md)
   * [Get Quote](javascript/functions/get-quote.md)
   * [Deploy](javascript/functions/deploy.md)
   * [Get Balance](javascript/functions/get-balance.md)
-  * [Get Key](javascript/functions/get-key.md)
-  * [Restore Keys](javascript/functions/restore-keys.md)
+  * [Get uploads](javascript/functions/get-uploads.md)
   * [Status](javascript/functions/status.md)
 
 ## Interacting with Smart Contracts

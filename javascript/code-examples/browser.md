@@ -15,19 +15,25 @@ function App() {
     const signer = provider.getSigner();
     const address = await signer.getAddress(); //users public key
     const message = (await axios.get(`https://api.lighthouse.storage/api/auth/get_message?publicKey=${address}`)).data; //Get message
-    const signed_message = await signer.signMessage(message); //Sign message
+    const signedMessage = await signer.signMessage(message); //Sign message
     return({
-      signed_message: signed_message,
+      signedMessage: signedMessage,
       address: address
     });
   }
 
   const deploy = async(e) =>{
     // Sign message for authentication
-    const signing_response = await sign_message();
+    const signingResponse = await sign_message();
+
+    // Get a temporary access token
+    const accessToken = (await axios.post(`https://api.lighthouse.storage/api/auth/verify_signer`, {
+      publicKey: signingResponse.address,
+      signedMessage: signingResponse.signedMessage
+    })).data.accessToken;
 
     // Push file to lighthouse node
-    console.log(await lighthouse.deploy(e, null, signing_response.address, signing_response.signed_message));
+    console.log(await lighthouse.deploy(e, accessToken));
     /*
       output:
         {
