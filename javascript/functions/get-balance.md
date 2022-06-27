@@ -9,7 +9,7 @@ This method returns the current balance of your wallet. Your wallet needs to hav
  * @param {string} publicKey wallet's public key.
  * @return {object} balance of the wallet in ether
 */
-const lighthouse = require('lighthouse-web3');
+const lighthouse = require('@lighthouse-web3/sdk');
 const balance = await lighthouse.getBalance('0xA3C960B3BA29367ecBCAf1430452C6cd7516F588');
 
 /* Returns: data used and data limit

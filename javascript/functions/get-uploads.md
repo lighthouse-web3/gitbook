@@ -9,7 +9,7 @@ Returns cid and filecost of all uploads by a publicKey
  * @param {string} publicKey wallet's public key
  * @return [object] array of file object
 */
-const lighthouse = require('lighthouse-web3');
+const lighthouse = require('@lighthouse-web3/sdk');
 const uploads = await lighthouse.getUploads('0x487fc2fE07c593EAb555729c3DD6dF85020B5160');
 
 /* Returns: wallet object

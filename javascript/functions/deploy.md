@@ -13,7 +13,7 @@ CID returned by quote function needs to be sent here.
  * @return {object} containing details of file uploaded.
  */
 
-const lighthouse = require('lighthouse-web3');
+const lighthouse = require('@lighthouse-web3/sdk');
 const deploy = await lighthouse.deploy('/home/cosmos/Desktop/wow.jpg', apiKey); // path, apiKey
 
 /* Returns:

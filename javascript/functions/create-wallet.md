@@ -9,7 +9,7 @@ Creates a new wallet to be used on EVM chains like polygon, ftm, bsc, optimism e
 /* Parameters:
     password - a password to encrypt wallet */
 
-const lighthouse = require('lighthouse-web3');
+const lighthouse = require('@lighthouse-web3/sdk');
 const wallet = await lighthouse.createWallet("bazooka"); // password is parameter here
 
 /* Returns: encrypted wallet object */
