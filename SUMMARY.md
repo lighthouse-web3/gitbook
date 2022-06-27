@@ -12,6 +12,7 @@
   * [wallet-forget](cli-tool/cli-commands/wallet-forget.md)
   * [balance](cli-tool/cli-commands/balance.md)
   * [deploy](cli-tool/cli-commands/deploy.md)
+  * [deploy-encrypted](cli-tool/cli-commands/deploy-encrypted.md)
   * [status](cli-tool/cli-commands/status.md)
   * [get-uploads](cli-tool/cli-commands/get-uploads.md)
   * [api-key](cli-tool/cli-commands/api-key.md)
@@ -24,6 +25,7 @@
   * [Browser](javascript/code-examples/browser.md)
   * [Browser Encryption Upload](javascript/code-examples/browser-with-encryption.md)
   * [Browser Decrypt File](javascript/code-examples/decrypt-file.md)
+  * [NodeJS Encryption](javascript/code-examples/nodejs-encrypt.md)
   * [NodeJS](javascript/code-examples/nodejs.md)
 * [Functions](javascript/functions/README.md)
   * [Create Wallet](javascript/functions/create-wallet.md)
@@ -31,6 +33,7 @@
   * [Deploy](javascript/functions/deploy.md)
   * [Get Balance](javascript/functions/get-balance.md)
   * [Get uploads](javascript/functions/get-uploads.md)
+  * [Encryption keypair](javascript/functions/get-encryption-keypair.md)
   * [Status](javascript/functions/status.md)
 
 ## Interacting with Smart Contracts
