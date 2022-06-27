@@ -8,9 +8,6 @@ import React from "react";
 import axios from "axios";
 import {ethers} from 'ethers';
 import lighthouse from '@lighthouse-web3/sdk';
-import decryptFile from './decryptFile';
-import share from './share';
-// import keypair from './getKP'
 
 function App() {
 
@@ -34,10 +31,10 @@ function App() {
     const filePassword = lighthouse.decryptPassword("eZbXrSSqIHt3IXJL7tw0gZHWpLOvxmW8WKR1+SzIDzmLYzCgKfDfh9IzTDbTzRGIq7McrQ==", "e6lS2GoqicvK7UXymLrU1VNLKZeDpZcx", "ucN0bseYBo79jUH5Q67VPPHPDW3RDZzIrx0N9FLI4hU=", localStorage.getItem("secretKey"));
 
     // Decrypt file
-    const decrypted = await decryptFile(cid, filePassword); // Blob response
-
-    const fileURL = URL.createObjectURL(decrypted);
-    setImg(fileURL);
+    const decrypted = await lighthouse.decryptFile(cid, filePassword); // Blob response
+    /*
+      Response: blob
+    */
   }
 
   return (
