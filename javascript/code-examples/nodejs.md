@@ -5,7 +5,7 @@
 Pushing file to lighthouse node using nodejs.
 
 ```javascript
-const lighthouse = require('lighthouse-web3');
+const lighthouse = require('@lighthouse-web3/sdk');
 
 const deploy = async() =>{
   const path = "/mnt/c/Users/cosmos/Desktop/projects/testing/status.js"; //Give absolute path
