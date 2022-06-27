@@ -8,7 +8,7 @@ This method returns the current balance of your wallet. Your wallet needs to hav
 /**
  * @param {string} publicKey wallet's public key.
  * @param {string} accessToken users access token or api key.
- * @return {object} balance of the wallet in ether
+ * @return {object} publicKey and secretKey for encrypting and decrypting file.
 */
 const lighthouse = require('@lighthouse-web3/sdk');
 const keypair = await lighthouse.getEncryptionKeyPair('0xA3C960B3BA29367ecBCAf1430452C6cd7516F588', '7dc7f8f2d52f450698503bc8cddc7629');
