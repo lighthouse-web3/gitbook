@@ -8,9 +8,6 @@ import React from "react";
 import axios from "axios";
 import {ethers} from 'ethers';
 import lighthouse from '@lighthouse-web3/sdk';
-import decryptFile from './decryptFile';
-import share from './share';
-// import keypair from './getKP'
 
 function App() {
 
