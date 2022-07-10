@@ -33,17 +33,16 @@
   * [Deploy](javascript/functions/deploy.md)
   * [Get Balance](javascript/functions/get-balance.md)
   * [Get uploads](javascript/functions/get-uploads.md)
-  * [Encryption keypair](javascript/functions/get-encryption-keypair.md)
   * [Status](javascript/functions/status.md)
 
-## Interacting with Smart Contracts
+<!-- ## Interacting with Smart Contracts
 
 * [Key Functions and Variables](interacting-with-smart-contracts/key-functions.md)
 * [Code Examples](interacting-with-smart-contracts/code-examples.md)
 
 ## Interacting with Node
 
-* [Web Sockets \[depreceated\]](interacting-with-node/web-sockets.md)
+* [Web Sockets \[depreceated\]](interacting-with-node/web-sockets.md) -->
 
 ## Support
 
