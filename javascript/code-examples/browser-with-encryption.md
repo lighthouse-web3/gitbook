@@ -30,7 +30,25 @@ function App() {
 
   /* Deploy file along with encryption */
   const deployEncrypted = async(e) =>{
-    const response = await lighthouse.uploadEncrypted(e, localStorage.getItem("accessToken"), localStorage.getItem("secretKey"), localStorage.getItem("publicKey"));
+    // Get an access token
+    const signingResponse = await sign_message();
+    const accessToken = (await axios.post(`https://api.lighthouse.storage/api/auth/verify_signer`, {
+      publicKey: signingResponse.address,
+      signedMessage: signingResponse.signedMessage
+    })).data.accessToken;
+
+    /*
+       uploadEncrypted(e, publicKey, accessToken)
+       - e: js event
+       - publicKey: wallets public key
+       - accessToken: token to upload
+    */
+    const response = await lighthouse.uploadEncrypted(
+      e,
+      signingResponse.address,
+      accessToken,
+    );
+    console.log(response);
     /*
       output:
         {
@@ -39,30 +57,11 @@ function App() {
           Hash: "QmcnzVoLcFcLzwUyjgtVmf2JQbPL5gbffNhjQFxre8aYvU"
         }
     */
-    setCid(response.Hash);
-  }
-
-  /* Generates a public private keypair for user. User has to keep his public key safe for decryption. */
-  const generateKeyPair = async () =>{
-    const signingResponse = await sign_message();
-    const accessToken = (await axios.post(`https://api.lighthouse.storage/api/auth/verify_signer`, {
-      publicKey: signingResponse.address,
-      signedMessage: signingResponse.signedMessage
-    })).data.accessToken;
-    
-    const kp = await lighthouse.getEncryptionKeyPair(signingResponse.address, accessToken);
-
-    localStorage.setItem("publicKey", signingResponse.address);
-    localStorage.setItem("accessToken", accessToken);
-    localStorage.setItem("secretKey", kp.secretKey);
-    localStorage.setItem("encryptionPublicKey", kp.publicKey);
   }
 
   return (
     <div className="App">
-      <button onClick={()=>generateKeyPair()}>generate key pair</button>
       <input onChange={e=>deployEncrypted(e)} type="file" />
-      <span>CID: {cid}</span>
     </div>
   );
 }

@@ -11,27 +11,31 @@ import lighthouse from '@lighthouse-web3/sdk';
 
 function App() {
 
-  const [img, setImg] = React.useState(null);
+  const sign_auth_message = async() =>{
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const publicKey = (await signer.getAddress()).toLowerCase();
+    const messageRequested = await lighthouse.getAuthMessage(publicKey);
+    const signed_message = await signer.signMessage(
+      messageRequested
+    );
+    return(signed_message);
+  }
 
   /* Decrypt file */
   const decrypt = async() =>{
-    // get file encrypted password
-    const cid = "QmcnzVoLcFcLzwUyjgtVmf2JQbPL5gbffNhjQFxre8aYvU";
-    
-    // Decrypt password
-    /*
-      lighthouse.decryptPassword(fileEncryptionKey, nonce, encryptionPublicKey, secretKey)
-      Note:
-        File details for user can be fetched from get request
-          https://api.lighthouse.storage/api/encryption/get_encrypted_uploads?publicKey=${publicKey}
-        File details contains fileEncryptionKey, nonce along with CID
+    // Fetch file encryption key
+    const cid = "Qmd53SEY9BwL4cr81jgZBmv2Qhpaqv87SJonUtPdfsigPH";
+    const signed_message = await sign_auth_message();
 
-        encryptionPublicKey: is the encryption public key of user who shared file, if not shared its users own encryption key
-    */
-    const filePassword = lighthouse.decryptPassword("eZbXrSSqIHt3IXJL7tw0gZHWpLOvxmW8WKR1+SzIDzmLYzCgKfDfh9IzTDbTzRGIq7McrQ==", "e6lS2GoqicvK7UXymLrU1VNLKZeDpZcx", "ucN0bseYBo79jUH5Q67VPPHPDW3RDZzIrx0N9FLI4hU=", localStorage.getItem("secretKey"));
+    const key = await lighthouse.fetchEncryptionKey(
+      cid,
+      "0x201Bcc3217E5AA8e803B41d1F5B6695fFEbD5CeD",
+      signed_message
+    );
 
     // Decrypt file
-    const decrypted = await lighthouse.decryptFile(cid, filePassword); // Blob response
+    const decrypted = await lighthouse.decryptFile(cid, key);
     /*
       Response: blob
     */
@@ -40,7 +44,6 @@ function App() {
   return (
     <div className="App">
       <button onClick={()=>decrypt()}>decrypt</button>
-      <img alt="output" id="the-image" src={img} />
     </div>
   );
 }

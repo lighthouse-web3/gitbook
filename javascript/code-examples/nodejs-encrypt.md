@@ -3,47 +3,32 @@
 Pushing file to lighthouse node with encryption using nodejs.
 
 ```javascript
+const { ethers } = require("ethers");
 const lighthouse = require('@lighthouse-web3/sdk');
+
+const sign_auth_message = async(publicKey, privateKey) =>{
+  const provider = new ethers.providers.JsonRpcProvider();
+  const signer = new ethers.Wallet(privateKey, provider);
+  const messageRequested = await lighthouse.getAuthMessage(publicKey);
+  const signedMessage = await signer.signMessage(messageRequested);
+  return(signedMessage)
+}
 
 const deployEncrypted = async() =>{
   const path = "/mnt/c/Users/ravis/Pictures/Screenshots/flow1.png";	//Give absolute path
-  const apiKey = process.env.apiKey; // Generatd from https://files.lighthouse.storage/ or cli command.
-  const publicKey = "0xa3c960b3ba29367ecbcaf1430452c6cd7516f588"; // Wallet address of user.
-  /*
-    fileEncryptionKey is key used to encrypt file. Its a random string.
-    In this example UUID is used as encryption key of file.
-  */
-  const fileEncryptionKey = "2221693f-af73-4ce0-b04f-16f4c9267596";
-  /*
-    encryptionPublicKey, secretKey can be generated from getEncryptionKeyPair() method of package, see defination in functions section of docs. 
-  */
-  const encryptionPublicKey = "GIcjiRmaW7rIxFP6iMDenzApDEFf12D8/vT+AW4WzHU=";
-  const secretKey = "s7Y+o6+SkUMfkGngFoQmM6zkABE+lwCiXg4E3VFfpjc=";
-
-  /* Encrypt file encryption key -
-      input - 
-        fileEncryptionKey: key using which file is encrypted
-        encryptionPublicKey: users encryption public key
-        secretKey: users secret key
-
-      returns - 
-        {
-          encryptedFileEncryptionKey: "x8ehs1FkPHt9BEYhu60sdG080AtGqey1IIIrbvWm5pdAD8T+6nbfKMOuokseB2YE+o5Hrg==",
-          nonce: "vYUirT+CdMAC8K1oMfFtPgAtUoHdY+MY"
-        }
-  */
-  const encryptedKey = lighthouse.encryptKey(fileEncryptionKey, encryptionPublicKey, secretKey);
+  const apiKey = "74de897c-f98f-486d-aaeb-809c31b2c0qf";
+  const publicKey = "0xa3c960b3ba29367ecbcaf1430452c6cd7516f588";
+  const privateKey = "0x6aa0ee41fa9cf65f90c06e5db8fa2834399b59b37974b21f2e405955630d452a";
+  const signed_message = await sign_auth_message(publicKey, privateKey);
 
   const response = await lighthouse.uploadEncrypted(
     path,
     apiKey,
     publicKey,
-    encryptionPublicKey,
-    fileEncryptionKey,
-    encryptedKey.encryptedFileEncryptionKey,
-    encryptedKey.nonce
+    signed_message
   );
   // Display response
+  console.log(response);
   /*
     {
       Name: 'flow1.png',
@@ -51,7 +36,6 @@ const deployEncrypted = async() =>{
       Size: '31735'
     }
   */
-  console.log(response);
 }
 
 deployEncrypted()
