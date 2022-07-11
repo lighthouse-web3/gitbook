@@ -1,6 +1,6 @@
-# Browser Decrypt File
+# Browser Share File
 
-Fetch file from lighthouse node and decrypt.
+Share file to another user.
 
 ```javascript
 import './App.css';
