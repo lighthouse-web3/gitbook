@@ -9,7 +9,7 @@ description: Lighthouse CLI tool to interact with the protocol
 Install the package globally on your system using our npm package
 
 ```
-npm install -g lighthouse-web3
+npm install -g @lighthouse-web3/sdk
 ```
 
 **Commands**
