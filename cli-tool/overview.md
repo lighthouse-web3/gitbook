@@ -4,7 +4,7 @@ description: Lighthouse CLI tool to interact with the protocol
 
 # Overview
 
-**Installation**
+****:tools:**Installation**
 
 Install the package globally on your system using our npm package
 
@@ -12,7 +12,17 @@ Install the package globally on your system using our npm package
 npm install -g @lighthouse-web3/sdk
 ```
 
-**Commands**
+{% hint style="info" %}
+in case you had our old package installed, you will need to uninstall that before installing the above package.&#x20;
+{% endhint %}
+
+**To uninstall old package, run the following command:**
+
+```
+npm uninstall -g lighthouse-web3
+```
+
+****:page\_facing\_up:**Commands**
 
 The following commands are available with the lighthouse cli tool
 
@@ -27,7 +37,7 @@ The following commands are available with the lighthouse cli tool
 
 ![](../.gitbook/assets/cli-home.png)
 
-### **Change Network**
+### ****:globe\_with\_meridians:**Change Network**
 
 The following networks are supported currently -&#x20;
 
