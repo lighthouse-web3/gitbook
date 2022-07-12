@@ -27,14 +27,30 @@ function App() {
     // Fetch file encryption key
     const cid = "Qmd53SEY9BwL4cr81jgZBmv2Qhpaqv87SJonUtPdfsigPH";
     const signed_message = await sign_auth_message();
+    const publicKey = "0x201Bcc3217E5AA8e803B41d1F5B6695fFEbD5CeD";
 
+    /*
+      fetchEncryptionKey(cid, publicKey, signedMessage)
+        Parameters:
+          CID: CID of file to decrypt
+          publicKey: public key of user who has access of file or owner
+          signedMessage: message signed by owner of publicKey
+    */
     const key = await lighthouse.fetchEncryptionKey(
       cid,
-      "0x201Bcc3217E5AA8e803B41d1F5B6695fFEbD5CeD",
+      publicKey,
       signed_message
     );
 
     // Decrypt file
+    /*
+      decryptFile(cid, key, mimeType)
+        Parameters:
+          CID: CID of file to decrypt
+          key: key to decrypt file
+          mimeType: default null, mime type of file
+    */
+   
     const decrypted = await lighthouse.decryptFile(cid, key);
     /*
       Response: blob

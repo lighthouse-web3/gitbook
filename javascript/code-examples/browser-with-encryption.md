@@ -56,6 +56,7 @@ function App() {
           Size: "44561",
           Hash: "QmcnzVoLcFcLzwUyjgtVmf2JQbPL5gbffNhjQFxre8aYvU"
         }
+      Note: Hash in response is CID.
     */
   }
 

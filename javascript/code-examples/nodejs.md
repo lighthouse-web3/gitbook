@@ -22,6 +22,7 @@ const deploy = async() =>{
         Name: "testImage1.svg",
         Size: 15370
       }
+    Note: Hash in response is CID.
   */
 }
 

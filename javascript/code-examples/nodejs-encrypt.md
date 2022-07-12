@@ -35,6 +35,7 @@ const deployEncrypted = async() =>{
       Hash: 'QmQqfuFH77vsau5xpVHUfJ6mJQgiG8kDmR62rF98iSPRes',
       Size: '31735'
     }
+    Note: Hash in response is CID.
   */
 }
 
