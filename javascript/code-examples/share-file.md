@@ -1,4 +1,4 @@
-# Browser Share File
+# Browser Share Private File
 
 Share file to another user.
 

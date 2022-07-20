@@ -27,7 +27,7 @@
   * [Browser Decrypt File](javascript/code-examples/decrypt-file.md)
   * [NodeJS Encryption](javascript/code-examples/nodejs-encrypt.md)
   * [NodeJS Upload](javascript/code-examples/nodejs.md)
-  * [Share File](javascript/code-examples/share-file.md)
+  * [Share Private File](javascript/code-examples/share-file.md)
 * [Functions](javascript/functions/README.md)
   * [Create Wallet](javascript/functions/create-wallet.md)
   * [Get Quote](javascript/functions/get-quote.md)
