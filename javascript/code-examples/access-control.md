@@ -40,10 +40,10 @@ const accessControl = async() =>{
     },
     {
       id: 2,
-      chain: "FantomTest",
+      chain: "OptimismKovan",
       method: "balanceOf",
       standardContractType: "ERC20",
-      contractAddress: "0xF0Bc72fA04aea04d04b1fA80B359Adb566E1c8B1",
+      contractAddress: "0x7f5c764cbc14f9669b88837ca1490cca17c31607",
       returnValueTest: { comparator: ">=", value: "0" },
       parameters: [":userAddress"],
     },
