@@ -16,6 +16,8 @@
   * [status](cli-tool/cli-commands/status.md)
   * [get-uploads](cli-tool/cli-commands/get-uploads.md)
   * [api-key](cli-tool/cli-commands/api-key.md)
+  * [revoke-access](cli-tool/cli-commands/revoke-access.md)
+  * [share-file](cli-tool/cli-commands/share-file.md)
   * [help](cli-tool/cli-commands/help.md)
 
 ## Javascript
@@ -37,6 +39,7 @@
   * [Get Balance](javascript/functions/get-balance.md)
   * [Get uploads](javascript/functions/get-uploads.md)
   * [Status](javascript/functions/status.md)
+  * [Text Upload](javascript/functions/text-upload-encrypted.md)
 
 <!-- ## Interacting with Smart Contracts
 

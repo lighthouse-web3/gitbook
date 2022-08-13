@@ -92,13 +92,11 @@ const getfileEncryptionKey = () => {
         cid: cid of file
         publicKey: your public key
         signedMessage: message signed by owner of public key
-        directaccessMode: to be set false in case you try to access file using access conditions.
   */
   const key = await lighthouse.fetchEncryptionKey(
     cid,
     publicKey,
-    signedMessage,
-    false
+    signedMessage
   );
   console.log(key);
 }
