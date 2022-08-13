@@ -28,6 +28,15 @@ function App() {
     });
   }
 
+  const encryptionSignature = async() =>{
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const address = await signer.getAddress();
+    const messageRequested = await lighthouse.getAuthMessage(address);
+    const signedMessage = await signer.signMessage(messageRequested);
+    return(signedMessage);
+  }
+
   /* Deploy file along with encryption */
   const deployEncrypted = async(e) =>{
     // Get an access token
@@ -37,16 +46,21 @@ function App() {
       signedMessage: signingResponse.signedMessage
     })).data.accessToken;
 
+    const publicKey = signingResponse.address;
+
     /*
        uploadEncrypted(e, publicKey, accessToken)
        - e: js event
        - publicKey: wallets public key
        - accessToken: token to upload
+       - signedMessage: message signed by owner of publicKey
     */
+    const encryptionSignature = await encryptionSignature();
     const response = await lighthouse.uploadEncrypted(
       e,
-      signingResponse.address,
+      publicKey,
       accessToken,
+      encryptionSignature
     );
     console.log(response);
     /*
