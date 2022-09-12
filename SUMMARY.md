@@ -41,6 +41,8 @@
   * [Status](javascript/functions/status.md)
   * [Text Upload](javascript/functions/text-upload-encrypted.md)
 
+## Gateway
+* [Video Player](gateway/video-player.md)
 <!-- ## Interacting with Smart Contracts
 
 * [Key Functions and Variables](interacting-with-smart-contracts/key-functions.md)
