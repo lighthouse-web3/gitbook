@@ -16,7 +16,7 @@ npm install -g @lighthouse-web3/sdk
 in case you had our old package installed, you will need to uninstall that before installing the above package.&#x20;
 {% endhint %}
 
-**To uninstall old package, run the following command:**
+****:x:**To uninstall old package, run the following command:**
 
 ```
 npm uninstall -g lighthouse-web3
