@@ -4,7 +4,7 @@
 
 ## CLI Tool
 
-* [Overview](cli-tool/overview.md)
+* [📃 Overview](cli-tool/overview.md)
 * [CLI Commands](cli-tool/cli-commands/README.md)
   * [wallet](cli-tool/cli-commands/wallet.md)
   * [create-wallet](cli-tool/cli-commands/create-wallet.md)
@@ -42,15 +42,8 @@
   * [Text Upload](javascript/functions/text-upload-encrypted.md)
 
 ## Gateway
+
 * [Video Player](gateway/video-player.md)
-<!-- ## Interacting with Smart Contracts
-
-* [Key Functions and Variables](interacting-with-smart-contracts/key-functions.md)
-* [Code Examples](interacting-with-smart-contracts/code-examples.md)
-
-## Interacting with Node
-
-* [Web Sockets \[depreceated\]](interacting-with-node/web-sockets.md) -->
 
 ## Support
 
