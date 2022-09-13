@@ -1,14 +1,14 @@
 # Contact
 
-Join our Discord - [https://discord.com/invite/c4a4CGCdJG](https://discord.com/invite/c4a4CGCdJG)
+**Discord** - [https://discord.com/invite/c4a4CGCdJG](https://discord.com/invite/c4a4CGCdJG)
 
-Follow us on Twitter - [https://twitter.com/LighthouseWeb3](https://twitter.com/LighthouseWeb3)&#x20;
+**Email** - nandit@lighthouse.storage
 
-Github - [https://github.com/LighthouseWeb3/](https://github.com/LighthouseWeb3/)
+**Twitter** - [https://twitter.com/LighthouseWeb3](https://twitter.com/LighthouseWeb3)&#x20;
 
-Website - [https://www.lighthouse.storage/](https://www.lighthouse.storage/)
+**Github** - [https://github.com/Lighthouse-Web3/](https://github.com/Lighthouse-Web3/)
 
-Email - nandit@lighthouse.storage
+**Website** - [https://www.lighthouse.storage/](https://www.lighthouse.storage/)
 
 
 

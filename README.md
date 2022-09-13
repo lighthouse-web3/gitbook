@@ -1,4 +1,8 @@
-# Introduction
+---
+description: An overview to Lighthouse
+---
+
+# 👋 Introduction
 
 Lighthouse is a perpetual file storage protocol that allows the ability to pay once for your files and store them long term. While traditionally, users need to recurrently keep track and pay for the file storage after every fixed interval of time, Lighthouse manages this for them and makes sure that user files are stored forever.&#x20;
 
