@@ -49,9 +49,9 @@ The following commands are available with the lighthouse cli tool
 
 <figure><img src="../.gitbook/assets/Screenshot 2022-09-13 at 6.16.15 PM.png" alt=""><figcaption></figcaption></figure>
 
-### ****:globe\_with\_meridians:**Switch Network**
+### ****:globe\_with\_meridians:**Switch Chain**
 
-The following networks are supported currently -&#x20;
+The following smart contract chains are supported currently for payments, verifiable proof -&#x20;
 
 1. Polygon mainnet (polygon)
 2. Mumbai testnet (polygon-testnet)
