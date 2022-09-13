@@ -5,7 +5,7 @@
 ## CLI Tool
 
 * [📃 Overview](cli-tool/overview.md)
-* [CLI Commands](cli-tool/cli-commands/README.md)
+* [📜 CLI Commands](cli-tool/cli-commands/README.md)
   * [wallet](cli-tool/cli-commands/wallet.md)
   * [create-wallet](cli-tool/cli-commands/create-wallet.md)
   * [import-wallet](cli-tool/cli-commands/import-wallet.md)
