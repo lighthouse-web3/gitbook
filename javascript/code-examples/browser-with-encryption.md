@@ -1,4 +1,4 @@
-# Browser Encryption Upload
+# 🔐 Browser Encryption Upload
 
 Pushing file to lighthouse node from browser with encryption.
 
@@ -32,14 +32,14 @@ function App() {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const address = await signer.getAddress();
-    const messageRequested = await lighthouse.getAuthMessage(address);
+    const messageRequested = (await lighthouse.getAuthMessage(address)).data.message;
     const signedMessage = await signer.signMessage(messageRequested);
     return(signedMessage);
   }
 
   /* Deploy file along with encryption */
   const deployEncrypted = async(e) =>{
-    // Get an access token
+    // Get bearer token
     const signingResponse = await sign_message();
     const accessToken = (await axios.post(`https://api.lighthouse.storage/api/auth/verify_signer`, {
       publicKey: signingResponse.address,

@@ -1,4 +1,4 @@
-# Browser Share Private File
+# 🤝 Share Private File
 
 Share file to another user.
 
@@ -15,7 +15,7 @@ function App() {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const publicKey = (await signer.getAddress()).toLowerCase();
-    const messageRequested = await lighthouse.getAuthMessage(publicKey);
+    const messageRequested = (await lighthouse.getAuthMessage(publicKey)).data.message;
     const signed_message = await signer.signMessage(
       messageRequested
     );

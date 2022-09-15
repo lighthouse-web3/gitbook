@@ -7,3 +7,5 @@ lighthouse-web3 deploy-encrypted <path>
 ```
 
 The path can be a path to file. Every file is encrypted with a unique random key.
+
+Note: windows user use wsl.

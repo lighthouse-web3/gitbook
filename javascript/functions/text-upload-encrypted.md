@@ -1,6 +1,4 @@
-# Text Upload Encrypted
-
-
+# Text Upload
 
 Upload a text string to IPFS with encryption
 
@@ -22,10 +20,12 @@ const response = await lighthouse.textUploadEncrypted(
 )
 
 /* Returns:
+  data:{
     {
       Hash: "QmYjsW76L3UQLXZzYdKyg1p9Qoof6HVo1BPCbS1SSDQoDX",
       Name: "testImage1.svg",
       Size: 15370
     }
+  }
 */
 ```

@@ -1,8 +1,6 @@
 # Deploy
 
-
-
-Used to deploy a file to Lighthouse. Use this function after the Get Quote function to get fee details and prepare file to be sent.&#x20;
+Used to deploy a file to Lighthouse. Use this function after the Get Quote function to get fee details and prepare file to be sent.
 
 CID returned by quote function needs to be sent here.
 
@@ -18,9 +16,11 @@ const deploy = await lighthouse.deploy('/home/cosmos/Desktop/wow.jpg', apiKey); 
 
 /* Returns:
     {
-      Hash: "QmYjsW76L3UQLXZzYdKyg1p9Qoof6HVo1BPCbS1SSDQoDX",
-      Name: "testImage1.svg",
-      Size: 15370
+      data: {
+        Name: 'flow1.png',
+        Hash: 'QmUHDKv3NNL1mrg4NTW4WwJqetzwZbGNitdjr2G6Z5Xe6s',
+        Size: '31735'
+      }
     }
 */
 ```
