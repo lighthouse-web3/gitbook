@@ -1,4 +1,4 @@
-# Browser Encryption Upload
+# 🔐 Browser Encryption Upload
 
 Pushing file to lighthouse node from browser with encryption.
 

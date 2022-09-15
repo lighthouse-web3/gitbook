@@ -1,6 +1,6 @@
-# Browser Decrypt File
+# 🤝 Share Private File
 
-Fetch file from lighthouse node and decrypt.
+Share file to another user.
 
 ```javascript
 import './App.css';
@@ -23,38 +23,38 @@ function App() {
   }
 
   /* Decrypt file */
-  const decrypt = async() =>{
+  const decrypt = async(cid) =>{
     // Fetch file encryption key
-    const cid = "Qmd53SEY9BwL4cr81jgZBmv2Qhpaqv87SJonUtPdfsigPH";
     const signed_message = await sign_auth_message();
-    const publicKey = "0x201Bcc3217E5AA8e803B41d1F5B6695fFEbD5CeD";
 
-    /*
-      fetchEncryptionKey(cid, publicKey, signedMessage)
-        Parameters:
-          CID: CID of file to decrypt
-          publicKey: public key of user who has access of file or owner
-          signedMessage: message signed by owner of publicKey
-    */
     const key = await lighthouse.fetchEncryptionKey(
       cid,
-      publicKey,
+      localStorage.getItem("publicKey"),
       signed_message
     );
 
-    // Decrypt file
-    /*
-      decryptFile(cid, key, mimeType)
-        Parameters:
-          CID: CID of file to decrypt
-          key: key to decrypt file
-          mimeType: default null, mime type of file
-    */
-   
-    const decrypted = await lighthouse.decryptFile(cid, key);
-    /*
-      Response: blob
-    */
+    return(key)
+  }
+
+  const shareFile = async() =>{
+    const cid = "QmSRGNKtP88vQzkQH9azFs8x4S8RUr6sKsqeHuHUevV6dG";
+    // First get file encryption key
+    const key = await decrypt(cid);
+
+    // Then get auth message and sign
+    const signed_message = await sign_auth_message();
+
+    const publicKeyUserB = "0xC88C729Ef2c18baf1074EA0Df537d61a54A8CE7b";
+    
+    const res = await lighthouse.shareFile(
+      localStorage.getItem("publicKey"),
+      publicKeyUserB,
+      cid,
+      key,
+      signed_message
+    );
+
+    console.log(res) // String: "Shared"
   }
 
   return (
