@@ -1,6 +1,4 @@
-# Get Uploads
-
-
+# Get uploads
 
 Returns cid and filecost of all uploads by a publicKey
 

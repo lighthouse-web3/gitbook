@@ -1,7 +1,5 @@
 # Status
 
-
-
 Get status of storage of a CID for a file previously stored on Lighthouse
 
 ```javascript

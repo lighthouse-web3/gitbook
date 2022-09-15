@@ -1,6 +1,4 @@
-# Text Upload Encrypted
-
-
+# Text Upload
 
 Upload a text string to IPFS with encryption
 
