@@ -1,6 +1,6 @@
-# Browser
+# ⬆ Browser-Upload
 
-Pushing file to lighthouse node from browser.
+Pushing file to lighthouse node from browser. Example below uses React.js
 
 ```javascript
 import React from "react";
@@ -11,6 +11,9 @@ import lighthouse from '@lighthouse-web3/sdk';
 function App() {
 
   const sign_message = async () => {
+    window.ethereum.request({ method: "eth_requestAccounts" }).then((res) => {
+      console.log("Account Connected: " + res[0]);
+    });
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const address = await signer.getAddress(); //users public key
@@ -33,7 +36,8 @@ function App() {
     })).data.accessToken;
 
     // Push file to lighthouse node
-    console.log(await lighthouse.deploy(e, accessToken));
+    const output = await lighthouse.deploy(e, accessToken);
+    console.log('File Status:', output);
     /*
       output:
         {
@@ -43,6 +47,8 @@ function App() {
         }
       Note: Hash in response is CID.
     */
+
+      console.log('Visit at https://ipfs.io/ipfs/' + output.Hash);
   }
 
   return (
