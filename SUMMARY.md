@@ -27,16 +27,16 @@
 * [🎯 Overview](javascript/overview.md)
 * [💻 Code Examples](javascript/code-examples/README.md)
   * [Browser Frontend](lighthouse-sdk/code-examples/browser-frontend/README.md)
-    * [⬆ Browser-Upload](lighthouse-sdk/code-examples/browser-frontend/browser.md)
-    * [🔐 Browser Encryption Upload](lighthouse-sdk/code-examples/browser-frontend/browser-with-encryption.md)
-    * [🔐 Browser Decrypt File](lighthouse-sdk/code-examples/browser-frontend/decrypt-file.md)
-    * [🤝 Share Private File](lighthouse-sdk/code-examples/browser-frontend/share-file.md)
+    * [⬆ Browser-Upload](javascript/code-examples/browser.md)
+    * [🔐 Browser Encryption Upload](javascript/code-examples/browser-with-encryption.md)
+    * [🔐 Browser Decrypt File](javascript/code-examples/decrypt-file.md)
+    * [🤝 Share Private File](javascript/code-examples/share-file.md)
   * [NodeJS Backend](lighthouse-sdk/code-examples/nodejs-backend/README.md)
     * [⬆ NodeJS Upload](javascript/code-examples/nodejs.md)
     * [🔐 NodeJS Encryption](javascript/code-examples/nodejs-encrypt.md)
     * [🔐 NodeJS Decrypt File](javascript/code-examples/nodejs-decrypt-file.md)
     * [🔑 Apply Access Control](javascript/code-examples/access-control.md)
-* [Functions](javascript/functions/README.md)
+* [📄 SDK Functions](javascript/functions/README.md)
   * [Create Wallet](javascript/functions/create-wallet.md)
   * [Get Quote](javascript/functions/get-quote.md)
   * [Deploy](javascript/functions/deploy.md)
@@ -47,7 +47,7 @@
 
 ## Gateway
 
-* [Video Player](gateway/video-player.md)
+* [📹 Video Player](gateway/video-player.md)
 
 ## Support
 
