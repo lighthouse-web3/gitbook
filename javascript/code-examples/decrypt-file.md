@@ -1,4 +1,4 @@
-# 🔐 Browser Decrypt File
+# Browser Decrypt File
 
 Fetch file from lighthouse node and decrypt.
 

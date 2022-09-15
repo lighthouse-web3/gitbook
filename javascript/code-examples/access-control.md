@@ -1,4 +1,4 @@
-# 🔑 Apply Access Control
+# NodeJS Encryption
 
 Pushing file to lighthouse node with encryption using nodejs.
 

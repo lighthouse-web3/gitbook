@@ -1,5 +1,7 @@
 # Get Balance
 
+
+
 This method returns the current balance of your wallet. Your wallet needs to have Matic/FTM/BSC/Optimism ETH or other chain tokens to store your files on Lighthouse
 
 ```javascript

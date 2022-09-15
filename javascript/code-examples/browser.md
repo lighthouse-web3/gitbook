@@ -1,6 +1,6 @@
-# ⬆ Browser-Upload
+# Browser
 
-Pushing file to lighthouse node from browser. Example below uses React.js
+Pushing file to lighthouse node from browser.
 
 ```javascript
 import React from "react";

@@ -51,4 +51,4 @@
 
 ## Support
 
-* [Contact](support/contact.md)
+* [📞 Contact](support/contact.md)

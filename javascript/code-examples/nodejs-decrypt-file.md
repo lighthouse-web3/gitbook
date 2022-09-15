@@ -1,6 +1,6 @@
-# 🔐 NodeJS Decrypt File
+# Nodejs Decrypt File
 
-Fetch file from lighthouse node and decrypt using node.js&#x20;
+Fetch file from lighthouse node and decrypt.
 
 ```javascript
 // Decrypt file nodejs

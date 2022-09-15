@@ -1,5 +1,8 @@
 # Create Wallet
 
+
+
+
 Creates a new wallet to be used on EVM chains like polygon, ftm, bsc, optimism etc.
 
 ```javascript
