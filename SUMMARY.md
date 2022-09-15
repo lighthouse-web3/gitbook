@@ -36,7 +36,7 @@
     * [🔐 NodeJS Encryption](javascript/code-examples/nodejs-encrypt.md)
     * [🔐 NodeJS Decrypt File](javascript/code-examples/nodejs-decrypt-file.md)
     * [🔑 Apply Access Control](javascript/code-examples/access-control.md)
-* [📄 SDK Functions](javascript/functions/README.md)
+* [📜 SDK Functions](javascript/functions/README.md)
   * [Create Wallet](javascript/functions/create-wallet.md)
   * [Get Quote](javascript/functions/get-quote.md)
   * [Deploy](javascript/functions/deploy.md)
