@@ -4,7 +4,7 @@ Fetch file from lighthouse node and decrypt using node.js&#x20;
 
 ```javascript
 // Decrypt file nodejs
-const {ethers} = require("ethers");
+const ethers = require("ethers");
 const fs = require("fs");
 const lighthouse = require('@lighthouse-web3/sdk');
 

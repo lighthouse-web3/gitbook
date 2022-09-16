@@ -26,6 +26,7 @@
 
 * [🎯 Overview](javascript/overview.md)
 * [💻 Code Examples](javascript/code-examples/README.md)
+  * [Access Conditions](lighthouse-sdk/code-examples/access-conditions.md)
   * [Browser Frontend](lighthouse-sdk/code-examples/browser-frontend/README.md)
     * [⬆ Browser-Upload](javascript/code-examples/browser.md)
     * [🔐 Browser Encryption Upload](javascript/code-examples/browser-with-encryption.md)
@@ -38,17 +39,18 @@
     * [🔑 Apply Access Control](javascript/code-examples/access-control.md)
 * [📜 SDK Functions](javascript/functions/README.md)
   * [Create Wallet](javascript/functions/create-wallet.md)
-  * [Get Quote](javascript/functions/get-quote.md)
   * [Deploy](javascript/functions/deploy.md)
-  * [Get Balance](javascript/functions/get-balance.md)
-  * [Get uploads](javascript/functions/get-uploads.md)
-  * [Status](javascript/functions/status.md)
+  * [Deploy Encrypted](lighthouse-sdk/functions/deploy-encrypted.md)
   * [Text Upload](javascript/functions/text-upload-encrypted.md)
+  * [Get Access Conditions](lighthouse-sdk/functions/get-access-conditions.md)
+  * [Get Balance](javascript/functions/get-balance.md)
+  * [Get Uploads](javascript/functions/get-uploads.md)
+  * [Status](javascript/functions/status.md)
 
 ## Gateway
 
-* [📹 Video Player](gateway/video-player.md)
+* [Video Player](gateway/video-player.md)
 
 ## Support
 
-* [📞 Contact](support/contact.md)
+* [Contact](support/contact.md)
