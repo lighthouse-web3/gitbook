@@ -26,7 +26,6 @@
 
 * [🎯 Overview](javascript/overview.md)
 * [💻 Code Examples](javascript/code-examples/README.md)
-  * [Access Conditions](lighthouse-sdk/code-examples/access-conditions.md)
   * [Browser Frontend](lighthouse-sdk/code-examples/browser-frontend/README.md)
     * [⬆ Browser-Upload](javascript/code-examples/browser.md)
     * [🔐 Browser Encryption Upload](javascript/code-examples/browser-with-encryption.md)
@@ -37,6 +36,7 @@
     * [🔐 NodeJS Encryption](javascript/code-examples/nodejs-encrypt.md)
     * [🔐 NodeJS Decrypt File](javascript/code-examples/nodejs-decrypt-file.md)
     * [🔑 Apply Access Control](javascript/code-examples/access-control.md)
+  * [Access Conditions](lighthouse-sdk/code-examples/access-conditions.md)
 * [📜 SDK Functions](javascript/functions/README.md)
   * [Create Wallet](javascript/functions/create-wallet.md)
   * [Deploy](javascript/functions/deploy.md)

@@ -3,7 +3,7 @@
 Pushing file to lighthouse node with encryption using nodejs.
 
 ```javascript
-const ethers = require("ethers");
+const { ethers } = require("ethers");
 const lighthouse = require('@lighthouse-web3/sdk');
 
 const sign_auth_message = async(publicKey, privateKey) =>{

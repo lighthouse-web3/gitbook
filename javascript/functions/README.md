@@ -1,2 +1,2 @@
-# 📜 SDK Functions
+# Functions
 

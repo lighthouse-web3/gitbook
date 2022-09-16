@@ -1,6 +1,6 @@
 # help
 
-returns all available commands with our CLI
+return all available commands
 
 ```
 lighthouse-web3 help
