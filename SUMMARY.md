@@ -47,8 +47,8 @@
 
 ## Gateway
 
-* [Video Player](gateway/video-player.md)
+* [📹 Video Player](gateway/video-player.md)
 
 ## Support
 
-* [Contact](support/contact.md)
+* [📞 Contact](support/contact.md)
