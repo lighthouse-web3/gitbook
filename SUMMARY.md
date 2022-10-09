@@ -39,7 +39,7 @@
   * [Access Conditions](lighthouse-sdk/code-examples/access-conditions.md)
 * [📜 SDK Functions](javascript/functions/README.md)
   * [Create Wallet](javascript/functions/create-wallet.md)
-  * [Deploy](javascript/functions/deploy.md)
+  * [Upload](javascript/functions/upload.md)
   * [Deploy Encrypted](lighthouse-sdk/functions/deploy-encrypted.md)
   * [Text Upload](javascript/functions/text-upload-encrypted.md)
   * [Get Access Conditions](lighthouse-sdk/functions/get-access-conditions.md)

@@ -1,6 +1,6 @@
-# Deploy
+# Upload
 
-Used to deploy a file to Lighthouse. Use this function after the Get Quote function to get fee details and prepare file to be sent.
+Used to upload a file to Lighthouse. Use this function after the Get Quote function to get fee details and prepare file to be sent.
 
 CID returned by quote function needs to be sent here.
 
@@ -12,7 +12,7 @@ CID returned by quote function needs to be sent here.
  */
 
 const lighthouse = require('@lighthouse-web3/sdk');
-const deploy = await lighthouse.deploy('/home/cosmos/Desktop/wow.jpg', apiKey); // path, apiKey
+const uploadResponse = await lighthouse.upload('/home/cosmos/Desktop/wow.jpg', apiKey); // path, apiKey
 
 /* Returns:
     {
