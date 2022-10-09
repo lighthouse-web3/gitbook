@@ -6,7 +6,7 @@ Pushing file to lighthouse node from browser with encryption.
 import './App.css';
 import React from "react";
 import axios from "axios";
-import {ethers} from 'ethers';
+import ethers from 'ethers';
 import lighthouse from '@lighthouse-web3/sdk';
 
 function App() {
