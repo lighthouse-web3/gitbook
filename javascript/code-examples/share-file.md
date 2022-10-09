@@ -6,7 +6,7 @@ Share file to another user.
 import './App.css';
 import React from "react";
 import axios from "axios";
-import {ethers} from 'ethers';
+import ethers from 'ethers';
 import lighthouse from '@lighthouse-web3/sdk';
 
 function App() {
@@ -22,24 +22,8 @@ function App() {
     return(signed_message);
   }
 
-  /* Decrypt file */
-  const decrypt = async(cid) =>{
-    // Fetch file encryption key
-    const signed_message = await sign_auth_message();
-
-    const key = await lighthouse.fetchEncryptionKey(
-      cid,
-      localStorage.getItem("publicKey"),
-      signed_message
-    );
-
-    return(key)
-  }
-
   const shareFile = async() =>{
     const cid = "QmSRGNKtP88vQzkQH9azFs8x4S8RUr6sKsqeHuHUevV6dG";
-    // First get file encryption key
-    const key = await decrypt(cid);
 
     // Then get auth message and sign
     const signed_message = await sign_auth_message();
@@ -50,7 +34,6 @@ function App() {
       localStorage.getItem("publicKey"),
       publicKeyUserB,
       cid,
-      key,
       signed_message
     );
 

@@ -5,7 +5,7 @@ Pushing file to lighthouse node from browser. Example below uses React.js
 ```javascript
 import React from "react";
 import axios from "axios";
-import { ethers } from 'ethers';
+import ethers from 'ethers';
 import lighthouse from '@lighthouse-web3/sdk';
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
     })).data.accessToken;
 
     // Push file to lighthouse node
-    const output = await lighthouse.deploy(e, accessToken);
+    const output = await lighthouse.upload(e, accessToken);
     console.log('File Status:', output);
     /*
       output:

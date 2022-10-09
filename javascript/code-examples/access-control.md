@@ -3,7 +3,7 @@
 Pushing file to lighthouse node with encryption using nodejs.
 
 ```javascript
-const { ethers } = require("ethers");
+const ethers = require("ethers");
 const lighthouse = require('@lighthouse-web3/sdk');
 
 const sign_auth_message = async(publicKey, privateKey) =>{
@@ -18,14 +18,6 @@ const accessControl = async() =>{
   const cid = "QmQA5LfUpoyBGcc6E4doYDU7YeWEar4bppfjZ6mB2by7mK";
   const publicKey = "0xa3c960b3ba29367ecbcaf1430452c6cd7516f588";
   const privateKey = "0x6aa0ee41fa9cf65f90c06e5db8fa2834399b59b37974b21f2e405955630d472a";
-  const signedMessage1 = await sign_auth_message(publicKey, privateKey);
-  
-  // Get File Encryption Key
-  const fileEncryptionKey = await lighthouse.fetchEncryptionKey(
-    cid,
-    publicKey,
-    signedMessage1,
-  );
   
   // Conditions to add
   const conditions = [
@@ -51,7 +43,7 @@ const accessControl = async() =>{
 
   const aggregator = "([1] and [2])";
 
-  const signedMessage2 = await sign_auth_message(publicKey, "0x6aa0ee41fa9cf65f90c06e5db8fa2834399b59b37974b21f2e405955630d472a");
+  const signedMessage = await sign_auth_message(publicKey, "0x6aa0ee41fa9cf65f90c06e5db8fa2834399b59b37974b21f2e405955630d472a");
   /*
     accessCondition(publicKey, cid, fileEncryptionKey, signedMessage, conditions, aggregator)
       Parameters:
@@ -65,8 +57,7 @@ const accessControl = async() =>{
   const response = await lighthouse.accessCondition(
     publicKey,
     cid,
-    fileEncryptionKey,
-    signedMessage2,
+    signedMessage,
     conditions,
     aggregator
   );
