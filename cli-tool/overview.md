@@ -34,8 +34,8 @@ The following commands are available with the lighthouse cli tool
 3. `import-wallet` - Imports an existing wallet
 4. `wallet-forget` - Remove previously saved wallet
 5. `balance` - Get the current balance of your wallet and data usage
-6. `deploy` - Deploy a file to Lighthouse
-7. `deploy-encrypted` - Deplpy an encrypted file
+6. `upload` - Upload a file to Lighthouse
+7. `upload-encrypted` - Upload an encrypted file
 8. `decrypt-file` - Decrypt and download the file
 9. `share-file` - Share direct access to the file
 10. `revoke-access` - Revoke direct access to the file
