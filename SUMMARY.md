@@ -15,7 +15,7 @@
   * [upload](cli-tool/cli-commands/upload.md)
   * [upload-encrypted](cli-tool/cli-commands/upload-encrypted.md)
   * [decrypt-file](cli-tool/cli-commands/decrypt-file.md)
-  * [status](cli-tool/cli-commands/status.md)
+  * [deal-status](cli-tool/cli-commands/deal-status.md)
   * [get-uploads](cli-tool/cli-commands/get-uploads.md)
   * [api-key](cli-tool/cli-commands/api-key.md)
   * [revoke-access](cli-tool/cli-commands/revoke-access.md)
@@ -45,7 +45,7 @@
   * [Get Access Conditions](lighthouse-sdk/functions/get-access-conditions.md)
   * [Get Balance](javascript/functions/get-balance.md)
   * [Get Uploads](javascript/functions/get-uploads.md)
-  * [Status](javascript/functions/status.md)
+  * [Deal Status](javascript/functions/deal-status.md)
 
 ## Gateway
 

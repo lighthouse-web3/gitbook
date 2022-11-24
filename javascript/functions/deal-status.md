@@ -11,7 +11,7 @@ Get status of storage of a CID for a file previously stored on Lighthouse
 */
 
 const lighthouse = require('@lighthouse-web3/sdk');
-const status = await lighthouse.status('bafkreia4ruswe7ghckleh3lmpujo5asrnd7hrtu5r23zjk2robpcoend34')
+const status = await lighthouse.dealStatus('bafkreia4ruswe7ghckleh3lmpujo5asrnd7hrtu5r23zjk2robpcoend34')
 
 /**/
 ```
