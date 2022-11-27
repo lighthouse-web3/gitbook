@@ -17,36 +17,36 @@ const sign_auth_message = async(publicKey, privateKey) =>{
 const accessControl = async() =>{
   const cid = "QmXtLgrwUYq3GeCXX3pjDG76byRkr4dUbmhRe148YqHgTK";
   const publicKey = "0xa3c960b3ba29367ecbcaf1430452c6cd7516f588";
-  const privateKey = "0x6aa0ee41fa9cf65f90c06e5db8fa2834399b59b37974b21f2e405955630d472a";
+  const privateKey = process.env.PRIVATE_KEY;
   
   // Conditions to add
   const conditions = [
     {
       id: 1,
-      chain: "FantomTest",
+      chain: "wallaby",
       method: "balanceOf",
       standardContractType: "ERC20",
-      contractAddress: "0xF0Bc72fA04aea04d04b1fA80B359Adb566E1c8B1",
-      returnValueTest: { comparator: ">=", value: "0" },
+      contractAddress: "0x1a6ceedD39E85668c233a061DBB83125847B8e3A",
+      returnValueTest: { comparator: ">=", value: "1" },
       parameters: [":userAddress"],
     },
     {
-			id: 2,
-			chain: "Ethereum",
-			method: "getBalance",
-			standardContractType: "",
-			returnValueTest: {
-				comparator: ">=",
-				value: "0"
-			}
-		}
+      id: 2,
+      chain: "Optimism",
+      method: "getBlockNumber",
+      standardContractType: "",
+      returnValueTest: {
+        comparator: ">=",
+        value: "13349"
+      },
+    },
   ];
 
   const aggregator = "([1] and [2])";
 
   const signedMessage = await sign_auth_message(publicKey, privateKey);
   /*
-    accessCondition(publicKey, cid, fileEncryptionKey, signedMessage, conditions, aggregator)
+    accessCondition(publicKey, cid, signedMessage, conditions, aggregator)
       Parameters:
         publicKey: owners public key
         CID: CID of file to decrypt
@@ -65,7 +65,13 @@ const accessControl = async() =>{
   // // Display response
   console.log(response);
   /*
-    shared
+    {
+      data: {
+        cid: 'QmUHDKv3NNL1mrg4NTW4WwJqetzwZbGNitdjr2G6Z5Xe6s',
+        conditions: [ [Object] ],
+        aggregator: '([1])'
+      }
+    }
   */
 }
 
@@ -77,7 +83,7 @@ const getfileEncryptionKey = async() => {
 
   const signedMessage = await sign_auth_message(publicKey, privateKey);
   /*
-    fetchEncryptionKey(cid, publicKey, signedMessage, directaccessMode)
+    fetchEncryptionKey(cid, publicKey, signedMessage)
       Parameters:
         cid: cid of file
         publicKey: your public key

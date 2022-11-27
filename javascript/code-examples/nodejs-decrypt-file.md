@@ -17,11 +17,12 @@ const sign_auth_message = async(publicKey, privateKey) =>{
 }
 
 const decrypt = async() =>{
-  const publicKey = "0xa3c960b3ba29367ecbcaf1430452c6cd7516f588";
   const cid = "QmbGN1YcBM25s6Ry9V2iMMsBpDEAPzWRiYQQwCTx7PPXRZ";
+  const publicKey = "0xa3c960b3ba29367ecbcaf1430452c6cd7516f588";
+  const privateKey = process.env.PRIVATE_KEY;
 
   // Get file encryption key
-  const signed_message = await sign_auth_message(publicKey, "0x6aa0ee41fa9cf65f90c06e5db8fa2834399b59b37974b21f2e405955630d472a");
+  const signed_message = await sign_auth_message(publicKey, privateKey);
   const fileEncryptionKey = await lighthouse.fetchEncryptionKey(
     cid,
     publicKey,
@@ -35,7 +36,7 @@ const decrypt = async() =>{
   );
 
   // Save File
-  fs.createWriteStream("flow.png").write(Buffer.from(decrypted))  
+  fs.createWriteStream("fileName.png").write(Buffer.from(decrypted))  
 }
 
 decrypt()

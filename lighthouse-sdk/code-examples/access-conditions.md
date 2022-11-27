@@ -7,12 +7,12 @@ Here are examples of how various access conditions can be applied.
 // NFT based access
 // If user own atleast one NFT of given contract deployed on bsc test chain.
 {
-    id: 2,
-    chain: "BSCTest",
+    id: 1,
+    chain: "wallaby",
     method: "balanceOf",
     standardContractType: "ERC20",
-    contractAddress: "0x2bea04c30d0A2dc7F053337607a0e5a93Ba21892",
-    returnValueTest: { comparator: ">=", value: "0" },
+    contractAddress: "0x1a6ceedD39E85668c233a061DBB83125847B8e3A",
+    returnValueTest: { comparator: ">=", value: "1" },
     parameters: [":userAddress"],
 }
 

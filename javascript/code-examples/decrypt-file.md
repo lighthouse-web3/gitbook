@@ -26,8 +26,8 @@ function App() {
   const decrypt = async() =>{
     // Fetch file encryption key
     const cid = "Qmd53SEY9BwL4cr81jgZBmv2Qhpaqv87SJonUtPdfsigPH";
-    const signed_message = await sign_auth_message();
     const publicKey = "0x201Bcc3217E5AA8e803B41d1F5B6695fFEbD5CeD";
+    const signed_message = await sign_auth_message();
 
     /*
       fetchEncryptionKey(cid, publicKey, signedMessage)
