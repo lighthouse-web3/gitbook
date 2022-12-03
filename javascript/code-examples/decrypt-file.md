@@ -36,7 +36,7 @@ function App() {
           publicKey: public key of user who has access of file or owner
           signedMessage: message signed by owner of publicKey
     */
-    const key = await lighthouse.fetchEncryptionKey(
+    const keyObject = await lighthouse.fetchEncryptionKey(
       cid,
       publicKey,
       signed_message
@@ -51,7 +51,7 @@ function App() {
           mimeType: default null, mime type of file
     */
    
-    const decrypted = await lighthouse.decryptFile(cid, key);
+    const decrypted = await lighthouse.decryptFile(cid, keyObject.data.key);
     /*
       Response: blob
     */
