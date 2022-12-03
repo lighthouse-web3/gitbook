@@ -32,7 +32,7 @@ const decrypt = async() =>{
   // Decrypt File
   const decrypted = await lighthouse.decryptFile(
     cid,
-    fileEncryptionKey
+    fileEncryptionKey.data.key
   );
 
   // Save File
