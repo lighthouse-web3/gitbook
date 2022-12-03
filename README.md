@@ -4,7 +4,7 @@ description: An overview to Lighthouse
 
 # 👋 Introduction
 
-Lighthouse is a perpetual file storage protocol that allows the ability to pay once for your files and store them long term. While traditionally, users need to recurrently keep track and pay for the file storage after every fixed interval of time, Lighthouse manages this for them and makes sure that user files are stored forever.&#x20;
+Lighthouse is a perpetual file storage protocol that allows the ability to pay once for your files and store them forever. While traditionally, users need to recurrently keep track and pay for the file storage after every fixed interval of time, Lighthouse manages this for them and makes sure that user files are stored forever.&#x20;
 
 The aim is to move users from a rent-based cost model where they are renting their own files on cloud storage to a perpetual storage model. It is built on top of IPFS, Filecoin, amd leverages smart contracts of Ethereum, Optimism, Polygon, Solana, etc.&#x20;
 
