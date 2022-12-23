@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={()=>decrypt()}>decrypt</button>
+      <button onClick={()=>shareFile()}>share file</button>
     </div>
   );
 }
