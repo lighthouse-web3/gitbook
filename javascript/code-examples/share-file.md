@@ -3,10 +3,8 @@
 Share file to another user.
 
 ```javascript
-import './App.css';
 import React from "react";
-import axios from "axios";
-import ethers from 'ethers';
+import { ethers } from 'ethers';
 import lighthouse from '@lighthouse-web3/sdk';
 
 function App() {
@@ -16,28 +14,34 @@ function App() {
     const signer = provider.getSigner();
     const publicKey = (await signer.getAddress()).toLowerCase();
     const messageRequested = (await lighthouse.getAuthMessage(publicKey)).data.message;
-    const signed_message = await signer.signMessage(
+    const signedMessage = await signer.signMessage(
       messageRequested
     );
-    return(signed_message);
+    return({publicKey: publicKey, signedMessage: signedMessage});
   }
 
   const shareFile = async() =>{
-    const cid = "QmSRGNKtP88vQzkQH9azFs8x4S8RUr6sKsqeHuHUevV6dG";
+    const cid = "QmcuuAtmYqbPYmPx3vhJvPDi61zMxYvJbfENMjBQjq7aM3";
 
     // Then get auth message and sign
-    const signed_message = await sign_auth_message();
+    const {publicKey, signedMessage} = await sign_auth_message();
 
-    const publicKeyUserB = "0xC88C729Ef2c18baf1074EA0Df537d61a54A8CE7b";
+    const publicKeyUserB = "0x201Bcc3217E5AA8e803B41d1F5B6695fFEbD5CeD";
     
     const res = await lighthouse.shareFile(
-      localStorage.getItem("publicKey"),
+      publicKey,
       publicKeyUserB,
       cid,
-      signed_message
+      signedMessage
     );
 
-    console.log(res) // String: "Shared"
+    console.log(res)
+    /*
+      data: {
+        cid: "QmcuuAtmYqbPYmPx3vhJvPDi61zMxYvJbfENMjBQjq7aM3",
+        shareTo: "0x201Bcc3217E5AA8e803B41d1F5B6695fFEbD5CeD"
+      }
+    */
   }
 
   return (
