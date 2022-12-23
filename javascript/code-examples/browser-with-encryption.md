@@ -3,16 +3,12 @@
 Pushing file to lighthouse node from browser with encryption.
 
 ```javascript
-import './App.css';
 import React from "react";
 import axios from "axios";
-import ethers from 'ethers';
+import { ethers } from 'ethers';
 import lighthouse from '@lighthouse-web3/sdk';
 
 function App() {
-
-  const [img, setImg] = React.useState(null);
-  const [cid, setCid] = React.useState(null);
 
   const sign_message = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -37,9 +33,15 @@ function App() {
     return(signedMessage);
   }
 
+  const progressCallback = (progressData) => {
+    let percentageDone =
+      100 - (progressData?.total / progressData?.uploaded)?.toFixed(2);
+    console.log(percentageDone);
+  };
+
   /* Deploy file along with encryption */
   const deployEncrypted = async(e) =>{
-    // Get bearer token
+    // Get authentication token
     const signingResponse = await sign_message();
     const accessToken = (await axios.post(`https://api.lighthouse.storage/api/auth/verify_signer`, {
       publicKey: signingResponse.address,
@@ -49,26 +51,28 @@ function App() {
     const publicKey = signingResponse.address;
 
     /*
-       uploadEncrypted(e, publicKey, accessToken)
+       uploadEncrypted(e, publicKey, accessToken, uploadProgressCallback)
        - e: js event
        - publicKey: wallets public key
        - accessToken: token to upload
        - signedMessage: message signed by owner of publicKey
+       - uploadProgressCallback: function to get progress (optional)
     */
-    const encryptionSignature = await encryptionSignature();
+    const sig = await encryptionSignature();
     const response = await lighthouse.uploadEncrypted(
       e,
       publicKey,
       accessToken,
-      encryptionSignature
+      sig,
+      progressCallback
     );
     console.log(response);
     /*
       output:
         {
-          Name: "main-qimg-6282220880e320c7889fec27a20e2eee-lq.jpg",
-          Size: "44561",
-          Hash: "QmcnzVoLcFcLzwUyjgtVmf2JQbPL5gbffNhjQFxre8aYvU"
+          Name: "c04b017b6b9d1c189e15e6559aeb3ca8.png",
+          Size: "318557",
+          Hash: "QmcuuAtmYqbPYmPx3vhJvPDi61zMxYvJbfENMjBQjq7aM3"
         }
       Note: Hash in response is CID.
     */
