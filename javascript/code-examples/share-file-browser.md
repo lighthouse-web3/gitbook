@@ -24,6 +24,7 @@ function App() {
     const cid = "QmcuuAtmYqbPYmPx3vhJvPDi61zMxYvJbfENMjBQjq7aM3";
 
     // Then get auth message and sign
+    // Note: message should be signed by owner of file.
     const {publicKey, signedMessage} = await sign_auth_message();
 
     const publicKeyUserB = "0x201Bcc3217E5AA8e803B41d1F5B6695fFEbD5CeD";
@@ -41,6 +42,10 @@ function App() {
         cid: "QmcuuAtmYqbPYmPx3vhJvPDi61zMxYvJbfENMjBQjq7aM3",
         shareTo: "0x201Bcc3217E5AA8e803B41d1F5B6695fFEbD5CeD"
       }
+    */
+    /*Visit: 
+        https://files.lighthouse.storage/viewFile/<cid>  
+      To view encrypted file
     */
   }
 
