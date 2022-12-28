@@ -20,11 +20,11 @@ const response = await lighthouse.textUploadEncrypted(
 )
 
 /* Returns:
-  data:{
-    {
-      Hash: "QmYjsW76L3UQLXZzYdKyg1p9Qoof6HVo1BPCbS1SSDQoDX",
-      Name: "testImage1.svg",
-      Size: 15370
+  {
+    data: {
+      Name: 'QmSRBDQ2KhzEzqmRSDppzAdEPDxmrhVrogggNv876eeLCC',
+      Hash: 'QmSRBDQ2KhzEzqmRSDppzAdEPDxmrhVrogggNv876eeLCC',
+      Size: '20'
     }
   }
 */
