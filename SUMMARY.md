@@ -35,7 +35,7 @@
     * [⬆ NodeJS Upload](javascript/code-examples/nodejs.md)
     * [🔐 NodeJS Encryption](javascript/code-examples/nodejs-encrypt.md)
     * [🔐 NodeJS Decrypt File](javascript/code-examples/nodejs-decrypt-file.md)
-    * [🔑 Apply Access Control](javascript/code-examples/access-control.md)
+    * [🔑 Apply Access Control](javascript/code-examples/access-control-node.md)
     * [🤝 Share Private File](javascript/code-examples/share-file-nodejs.md)
     * [🚫 Revoke File Access](javascript/code-examples/revoke-access-nodejs.md)
   * [Access Conditions](lighthouse-sdk/code-examples/access-conditions.md)
