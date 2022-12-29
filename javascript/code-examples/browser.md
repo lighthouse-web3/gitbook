@@ -5,12 +5,12 @@ Pushing file to lighthouse node from browser. Example below uses React.js
 ```javascript
 import React from "react";
 import axios from "axios";
-import ethers from 'ethers';
+import {ethers} from 'ethers';
 import lighthouse from '@lighthouse-web3/sdk';
 
 function App() {
 
-  const sign_message = async () => {
+  const signMessage = async () => {
     window.ethereum.request({ method: "eth_requestAccounts" }).then((res) => {
       console.log("Account Connected: " + res[0]);
     });
@@ -25,9 +25,15 @@ function App() {
     });
   }
 
+  const progressCallback = (progressData) => {
+    let percentageDone =
+      100 - (progressData?.total / progressData?.uploaded)?.toFixed(2);
+    console.log(percentageDone);
+  };
+
   const deploy = async(e) =>{
     // Sign message for authentication
-    const signingResponse = await sign_message();
+    const signingResponse = await signMessage();
 
     // Get a bearer token
     const accessToken = (await axios.post(`https://api.lighthouse.storage/api/auth/verify_signer`, {
@@ -36,7 +42,7 @@ function App() {
     })).data.accessToken;
 
     // Push file to lighthouse node
-    const output = await lighthouse.upload(e, accessToken);
+    const output = await lighthouse.upload(e, accessToken, progressCallback);
     console.log('File Status:', output);
     /*
       output:
