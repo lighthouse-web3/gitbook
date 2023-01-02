@@ -33,6 +33,7 @@
     * [🤝 Share Private File](javascript/code-examples/share-file-browser.md)
   * [NodeJS Backend](lighthouse-sdk/code-examples/nodejs-backend/README.md)
     * [⬆ NodeJS Upload](javascript/code-examples/nodejs.md)
+    * [⬆ Text Upload](javascript/code-examples/text-upload-nodejs.md)
     * [🔐 NodeJS Encryption](javascript/code-examples/nodejs-encrypt.md)
     * [🔐 NodeJS Decrypt File](javascript/code-examples/nodejs-decrypt-file.md)
     * [🔑 Apply Access Control](javascript/code-examples/access-control-node.md)
