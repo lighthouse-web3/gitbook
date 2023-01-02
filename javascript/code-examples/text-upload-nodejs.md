@@ -8,7 +8,7 @@ require("dotenv").config();
 const lighthouse = require('@lighthouse-web3/sdk');
 
 const uploadText = async() =>{
-  const apiKey = "3bc2a852-3qa1-46e8-9cfg-3f42150d2448";
+  const apiKey = process.env.API_KEY; //generate from https://files.lighthouse.storage/ or cli (lighthouse-web3 api-key --new)
   const response = await lighthouse.uploadText(
     "This is a string",
     apiKey
