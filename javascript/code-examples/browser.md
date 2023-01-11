@@ -10,21 +10,6 @@ import lighthouse from '@lighthouse-web3/sdk';
 
 function App() {
 
-  const signMessage = async () => {
-    window.ethereum.request({ method: "eth_requestAccounts" }).then((res) => {
-      console.log("Account Connected: " + res[0]);
-    });
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    const address = await signer.getAddress(); //users public key
-    const messageRequested = (await axios.get(`https://api.lighthouse.storage/api/auth/get_message?publicKey=${address}`)).data; //Get message
-    const signedMessage = await signer.signMessage(messageRequested); //Sign message
-    return({
-      signedMessage: signedMessage,
-      address: address
-    });
-  }
-
   const progressCallback = (progressData) => {
     let percentageDone =
       100 - (progressData?.total / progressData?.uploaded)?.toFixed(2);
@@ -32,17 +17,8 @@ function App() {
   };
 
   const deploy = async(e) =>{
-    // Sign message for authentication
-    const signingResponse = await signMessage();
-
-    // Get a bearer token
-    const accessToken = (await axios.post(`https://api.lighthouse.storage/api/auth/verify_signer`, {
-      publicKey: signingResponse.address,
-      signedMessage: signingResponse.signedMessage
-    })).data.accessToken;
-
     // Push file to lighthouse node
-    const output = await lighthouse.upload(e, accessToken, progressCallback);
+    const output = await lighthouse.upload(e, "YOUR_API_KEY", progressCallback);
     console.log('File Status:', output);
     /*
       output:
