@@ -7,7 +7,7 @@ coverY: 0
 
 # 📃 Overview
 
-****:tools:**Installation**
+:tools:**Installation**
 
 Install the package globally on your system using our npm package
 
@@ -16,18 +16,18 @@ npm install -g @lighthouse-web3/sdk
 ```
 
 {% hint style="info" %}
-in case you had our old package installed, you will need to uninstall that before installing the above package.&#x20;
+in case you had our old package installed, you will need to uninstall that before installing the above package.
 {% endhint %}
 
-****:x:**To uninstall old package, run the following command:**
+:x:**To uninstall the old package, run the following command:**
 
 ```
 npm uninstall -g lighthouse-web3
 ```
 
-****:page\_facing\_up:**Commands**
+:page\_facing\_up:**Commands**
 
-The following commands are available with the lighthouse cli tool
+The following commands are available with the Lighthouse CLI tool
 
 1. `wallet` - Returns public key and connected network
 2. `create-wallet` - Creates a new wallet
@@ -41,17 +41,15 @@ The following commands are available with the lighthouse cli tool
 10. `revoke-access` - Revoke direct access to the file
 11. `status` - Get metadata of a file CID
 12. `get-uploads` - Get details of files uploaded
-13. `api-key` - Get new api key
+13. `api-key` - Get a new API key
 
-
-
-****:frame\_photo:**CLI screenshot**&#x20;
+:frame\_photo:**CLI screenshot**
 
 <figure><img src="../.gitbook/assets/Screenshot 2022-09-13 at 6.16.15 PM.png" alt=""><figcaption></figcaption></figure>
 
-### ****:globe\_with\_meridians:**Switch Chain**
+### :globe\_with\_meridians:**Switch Chain**
 
-The following smart contract chains are supported currently for payments, verifiable proof -&#x20;
+The following smart contract chains are supported currently for payments, verifiable proof -
 
 1. Polygon mainnet (polygon)
 2. Mumbai testnet (polygon-testnet)
@@ -60,13 +58,13 @@ The following smart contract chains are supported currently for payments, verifi
 5. Binance (binance)
 6. Binance Testnet (binance-testnet)
 
-To switch to a mainnet network, use the following command as example -&#x20;
+To switch to a mainnet network, use the following command as an example -
 
 ```
 lighthouse-web3 --network polygon
 ```
 
-To switch to a testnet network, use the following command as example -&#x20;
+To switch to a testnet network, use the following command as an example -
 
 ```
 lighthouse-web3 --network fantom-testnet
