@@ -15,11 +15,11 @@
   * [upload](cli-tool/cli-commands/upload.md)
   * [upload-encrypted](cli-tool/cli-commands/upload-encrypted.md)
   * [decrypt-file](cli-tool/cli-commands/decrypt-file.md)
+  * [share-file](cli-tool/cli-commands/share-file.md)
+  * [revoke-access](cli-tool/cli-commands/revoke-access.md)
   * [deal-status](cli-tool/cli-commands/deal-status.md)
   * [get-uploads](cli-tool/cli-commands/get-uploads.md)
   * [api-key](cli-tool/cli-commands/api-key.md)
-  * [revoke-access](cli-tool/cli-commands/revoke-access.md)
-  * [share-file](cli-tool/cli-commands/share-file.md)
   * [help](cli-tool/cli-commands/help.md)
 
 ## Lighthouse SDK
