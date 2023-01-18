@@ -49,14 +49,17 @@ The following commands are available with the Lighthouse CLI tool
 
 ### :globe\_with\_meridians:**Switch Chain**
 
-The following smart contract chains are supported currently for payments, verifiable proof -
+The following smart contract chains are currently supported for payments, verifiable proof -
 
-1. Polygon mainnet (polygon)
-2. Mumbai testnet (polygon-testnet)
-3. Fantom (fantom)
-4. Fantom Testnet (fantom-testnet)
-5. Binance (binance)
-6. Binance Testnet (binance-testnet)
+1. Ethereum (ethereum)
+2. Polygon (polygon)
+3. Solana (solana)
+4. Binance (binance)
+5. Fantom (fantom)
+6. Mumbai testnet (polygon-testnet)
+7. FVM (wallaby-testnet)
+8. Fantom Testnet (fantom-testnet)
+9. Binance Testnet (binance-testnet)
 
 To switch to a mainnet network, use the following command as an example -
 
