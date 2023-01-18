@@ -6,4 +6,4 @@ To decrypt and download a previously uploaded encrypted file, use the following 
 lighthouse-web3 decrypt-file <CID>
 ```
 
-This downloads the file in the same directory you ran the command in
+This downloads the file in the same directory you ran the command in.

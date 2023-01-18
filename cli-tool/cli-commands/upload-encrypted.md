@@ -1,11 +1,11 @@
 # upload-encrypted
 
-This is the command that is used to upload file to the Lighthouse protocol with encrypting file.
+This is the command to upload encrypted files to the Lighthouse
 
 ```
 lighthouse-web3 upload-encrypted <path>
 ```
 
-The path can be a path to file. Every file is encrypted with a unique random key.
+The path can be a path to a file. Every file is encrypted with a unique random key.
 
-Note: windows user use wsl.
+Note: Windows users should use WSL.
