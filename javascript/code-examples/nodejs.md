@@ -19,16 +19,17 @@ const deploy = async() =>{
 }
 
 deploy()
-
 ```
 
-The above code gives the following **output**&#x20;
+The above code gives the following **output**
 
-<pre><code><strong>response output:
-</strong>{
+```
+response output:
+{
     Hash: "QmYjsW76L3UQLXZzYdKyg1p9Qoof6HVo1BPCbS1SSDQoDX",
     Name: "img-1",
     Size: 15370
 }
 
-Note: The Hash in above output is IPFS CID</code></pre>
+Note: The Hash in above output is IPFS CID
+```

@@ -9,7 +9,7 @@ coverY: 0
 
 :tools:**Installation**
 
-Install the package globally on your system using our npm package
+Install the npm package globally on your system
 
 ```
 npm install -g @lighthouse-web3/sdk
@@ -27,39 +27,55 @@ npm uninstall -g lighthouse-web3
 
 :page\_facing\_up:**Commands**
 
+Run the following command in your CLI to see every function
+
+```
+lighthouse-web3 --help
+```
+
 The following commands are available with the Lighthouse CLI tool
 
-1. `wallet` - Returns public key and connected network
+1. `wallet` - Returns wallet public address and connected network
 2. `create-wallet` - Creates a new wallet
 3. `import-wallet` - Imports an existing wallet
 4. `wallet-forget` - Remove previously saved wallet
-5. `balance` - Get the current balance of your wallet and data usage
-6. `upload` - Upload a file to Lighthouse
-7. `upload-encrypted` - Upload an encrypted file
-8. `decrypt-file` - Decrypt and download the file
-9. `share-file` - Share direct access to the file
-10. `revoke-access` - Revoke direct access to the file
-11. `status` - Get metadata of a file CID
-12. `get-uploads` - Get details of files uploaded
-13. `api-key` - Get a new API key
+5. `reset-password` - Change your password
+6. `balance` - Get the current balance of your wallet and data usage
+7. `upload` - Upload a file
+8. `upload-encrypted` - Upload a file with encryption
+9. `decrypt-file` - Decrypt and download the file
+10. `share-file` - Share direct access to the file
+11. `revoke-access` - Revoke direct access to the file
+12. `deal-status` - Get storage Filecoin deal status
+13. `get-uploads` - Get details of files uploaded
+14. `api-key` - Get a new API key
 
-:frame\_photo:**CLI screenshot**
+:frame\_photo:**CLI Commands**
 
-<figure><img src="../.gitbook/assets/Screenshot 2022-09-13 at 6.16.15 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-01-18 at 4.12.21 PM.png" alt=""><figcaption><p>Lighthouse CLI Commands</p></figcaption></figure>
 
-### :globe\_with\_meridians:**Switch Chain**
+:globe\_with\_meridians:**Switch Chain**
 
-The following smart contract chains are currently supported for payments, verifiable proof -
+The following smart contract chains are currently supported for payments, verifiable proof, encryption, and access control -
+
+**Mainnet**
 
 1. Ethereum (ethereum)
 2. Polygon (polygon)
 3. Solana (solana)
 4. Binance (binance)
 5. Fantom (fantom)
-6. Mumbai testnet (polygon-testnet)
-7. FVM (wallaby-testnet)
-8. Fantom Testnet (fantom-testnet)
-9. Binance Testnet (binance-testnet)
+6. Optimism (optimism)
+7. To support any other chain, ping us on [Lighthouse Discord](https://discord.com/invite/c4a4CGCdJG)
+
+**Testnets**
+
+1. Mumbai Testnet (polygon-testnet)
+2. FVM (wallaby-testnet)
+3. Fantom Testnet (fantom-testnet)
+4. Binance Testnet (binance-testnet)
+5. Optimism Testnet Kovan (optimism-testnet)&#x20;
+6. Shardeum Liberty 2.x
 
 To switch to a mainnet network, use the following command as an example -
 
