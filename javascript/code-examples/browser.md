@@ -16,11 +16,7 @@ and go into the new repository using
 cd lighthouse-app
 ```
 
-**Step 2:** **Install the basic react dependencies and then the Lighthouse SDK**
-
-```
-npm i  
-```
+**Step 2:** **Install the Lighthouse SDK**
 
 ```
 npm i @lighthouse-web3/sdk
