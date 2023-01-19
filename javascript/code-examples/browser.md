@@ -30,7 +30,7 @@ function App() {
       Note: Hash in response is CID.
     */
 
-      console.log('Visit at https://ipfs.io/ipfs/' + output.data.Hash);
+      console.log('Visit at https://gateway.lighthouse.storage/ipfs/' + output.data.Hash);
   }
 
   return (
