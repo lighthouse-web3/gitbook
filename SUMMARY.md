@@ -27,7 +27,7 @@
 * [🎯 Overview](javascript/overview.md)
 * [💻 Code Examples](javascript/code-examples/README.md)
   * [Browser Frontend](lighthouse-sdk/code-examples/browser-frontend/README.md)
-    * [⬆ Browser-Upload](javascript/code-examples/browser.md)
+    * [⬆ Browser Upload](javascript/code-examples/browser.md)
     * [🔐 Browser Encryption Upload](javascript/code-examples/browser-with-encryption.md)
     * [🔐 Browser Decrypt File](javascript/code-examples/decrypt-file.md)
     * [🤝 Share Private File](javascript/code-examples/share-file-browser.md)
