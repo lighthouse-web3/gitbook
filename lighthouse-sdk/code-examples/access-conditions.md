@@ -1,23 +1,33 @@
 # Access Conditions
 
+Type of Access Control conditions supported&#x20;
+
+1. NFTs and Tokens
+   * ERC20
+   * ERC721
+   * ERC1155
+2. Custom Contracts deployed
+3. Native chain token (like ETH)
+4. Time-based Access
+
 Here are examples of how various access conditions can be applied.
 
 {% code lineNumbers="true" %}
 ```javascript
 // NFT based access
-// If user own atleast one NFT of given contract deployed on bsc test chain.
+// Example, if a user owns atleast one NFT of given NFT contract deployed on wallaby testnet chain.
 {
     id: 1,
     chain: "wallaby",
     method: "balanceOf",
-    standardContractType: "ERC20",
+    standardContractType: "ERC721",
     contractAddress: "0x1a6ceedD39E85668c233a061DBB83125847B8e3A",
     returnValueTest: { comparator: ">=", value: "1" },
     parameters: [":userAddress"],
 }
 
 // Custom Contract
-// If output of get function of given contract deployed on matic mumbai chain is 1.
+// Example, If the output of the get function of a given contract deployed on polygon mumbai chain is 1.
 {
     id: 1,
     chain: "Mumbai",
@@ -34,7 +44,7 @@ Here are examples of how various access conditions can be applied.
 }
 
 // Native Token
-// If user own atleast 1 Eth
+// Example, If the user owns at least 1 Eth
 {
     id: 1,
     chain: "Ethereum",
@@ -46,8 +56,8 @@ Here are examples of how various access conditions can be applied.
     }
 }
 
-// Time based access
-// Can access if current block is greater than 133493
+// Time-based access
+// Example, Can access file if the current block is greater than 133493
 {
     id: 1,
     chain: "Optimism",
