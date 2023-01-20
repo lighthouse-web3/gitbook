@@ -1,6 +1,6 @@
 # ⬆ NodeJS Upload
 
-Pushing file to IPFS and Filecoin using Lighthouse in Node.JS.
+Pushing files to IPFS and Filecoin using Lighthouse in NodeJS.
 
 ```javascript
 require("dotenv").config();
@@ -15,7 +15,7 @@ const deploy = async() =>{
   
   // Display response
   console.log(response);
-  console.log("Visit at: https://ipfs.io/ipfs/" + response.Hash);
+  console.log("Visit at: https://gateway.lighthouse.storage/ipfs/" + response.Hash);
 }
 
 deploy()
@@ -31,5 +31,5 @@ response output:
     Size: 15370
 }
 
-Note: The Hash in above output is IPFS CID
+Note: The Hash in the above output is IPFS CID
 ```
