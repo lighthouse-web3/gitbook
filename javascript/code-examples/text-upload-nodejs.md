@@ -25,7 +25,7 @@ const uploadText = async() =>{
     }
   }
   */
-  console.log("Visit at: https://ipfs.io/ipfs/" + response.Hash);
+  console.log("Visit at: https://gateway.lighthouse.storage/ipfs/" + response.Hash);
 }
 
 uploadText()
