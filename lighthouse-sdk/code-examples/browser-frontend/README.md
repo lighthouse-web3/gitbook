@@ -4,5 +4,5 @@ description: >-
   React
 ---
 
-# Browser Frontend
+# 🖥 Browser Frontend
 

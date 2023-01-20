@@ -25,13 +25,13 @@
 ## Lighthouse SDK
 
 * [🎯 Overview](javascript/overview.md)
-* [💻 Code Examples](javascript/code-examples/README.md)
-  * [Browser Frontend](lighthouse-sdk/code-examples/browser-frontend/README.md)
+* [⛏ Code Examples](javascript/code-examples/README.md)
+  * [🖥 Browser Frontend](lighthouse-sdk/code-examples/browser-frontend/README.md)
     * [⬆ Browser Upload](javascript/code-examples/browser.md)
     * [🔐 Browser Encryption Upload](javascript/code-examples/browser-with-encryption.md)
     * [🔐 Browser Decrypt File](javascript/code-examples/decrypt-file.md)
     * [🤝 Share Private File](javascript/code-examples/share-file-browser.md)
-  * [NodeJS Backend](lighthouse-sdk/code-examples/nodejs-backend/README.md)
+  * [👩💻 NodeJS Backend](lighthouse-sdk/code-examples/nodejs-backend/README.md)
     * [⬆ NodeJS Upload](javascript/code-examples/nodejs.md)
     * [⬆ Text Upload](javascript/code-examples/text-upload-nodejs.md)
     * [🔐 NodeJS Encryption](javascript/code-examples/nodejs-encrypt.md)
