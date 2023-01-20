@@ -52,7 +52,7 @@
 
 ## Kavach Encryption SDK
 
-* [Overview](kavach-encryption-sdk/overview.md)
+* [🎯 Overview](kavach-encryption-sdk/overview.md)
 
 ## Gateway
 
