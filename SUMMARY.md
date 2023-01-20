@@ -50,6 +50,10 @@
   * [Get Uploads](javascript/functions/get-uploads.md)
   * [Deal Status](javascript/functions/deal-status.md)
 
+## Kavach Encryption SDK
+
+* [Overview](kavach-encryption-sdk/overview.md)
+
 ## Gateway
 
 * [📹 Video Player](gateway/video-player.md)
