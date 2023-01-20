@@ -1,4 +1,4 @@
-# Contact
+# 📞 Contact
 
 **Discord** - [https://discord.com/invite/c4a4CGCdJG](https://discord.com/invite/c4a4CGCdJG)
 
