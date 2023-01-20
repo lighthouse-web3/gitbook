@@ -1,6 +1,40 @@
 # 🤝 Share Private File
 
-Share file to another user.
+To get started with sharing the private files, make sure you already have a file CID that you want to share, or else follow a previous code example => "Browser Encryption Upload"
+
+**Step 1:** **Follow this** [**React documentation**](https://reactjs.org/docs/create-a-new-react-app.html) **and Create a new react app using the following command**&#x20;
+
+```
+npx create-react-app lighthouse-app
+```
+
+and go into the new repository using
+
+```
+cd lighthouse-app
+```
+
+**Step 2.1:** **Install the Lighthouse SDK**&#x20;
+
+```
+npm i @lighthouse-web3/sdk
+```
+
+**Step 2.2:** **Install the ethers library**&#x20;
+
+Also, install the ethers library to trigger wallet-related functions like signing.
+
+```
+npm i ethers
+```
+
+**Step 3: Copy and paste the following code example into src/App.js file**
+
+The following code will decrypt an image file previously uploaded to Lighthouse with encryption. You need to have a browser wallet like Metamask to sign from your wallet.
+
+**Step 3.1:** Paste the CID of the file you want to decrypt in the `shareFile` function below as the _cid_ variable.&#x20;
+
+**Step 3.2:** Paste the wallet address of the user to share the file to in the `shareFile` function below as _publicKeyUserB_ variable
 
 ```javascript
 import React from "react";
@@ -58,3 +92,15 @@ function App() {
 
 export default App;
 ```
+
+**Step 4: As a final step, run the following command to view your react site in the browser**
+
+```
+npm start
+```
+
+You can now share the file by clicking the **share file** button and signing from the wallet. View the console.log to view the data object containing the CID of the shared file and wallet address given access.
+
+**Step 5: Share the file link**
+
+The following URL can be shared to view the file **https://files.lighthouse.storage/viewFile/\<cid>** (insert cid here). ****&#x20;

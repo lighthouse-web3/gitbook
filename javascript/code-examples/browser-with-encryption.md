@@ -112,3 +112,7 @@ You can now upload a file by clicking the upload button and viewing the IPFS has
 <figure><img src="../../.gitbook/assets/Screenshot 2023-01-21 at 3.05.41 AM.png" alt=""><figcaption><p>data obect in the browser console</p></figcaption></figure>
 
 The Hash above is the IPFS CID of the encrypted file. If you try downloading it from the public IPFS network, it will be an encrypted file and can be decrypted only by the Authorised wallet address. Check the "Browser Decrypt File" Code example on how to decrypt the file.
+
+**Step 5: View the file**
+
+To view the uploaded file, go to the following link and sign in from your wallet **https://files.lighthouse.storage/viewFile/\<cid>**  (insert cid here)

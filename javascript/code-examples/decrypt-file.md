@@ -32,7 +32,7 @@ npm i ethers
 
 The following code will decrypt an image file previously uploaded to Lighthouse with encryption. You need to have a browser wallet like Metamask to sign from your wallet.
 
-**Step 3.1:** Paste the CID of the file you want to decrypt in the `decrypt` the function below as the _cid_ variable.&#x20;
+**Step 3.1:** Paste the CID of the file you want to decrypt in the `decrypt` function below as the _cid_ variable.&#x20;
 
 ```javascript
 import React from "react";
