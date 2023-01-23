@@ -25,7 +25,7 @@
 ## Lighthouse SDK
 
 * [🎯 Overview](javascript/overview.md)
-* [💻 Code Examples](javascript/code-examples/README.md)
+* [🔨 Code Examples](javascript/code-examples/README.md)
   * [🖥 Browser Frontend](lighthouse-sdk/code-examples/browser-frontend/README.md)
     * [⬆ Browser Upload](javascript/code-examples/browser.md)
     * [🔐 Browser Encryption Upload](javascript/code-examples/browser-with-encryption.md)
@@ -59,8 +59,8 @@
 
 ## Gateway
 
-* [Video Player](gateway/video-player.md)
+* [📹 Video Player](gateway/video-player.md)
 
 ## Support
 
-* [Contact](support/contact.md)
+* [📞 Contact](support/contact.md)
