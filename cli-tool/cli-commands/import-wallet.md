@@ -1,18 +1,20 @@
----
-description: Used to import an existing wallet to CLI
----
-
 # import-wallet
 
-To import wallet using the **private key**, use the following command
+Used to import an existing wallet to CLI
+
+1. To import using the private key
 
 ```
 lighthouse-web3 import-wallet --key <private_key>
 ```
 
+&#x20; 2\. To import using wallet file
 
+```
+lighthouse-web3 import-wallet --path <path_to_wallet_file>
+```
 
-You can also import a previously created wallet by copying the private\_key from the wallet.json file&#x20;
+The wallet file is a json with the following format
 
 ```
 {

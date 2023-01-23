@@ -25,7 +25,7 @@
 ## Lighthouse SDK
 
 * [🎯 Overview](javascript/overview.md)
-* [⛏ Code Examples](javascript/code-examples/README.md)
+* [💻 Code Examples](javascript/code-examples/README.md)
   * [🖥 Browser Frontend](lighthouse-sdk/code-examples/browser-frontend/README.md)
     * [⬆ Browser Upload](javascript/code-examples/browser.md)
     * [🔐 Browser Encryption Upload](javascript/code-examples/browser-with-encryption.md)
@@ -42,6 +42,8 @@
   * [📄 Access Control Conditions](lighthouse-sdk/code-examples/access-conditions.md)
 * [📜 SDK Functions](javascript/functions/README.md)
   * [Create Wallet](javascript/functions/create-wallet.md)
+  * [Share File](lighthouse-sdk/functions/share-file.md)
+  * [Revoke Access](lighthouse-sdk/functions/revoke-access.md)
   * [Upload](javascript/functions/upload.md)
   * [Buffer Upload](javascript/functions/upload-buffer.md)
   * [Upload Encrypted](lighthouse-sdk/functions/upload-encrypted.md)
@@ -57,8 +59,8 @@
 
 ## Gateway
 
-* [📹 Video Player](gateway/video-player.md)
+* [Video Player](gateway/video-player.md)
 
 ## Support
 
-* [📞 Contact](support/contact.md)
+* [Contact](support/contact.md)
