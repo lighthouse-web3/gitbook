@@ -4,13 +4,17 @@ description: >-
   have minted NFT from the contract defined by the owner in access conditions.
 ---
 
-# Create Pay to View Media
+# 💸 Create Pay to View Media
 
-**Step 1:** User uploads file with encryption to lighthouse IPFS node [**Upload Encrypted link**](https://docs.lighthouse.storage/lighthouse-1/lighthouse-sdk/code-examples/nodejs-backend/nodejs-encrypt) Lighthouse node returns a CID/Hash for the encrypted file.
+**Step 1:** The user uploads an encrypted file to the Lighthouse IPFS node. Refer to this NodeJS [Encryption Upload](../javascript/code-examples/nodejs-encrypt.md) **** or ReactJS [Browser Encryption Upload](../javascript/code-examples/browser-with-encryption.md) code example**.**&#x20;
+
+Lighthouse node returns an IPFS CID/Hash for the encrypted file.
 
 
 
-**Step 2:** Suppose the user(file owner) wants only people who own NFT from a particular collection to access the encrypted file; he applies access control to the encrypted file. For example, in the case of NFT
+**Step 2:** Suppose the user(file owner) wants only people who buy an NFT from a particular collection to access the encrypted file; he applies access control to the encrypted file.&#x20;
+
+For example, in the case of NFT
 
 ```
 // If a user owns at least one NFT of a given contract deployed on the Shardeum chain.
@@ -33,8 +37,8 @@ Note: access conditions are not only restricted to NFT. Users can apply custom c
 
 ****
 
-**Step 3:** [Lighthouse view URL](https://files.lighthouse.storage/viewFile/Qmbgib2DXXYTvXh1o8vgDzi4PiAgqgP98RZyMGB97esh2L) can be used that decrypts the file and displays it at the user end, or the user can build custom decryption and view the page referring to the given [code example](https://docs.lighthouse.storage/lighthouse-1/lighthouse-sdk/code-examples/browser-frontend/decrypt-file)
+**Step 3:** [Lighthouse view URL](https://files.lighthouse.storage/viewFile/Qmbgib2DXXYTvXh1o8vgDzi4PiAgqgP98RZyMGB97esh2L) can be used to view the encrypted file and displays it at the user end, or the user can build a custom decryption view page, refer to this [code example](https://docs.lighthouse.storage/lighthouse-1/lighthouse-sdk/code-examples/browser-frontend/decrypt-file).
 
 
 
-**Step 4:** NFT can be made a soul-bound token (SBT) so that the owner is not able to transfer to any other address
+**Step 4:** NFT can also be made a soul-bound token (SBT) so that the owner is not able to transfer to any other address
