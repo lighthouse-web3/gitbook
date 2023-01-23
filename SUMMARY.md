@@ -40,6 +40,7 @@
     * [🔑 Apply Access Control](javascript/code-examples/access-control-node.md)
     * [🤝 Share Private File](javascript/code-examples/share-file-nodejs.md)
     * [🚫 Revoke File Access](javascript/code-examples/revoke-access-nodejs.md)
+  * [🌐 Chains Supported](lighthouse-sdk/code-examples/chains-supported.md)
   * [📄 Access Control Conditions](lighthouse-sdk/code-examples/access-conditions.md)
 * [📜 SDK Functions](javascript/functions/README.md)
   * [Create Wallet](javascript/functions/create-wallet.md)
@@ -56,7 +57,7 @@
 
 ## How to
 
-* [Create Pay to View Media](how-to/create-pay-to-view-media.md)
+* [💸 Create Pay to View Media](how-to/create-pay-to-view-media.md)
 
 ## Kavach Encryption SDK
 
