@@ -54,6 +54,10 @@
   * [Get Uploads](javascript/functions/get-uploads.md)
   * [Deal Status](javascript/functions/deal-status.md)
 
+## How to
+
+* [Create Pay to View Media](how-to/create-pay-to-view-media.md)
+
 ## Kavach Encryption SDK
 
 * [🎯 Overview](kavach-encryption-sdk/overview.md)
