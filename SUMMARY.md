@@ -30,6 +30,7 @@
     * [⬆ Browser Upload](javascript/code-examples/browser.md)
     * [🔐 Browser Encryption Upload](javascript/code-examples/browser-with-encryption.md)
     * [🔐 Browser Decrypt File](javascript/code-examples/decrypt-file.md)
+    * [🔑 Apply Access Control](javascript/code-examples/access-control-browser.md)
     * [🤝 Share Private File](javascript/code-examples/share-file-browser.md)
   * [👩💻 NodeJS Backend](lighthouse-sdk/code-examples/nodejs-backend/README.md)
     * [⬆ NodeJS Upload](javascript/code-examples/nodejs.md)
