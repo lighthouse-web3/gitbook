@@ -44,7 +44,7 @@ const accessControl = async() =>{
           CID: CID of file to decrypt
           signedMessage: message signed by owner of publicKey
           conditions: should be in format like above
-          aggregator: aggregator to apply on conditions, in this example we used and
+          aggregator: aggregator to apply on conditions
     */
     const response = await lighthouse.accessCondition(
       publicKey,
