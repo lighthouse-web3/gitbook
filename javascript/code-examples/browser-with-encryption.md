@@ -28,7 +28,7 @@ npm i ethers
 
 **Step 3: Copy and paste the following code example into src/App.js file**
 
-Now the following code and be used to push files to Lighthouse from the browser with encryption. You need to have a browser wallet like Metamask to sign from your wallet
+Now the following code can be used to push files to Lighthouse from the browser with encryption. You need to have a browser wallet like Metamask to sign from your wallet
 
 **Step 3.1:** Get the API Key from [Lighthouse Files Dapp](https://files.lighthouse.storage/) and insert it into the `uploadEncrypted` function as a parameter below.
 
