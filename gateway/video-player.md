@@ -1,6 +1,6 @@
 # Video Player
 
-To create add a video player in your own site you can use video tag in similar fashion.
+To add a video player on your own site you can use video tag in similar fashion.
 
 ```javascript
   <video controls autoplay name="media">
