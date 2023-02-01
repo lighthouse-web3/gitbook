@@ -12,7 +12,7 @@ Lighthouse Smart Contracts -&#x20;
 
 ### Functions:
 
-* **Store** function requires a cid and config as input paramters and also an optional value pass in ETH for fileCost. The code examples below use ethers.js
+* **Store** function requires a cid and config as input parameters and also an optional value pass in ETH for fileCost. The code examples below use ethers.js
 
 {% hint style="info" %}
 &#x20;Currently user and applications need to calculate the storage cost on their end to pay to the lighthouse smart contract for the equivalent amount of storage.
@@ -29,7 +29,7 @@ contractWithSigner.store(cid, config).then(async (res) => {
 });
 ```
 
-* **Request Storage Status** function ask the storage status of a cid to be published on-chain if a filecoin deal was made using that cid previously. This is achieved by an oracle mechanism running in the lighthouse node. This function accepts a cid as input and as a response the Status of that cid containing filecoin deal-Ids and active storage status is stored on-chain in the _statuses_ mapping variable.
+* **Request Storage Status** function asks the storage status of a cid to be published on-chain if a filecoin deal was made using that cid previously. This is achieved by an oracle mechanism running in the lighthouse node. This function accepts a cid as input and as a response the Status of that cid containing filecoin deal-Ids and active storage status is stored on-chain in the _statuses_ mapping variable.
 
 ```javascript
 const provider = new ethers.providers.Web3Provider(); // use desired provider here
