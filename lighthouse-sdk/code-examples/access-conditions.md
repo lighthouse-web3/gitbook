@@ -1,6 +1,6 @@
 # 📄 Access Control Conditions
 
-Type of Access Control conditions supported&#x20;
+Type of Access Control conditions supported
 
 1. NFTs and Tokens
    * ERC20
@@ -10,10 +10,23 @@ Type of Access Control conditions supported&#x20;
 3. Native chain token (like ETH)
 4. Time-based Access
 
-Here are examples of how various access conditions can be applied. Also, we support Ethereum, Rinkeby, Polygon, Optimism, Fantom, AVAX, Fuji, BSC, Shardeum_Lib1, Shardeum_Lib2, Goerli, Hyperspace, BSCTest, Optimism, FantomTest, OptimismGoerli, OptimismKovan, Mumbai, Wallaby
+Here are examples of how various access conditions can be applied.
+
+****
 
 {% code lineNumbers="true" %}
 ```javascript
+/*
+    id here represent condition number
+    chain is the blockchain network on which conditions should be applied
+    method is the name of the function to invoke
+    standardContractType is the type of contract, can be ERC20, ERC1155, ERC721 or Custom
+    returnValueTest is what to test from functions response >, ==, < 
+    parameters if the function takes any parameter as input mention it
+    inputArrayType type of parameter that the function is taking as input
+    outputType is the type of response returned by the function
+*/
+
 // NFT based access
 // Example, if a user owns atleast one NFT of given NFT contract deployed on wallaby testnet chain.
 {

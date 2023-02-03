@@ -4,11 +4,11 @@ Used to upload a file to Lighthouse.
 
 ```javascript
 /**
- * @param {string} path path to file.
+ * @param {string} path to file.
  * @param {string} apiKey your api key.
  * @return {object} containing details of file uploaded.
  */
-
+ // Both file and folder supported by upload function
 const lighthouse = require('@lighthouse-web3/sdk');
 const uploadResponse = await lighthouse.upload('/home/cosmos/Desktop/wow.jpg', apiKey); // path, apiKey
 

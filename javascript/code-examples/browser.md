@@ -42,6 +42,7 @@ function App() {
 
   const deploy = async(e) =>{
     // Push file to lighthouse node
+    // Both file and folder supported by upload function
     const output = await lighthouse.upload(e, "YOUR_API_KEY", progressCallback);
     console.log('File Status:', output);
     /*
