@@ -37,23 +37,48 @@ Note: for production use, set the API Key to the .env file and don't publish you
 
 
 ```javascript
-import React from "react";
-import { ethers } from 'ethers';
-import lighthouse from '@lighthouse-web3/sdk';
+import React, { useState } from "react";
+import { ethers } from "ethers";
+import lighthouse from "@lighthouse-web3/sdk";
 
 function App() {
 
-  const encryptionSignature = async() =>{
+  const ConnectWalletButton = () => {
+    const [isWalletConnected, setAccount] = useState(null);
+
+    const handleClick = async () => {
+      if (window.ethereum) {
+        try {
+          const accounts = await window.ethereum.request({
+            method: "eth_requestAccounts",
+          });
+          setAccount(accounts[0]);
+        } catch (error) {
+          console.error(error);
+        }
+      } else {
+        console.error("Wallet is not installed on this browser");
+      }
+    };
+    return (
+      <button onClick={handleClick} disabled={isWalletConnected}>
+        Connect Wallet
+      </button>
+    );
+  };
+
+  const encryptionSignature = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const address = await signer.getAddress();
-    const messageRequested = (await lighthouse.getAuthMessage(address)).data.message;
+    const messageRequested = (await lighthouse.getAuthMessage(address)).data
+      .message;
     const signedMessage = await signer.signMessage(messageRequested);
-    return({
+    return {
       signedMessage: signedMessage,
-      publicKey: address
-    });
-  }
+      publicKey: address,
+    };
+  };
 
   const progressCallback = (progressData) => {
     let percentageDone =
@@ -62,7 +87,7 @@ function App() {
   };
 
   /* Deploy file along with encryption */
-  const deployEncrypted = async(e) =>{
+  const deployEncrypted = async (e) => {
     /*
        uploadEncrypted(e, publicKey, accessToken, uploadProgressCallback)
        - e: js event
@@ -89,11 +114,12 @@ function App() {
         }
       Note: Hash in response is CID.
     */
-  }
+  };
 
   return (
     <div className="App">
-      <input onChange={e=>deployEncrypted(e)} type="file" />
+      <input onChange={(e) => deployEncrypted(e)} type="file" />
+      <ConnectWalletButton />
     </div>
   );
 }
