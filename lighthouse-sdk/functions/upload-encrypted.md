@@ -1,4 +1,4 @@
-# Deploy Encrypted
+# Upload Encrypted
 
 Deploy file with encryption enabled
 
@@ -11,7 +11,7 @@ Deploy file with encryption enabled
  * @return {object} containing details of file uploaded.
 */
 
-const lighthouse = require('@lighthouse-web3/sdk');
+import lighthouse from '@lighthouse-web3/sdk'
 const response = await lighthouse.uploadEncrypted(
   '/home/cosmos/Desktop/wow.jpg',
   process.env.apiKey,

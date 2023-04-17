@@ -14,12 +14,11 @@ Share access to a encrypted file
 */
 
 // Note: you can also share to solana address
-const lighthouse = require('@lighthouse-web3/sdk');
+import lighthouse from '@lighthouse-web3/sdk'
 const response = await lighthouse.shareFile(
     publicKeyOfOwner,
-    publicKeyUserB,
+    [publicKeyUserB],
     cid,
-    fileEncryptionKey,
     signedMessage
 );
 
@@ -28,7 +27,8 @@ Response:
  {
    data: {
      shareTo: [ '0x487fc2fE07c593EAb555729c3DD6dF85020B5160' ],
-     cid: 'QmUHDKv3NNL1mrg4NTW4WwJqetzwZbGNitdjr2G6Z5Xe6s'
+     cid: 'QmUHDKv3NNL1mrg4NTW4WwJqetzwZbGNitdjr2G6Z5Xe6s',
+     status: 'Success'
    }
  }
 */

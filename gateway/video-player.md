@@ -1,4 +1,4 @@
-# Video Player
+# 📹 Video Player
 
 To add a video player on your own site you can use video tag in similar fashion.
 

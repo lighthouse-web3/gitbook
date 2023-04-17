@@ -1,6 +1,6 @@
 # 🔐 Browser Encryption Upload
 
-**Step 1:** **Follow this** [**React documentation**](https://reactjs.org/docs/create-a-new-react-app.html) **and Create a new react app using the following command**&#x20;
+**Step 1:** **Follow this** [**React documentation**](https://reactjs.org/docs/create-a-new-react-app.html) **and Create a new react app using the following command**
 
 ```
 npx create-react-app lighthouse-app
@@ -12,13 +12,13 @@ and go into the new repository using
 cd lighthouse-app
 ```
 
-**Step 2.1:** **Install the Lighthouse SDK**&#x20;
+**Step 2.1:** **Install the Lighthouse SDK**
 
 ```
 npm i @lighthouse-web3/sdk
 ```
 
-**Step 2.2:** **Install the ethers library**&#x20;
+**Step 2.2:** **Install the ethers library**
 
 Also, install the ethers library to trigger wallet-related functions like signing.
 
@@ -33,8 +33,6 @@ Now the following code can be used to push files to Lighthouse from the browser 
 **Step 3.1:** Get the API Key from [Lighthouse Files Dapp](https://files.lighthouse.storage/) and insert it into the `uploadEncrypted` function as a parameter below.
 
 Note: for production use, set the API Key to the .env file and don't publish your API Key publically
-
-
 
 ```javascript
 import React from "react";
@@ -62,27 +60,27 @@ function App() {
   };
 
   /* Deploy file along with encryption */
-  const deployEncrypted = async(e) =>{
+  const uploadFileEncrypted = async(e) =>{
     /*
-       uploadEncrypted(e, publicKey, accessToken, uploadProgressCallback)
+       uploadEncrypted(e, accessToken, publicKey, signedMessage, uploadProgressCallback)
        - e: js event
+       - accessToken: your API key
        - publicKey: wallets public key
-       - accessToken: your api key
        - signedMessage: message signed by the owner of publicKey
        - uploadProgressCallback: function to get progress (optional)
     */
     const sig = await encryptionSignature();
     const response = await lighthouse.uploadEncrypted(
       e,
-      sig.publicKey,
       "YOUR_API_KEY",
+      sig.publicKey,
       sig.signedMessage,
       progressCallback
     );
     console.log(response);
     /*
       output:
-        {
+        data: {
           Name: "c04b017b6b9d1c189e15e6559aeb3ca8.png",
           Size: "318557",
           Hash: "QmcuuAtmYqbPYmPx3vhJvPDi61zMxYvJbfENMjBQjq7aM3"
@@ -93,7 +91,7 @@ function App() {
 
   return (
     <div className="App">
-      <input onChange={e=>deployEncrypted(e)} type="file" />
+      <input onChange={e=>uploadFileEncrypted(e)} type="file" />
     </div>
   );
 }
@@ -107,7 +105,7 @@ export default App;
 npm start
 ```
 
-You can now upload a file by clicking the upload button and viewing the IPFS hash (CID) to the file in the browser console in the data object, as shown below -&#x20;
+You can now upload a file by clicking the upload button and viewing the IPFS hash (CID) to the file in the browser console in the data object, as shown below -
 
 <figure><img src="../../.gitbook/assets/Screenshot 2023-01-21 at 3.05.41 AM.png" alt=""><figcaption><p>data obect in the browser console</p></figcaption></figure>
 
@@ -115,4 +113,4 @@ The Hash above is the IPFS CID of the encrypted file. If you try downloading it 
 
 **Step 5: View the file**
 
-To view the uploaded file, go to the following link and sign in from your wallet **https://files.lighthouse.storage/viewFile/\<cid>**  (insert cid here)
+To view the uploaded file, go to the following link and sign in from your wallet **https://files.lighthouse.storage/viewFile/\<cid>** (insert cid here)

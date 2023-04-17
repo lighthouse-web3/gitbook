@@ -1,14 +1,14 @@
 # 🔐 NodeJS Decrypt File
 
-Fetch file from lighthouse node and decrypt using node.js&#x20;
+Fetch the file from lighthouse node and decrypt using node.js
 
 ```javascript
 // Decrypt file nodejs
-const {ethers} = require("ethers");
-const fs = require("fs");
-const lighthouse = require('@lighthouse-web3/sdk');
+import fs from "fs"
+import {ethers} from "ethers"
+import lighthouse from '@lighthouse-web3/sdk'
 
-const sign_auth_message = async(publicKey, privateKey) =>{
+const signAuthMessage = async(publicKey, privateKey) =>{
   const provider = new ethers.providers.JsonRpcProvider();
   const signer = new ethers.Wallet(privateKey, provider);
   const messageRequested = (await lighthouse.getAuthMessage(publicKey)).data.message
@@ -22,11 +22,11 @@ const decrypt = async() =>{
   const privateKey = process.env.PRIVATE_KEY;
 
   // Get file encryption key
-  const signed_message = await sign_auth_message(publicKey, privateKey);
+  const signedMessage = await signAuthMessage(publicKey, privateKey);
   const fileEncryptionKey = await lighthouse.fetchEncryptionKey(
     cid,
     publicKey,
-    signed_message
+    signedMessage
   );
 
   // Decrypt File

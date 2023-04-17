@@ -1,15 +1,15 @@
-# Upload Buffer
+# Buffer Upload
 
 Used to upload a buffer/streams to Lighthouse.
 
 ```javascript
 /**
- * @param {string} buffer buffer or stream.
- * @param {string} apiKey your api key.
- * @return {object} containing details of file uploaded.
+ * @param {string} buffer or stream.
+ * @param {string} apiKey your API key.
+ * @return {object} containing details of the file uploaded.
  */
 
-const lighthouse = require('@lighthouse-web3/sdk');
+import lighthouse from '@lighthouse-web3/sdk'
 const uploadResponse = await lighthouse.uploadBuffer(buffer, apiKey); // buffer/stream, apiKey
 
 /* Returns:

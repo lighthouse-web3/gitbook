@@ -55,10 +55,10 @@ function App() {
   }
 
   const shareFile = async() =>{
-    const cid = "QmTTa7rm2nMjz6wCj9pvRsadrCKyDXm5Vmd2YyBubCvGPi";
+    const cid = "QmVkbVeTGA7RHgvdt31H3ax1gW3pLi9JfW6i9hDdxTmcGK";
 
     // Then get auth message and sign
-    // Note: message should be signed by owner of file.
+    // Note: the owner of the file should sign the message.
     const {publicKey, signedMessage} = await signAuthMessage();
 
     const publicKeyUserB = ["0x201Bcc3217E5AA8e803B41d1F5B6695fFEbD5CeD"];
@@ -74,7 +74,8 @@ function App() {
     /*
       data: {
         cid: "QmTTa7rm2nMjz6wCj9pvRsadrCKyDXm5Vmd2YyBubCvGPi",
-        shareTo: "0x201Bcc3217E5AA8e803B41d1F5B6695fFEbD5CeD"
+        shareTo: ["0x201Bcc3217E5AA8e803B41d1F5B6695fFEbD5CeD"],
+        status: "Success"
       }
     */
     /*Visit: 
@@ -103,4 +104,4 @@ You can now share the file by clicking the **share file** button and signing fro
 
 **Step 5: Share the file link**
 
-The following URL can be shared to view the file **https://files.lighthouse.storage/viewFile/\<cid>** (insert cid here). ****&#x20;
+The following URL can be shared to view the file **https://files.lighthouse.storage/viewFile/\<cid>** (insert cid here).&#x20;

@@ -1,4 +1,4 @@
-# Get uploads
+# Get Uploads
 
 Returns cid and filecost of all uploads by a publicKey
 
@@ -7,13 +7,13 @@ Returns cid and filecost of all uploads by a publicKey
  * @param {string} publicKey wallet's public key
  * @return [object] array of file object
 */
-const lighthouse = require('@lighthouse-web3/sdk');
+import lighthouse from '@lighthouse-web3/sdk'
 const uploads = await lighthouse.getUploads('0x487fc2fE07c593EAb555729c3DD6dF85020B5160');
 
 /* Returns:
     {
         data: {
-          uploads: [
+          fileList: [
             {
               publicKey: '0xa3c960b3ba29367ecbcaf1430452c6cd7516f588',
               fileName: 'flow1.png',
@@ -27,7 +27,8 @@ const uploads = await lighthouse.getUploads('0x487fc2fE07c593EAb555729c3DD6dF850
               lastUpdate: 1662883207149,
               encryption: true
             },  
-          ]
+          ],
+          totalFiles: 1
         }
     }
 */

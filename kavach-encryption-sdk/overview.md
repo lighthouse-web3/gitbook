@@ -1,4 +1,4 @@
-# Overview
+# 🎯 Overview
 
 Note: Lighthouse SDK already uses the Kavach Encryption SDK, so developers can directly refer to encryption and access control [code examples](../javascript/code-examples/) to store private data on IPFS and build token-gated applications.
 
@@ -14,7 +14,7 @@ Note: Lighthouse SDK already uses the Kavach Encryption SDK, so developers can d
 
 ### GitHub
 
-****[**https://github.com/lighthouse-web3/encryption-sdk**](https://github.com/lighthouse-web3/encryption-sdk)****
+[**https://github.com/lighthouse-web3/encryption-sdk**](https://github.com/lighthouse-web3/encryption-sdk)
 
 ###
 

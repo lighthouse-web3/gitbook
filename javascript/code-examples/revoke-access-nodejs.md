@@ -3,9 +3,10 @@
 Revoke file access from an user.
 
 ```javascript
-require("dotenv").config();
-const {ethers} = require("ethers");
-const lighthouse = require('@lighthouse-web3/sdk');
+import * as dotenv from 'dotenv'
+dotenv.config()
+const {ethers} = require("ethers")
+const lighthouse = require('@lighthouse-web3/sdk')
 
 const signAuthMessage = async(publicKey, privateKey) =>{
   const provider = new ethers.providers.JsonRpcProvider();
@@ -29,7 +30,7 @@ const revokeAccess = async() =>{
 
     const revokeResponse = await lighthouse.revokeFileAccess(
       publicKey,
-      publicKeyUserB,
+      [publicKeyUserB],
       cid,
       signedMessage
     );
@@ -39,7 +40,7 @@ const revokeAccess = async() =>{
       {
         data: {
           cid: 'Qma7Na9sEdeM6aQeu6bUFW54HktNnW2k8g226VunXBhrn7',
-          revokeTo: '0x487fc2fE07c593EAb555729c3DD6dF85020B5160',
+          revokeTo: ['0x487fc2fE07c593EAb555729c3DD6dF85020B5160'],
           status: 'Success'
         }
       }

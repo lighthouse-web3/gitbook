@@ -43,7 +43,6 @@
   * [🌐 Chains Supported](lighthouse-sdk/code-examples/chains-supported.md)
   * [📄 Access Control Conditions](lighthouse-sdk/code-examples/access-conditions.md)
 * [📜 SDK Functions](javascript/functions/README.md)
-  * [Create Wallet](javascript/functions/create-wallet.md)
   * [Upload](javascript/functions/upload.md)
   * [Buffer Upload](javascript/functions/upload-buffer.md)
   * [Upload Encrypted](lighthouse-sdk/functions/upload-encrypted.md)

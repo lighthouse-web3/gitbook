@@ -6,7 +6,7 @@ description: >-
 
 # 💸 Create Pay to View Media
 
-**Step 1:** The user uploads an encrypted file to the Lighthouse IPFS node. Refer to this NodeJS [Encryption Upload](../javascript/code-examples/nodejs-encrypt.md) **** or ReactJS [Browser Encryption Upload](../javascript/code-examples/browser-with-encryption.md) code example**.**&#x20;
+**Step 1:** The user uploads an encrypted file to the Lighthouse IPFS node. Refer to this NodeJS [Encryption Upload](../javascript/code-examples/nodejs-encrypt.md) or ReactJS [Browser Encryption Upload](../javascript/code-examples/browser-with-encryption.md) code example**.**&#x20;
 
 Lighthouse node returns an IPFS CID/Hash for the encrypted file.
 
@@ -35,7 +35,7 @@ After applying the access condition, only the user who owns NFT from that partic
 
 Note: access conditions are not only restricted to NFT. Users can apply custom contracts, time-based, and native token-based conditions also.
 
-****
+
 
 **Step 3:** [Lighthouse view URL](https://files.lighthouse.storage/viewFile/Qmbgib2DXXYTvXh1o8vgDzi4PiAgqgP98RZyMGB97esh2L) can be used to view the encrypted file and displays it at the user end, or the user can build a custom decryption view page, refer to this [code example](https://docs.lighthouse.storage/lighthouse-1/lighthouse-sdk/code-examples/browser-frontend/decrypt-file).
 

@@ -8,7 +8,7 @@ Get access conditions for encrypted files
  * @return {object} containing details of access conditions.
 */
 
-const lighthouse = require('@lighthouse-web3/sdk');
+import lighthouse from '@lighthouse-web3/sdk'
 
 const accessConditions = async() =>{
   const cid = "QmUHDKv3NNL1mrg4NTW4WwJqetzwZbGNitdjr2G6Z5Xe6s";

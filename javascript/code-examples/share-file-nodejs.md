@@ -3,9 +3,10 @@
 Share file to another user.
 
 ```javascript
-require("dotenv").config();
-const {ethers} = require("ethers");
-const lighthouse = require('@lighthouse-web3/sdk');
+import * as dotenv from 'dotenv'
+dotenv.config()
+import {ethers} from "ethers";
+import lighthouse from '@lighthouse-web3/sdk';
 
 const signAuthMessage = async(publicKey, privateKey) =>{
   const provider = new ethers.providers.JsonRpcProvider();

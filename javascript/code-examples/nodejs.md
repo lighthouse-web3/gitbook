@@ -3,34 +3,27 @@
 Pushing files to IPFS and Filecoin using Lighthouse in NodeJS.
 
 ```javascript
-require("dotenv").config();
+import * as dotenv from 'dotenv'
+dotenv.config()
+import lighthouse from '@lighthouse-web3/sdk'
 
-const lighthouse = require('@lighthouse-web3/sdk');
-
-const deploy = async() =>{
-  const path = "img-1.jpg"; //Give path to the file 
+const uploadFile = async() =>{
+  const path = "C:/Users/.../test"; // Give path to the file
   const apiKey = process.env.API_KEY; //generate from https://files.lighthouse.storage/ or cli (lighthouse-web3 api-key --new)
-
-  // Both file and folder supported by upload function
+  // Both file and folder are supported by the upload function
   const response = await lighthouse.upload(path, apiKey);
   
-  // Display response
+  /*
+      data: {
+        Name: 'test',
+        Hash: 'QmWC9AkGa6vSbR4yizoJrFMfmZh4XjZXxvRDknk2LdJffc',
+        Size: '6198'
+      }
+      Note: Hash in response is CID.
+  */
   console.log(response);
-  console.log("Visit at: https://gateway.lighthouse.storage/ipfs/" + response.Hash);
+  console.log("Visit at: https://gateway.lighthouse.storage/ipfs/" + response.data.Hash);
 }
 
-deploy()
-```
-
-The above code gives the following **output**
-
-```
-response output:
-{
-    Hash: "QmYjsW76L3UQLXZzYdKyg1p9Qoof6HVo1BPCbS1SSDQoDX",
-    Name: "img-1",
-    Size: 15370
-}
-
-Note: The Hash in the above output is IPFS CID
+uploadFile()
 ```

@@ -43,23 +43,23 @@ function App() {
 
   const [fileURL, setFileURL] = React.useState(null);
 
-  const sign_auth_message = async() =>{
+  const encryptionSignature = async() =>{
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
-    const publicKey = (await signer.getAddress()).toLowerCase();
-    const messageRequested = (await lighthouse.getAuthMessage(publicKey)).data.message;
-    const signedMessage = await signer.signMessage(
-      messageRequested
-    );
-    return({publicKey: publicKey, signedMessage: signedMessage});
+    const address = await signer.getAddress();
+    const messageRequested = (await lighthouse.getAuthMessage(address)).data.message;
+    const signedMessage = await signer.signMessage(messageRequested);
+    return({
+      signedMessage: signedMessage,
+      publicKey: address
+    });
   }
 
   /* Decrypt file */
   const decrypt = async() =>{
     // Fetch file encryption key
-    const cid = "QmcuuAtmYqbPYmPx3vhJvPDi61zMxYvJbfENMjBQjq7aM3"; //replace with your IPFS CID
-    const {publicKey, signedMessage} = await sign_auth_message();
-    console.log(signedMessage)
+    const cid = "QmVkbVeTGA7RHgvdt31H3ax1gW3pLi9JfW6i9hDdxTmcGK"; //replace with your IPFS CID
+    const {publicKey, signedMessage} = await encryptionSignature();
     /*
       fetchEncryptionKey(cid, publicKey, signedMessage)
         Parameters:

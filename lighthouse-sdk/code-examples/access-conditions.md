@@ -12,7 +12,7 @@ Type of Access Control conditions supported
 
 Here are examples of how various access conditions can be applied.
 
-****
+
 
 {% code lineNumbers="true" %}
 ```javascript
