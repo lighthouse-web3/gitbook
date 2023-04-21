@@ -23,7 +23,7 @@ npm i @lighthouse-web3/sdk
 Also, install the ethers library to trigger wallet-related functions like signing.
 
 ```
-npm i ethers
+npm i ethers@5.7.2
 ```
 
 **Step 3: Copy and paste the following code example into src/App.js file**
