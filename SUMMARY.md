@@ -20,6 +20,7 @@
   * [deal-status](cli-tool/cli-commands/deal-status.md)
   * [get-uploads](cli-tool/cli-commands/get-uploads.md)
   * [api-key](cli-tool/cli-commands/api-key.md)
+  * [ipns](cli-tool/cli-commands/ipns.md)
   * [help](cli-tool/cli-commands/help.md)
 
 ## Lighthouse SDK
