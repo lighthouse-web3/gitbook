@@ -55,6 +55,7 @@
   * [Get Balance](javascript/functions/get-balance.md)
   * [Get Uploads](javascript/functions/get-uploads.md)
   * [Deal Status](javascript/functions/deal-status.md)
+  * [IPNS](lighthouse-sdk/functions/ipns.md)
 
 ## How to
 
