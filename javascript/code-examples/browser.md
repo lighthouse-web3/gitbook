@@ -40,10 +40,10 @@ function App() {
     console.log(percentageDone);
   };
 
-  const uploadFile = async(e) =>{
+  const uploadFile = async(file) =>{
     // Push file to lighthouse node
     // Both file and folder are supported by upload function
-    const output = await lighthouse.upload(e, "YOUR_API_KEY", progressCallback);
+    const output = await lighthouse.upload(file, "YOUR_API_KEY", progressCallback);
     console.log('File Status:', output);
     /*
       output:
@@ -60,7 +60,7 @@ function App() {
 
   return (
     <div className="App">
-      <input onChange={e=>uploadFile(e)} type="file" />
+      <input onChange={e=>uploadFile(e.target.files)} type="file" />
     </div>
   );
 }

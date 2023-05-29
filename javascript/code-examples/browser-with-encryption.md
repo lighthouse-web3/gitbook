@@ -60,7 +60,7 @@ function App() {
   };
 
   /* Deploy file along with encryption */
-  const uploadFileEncrypted = async(e) =>{
+  const uploadFileEncrypted = async(file) =>{
     /*
        uploadEncrypted(e, accessToken, publicKey, signedMessage, uploadProgressCallback)
        - e: js event
@@ -71,7 +71,7 @@ function App() {
     */
     const sig = await encryptionSignature();
     const response = await lighthouse.uploadEncrypted(
-      e,
+      file,
       "YOUR_API_KEY",
       sig.publicKey,
       sig.signedMessage,
@@ -91,7 +91,7 @@ function App() {
 
   return (
     <div className="App">
-      <input onChange={e=>uploadFileEncrypted(e)} type="file" />
+      <input onChange={e=>uploadFileEncrypted(e.target.files)} type="file" />
     </div>
   );
 }
