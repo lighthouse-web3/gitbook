@@ -20,7 +20,7 @@ description: List of chains supported for encryption access control.
 1. Mumbai (polygon-testnet)
 2. Shardeum\_Lib1
 3. Shardeum\_Lib2
-4. Hyperspace
+4. Calibration
 5. Goerli
 6. BSCTest (binance-testnet)
 7. Wallaby
