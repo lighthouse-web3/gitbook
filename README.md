@@ -12,7 +12,7 @@ It uses the miner network and storage capacity of the filecoin network and IPFS 
 
 #### How are we different from existing storage systems? <a href="#docs-internal-guid-b71b2036-7fff-9a19-aed9-151d92819f81" id="docs-internal-guid-b71b2036-7fff-9a19-aed9-151d92819f81"></a>
 
-* **Perpetual Storage -** Pay once and store forever cost model is a pretty new storage cost model which is different from existing protocols offering recurrent payment options
+* **Perpetual Storage -** The long-term storage model is a recently introduced storage cost structure that sets it apart from existing protocols that provide recurring payment choices.
 * **Encryption and Private data** - Ability to store private and encrypted data without the hassle of managing private key of the file and build token-gated applications using Smart Contracts on any chain.
 * **Dedicated custom IPFS Gateway** - This gateway serves and retrieves your files quickly. It even delivers multimedia content like 4k videos with speed.
 * **Pay using any token** - Smart contracts run on popular EVM-based chains like ethereum, polygon, optimism, bsc, etc. hence direct integration with dapps of these ecosystems. Users can pay for storage via any token on the chain of their choice and get verifiable proof. Supporting Non-EVM-based chains like Solana as well.
