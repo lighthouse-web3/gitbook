@@ -64,6 +64,7 @@
 * [Lighthouse SDK](filecoin-virtual-machine/lighthouse-sdk.md)
 * [FVM Contract](filecoin-virtual-machine/fvm-contract.md)
 * [PoDSI](filecoin-virtual-machine/podsi.md)
+* [Code Example](filecoin-virtual-machine/code-example.md)
 
 ## How to
 
