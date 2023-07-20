@@ -58,6 +58,13 @@
   * [Deal Status](javascript/functions/deal-status.md)
   * [IPNS](lighthouse-sdk/functions/ipns.md)
 
+## 💾 Filecoin Virtual Machine
+
+* [Flow Diagram](filecoin-virtual-machine/flow-diagram.md)
+* [Lighthouse SDK](filecoin-virtual-machine/lighthouse-sdk.md)
+* [FVM Contract](filecoin-virtual-machine/fvm-contract.md)
+* [PoDSI](filecoin-virtual-machine/podsi.md)
+
 ## How to
 
 * [💸 Create Pay to View Media](how-to/create-pay-to-view-media.md)

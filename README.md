@@ -20,4 +20,3 @@ It uses the miner network and storage capacity of the filecoin network and IPFS 
 * **Lower fee** - Our mechanism involves staking, accruing fees, and interest on the storage cost paid by the user, leading to a lower fee than the current alternatives like Arweave.
 * **Verifiable storage** - Provides users with verifiable storage proofs to know which miners are storing your data.
 
-****
