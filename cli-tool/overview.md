@@ -77,7 +77,7 @@ The following smart contract chains are currently supported for payments, verifi
 5. OptimismGoerli (optimism-testnet)
 6. Shardeum Liberty 2.x
 7. Calibration (Filecoin-testnet)
-8.  Goerli
+8. Goerli
 9. Rinkeby
 
 To switch to a mainnet network, use the following command as an example -
