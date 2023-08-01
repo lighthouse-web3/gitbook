@@ -31,9 +31,8 @@ https://encryption.lighthouse.storage/api/message/<walletAddress>
 ```json
 [
     {
-        "message": "Please sign this message to prove you are owner of this account: 87d6c3fb5ef8433284fa598888a645ab"
+        "message": <Message TO sign>
     },
-    ... [repeated messages]
 ]
 ```
 
