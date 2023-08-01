@@ -78,6 +78,10 @@
 
 - [Kavach Encryption Authentication](api/auth/encryption.md)
 
+## 💾 API Docummentation
+
+* [Kavach Encryption Authentication](api/auth/encryption.md)
+
 ## Gateway
 
 - [📹 Video Player](gateway/video-player.md)

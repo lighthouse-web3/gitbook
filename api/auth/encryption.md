@@ -30,9 +30,9 @@ https://encryption.lighthouse.storage/api/message/<walletAddress>
 
 ```json
 [
-    {
-        "message": <Message TO sign>
-    },
+  {
+    "message": "<Message to sign>"
+  }
 ]
 ```
 
@@ -189,14 +189,14 @@ https://encryption.lighthouse.storage/passkey/register/start
 
 ```json
 {
-    "challenge": {
-        "data": [Array of challenge data]
-    },
-    "user": {
-        "id": [Array of user ID data],
-        "name": <WalletAddress>,
-        "displayName": <WalletAddress>
-    }
+  "challenge": {
+    "data": "[Array of challenge data]"
+  },
+  "user": {
+    "id": "[Array of user ID data]",
+    "name": "<WalletAddress>",
+    "displayName": "<WalletAddress>"
+  }
 }
 ```
 
@@ -353,9 +353,68 @@ https://encryption.lighthouse.storage/passkey/login/start
 
 ```json
 {
-    ...[public key challenge and related data]
+  "challenge": {
+    "type": "Buffer",
+    "data": "[Array of challenge data]"
+  },
+  "rp": {
+    "id": "<RelyingPartyID>",
+    "name": "<RelyingPartyName>"
+  },
+  "user": {
+    "id": "[Array of user ID data]",
+    "name": "<WalletAddress>",
+    "displayName": "<WalletAddress>"
+  },
+  "pubKeyCredParams": [
+    {
+      "type": "<KeyType>",
+      "alg": "<AlgorithmNumber>"
+    },
+    {
+      "type": "<KeyType>",
+      "alg": "<AlgorithmNumber>"
+    }
+  ],
+  "authenticatorSelection": {
+    "userVerification": "<UserVerificationType>",
+    "residentKey": "<ResidentKeyType>",
+    "requireResidentKey": "<BooleanValue>"
+  }
 }
 ```
+
+#### ** Content Body Parameters:**
+
+- `challenge`:
+
+  - `type`: The type of buffer used. (e.g., "Buffer").
+  - `data`: An array of numeric values representing the challenge data.
+
+- `rp`:
+
+  - `id`: The ID of the relying party (e.g., "localhost").
+  - `name`: The name of the relying party (e.g., "Lighthouse Files").
+
+- `user`:
+
+  - `id`: An array of numeric values representing the user's ID.
+  - `name`: The user's name, typically a string representation of their address or ID (e.g., "0x254511193dd29f9c3c474c43b8d23c3d367bc4a8").
+  - `displayName`: A display name for the user, which can be the same as the `name`.
+
+- `pubKeyCredParams`: An array containing public key credential parameters. Each parameter object contains:
+
+  - `type`: The type of the key (e.g., "public-key").
+  - `alg`: The algorithm used, represented by a numeric value.
+
+- `authenticatorSelection`:
+  - `userVerification`: The requirement for user verification (e.g., "required").
+  - `residentKey`: The preference for resident key (e.g., "preferred").
+  - `requireResidentKey`: A boolean indicating if resident key is required (e.g., false).
+
+---
+
+This structure provides a clearer, organized description of the given JSON payload.
 
 ---
 
