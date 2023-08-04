@@ -23,13 +23,15 @@ npm install dotenv @lighthouse-web3/sdk
 
 **Step 3:** **Import the necessary dependencies and configure the environment variables in your Node.js application:**
 
+_Note: In this example, we are using ES6 so we have to save the file as `filename.mjs` or define `"type": "module",` in the `package.json` file._
+
 ```javascript
 import * as dotenv from 'dotenv';
 dotenv.config();
 import lighthouse from '@lighthouse-web3/sdk';
 
 const uploadFile = async () => {
-  const path = "C:/Users/.../test"; // Provide the path to the file
+  const path = "path/to/your/file"; // Provide the path to the file
   const apiKey = process.env.API_KEY; 
   // Generate the API key from https://files.lighthouse.storage/ 
   //or using CLI (lighthouse-web3 api-key --new)
@@ -37,24 +39,26 @@ const uploadFile = async () => {
   // Both files and folders are supported by the upload function
   const response = await lighthouse.upload(path, apiKey);
 
-  /*
-    Expected response:
-    {
-      data: {
-        Name: 'test',
-        Hash: 'QmWC9AkGa6vSbR4yizoJrFMfmZh4XjZXxvRDknk2LdJffc',
-        Size: '6198'
-      }
-    }
-    Note: The Hash in the response is a CID.
-  */
-
   console.log(response);
   console.log("Visit at: https://gateway.lighthouse.storage/ipfs/" + response.data.Hash);
 }
 
 uploadFile();
 ```
+
+**Expected response:**
+
+```bash
+{
+  data: {
+    Name: 'test',
+    Hash: 'QmWC9AkGa6vSbR4yizoJrFMfmZh4XjZXxvRDknk2LdJffc',
+    Size: '6198'
+  }
+}
+```
+
+_Note: The Hash in the response is a CID._
 
 **Step 4:** **Customize the code:**
 

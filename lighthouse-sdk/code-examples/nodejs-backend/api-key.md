@@ -23,10 +23,12 @@ npm install @lighthouse-web3/sdk axios ethers
 
 **Step 3:** **Import the required dependencies and define the necessary functions in your Node.js application:**
 
+_Note: In this example, we are using ES6 so we have to save the file as `filename.mjs` or define `"type": "module",` in the `package.json` file._
+
 ```javascript
 import lighthouse from '@lighthouse-web3/sdk'
 import axios from 'axios'
-import {ethers} from 'ethers'
+import { ethers } from 'ethers'
 
 const signAuthMessage = async(privateKey, messageRequested) =>{
   const signer = new ethers.Wallet(privateKey);
@@ -36,7 +38,7 @@ const signAuthMessage = async(privateKey, messageRequested) =>{
 
 const getApiKey = async() =>{
   const wallet = {
-    publicKey: 'YOUR_PUBLIC_KEY' //>> Example: '0xEaF4E24ffC1A2f53c07839a74966A6611b8Cb8A1',
+    publicKey: 'YOUR_PUBLIC_KEY', //>> Example: '0xEaF4E24ffC1A2f53c07839a74966A6611b8Cb8A1'
     privateKey: 'WALLET_PRIVATE_KEY'
   }
   const verificationMessage = (
@@ -47,10 +49,15 @@ const getApiKey = async() =>{
   const signedMessage = await signAuthMessage(wallet.privateKey, verificationMessage)
   const response = await lighthouse.getApiKey(wallet.publicKey, signedMessage)
   console.log(response)
-  /* { data: { apiKey: '7d8f3d18.eda91521aa294773a8201d2a7d241a2c' } } */
 }
 
 getApiKey()
+```
+
+**Expected Response:**
+
+```bash
+{ data: { apiKey: '7d8f3d18.eda91521aa294773a8201d2a7d241a2c' } } 
 ```
 
 * Replace `'YOUR_PUBLIC_KEY'` with your wallet's public key.

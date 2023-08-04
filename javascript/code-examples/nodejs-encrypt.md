@@ -25,6 +25,8 @@ npm install dotenv ethers @lighthouse-web3/sdk
 
 **Step 3:** **Import the necessary dependencies and configure the environment variables in your Node.js application:**
 
+_Note: In this example, we are using ES6 so we have to save the file as `filename.mjs` or define `"type": "module",` in the `package.json` file._
+
 ```javascript
 import * as dotenv from 'dotenv';
 dotenv.config();
@@ -32,7 +34,7 @@ import { ethers } from "ethers";
 import lighthouse from '@lighthouse-web3/sdk';
 
 const signAuthMessage = async (publicKey, privateKey) => {
-  const provider = new ethers.providers.JsonRpcProvider();
+  const provider = new ethers.JsonRpcProvider();
   const signer = new ethers.Wallet(privateKey, provider);
   const messageRequested = (await lighthouse.getAuthMessage(publicKey)).data.message;
   const signedMessage = await signer.signMessage(messageRequested);
@@ -55,21 +57,23 @@ const deployEncrypted = async () => {
 
   // Display response
   console.log(response);
-  /*
-    response:
-    {
-      data: {
-        Name: 'flow1.png',
-        Hash: 'QmQqfuFH77vsau5xpVHUfJ6mJQgiG8kDmR62rF98iSPRes',
-        Size: '31735'
-      }
-    }
-    Note: The Hash in the response is a CID.
-  */
 }
-
 deployEncrypted();
 ```
+
+**Expected Response:**
+
+```bash
+{
+  data: {
+    Name: 'flow1.png',
+    Hash: 'QmQqfuFH77vsau5xpVHUfJ6mJQgiG8kDmR62rF98iSPRes',
+    Size: '31735'
+  }
+}
+```
+
+_Note: The Hash in the response is a CID._
 
 **Step 4:** **Customize the code:**
 

@@ -12,10 +12,11 @@ description: >-
 * Navigate to the desired directory where you want to create the application.
 * Run the following command to create a new Node.js application
 
-<pre class="language-shell"><code class="lang-shell"><strong>mkdir lighthouse-access-control-app
-</strong><strong>cd lighthouse-access-control-app
-</strong>npm init -y
-</code></pre>
+```bash
+mkdir lighthouse-access-control-app
+cd lighthouse-access-control-app
+npm init -y
+```
 
 **Step 2:** **Install the required dependencies:**
 
@@ -25,6 +26,8 @@ npm install dotenv ethers @lighthouse-web3/sdk
 
 **Step 3:** **Import the necessary dependencies and configure the environment variables in your Node.js application:**
 
+_Note: In this example, we are using ES6 so we have to save the file as `filename.mjs` or define `"type": "module",` in the `package.json` file._
+
 ```javascript
 import * as dotenv from 'dotenv';
 dotenv.config();
@@ -32,7 +35,7 @@ import ethers from "ethers";
 import lighthouse from '@lighthouse-web3/sdk';
 
 const signAuthMessage = async (publicKey, privateKey) => {
-  const provider = new ethers.providers.JsonRpcProvider();
+  const provider = new ethers.JsonRpcProvider();
   const signer = new ethers.Wallet(privateKey, provider);
   const messageRequested = (await lighthouse.getAuthMessage(publicKey)).data.message;
   const signedMessage = await signer.signMessage(messageRequested);
@@ -76,7 +79,7 @@ const accessControl = async () => {
           conditions: access conditions in the specified format
           aggregator: aggregator to apply conditions
     */
-    const response = await lighthouse.accessCondition(
+    const response = await lighthouse.applyAccessCondition(
       publicKey,
       cid,
       signedMessage,
@@ -86,15 +89,6 @@ const accessControl = async () => {
 
     // Display response
     console.log(response);
-    /*
-    Expected Response:
-      {
-        data: {
-          cid: 'Qma7Na9sEdeM6aQeu6bUFW54HktNnW2k8g226VunXBhrn7',
-          status: 'Success'
-        }
-      }
-    */
   } catch (error) {
     console.log(error)
   }
@@ -121,20 +115,33 @@ const getFileEncryptionKey = async () => {
       signedMessage
     );
     console.log(key);
-    /*
-    Expected Response:
-      {
-        data: {
-          key: '18475nf54a37294f538t4c83ba67e0c5e11fds0fcaa2507cg8539aaff79c5d82'
-        }
-      }
-    */
   } catch (error) {
     console.log(error)
   }
 }
 
 accessControl();
+```
+
+**Expected Response (for accessControl function):**
+
+```bash
+{
+  data: {
+    cid: 'Qma7Na9sEdeM6aQeu6bUFW54HktNnW2k8g226VunXBhrn7',
+    status: 'Success'
+  }
+}
+```
+
+**Expected Response (for getFileEncryptionKey function):**
+
+```bash
+{
+  data: {
+    key: '18475nf54a37294f538t4c83ba67e0c5e11fds0fcaa2507cg8539aaff79c5d82'
+  }
+}
 ```
 
 **Step 4:** **Customize the code:**

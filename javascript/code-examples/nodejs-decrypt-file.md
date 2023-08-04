@@ -25,13 +25,17 @@ npm install fs ethers @lighthouse-web3/sdk
 
 **Step 3:** **Import the necessary dependencies and configure the environment variables in your Node.js application:**
 
+_Note: In this example, we are using ES6 so we have to save the file as `filename.mjs` or define `"type": "module",` in the `package.json` file._
+
 ```javascript
+import * as dotenv from 'dotenv';
+dotenv.config();
 import fs from "fs";
 import { ethers } from "ethers";
 import lighthouse from '@lighthouse-web3/sdk';
 
 const signAuthMessage = async (publicKey, privateKey) => {
-  const provider = new ethers.providers.JsonRpcProvider();
+  const provider = new ethers.JsonRpcProvider();
   const signer = new ethers.Wallet(privateKey, provider);
   const messageRequested = (await lighthouse.getAuthMessage(publicKey)).data.message;
   const signedMessage = await signer.signMessage(messageRequested);

@@ -25,6 +25,8 @@ npm install @lighthouse-web3/sdk
 
 **Step 3:** **Import the necessary dependencies and configure the environment variables in your Node.js application:**
 
+_Note: In this example, we are using ES6 so we have to save the file as `filename.mjs` or define `"type": "module",` in the `package.json` file._
+
 ```javascript
 import lighthouse from '@lighthouse-web3/sdk';
 
@@ -39,13 +41,14 @@ const generateCAR = async () => {
   const response = await lighthouse.createCar(path, authToken.data.access_token);
 
   console.log(response);
-  /*
-    Expected Response:
-    { data: 'Uploaded the files successfully' }
-  */
 }
-
 generateCAR();
+```
+
+**Expected Response:**
+
+```bash
+{ data: 'Uploaded the files successfully' }
 ```
 
 **Step 4:** **Customize the code:**

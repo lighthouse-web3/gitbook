@@ -25,6 +25,8 @@ npm install dotenv ethers @lighthouse-web3/sdk
 
 **Step 3:** **Import the necessary dependencies and configure the environment variables in your Node.js application:**
 
+_Note: In this example, we are using ES6 so we have to save the file as `filename.mjs` or define `"type": "module",` in the `package.json` file._
+
 ```javascript
 import * as dotenv from 'dotenv';
 dotenv.config();
@@ -32,7 +34,7 @@ import { ethers } from "ethers";
 import lighthouse from '@lighthouse-web3/sdk';
 
 const signAuthMessage = async (publicKey, privateKey) => {
-  const provider = new ethers.providers.JsonRpcProvider();
+  const provider = new ethers.JsonRpcProvider();
   const signer = new ethers.Wallet(privateKey, provider);
   const messageRequested = (await lighthouse.getAuthMessage(publicKey)).data.message;
   const signedMessage = await signer.signMessage(messageRequested);
@@ -59,20 +61,6 @@ const shareFile = async () => {
     );
 
     console.log(shareResponse);
-    /*
-      Expected Response:
-      {
-        data: {
-          cid: 'Qma7Na9sEdeM6aQeu6bUFW54HktNnW2k8g226VunXBhrn7',
-          shareTo: [ '0x487fc2fE07c593EAb555729c3DD6dF85020B5160' ],
-          status: 'Success'
-        }
-      }
-    */
-    /*Visit: 
-        https://files.lighthouse.storage/viewFile/<cid>  
-      To view the encrypted file
-    */
   } catch (error) {
     console.log(error);
   }
@@ -80,6 +68,21 @@ const shareFile = async () => {
 
 shareFile();
 ```
+
+**Expected Response:**
+
+```bash
+Expected Response:
+{
+  data: {
+    cid: 'Qma7Na9sEdeM6aQeu6bUFW54HktNnW2k8g226VunXBhrn7',
+    shareTo: [ '0x487fc2fE07c593EAb555729c3DD6dF85020B5160' ],
+    status: 'Success'
+  }
+}
+```
+
+_Visit: https://files.lighthouse.storage/viewFile/ To view the encrypted file_
 
 **Step 4:** **Customize the code:**
 

@@ -23,6 +23,8 @@ npm install dotenv @lighthouse-web3/sdk
 
 **Step 3:** **Import the necessary dependencies and configure the environment variables in your Node.js application:**
 
+_Note: In this example, we are using ES6 so we have to save the file as `filename.mjs` or define `"type": "module",` in the `package.json` file._
+
 ```javascript
 import * as dotenv from 'dotenv'
 dotenv.config()
@@ -38,7 +40,14 @@ const uploadText = async () => {
   
   // Display response
   console.log(response);
-  /*
+  console.log("Visit at: https://gateway.lighthouse.storage/ipfs/" + response.data.Hash);
+}
+uploadText();
+```
+
+**Expected Response:**
+
+```bash
   {
     data: {
       Name: 'Qmbz13iSeUU1y1z4JGcLNSBH1bFveWzpyTk1drZ6iKSVvd',
@@ -46,11 +55,6 @@ const uploadText = async () => {
       Size: '24'
     }
   }
-  */
-  console.log("Visit at: https://gateway.lighthouse.storage/ipfs/" + response.data.Hash);
-}
-
-uploadText();
 ```
 
 **Step 4:** **Customize the code:**
