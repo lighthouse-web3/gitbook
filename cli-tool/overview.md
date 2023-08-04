@@ -71,11 +71,14 @@ The following smart contract chains are currently supported for payments, verifi
 **Testnets**
 
 1. Mumbai Testnet (polygon-testnet)
-2. FVM (wallaby-testnet)
-3. Fantom Testnet (fantom-testnet)
-4. Binance Testnet (binance-testnet)
-5. Optimism Testnet Kovan (optimism-testnet)&#x20;
+2. FantomTest (fantom-testnet)
+3. BSCTest (binance-testnet)
+4. Optimism Testnet Kovan (optimism-testnet)
+5. OptimismGoerli (optimism-testnet)
 6. Shardeum Liberty 2.x
+7. Calibration (Filecoin-testnet)
+8. Goerli
+9. Rinkeby
 
 To switch to a mainnet network, use the following command as an example -
 

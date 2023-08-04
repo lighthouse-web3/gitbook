@@ -12,7 +12,7 @@ It uses the miner network and storage capacity of the filecoin network and IPFS 
 
 #### How are we different from existing storage systems? <a href="#docs-internal-guid-b71b2036-7fff-9a19-aed9-151d92819f81" id="docs-internal-guid-b71b2036-7fff-9a19-aed9-151d92819f81"></a>
 
-* **Perpetual Storage -** Pay once and store forever cost model is a pretty new storage cost model which is different from existing protocols offering recurrent payment options
+* **Perpetual Storage -** The long-term storage model sets Lighthouse apart from existing protocols that provide recurring payment choices and also from web2 storage systems
 * **Encryption and Private data** - Ability to store private and encrypted data without the hassle of managing private key of the file and build token-gated applications using Smart Contracts on any chain.
 * **Dedicated custom IPFS Gateway** - This gateway serves and retrieves your files quickly. It even delivers multimedia content like 4k videos with speed.
 * **Pay using any token** - Smart contracts run on popular EVM-based chains like ethereum, polygon, optimism, bsc, etc. hence direct integration with dapps of these ecosystems. Users can pay for storage via any token on the chain of their choice and get verifiable proof. Supporting Non-EVM-based chains like Solana as well.
@@ -20,3 +20,4 @@ It uses the miner network and storage capacity of the filecoin network and IPFS 
 * **Lower fee** - Our mechanism involves staking, accruing fees, and interest on the storage cost paid by the user, leading to a lower fee than the current alternatives like Arweave.
 * **Verifiable storage** - Provides users with verifiable storage proofs to know which miners are storing your data.
 
+***

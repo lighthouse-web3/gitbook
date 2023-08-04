@@ -20,14 +20,13 @@ description: List of chains supported for encryption access control.
 1. Mumbai (polygon-testnet)
 2. Shardeum\_Lib1
 3. Shardeum\_Lib2
-4. Hyperspace
+4. Calibration
 5. Goerli
 6. BSCTest (binance-testnet)
-7. Wallaby
-8. FantomTest
-9. Rinkeby
-10. OptimismGoerli
-11. OptimismKovan
+7. FantomTest
+8. Rinkeby
+9. OptimismGoerli
+10. OptimismKovan
 
 Note: name is not case sensitive.
 
