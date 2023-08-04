@@ -8,7 +8,7 @@ Returns cid and filecost of all uploads by a publicKey
  * @return [object] array of file object
 */
 import lighthouse from '@lighthouse-web3/sdk'
-const uploads = await lighthouse.getUploads('0x487fc2fE07c593EAb555729c3DD6dF85020B5160');
+const uploads = await lighthouse.getUploads(process.env.API_KEY);
 
 /* Returns:
     {

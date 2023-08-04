@@ -80,11 +80,11 @@ function App() {
     console.log(response);
     /*
       output:
-        data: {
+        data: [{
           Name: "c04b017b6b9d1c189e15e6559aeb3ca8.png",
           Size: "318557",
           Hash: "QmcuuAtmYqbPYmPx3vhJvPDi61zMxYvJbfENMjBQjq7aM3"
-        }
+        }]
       Note: Hash in response is CID.
     */
   }

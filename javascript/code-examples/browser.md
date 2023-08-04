@@ -43,7 +43,8 @@ function App() {
   const uploadFile = async(file) =>{
     // Push file to lighthouse node
     // Both file and folder are supported by upload function
-    const output = await lighthouse.upload(file, "YOUR_API_KEY", progressCallback);
+    // Third parameter is for multiple files, if multiple files are to be uploaded at once make it true
+    const output = await lighthouse.upload(file, "YOUR_API_KEY", false, progressCallback);
     console.log('File Status:', output);
     /*
       output:

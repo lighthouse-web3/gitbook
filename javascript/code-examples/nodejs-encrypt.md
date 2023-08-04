@@ -65,11 +65,11 @@ deployEncrypted();
 
 ```bash
 {
-  data: {
+  data: [{
     Name: 'flow1.png',
     Hash: 'QmQqfuFH77vsau5xpVHUfJ6mJQgiG8kDmR62rF98iSPRes',
     Size: '31735'
-  }
+  }]
 }
 ```
 
