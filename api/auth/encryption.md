@@ -145,6 +145,15 @@ Ensure you store the received JWT token securely and do not expose it. This toke
 
 With the JWT token in hand, you can now authenticate and interact with other secured endpoints in the Lighthouse system. Always remember to include the JWT in the header of your requests where authentication is required.
 
+---
+
+                         ⚠️  **This is only available on our Encryption Testnet  **  ⚠️
+
+
+---
+
+---
+
 # 🛡 **Authentication Verification via PassKey**
 
 **Lighthouse Encryption WebAuthn Registration API**
@@ -160,7 +169,7 @@ Initiate the registration process by sending a request with the user's address.
 #### **Endpoint:**
 
 ```
-https://encryption.lighthouse.storage/passkey/register/start
+https://enctest.lighthouse.storage/passkey/register/start
 ```
 
 #### **Method:**
@@ -211,7 +220,7 @@ Finalize the registration process with the provided credential data.
 #### **Endpoint:**
 
 ```
-https://encryption.lighthouse.storage/passkey/register/finish
+https://enctest.lighthouse.storage/passkey/register/finish
 ```
 
 #### **Method:**
@@ -330,7 +339,7 @@ Initiate the authentication process by sending a request with the user's address
 #### **Endpoint:**
 
 ```
-https://encryption.lighthouse.storage/passkey/login/start
+https://enctest.lighthouse.storage/passkey/login/start
 ```
 
 #### **Method:**
@@ -427,7 +436,7 @@ Finalize the authentication process with the provided credential data.
 #### **Endpoint:**
 
 ```
-https://encryption.lighthouse.storage/passkey/login/finish
+https://enctest.lighthouse.storage/passkey/login/finish
 ```
 
 #### **Method:**
