@@ -74,6 +74,14 @@
 
 * [🎯 Overview](kavach-encryption-sdk/overview.md)
 
+## API Documentation
+
+* [📃 Overview](api-documentation/overview.md)
+* [🛡 Kavach Encryption Authentication](api-documentation/kavach-encryption-authentication/README.md)
+  * [Method 1: Signed Message](api-documentation/kavach-encryption-authentication/method-1-signed-message.md)
+  * [Method 2: JWT](api-documentation/kavach-encryption-authentication/method-2-jwt.md)
+  * [Method 3: Passkey](api-documentation/kavach-encryption-authentication/method-3-passkey.md)
+
 ## Gateway
 
 * [📹 Video Player](gateway/video-player.md)
