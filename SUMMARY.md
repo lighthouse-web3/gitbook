@@ -69,6 +69,8 @@
 ## How to
 
 * [💸 Create Pay to View Media](how-to/create-pay-to-view-media.md)
+* [🗃 Use Python SDK](how-to/use-python-sdk.md)
+* [📝 Update Content with Lighthouse IPNS](how-to/update-content-with-lighthouse-ipns.md)
 
 ## Kavach Encryption SDK
 
