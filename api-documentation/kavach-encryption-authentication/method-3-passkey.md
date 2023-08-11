@@ -45,12 +45,6 @@ Content example**:**
   "challenge": {
     "data": "[Array of challenge data]"
   },
-  "allowCredentials": [
-      {
-          "credentialID": "<Credential ID>",
-          "name": "<User Assigned user Name>"
-      }
-    ],
   "user": {
     "id": "[Array of user ID data]",
     "name": "<WalletAddress>",
@@ -190,29 +184,12 @@ Content example**:**
     "type": "Buffer",
     "data": "[Array of challenge data]"
   },
-  "rp": {
-    "name": "<RelyingPartyName>"
-  },
-  "user": {
-    "id": "[Array of user ID data]",
-    "name": "<WalletAddress>",
-    "displayName": "<WalletAddress>"
-  },
-  "pubKeyCredParams": [
-    {
-      "type": "<KeyType>",
-      "alg": "<AlgorithmNumber>"
-    },
-    {
-      "type": "<KeyType>",
-      "alg": "<AlgorithmNumber>"
-    }
-  ],
-  "authenticatorSelection": {
-    "userVerification": "<UserVerificationType>",
-    "residentKey": "<ResidentKeyType>",
-    "requireResidentKey": "<BooleanValue>"
-  }
+    "allowCredentials": [
+      {
+          "credentialID": "<Credential ID>",
+          "name": "<User Assigned user Name>"
+      }
+    ]
 }
 ```
 
@@ -221,19 +198,9 @@ Content example**:**
 * `challenge`:
   * `type`: The type of buffer used. (e.g., "Buffer").
   * `data`: An array of numeric values representing the challenge data.
-* `rp`:
-  * `name`: The name of the relying party (e.g., "Lighthouse Files").
-* `user`:
-  * `id`: An array of numeric values representing the user's ID.
-  * `name`: The user's name, typically a string representation of their address or ID (e.g., "0x254511193dd29f9c3c474c43b8d23c3d367bc4a8").
-  * `displayName`: A display name for the user, which can be the same as the `name`.
-* `pubKeyCredParams`: An array containing public key credential parameters. Each parameter object contains:
-  * `type`: The type of the key (e.g., "public-key").
-  * `alg`: The algorithm used, represented by a numeric value.
-* `authenticatorSelection`:
-  * `userVerification`: The requirement for user verification (e.g., "required").
-  * `residentKey`: The preference for resident key (e.g., "preferred").
-  * `requireResidentKey`: A boolean indicating if resident key is required (e.g., false).
+* `allowCredentials` (Array):
+  * `credentialID`: The unique identifier for the WebAuthn credential
+  * `name` :This is the Name you are assigning to this credential (Options)
 
 This structure provides a clearer, organized description of the given JSON payload.
 
