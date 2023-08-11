@@ -45,6 +45,12 @@ Content example**:**
   "challenge": {
     "data": "[Array of challenge data]"
   },
+  "allowCredentials": [
+      {
+          "credentialID": "<Credential ID>",
+          "name": "<User Assigned user Name>"
+      }
+    ],
   "user": {
     "id": "[Array of user ID data]",
     "name": "<WalletAddress>",
@@ -81,6 +87,7 @@ https://enctest.lighthouse.storage/passkey/register/finish
   * `type`: Type of the credential. Example: `public-key`.
 * `address`: The wallet address that the user wants to prove ownership of. Example: `0x254511193Dd29f9c3c474c43B8d23C3d367Bc4A8`.
 * `signature`: The signature generated after signing the message provided by the previous endpoint (`/api/message/<walletAddress>`).
+* `name` :This is the Name you are assigning to this credential (Options)
 
 ***
 
@@ -184,7 +191,6 @@ Content example**:**
     "data": "[Array of challenge data]"
   },
   "rp": {
-    "id": "<RelyingPartyID>",
     "name": "<RelyingPartyName>"
   },
   "user": {
@@ -216,7 +222,6 @@ Content example**:**
   * `type`: The type of buffer used. (e.g., "Buffer").
   * `data`: An array of numeric values representing the challenge data.
 * `rp`:
-  * `id`: The ID of the relying party (e.g., "localhost").
   * `name`: The name of the relying party (e.g., "Lighthouse Files").
 * `user`:
   * `id`: An array of numeric values representing the user's ID.
@@ -330,3 +335,91 @@ Use the Bearer Authorization token (signed message) for authenticating API reque
 ***
 
 By following these steps, users can authenticate securely using WebAuthn with the Lighthouse system. Always ensure the security and integrity of the data exchanged during the authentication process.
+
+
+## <mark style="color:blue;">**3) Lighthouse Encryption WebAuthn Delete Credential API**</mark>
+
+### **B. Delete Credential Endpoint**
+
+Remove the credential data based on the provided address and credential ID.
+
+**Endpoint:**
+
+```
+https://enctest.lighthouse.storage/passkey/delete
+```
+
+**Method:**
+
+`DELETE`
+
+**Headers:**
+
+* `Content-Type`: `application/json`
+* `Authorization`: `Bearer SIGNED_MESSAGE`
+
+**Request Body Parameters:**
+
+* `address`: The Ethereum wallet address associated with the user.
+* `credentialID`: The unique identifier for the WebAuthn credential obtained from the `start` endpoint.
+
+***
+
+**Success Response:**
+
+Code: `200`
+
+**Notes:** Successful response indicates the deletion of the specified credential.
+
+***
+
+**Error Responses for both endpoints:**
+
+Code: `400 Bad Request`
+
+Content:
+
+```json
+{
+  "error": "Invalid data or address format."
+}
+```
+
+Code: `401 Unauthorized`
+
+Content:
+
+```json
+{
+  "error": "Invalid or expired signed message."
+}
+```
+
+Code: `500 Internal Server Error`
+
+Content:
+
+```json
+{
+  "error": "Server error, please try again later."
+}
+```
+
+***
+
+**Notes & Usage:**
+
+* The authentication process consists of two main steps:
+  1. Initiate the authentication by sending the user's address to the `start` endpoint. This returns a Credential ID which can be used for further operations.
+  2. Delete the credentials using the obtained `credentialID` and a signed message.
+* Always ensure you handle the public key and other data securely during operations.
+
+***
+
+{% hint style="info" %}
+Use the Bearer Authorization token (signed message) or JWT token for authenticating API requests
+{% endhint %}
+
+***
+
+By following these steps, users can manage their credentials securely with the Lighthouse system. Always ensure the security and integrity of the data exchanged during the process.
