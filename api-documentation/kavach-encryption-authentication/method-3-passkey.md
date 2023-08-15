@@ -222,7 +222,7 @@ https://enctest.lighthouse.storage/passkey/login/finish
 
 **Request Body Parameters:**
 
-* `address`: The Ethereum wallet address associated with the user.
+* `credentialID`: The unique identifier for the WebAuthn credential.
 * `data`: Contains details regarding the WebAuthn response and authenticator.
   * `authenticatorAttachment`: Describes the authenticator attachment modality, e.g., "cross-platform".
   * `id`: A unique identifier for the credential.
