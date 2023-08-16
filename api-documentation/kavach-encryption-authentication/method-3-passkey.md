@@ -4,9 +4,6 @@ description: Authentication via PassKey
 
 # Method 3: Passkey
 
-```
-                 ⚠️  This is only available on our Encryption Testnet  ⚠️
-```
 
 ## <mark style="color:blue;">1) Lighthouse Encryption WebAuthn Registration API</mark>
 
@@ -17,7 +14,7 @@ Initiate the registration process by sending a request with the user's address.
 **Endpoint:**
 
 ```
-https://enctest.lighthouse.storage/passkey/register/start
+https://encryption.lighthouse.storage/passkey/register/start
 ```
 
 **Method:**
@@ -62,7 +59,7 @@ Finalize the registration process with the provided credential data.
 **Endpoint:**
 
 ```
-https://enctest.lighthouse.storage/passkey/register/finish
+https://encryption.lighthouse.storage/passkey/register/finish
 ```
 
 **Method:**
@@ -159,7 +156,7 @@ Initiate the authentication process by sending a request with the user's address
 **Endpoint:**
 
 ```
-https://enctest.lighthouse.storage/passkey/login/start
+https://encryption.lighthouse.storage/passkey/login/start
 ```
 
 **Method:**
@@ -213,7 +210,7 @@ Finalize the authentication process with the provided credential data.
 **Endpoint:**
 
 ```
-https://enctest.lighthouse.storage/passkey/login/finish
+https://encryption.lighthouse.storage/passkey/login/finish
 ```
 
 **Method:**
@@ -313,7 +310,7 @@ Remove the credential data based on the provided address and credential ID.
 **Endpoint:**
 
 ```
-https://enctest.lighthouse.storage/passkey/delete
+https://encryption.lighthouse.storage/passkey/delete
 ```
 
 **Method:**
