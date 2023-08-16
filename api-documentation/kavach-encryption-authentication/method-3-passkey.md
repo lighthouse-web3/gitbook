@@ -4,10 +4,6 @@ description: Authentication via PassKey
 
 # Method 3: Passkey
 
-```
-                 ⚠️  This is only available on our Encryption Testnet  ⚠️
-```
-
 ## <mark style="color:blue;">1) Lighthouse Encryption WebAuthn Registration API</mark>
 
 ### A. **Start Registration Endpoint**
@@ -17,7 +13,7 @@ Initiate the registration process by sending a request with the user's address.
 **Endpoint:**
 
 ```
-https://enctest.lighthouse.storage/passkey/register/start
+https://encryption.lighthouse.storage/passkey/register/start
 ```
 
 **Method:**
@@ -62,7 +58,7 @@ Finalize the registration process with the provided credential data.
 **Endpoint:**
 
 ```
-https://enctest.lighthouse.storage/passkey/register/finish
+https://encryption.lighthouse.storage/passkey/register/finish
 ```
 
 **Method:**
@@ -81,6 +77,7 @@ https://enctest.lighthouse.storage/passkey/register/finish
   * `type`: Type of the credential. Example: `public-key`.
 * `address`: The wallet address that the user wants to prove ownership of. Example: `0x254511193Dd29f9c3c474c43B8d23C3d367Bc4A8`.
 * `signature`: The signature generated after signing the message provided by the previous endpoint (`/api/message/<walletAddress>`).
+* `name` :This is the Name you are assigning to this credential (Options)
 
 ***
 
@@ -158,7 +155,7 @@ Initiate the authentication process by sending a request with the user's address
 **Endpoint:**
 
 ```
-https://enctest.lighthouse.storage/passkey/login/start
+https://encryption.lighthouse.storage/passkey/login/start
 ```
 
 **Method:**
@@ -183,30 +180,12 @@ Content example**:**
     "type": "Buffer",
     "data": "[Array of challenge data]"
   },
-  "rp": {
-    "id": "<RelyingPartyID>",
-    "name": "<RelyingPartyName>"
-  },
-  "user": {
-    "id": "[Array of user ID data]",
-    "name": "<WalletAddress>",
-    "displayName": "<WalletAddress>"
-  },
-  "pubKeyCredParams": [
-    {
-      "type": "<KeyType>",
-      "alg": "<AlgorithmNumber>"
-    },
-    {
-      "type": "<KeyType>",
-      "alg": "<AlgorithmNumber>"
-    }
-  ],
-  "authenticatorSelection": {
-    "userVerification": "<UserVerificationType>",
-    "residentKey": "<ResidentKeyType>",
-    "requireResidentKey": "<BooleanValue>"
-  }
+  "allowCredentials": [
+      {
+          "credentialID": "<Credential ID>",
+          "name": "<User Assigned user Name>"
+      }
+    ]
 }
 ```
 
@@ -215,20 +194,9 @@ Content example**:**
 * `challenge`:
   * `type`: The type of buffer used. (e.g., "Buffer").
   * `data`: An array of numeric values representing the challenge data.
-* `rp`:
-  * `id`: The ID of the relying party (e.g., "localhost").
-  * `name`: The name of the relying party (e.g., "Lighthouse Files").
-* `user`:
-  * `id`: An array of numeric values representing the user's ID.
-  * `name`: The user's name, typically a string representation of their address or ID (e.g., "0x254511193dd29f9c3c474c43b8d23c3d367bc4a8").
-  * `displayName`: A display name for the user, which can be the same as the `name`.
-* `pubKeyCredParams`: An array containing public key credential parameters. Each parameter object contains:
-  * `type`: The type of the key (e.g., "public-key").
-  * `alg`: The algorithm used, represented by a numeric value.
-* `authenticatorSelection`:
-  * `userVerification`: The requirement for user verification (e.g., "required").
-  * `residentKey`: The preference for resident key (e.g., "preferred").
-  * `requireResidentKey`: A boolean indicating if resident key is required (e.g., false).
+* `allowCredentials` (Array):
+  * `credentialID`: The unique identifier for the WebAuthn credential
+  * `name` :This is the Name you are assigning to this credential (Options)
 
 This structure provides a clearer, organized description of the given JSON payload.
 
@@ -241,7 +209,7 @@ Finalize the authentication process with the provided credential data.
 **Endpoint:**
 
 ```
-https://enctest.lighthouse.storage/passkey/login/finish
+https://encryption.lighthouse.storage/passkey/login/finish
 ```
 
 **Method:**
@@ -250,7 +218,7 @@ https://enctest.lighthouse.storage/passkey/login/finish
 
 **Request Body Parameters:**
 
-* `address`: The Ethereum wallet address associated with the user.
+* `credentialID`: The unique identifier for the WebAuthn credential.
 * `data`: Contains details regarding the WebAuthn response and authenticator.
   * `authenticatorAttachment`: Describes the authenticator attachment modality, e.g., "cross-platform".
   * `id`: A unique identifier for the credential.
@@ -330,3 +298,86 @@ Use the Bearer Authorization token (signed message) for authenticating API reque
 ***
 
 By following these steps, users can authenticate securely using WebAuthn with the Lighthouse system. Always ensure the security and integrity of the data exchanged during the authentication process.
+
+### <mark style="color:blue;">**3) Lighthouse Encryption WebAuthn Delete Credential API**</mark>
+
+#### **A. Delete Credential Endpoint**
+
+Remove the credential data based on the provided address and credential ID.
+
+**Endpoint:**
+
+```
+https://encryption.lighthouse.storage/passkey/delete
+```
+
+**Method:**
+
+`DELETE`
+
+**Headers:**
+
+* `Content-Type`: `application/json`
+* `Authorization`: `Bearer SIGNED_MESSAGE`
+
+**Request Body Parameters:**
+
+* `address`: The Ethereum wallet address associated with the user.
+* `credentialID`: The unique identifier for the WebAuthn credential obtained from the `start` endpoint.
+
+***
+
+**Success Response:**
+
+Code: `200`
+
+**Notes:** Successful response indicates the deletion of the specified credential.
+
+***
+
+**Error Responses for both endpoints:**
+
+Code: `400 Bad Request`
+
+Content:
+
+```json
+{
+  "error": "Invalid data or address format."
+}
+```
+
+Code: `401 Unauthorized`
+
+Content:
+
+```json
+{
+  "error": "Invalid or expired signed message."
+}
+```
+
+Code: `500 Internal Server Error`
+
+Content:
+
+```json
+{
+  "error": "Server error, please try again later."
+}
+```
+
+**Notes & Usage:**
+
+* The authentication process consists of two main steps:
+  1. Initiate the authentication by sending the user's address to the `start` endpoint. This returns a Credential ID which can be used for further operations.
+  2. Delete the credentials using the obtained `credentialID` and a signed message.
+* Always ensure you handle the public key and other data securely during operations.
+
+{% hint style="info" %}
+Use the Bearer Authorization token (signed message) or JWT token for authenticating API requests
+{% endhint %}
+
+***
+
+By following these steps, users can manage their credentials securely with the Lighthouse system. Always ensure the security and integrity of the data exchanged during the process.
