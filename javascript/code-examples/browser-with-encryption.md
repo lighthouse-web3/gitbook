@@ -67,6 +67,7 @@ function App() {
        - accessToken: your API key
        - publicKey: wallets public key
        - signedMessage: message signed by the owner of publicKey
+       - dealParameters: default null
        - uploadProgressCallback: function to get progress (optional)
     */
     const sig = await encryptionSignature();
@@ -75,6 +76,7 @@ function App() {
       "YOUR_API_KEY",
       sig.publicKey,
       sig.signedMessage,
+      null
       progressCallback
     );
     console.log(response);

@@ -10,7 +10,7 @@ Replace the CID with your CID, and in case of testnet, add another query paramet
 
 ### How to verify inclusion:
 
-1. Call the verifyPodsi function of the contract(`0xAD978E56d3264673bA8705c1e7b2f00932345B1D`) with the proofSubtree, proofIndex, and verifierData, it will return commPa and sizePa. The commPa and SizePa should match the pieceCID and pieceSize.&#x20;
+1. Call the verify function of the contract(`0x27235FbFee0F5519A8786EA7Fc13258234aC1847`) with the proofSubtree, proofIndex, and verifierData, it will return commPa and sizePa. The commPa and SizePa should match the pieceCID and pieceSize.&#x20;
    1. **Note**: pieceCID and pieceSize are in the string will have to be converted into hex for matching
 2. Verifier data is your file's data aggregated with other files. The above steps prove the given verifier data computes to correct piece cid.&#x20;
 3. Now, you must verify that the verifier data shown is the data generated from your file. For that, you must compute the PieceCid of your file and match it with the verifier data provided.

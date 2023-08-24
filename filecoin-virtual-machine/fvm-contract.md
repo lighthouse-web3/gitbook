@@ -2,7 +2,7 @@
 
 ### Lighthouse contract address:&#x20;
 
-Calibration Testnet: `0x467b08Ae34df6Bd00947555A308cFB935D8Ab06c`
+Calibration Testnet: `0x27235FbFee0F5519A8786EA7Fc13258234aC1847`
 
 ### Contract Functions
 
