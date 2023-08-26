@@ -1,9 +1,9 @@
 # Lighthouse SDK
 
-Check out the following to upload files to Lighthouse:
+Check out the following code examples to upload files:
 
-1. [NodeJS Docs](../lighthouse-sdk/code-examples/nodejs-backend/)
-2. [ReactJS Docs](../lighthouse-sdk/code-examples/browser-frontend/)
-3. [Lighthouse Files](https://files.lighthouse.storage/)
+1. [NodeJS Code Examples](../lighthouse-sdk/code-examples/nodejs-backend/)
+2. [Frontend(React, Next..) Code Examples](../lighthouse-sdk/code-examples/browser-frontend/)
+3. [Lighthouse File](https://files.lighthouse.storage/)
 
-**Note**: Currently deals created using SDK will be on the Filecoin mainnet and those created using contract will be on the testnet.
+**Note**: Deal by default using SDK will go to the mainnet unless deal parameters are provided mentioned [here](../javascript/functions/upload.md).

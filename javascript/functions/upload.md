@@ -40,6 +40,17 @@ deal parameters: A JSON can be provided with the following parameters:
     "miner": ["t017840", "t017819"], // give your own miners, default []
     "network": 'calibration' // default calibration
  }
+ 
+Parameters Description:
+num_copies: the total number of copies to be created for same file, i.e. num_copies=3 imply store file with 3 different storage provider
+
+repair_threshold: after how many epoch(from the epoch deal initiate) should the sector storing particular file considered broken. Say, If miner fails to provide proof of your file for 28800 epoch(10 days approx) then create another copy of same file and consider current copy broken.
+
+renew_threshold: after how many epoch(from the epoch deal initiate) should deal be renewed with same or another miner.
+
+miner: you can provider address of any miner of your choice we will initiate deal with them. In testnet the miners are limited and we recommend t017840.
+
 Note: this functionality is currently supported on calibration net, providing "network": 'calibration' is necessary else the deal will get created on mainnet.
 ```
 {% endcode %}
+
