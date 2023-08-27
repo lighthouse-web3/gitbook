@@ -1,56 +1,90 @@
+---
+description: >-
+  Here's a step-by-step guide to help you upload files to Lighthouse using its
+  SDK.
+---
+
 # Upload
 
-Used to upload a file to Lighthouse.
+### 1. Function Overview
 
 ```javascript
 /**
- * @param {string} path to file.
- * @param {string} apiKey your API key.
- * @param {boolean} multi if multiple files are to be uploaded at once.
- * @return {object} containing details of the file uploaded.
+ * This function allows you to upload a file or a folder to Lighthouse.
+ * 
+ * @param {string} path - The location of your file or folder.
+ * @param {string} apiKey - Your personal API key for Lighthouse.
+ * @param {boolean} multi - Specify if you are uploading multiple files or folders.
+ * @param {object} dealParameters - Custom parameters for file storage deals (see below for more details).
+ * 
+ * @return {object} - Returns details about the uploaded file.
  */
- // Both file and folder are supported by the upload function
+```
+
+### 2. Basic Usage
+
+Here's a simple example where you're uploading a single file named 'wow.jpg' from your desktop:
+
+```javascript
 import lighthouse from '@lighthouse-web3/sdk'
+
+const apiKey = 'YOUR_API_KEY_HERE';
+const uploadResponse = await lighthouse.upload(
+  '/home/cosmos/Desktop/wow.jpg', 
+  apiKey,
+  false
+);
+
+console.log(uploadResponse);
+```
+
+Upon successful upload, you'll receive an output like:
+
+```js
+{
+  data: {
+    Name: 'wow.jpg',
+    Hash: 'QmUHDKv3NNL1mrg4NTW4WwJqetzwZbGNitdjr2G6Z5Xe6s',
+    Size: '31735'
+  }
+}
+```
+
+### 3. Advanced Options (Deal Parameters)
+
+When uploading a file, you can customize how it's stored in Lighthouse using the **dealParameters**:
+
+**num\_copies**: Decide how many backup copies you want for your file. Max limit is 3. For instance, if set to 3, your file will be stored by 3 different storage providers.
+
+**repair\_threshold**: Determines the time after which a storage sector is considered "broken" if a provider fails to confirm they still have your file. It's measured in "epochs", with 28800 epochs being roughly 10 days.
+
+**renew\_threshold**: Specifies when your storage deal should be renewed. It's also measured in epochs.
+
+**miner**: If you have preferred miners, list their addresses here. For testing, it's recommended to use t017840.
+
+**network**: This should always be set to 'calibration' unless you specifically want to use the mainnet.
+
+**add\_mock\_data**: This field is used to make smaller files reach the minimum file size accepted on the Lighthouse calibration test network (1 MB). If your file is less than the minimum size, `add_mock_data` will append a mock file to ensure it meets the storage requirements. The value indicates the size in MB. For instance, if your file is 256KB, the add\_mock\_data should be set to 2 to the minimum target.
+
+Example:
+
+```javascript
+const dealParams = {
+  num_copies: 2,
+  repair_threshold: 28800,
+  renew_threshold: 240,
+  miner: ["t017840"],
+  network: 'calibration',
+  add_mock_data: 2 // assuming the file size to be 256KB
+
+};
+
 const uploadResponse = await lighthouse.upload(
   '/home/cosmos/Desktop/wow.jpg', 
   apiKey,
   false,
-  null
-); // path, apiKey
-
-/* Returns:
-    {
-      data: {
-        Name: 'flow1.png',
-        Hash: 'QmUHDKv3NNL1mrg4NTW4WwJqetzwZbGNitdjr2G6Z5Xe6s',
-        Size: '31735'
-      }
-    }
-*/
+  dealParams
+);
 ```
 
-{% code overflow="wrap" %}
-```
-Note:
-deal parameters: A JSON can be provided with the following parameters: 
- {
-    "num_copies": 2, // max 3
-    "repair_threshold": 28800, // default 10 days (28800)
-    "renew_threshold": 240, //2880 epoch per day, default 28800, min 240(2 hours)
-    "miner": ["t017840", "t017819"], // give your own miners, default []
-    "network": 'calibration' // default calibration
- }
- 
-Parameters Description:
-num_copies: the total number of copies to be created for same file, i.e. num_copies=3 imply store file with 3 different storage provider
-
-repair_threshold: after how many epoch(from the epoch deal initiate) should the sector storing particular file considered broken. Say, If miner fails to provide proof of your file for 28800 epoch(10 days approx) then create another copy of same file and consider current copy broken.
-
-renew_threshold: after how many epoch(from the epoch deal initiate) should deal be renewed with same or another miner.
-
-miner: you can provider address of any miner of your choice we will initiate deal with them. In testnet the miners are limited and we recommend t017840.
-
-Note: this functionality is currently supported on calibration net, providing "network": 'calibration' is necessary else the deal will get created on mainnet.
-```
-{% endcode %}
-
+> **Friendly Tip**: The term "epoch" can be thought of as a time unit in filecoin under which various operation occur like PoST PoRep..., with 2880 epochs being equivalent to a day.

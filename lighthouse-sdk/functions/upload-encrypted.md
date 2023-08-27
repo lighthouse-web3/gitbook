@@ -1,31 +1,58 @@
+---
+description: >-
+  For those who prioritize privacy, Lighthouse offers the ability to encrypt
+  files before uploading. Here's a guide to help you navigate through this
+  process.
+---
+
 # Upload Encrypted
 
-Deploy file with encryption enabled
+### 1. Why Encrypt Files?
+
+**Encryption** is the process of converting information into a code to prevent unauthorized access. By encrypting your files before uploading, you're adding an extra layer of security to your data.
+
+### 2. Function Overview
 
 ```javascript
-/*
- * @param {string} path path to file.
- * @param {string} apiKey your api key.
- * @param {publicKey} publicKey of user.
- * @param {signedMessage} signed message for auth at ecnryption nodes.
- * @return {object} containing details of file uploaded.
-*/
-
-import lighthouse from '@lighthouse-web3/sdk'
-const response = await lighthouse.uploadEncrypted(
-  '/home/cosmos/Desktop/wow.jpg',
-  process.env.apiKey,
-  "0xa3c960b3ba29367ecbcaf1430452c6cd7516f588",
-  "0xbfdd117......317467897341b"
-);
-
-/* Returns:
-    {
-      data: {
-        Name: 'flow1.png',
-        Hash: 'QmbGN1YcBM25s6Ry9V2iMMsBpDEAPzWRiYQQwCTx7PPXRZ',
-        Size: '31735'
-      }
-    }
-*/
+/**
+ * This function lets you upload a file to Lighthouse with encryption enabled.
+ * 
+ * @param {string} path - Location of your file.
+ * @param {string} apiKey - Your unique Lighthouse API key.
+ * @param {string} publicKey - User's public key for encryption.
+ * @param {string} signedMessage - A signed message used for authentication at encryption nodes.
+ * 
+ * @return {object} - Returns details of the encrypted uploaded file.
+ */
 ```
+
+### 3. Example Usage
+
+Here's a walkthrough of the code needed to upload an encrypted file:
+
+```javascript
+import lighthouse from '@lighthouse-web3/sdk';
+
+const pathToFile = '/home/cosmos/Desktop/wow.jpg';
+const apiKey = 'YOUR_API_KEY_HERE';
+const publicKey = 'YOUR_PUBLIC_KEY_HERE';
+const signedMessage = 'YOUR_SIGNED_MESSAGE_HERE';
+
+const response = await lighthouse.uploadEncrypted(pathToFile, apiKey, publicKey, signedMessage);
+
+console.log(response);
+```
+
+On successful upload, you'll receive the following details:
+
+```javascript
+{
+  data: {
+    Name: 'flow1.png',
+    Hash: 'QmbGN1YcBM25s6Ry9V2iMMsBpDEAPzWRiYQQwCTx7PPXRZ',
+    Size: '31735'
+  }
+}
+```
+
+**Note**: Ensure you have the correct `publicKey` and a valid `signedMessage` for the encryption to work seamlessly.

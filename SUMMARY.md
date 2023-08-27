@@ -62,8 +62,8 @@
 
 * [Flow Diagram](filecoin-virtual-machine/flow-diagram.md)
 * [Lighthouse SDK](filecoin-virtual-machine/lighthouse-sdk.md)
-* [FVM Contract](filecoin-virtual-machine/fvm-contract.md)
-* [PoDSI](filecoin-virtual-machine/podsi.md)
+* [FVM Contract Overview](filecoin-virtual-machine/fvm-contract-overview.md)
+* [PoDSI: A Simple Overview](filecoin-virtual-machine/podsi-a-simple-overview.md)
 * [Code Example](filecoin-virtual-machine/code-example.md)
 
 ## How to

@@ -1,31 +1,60 @@
+---
+description: >-
+  If you've ever wanted to securely save a piece of text, maybe a note or a
+  secret, on the InterPlanetary File System (IPFS) with encryption, Lighthouse
+  makes it easy. Here's a step-by-step guide to hel
+---
+
 # Text Upload Encrypted
 
-Upload a text string to IPFS with encryption
+### 1. Why Encryption Matters?
 
-```javascript
-/** 
- * @param {string} text to upload 
- * @param {string} apiKey your api key.
- * @param {string} publicKey wallet's public key.
- * @param {string} signedMessage message signed by owner of publicKey.
- * @return {object} containing details of file uploaded.
-*/
+**Encryption** scrambles your text into a code to protect it from prying eyes. When you encrypt before uploading, you're ensuring only those with the correct key can decipher and read your text.
 
-import lighthouse from '@lighthouse-web3/sdk'
-const response = await lighthouse.textUploadEncrypted(
-  "This is a string",
-  "YOUR_API_KEY",
-  "0xa3c960b3ba29367ecbcaf1430452c6cd7516f588",
-  "0x16b15f88bbd2e0a22d1d0084b8b7080f2003ea83eab1a00f80d8c18446c9c1b6224f17aa09eaf167717ca4f355bb6dc94356e037edf3adf6735a86fc3741f5231b"
-)
+### 2. Function Overview
 
-/* Returns:
-  {
-    data: {
-      Name: 'QmSRBDQ2KhzEzqmRSDppzAdEPDxmrhVrogggNv876eeLCC',
-      Hash: 'QmSRBDQ2KhzEzqmRSDppzAdEPDxmrhVrogggNv876eeLCC',
-      Size: '20'
-    }
-  }
+To help understand, here's a brief about the function:
+
+```plaintext
+/**
+* Use this function to upload an encrypted text string to IPFS.
+* 
+* @param {string} text - The text you want to upload.
+* @param {string} apiKey - Your unique Lighthouse API key.
+* @param {string} publicKey - Your wallet's public key.
+* @param {string} signedMessage - A message you've signed using your private key.
+* 
+* @return {object} - Details of the uploaded file on IPFS.
 */
 ```
+
+### 3. Let's Dive into the Code
+
+Below is a template to help you use the function. Just fill in the placeholders with your details:
+
+```javascript
+import lighthouse from '@lighthouse-web3/sdk';
+
+const yourText = "PLACE_YOUR_TEXT_HERE";
+const apiKey = "PLACE_YOUR_API_KEY_HERE";
+const publicKey = "PLACE_YOUR_PUBLIC_KEY_HERE";
+const signedMessage = "PLACE_YOUR_SIGNED_MESSAGE_HERE";
+
+const response = await lighthouse.textUploadEncrypted(yourText, apiKey, publicKey, signedMessage);
+
+console.log(response);
+```
+
+Upon successful execution, you'll receive:
+
+```javascript
+{
+  data: {
+    Name: 'SOME_HASH_VALUE',
+    Hash: 'SOME_HASH_VALUE',
+    Size: 'SIZE_OF_TEXT'
+  }
+}
+```
+
+**Friendly Reminder**: Always ensure you have the right `publicKey` and a valid `signedMessage`. Also, remember to never share your private keys or API keys publicly.
