@@ -26,6 +26,18 @@
 ## Lighthouse SDK
 
 * [🎯 Overview](javascript/overview.md)
+* [📜 SDK Functions](javascript/functions/README.md)
+  * [Upload](javascript/functions/upload.md)
+  * [Buffer Upload](javascript/functions/upload-buffer.md)
+  * [Upload Encrypted](lighthouse-sdk/functions/upload-encrypted.md)
+  * [Text Upload Encrypted](javascript/functions/text-upload-encrypted.md)
+  * [Share File](lighthouse-sdk/functions/share-file.md)
+  * [Revoke Access](lighthouse-sdk/functions/revoke-access.md)
+  * [Get Access Conditions](lighthouse-sdk/functions/get-access-conditions.md)
+  * [Get Balance](javascript/functions/get-balance.md)
+  * [Get Uploads](javascript/functions/get-uploads.md)
+  * [Deal Status](javascript/functions/deal-status.md)
+  * [IPNS](lighthouse-sdk/functions/ipns.md)
 * [🔨 Code Examples](javascript/code-examples/README.md)
   * [🖥 Browser Frontend](lighthouse-sdk/code-examples/browser-frontend/README.md)
     * [⬆ Browser Upload](javascript/code-examples/browser.md)
@@ -45,18 +57,6 @@
     * [📁 Create Car File](lighthouse-sdk/code-examples/nodejs-backend/create-car-file.md)
   * [🌐 Chains Supported](lighthouse-sdk/code-examples/chains-supported.md)
   * [📄 Access Control Conditions](lighthouse-sdk/code-examples/access-conditions.md)
-* [📜 SDK Functions](javascript/functions/README.md)
-  * [Upload](javascript/functions/upload.md)
-  * [Buffer Upload](javascript/functions/upload-buffer.md)
-  * [Upload Encrypted](lighthouse-sdk/functions/upload-encrypted.md)
-  * [Text Upload Encrypted](javascript/functions/text-upload-encrypted.md)
-  * [Share File](lighthouse-sdk/functions/share-file.md)
-  * [Revoke Access](lighthouse-sdk/functions/revoke-access.md)
-  * [Get Access Conditions](lighthouse-sdk/functions/get-access-conditions.md)
-  * [Get Balance](javascript/functions/get-balance.md)
-  * [Get Uploads](javascript/functions/get-uploads.md)
-  * [Deal Status](javascript/functions/deal-status.md)
-  * [IPNS](lighthouse-sdk/functions/ipns.md)
 
 ## 💾 Filecoin Virtual Machine
 

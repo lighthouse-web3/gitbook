@@ -75,7 +75,7 @@ const dealParams = {
   renew_threshold: 240,
   miner: ["t017840"],
   network: 'calibration',
-  add_mock_data: 2 // assuming the file size to be 256KB
+  add_mock_data: 2
 
 };
 
@@ -85,6 +85,28 @@ const uploadResponse = await lighthouse.upload(
   false,
   dealParams
 );
+```
+
+```
+# Use cases
+// This will use default values of other parameters.
+const dealParam_default = {
+	"network":"calibration"
+}
+
+// If user wants to bundle 4MB dummy file with their data
+const dealParam_mock = {
+	"add_mock_data": 4,
+	"network":"calibration"
+}
+
+// specifying null will disable functionality of specified field
+const dealParam_ignore = {
+	"num_copies":null,
+	"repair_threshold":null,
+	"renewal_threshold":null,
+	"network":"calibration"
+}
 ```
 
 > **Friendly Tip**: The term "epoch" can be thought of as a time unit in filecoin under which various operation occur like PoST PoRep..., with 2880 epochs being equivalent to a day.
