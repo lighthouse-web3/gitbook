@@ -86,3 +86,6 @@ previousAggregates if deal of file is renewed, older aggregateID of given file i
 also you can get more details of previous aggregate using given api(just replace aggregateID)
 https://api.lighthouse.storage/api/lighthouse/aggregate_info?aggregateId=975afcd3-ff3e-4395-a50e-24500ca0bfb7&network=testnet
 ````
+
+Note: Deals can be verified on filfox using the following URL\
+[https://calibration.filfox.info/en/deal/\<dealId>](https://calibration.filfox.info/en/deal/%3CdealId%3E)
