@@ -65,7 +65,6 @@
 * [PODSI and Deal Info](filecoin-virtual-machine/podsi-and-deal-info.md)
 * [FVM Contract Overview](filecoin-virtual-machine/fvm-contract-overview.md)
 * [PoDSI: A Simple Overview](filecoin-virtual-machine/podsi-a-simple-overview.md)
-* [Code Example](filecoin-virtual-machine/code-example.md)
 
 ## How to
 
