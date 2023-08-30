@@ -1,10 +1,9 @@
 ---
 description: >-
-  A concise guide detailing the functionalities and methods within the FVM
-  Contract on the Calibration Testnet.
+  A concise guide detailing the functionalities and methods within the RaaS service smart contract on the Calibration Testnet.
 ---
 
-# FVM Contract Overview
+# RaaS Service Overview
 
 ## Self-hosted and Aggregator-Hosted RaaS Interfaces
 
