@@ -1,6 +1,6 @@
 # Deal Status
 
-Get status of storage of a CID for a file previously stored on Lighthouse
+Get filecoin deal status of files pushed on Lighthouse.
 
 ```javascript
 /** 
