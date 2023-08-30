@@ -6,12 +6,12 @@ description: >-
 
 # FVM Contract Overview
 
-## The Base and Full RaaS Interfaces
+## Self-hosted and Aggregator-Hosted RaaS Interfaces
 
 RaaS (renew, repair, replication) interacts with smart contracts to figure out which on-chain data deals to perform its services on. Specifically, it can interact with one of two types of interfaces:
 
-- The Base Interface: A user deploys a smart contract that inherits from [`IAggregatorOracle.sol`](https://github.com/xBalbinus/fevm-data-segment/blob/main/contracts/aggregator-oracle/IAggregatorOracle.sol) which allows them to rely on their own contract deployment to submit and complete data deals.
-- The Full Interface: A user relies on an existing FVM contract deployment to submit and complete data deals. Usually, the deployment is verified and maintained by storage infrastructures such as Lighthouse.
+- Self-hosted RaaS: A user deploys a smart contract that inherits from [`IAggregatorOracle.sol`](https://github.com/xBalbinus/fevm-data-segment/blob/main/contracts/aggregator-oracle/IAggregatorOracle.sol) which allows them to rely on their own contract deployment to submit and complete data deals.
+- Aggregator-hosted RaaS: A user relies on an existing FVM contract deployment to submit and complete data deals. Usually, the deployment is verified and maintained by storage infrastructures such as Lighthouse.
 
 Among the two interfaces, some important common features stand out:
 
@@ -20,14 +20,14 @@ Among the two interfaces, some important common features stand out:
 ## Interacting with the Smart Contract
 
 First, you'll need to either:
-- Start an instance of the BaseInterface by deploying a contract that inherits from `IAggregatorOracle` (you can do so via. `yarn deploy` in the [RaaS Starter Kit](https://github.com/filecoin-project/raas-starter-kit))
-- Or, use an existing instance of the FullInterface located at 
+- Start an instance of the self-hosted RaaS by deploying a contract that inherits from `IAggregatorOracle` (you can do so via. `yarn deploy` in the [RaaS Starter Kit](https://github.com/filecoin-project/raas-starter-kit))
+- Or, use an existing instance of the aggregator-hosted RaaS (hosted by Lighthouse) located at 
   - **Calibration Testnet**: `0x6ec8722e6543fB5976a547434c8644b51e24785b`
 
 You can then interact with the smart contract by submitting a CID of your choice to the `submit` function. This will create a new deal request that will be picked up by the RaaS services.
 
 ```javascript
-// contractInstance is the address of the contract you deployed or the FullInterface address above.
+// contractInstance is the address of the contract you deployed or the aggregator-hosted RaaS address above.
 const dealStatus = await ethers.getContractAt("DealStatus", contractInstance);
 // Submit the CID of the file you want to upload to the Filecoin network in the following way.
 await dealStatus.submit(ethers.utils.toUtf8Bytes(newJob.cid));
@@ -41,9 +41,9 @@ But first, you'll need to know how to register the various RaaS workers. **RaaS 
 
 ## Add Replication, Renewal, Repair Workers
 
-You can add workers to perform replication, renewal, and repair jobs by having them listen to the `SubmitAggregatorRequest`. The methods for doing so differ between the Base and Full interfaces.
+You can add workers to perform replication, renewal, and repair jobs by having them listen to the `SubmitAggregatorRequest`. The methods for doing so differ between the self-hosted and aggregator-hosted interfaces.
 
-If you are running a base interface (specifically, the one in the [RaaS Starter Kit](https://github.com/filecoin-project/raas-starter-kit)), there's an event listener inside the RaaS service node that you can use to listen for new deal requests.
+If you're hosting your own RaaS service (specifically, the one in the [RaaS Starter Kit](https://github.com/filecoin-project/raas-starter-kit)), there's an event listener inside that you can use to listen for new deal requests.
 This event listener performs processing for each job submitted to the contract to add RaaS service workers and eventually to call `complete` on the contract.
 
 ```javascript
@@ -75,7 +75,7 @@ async function initializeDealCreationListener() {
 
 To use this, simply do `yarn service` in the terminal and proceed through the frontend as you normally would - uploading any random file, and then registering the workers using the autocompleted CID that appears in the box. **If you want to register the workers manually for a job that you didn't upload, just simply paste in the known CID of your file into the box and register the jobs anyway**.
 
-With Lighthouse's full interface, you'll have to make a few additions instead to the API call on upload. Recall the process described for uploading a file with replication:
+When using the RaaS service hosted by Lighthouse, you'll have to make a few additions instead to the API call on upload. Recall the process described for uploading a file with replication:
 
 ```javascript
 import lighthouse from "@lighthouse-web3/sdk";
@@ -89,7 +89,7 @@ const dealParams = {
 const uploadResponse = await lighthouse.upload('/path/to/adorable/dog.jpg', 'YOUR_API_KEY', false, dealParams);
 ```
 
-For initializing RaaS services via. the full interface, you'll need to add a few more parameters to the `dealParams` object:
+You'll only need to add a few more parameters to the `dealParams` object to register RaaS services hosted by the Lighthouse aggregator:
 
 ```javascript
 import lighthouse from "@lighthouse-web3/sdk";
