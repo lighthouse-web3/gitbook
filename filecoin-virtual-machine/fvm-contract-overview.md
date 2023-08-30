@@ -35,6 +35,8 @@ await dealStatus.submit(ethers.utils.toUtf8Bytes(newJob.cid));
 
 The [RaaS Starter Kit](https://github.com/filecoin-project/raas-starter-kit) actually provides you with a frontend that allows you to upload your file to Lighthouse, get a CID for the uploaded file, then seamlessly submit the CID to the smart contract (accessible via `yarn start`). 
 
+![RaaS Starter Kit Frontend](../.gitbook/assets/Frontend.png)
+
 But first, you'll need to know how to register the various RaaS workers. **RaaS functionality will not function automatically if deals are only created using submit function.**
 
 ## Add Replication, Renewal, Repair Workers
@@ -101,6 +103,14 @@ const dealParams = {
 };
 
 const uploadResponse = await lighthouse.upload('/path/to/adorable/dog.jpg', 'YOUR_API_KEY', false, dealParams);
+```
+
+Alternatively, you can register RaaS workers for any CID (including ones of files you didn't upload) by making a post request to `https://calibration.lighthouse.storage/api/register_job` with your CID as the body of the request. You'll then be able to query the deal's status using the `deal_status` endpoint
+
+```bash
+# Example of registering a job and querying its status
+curl -X POST -H "Content-Type: text/plain" --data "your_CID_here" "https://calibration.lighthouse.storage/api/register_job"
+curl -X GET "https://calibration.lighthouse.storage/api/deal_status?CID=your_CID_here"
 ```
 
 ## Why Does This Matter?
