@@ -10,7 +10,7 @@ description: >-
 
 RaaS (renew, repair, replication) interacts with smart contracts to figure out which on-chain data deals to perform its services on. Specifically, it can interact with one of two types of interfaces:
 
-- The Base Interface: A user deploys deploys a smart contract that inherits from [`IAggregatorOracle.sol`](https://github.com/xBalbinus/fevm-data-segment/blob/main/contracts/aggregator-oracle/IAggregatorOracle.sol) which allows them to rely on their own contract deployment to submit and complete data deals.
+- The Base Interface: A user deploys a smart contract that inherits from [`IAggregatorOracle.sol`](https://github.com/xBalbinus/fevm-data-segment/blob/main/contracts/aggregator-oracle/IAggregatorOracle.sol) which allows them to rely on their own contract deployment to submit and complete data deals.
 - The Full Interface: A user relies on an existing FVM contract deployment to submit and complete data deals. Usually, the deployment is verified and maintained by storage infrastructures such as Lighthouse.
 
 Among the two interfaces, some important common features stand out:
