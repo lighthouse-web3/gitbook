@@ -4,8 +4,8 @@
 
 ## 💾 Filecoin Virtual Machine
 
-* [Section A: Upload, PoDSI and Deal ID](filecoin-virtual-machine/section-a.md)
-* [Section B: RaaS](filecoin-virtual-machine/section-b.md)
+* [🅰 Method 1: Lighthouse SDK](filecoin-virtual-machine/section-a.md)
+* [🅱 Method 2: RaaS (via Smart Contract)](filecoin-virtual-machine/section-b.md)
 
 ## CLI Tool
 
