@@ -1,9 +1,8 @@
+# Section B: RaaS Service Overview
 ---
 description: >-
   A concise guide detailing the functionalities and methods within the RaaS service smart contract on the Calibration Testnet.
 ---
-
-# RaaS Service Overview
 
 ## Self-hosted and Aggregator-Hosted RaaS Interfaces
 

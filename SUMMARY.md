@@ -5,7 +5,7 @@
 ## 💾 Filecoin Virtual Machine
 
 * [Section A: Upload, PoDSI and Deal ID](filecoin-virtual-machine/section-a.md)
-* [Section B: RaaS](filecoin-virtual-machine/section-a.md)
+* [Section B: RaaS](filecoin-virtual-machine/section-b.md)
 
 ## CLI Tool
 
