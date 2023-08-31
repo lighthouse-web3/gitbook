@@ -8,7 +8,7 @@ Firstly, you'll need to get a picture of your favorite pupper whose picture you'
 
 ![Adapted from https://www.tldraw.com/r/v2_c_M7QpjoG42dpa5c2E4N2hG](../.gitbook/assets/DogDiagram.png)
 
-Think of the lighthouse SDK as a doggy daycare and the RaaS (renew, repair, replication) services as its caretaker. The lighthouse SDK provides a place for your puppy to stay while the services take care of your dog and makes sure it's fed and healthy. In this case, lighthouse provides storage while the RaaS services takes care of your file and makes sure it's stored on the Filecoin network permanently. 
+Think of the lighthouse SDK as a doggy daycare and the RaaS (renew, repair, replication) services as its caretaker. The lighthouse SDK provides a place for your puppy to stay while the services take care of your dog and makes sure it's fed and healthy. In this case, lighthouse provides storage while the RaaS takes care of your file and makes sure it's stored on the Filecoin network permanently. 
 
 The lighthouse SDK is a JavaScript library that allows you to upload files to the Filecoin network. It's open source and available [here](https://github.com/lighthouse-web3/lighthouse-package)
 
@@ -22,7 +22,7 @@ const uploadResponse = await lighthouse.upload('/path/to/adorable/dog.jpg', 'YOU
 
 Previously, if the file of your puppy was too small, it would encounter issues being stored on chain due to size minimums enforced by on-chain deal makers. The SDK helps you get around this by adding mock data to your file to meet the minimum size requirements.
 
-When you upload a file without any RaaS services, you've only uploaded one copy of your file to the Filecoin network. There's no guarantee that if the file's deal term expires or is no longer being maintained by the storage provider, that you'll be able to retrieve your file. This is where the RaaS services come in.
+When you upload a file without any RaaS, you've only uploaded one copy of your file to the Filecoin network. There's no guarantee that if the file's deal term expires or is no longer being maintained by the storage provider, that you'll be able to retrieve your file. This is where the RaaS come in.
 
 Replication is the process of making copies of your file and storing them on the Filecoin network. This ensures that if one storage provider goes down, you'll still be able to retrieve your file from another storage provider.
 
@@ -40,103 +40,7 @@ const dealParams = {
 const uploadResponse = await lighthouse.upload('/path/to/adorable/dog.jpg', 'YOUR_API_KEY', false, dealParams);
 ```
 
-### Getting the PoDSI for your file
-
-Now that you've registered the picture of your puppy, how would you know that it's actually being maintained on the Filecoin network? This is where the PoDSI comes in. The PoDSI is a proof that your file is being maintained on the Filecoin network. 
-
-The time between upload and being able to get your PoDSI should only be a few minutes. You can get the PoDSI for your file by calling the `getProof` function in one of the following ways:
-
-```bash
-# Assumes that uploaded your file to mainnet.
-# Alternatively, if you are using testnet, add &network=testnet to the end of the URL.
-curl https://api.lighthouse.storage/api/lighthouse/get_proof?cid=<puppy_CID>
-```
-
-```javascript
-let response = await axios.get("https://api.lighthouse.storage/api/lighthouse/get_proof", {
-    params: {
-        cid: lighthouse_cid,
-        network: "testnet" // Change the network to mainnet when ready
-    }
-})
-```
-
-### Get your deal ID from your upload
-When you upload the picture of your puppy, the on-chain deal that is made to store it on the Filecoin network is assigned a unique deal ID. You can get this deal ID the same way you get the PoDSI for your file. In the above, it would be accessible through `response.data.deal_id`.
-
-Under the hood, the node infrastructure is working hard to ensure that your file is included on-chain. The process can take up to about **an hour**.
-
-### Download your file using the file’s CID
-Now that your file is stored on the Filecoin network, you can retrieve it using the file's CID. You can do this by calling the `download` function in one of the following ways:
-
-```bash
-# Assumes that you have lighthouse-cli installed. If not, feel free to download it using 
-# npm install -g @lighthouse-web3/sdk
-lighthouse-web3 decrypt-file <CID>
-```
-
-```javascript
-let response = await axios({
-    method: 'GET',
-    url: `${lighthouseDealDownloadEndpoint}${lighthouse_cid}`,
-    responseType: 'stream',
-});
-
-try {
-    const filePath = await this.saveResponseToFile(response, downloadPath);
-    console.log(`File saved at ${filePath}`);
-    return filePath
-} catch (err) {
-    console.error(`Error saving file: ${err}`);
-}
-
-saveResponseToFile(response, filePath) {
-    const writer = fs.createWriteStream(filePath);
-
-    // Pipe the response data to the file
-    response.data.pipe(writer);
-
-    return new Promise((resolve, reject) => {
-        writer.on('finish', () => resolve(filePath));
-        writer.on('error', (err) => {
-            console.error(err);
-            reject(err);
-        });
-    });
-}
-```
-
-## Why does all this matter?
-
-We see a bright future in enabling permanent, immutable, decentralized data-storage for developers. 
-
-The interface for the lighthouse SDK is designed to be simple and easy to use. We hope that this will enable developers to easily integrate the Filecoin network as the primary data storage provider for their applications.
-
-More importantly, this enables developers to build novel applications. Imagine a dapp or DAO that can be built to incentivize, analyze and store upload metadata on-chain. There are a couple of examples of this:
-
-- Rewarding $TOKEN based on the upload of a particular file and their CID.
-- Being able to track CIDs and deal IDs onchain for verification and airdropping.
-- Building more advanced, robust DataDAOs (check out the starter kit [here](https://github.com/filecoin-project/fevm-data-dao-kit)!)
-
-## Appendix
-
-For more information, check out the following code examples to upload files:
-
-1. [NodeJS Code Examples](../lighthouse-sdk/code-examples/nodejs-backend/)
-2. [Frontend(React, Next..) Code Examples](../lighthouse-sdk/code-examples/browser-frontend/)
-3. [Lighthouse File](https://files.lighthouse.storage/)
-
-You can also check out the following documentation to learn more about various other jobs you can register
-
-**Note**: Deal by default using SDK will go to the mainnet unless deal parameters are provided mentioned [here](../javascript/functions/upload.md).
-
-### Appendix: Flow diagram
-
-A full flow diagram of the lighthouse SDK can be found below:
-
-<figure><img src="../.gitbook/assets/Screenshot 2023-07-20 153056.png" alt=""><figcaption></figcaption></figure>
-
-### Appendix: Deal Parameters
+### Deal Parameters
 
 When uploading a file, you can customize how it's stored in Lighthouse using the **deal parameters**:
 
@@ -154,7 +58,7 @@ When uploading a file, you can customize how it's stored in Lighthouse using the
 
 Example:
 
-```
+```javascript
 // Sample JSON of deal parameters
 const dealParams = {
   num_copies: 2,
@@ -166,45 +70,74 @@ const dealParams = {
 };
 ```
 
-```
-# Use cases
-// This will use default values of other parameters.
+```javascript
+const path = "/path/to/file.jpg"
+const apiKey = "thisisaateststring"
+
+
+
 const dealParam_default = {
 	"network":"calibration"
 }
 
-// If user wants to bundle 4MB dummy file with their data
+
 const dealParam_mock = {
 	"add_mock_data": 4,
-	"network":"calibration"
+"network":"calibration"
 }
 
-// specifying null will disable functionality of specified field
 const dealParam_ignore = {
-	"num_copies":null,
+	"replication_num_copies":null,
 	"repair_threshold":null,
 	"renewal_threshold":null,
 	"network":"calibration"
 }
+
+//this should do all the correct default things for ODH. All RaaS workers enabled, any miners can take the deal. 2 MiB mock file added.
+const response = await lighthouse.upload(path, apiKey, false,dealParam_default);
+
+
+//this should be used if the user wants to bundle in a 4MiB mock file with their user submission.
+const response = await lighthouse.upload(path, apiKey, false, dealParam_mock);
+
+//this needs to be used by the self hosted RaaS module, and the aggregator SDK after the event gets emitted. Turns off all RaaS workers. 2 MiB mock file added.
+const response = await lighthouse.upload(path, apiKey, false, dealParam_ignore);
 ```
 
 **Friendly Tip**: The term "epoch" can be thought of as a time unit in filecoin under which various operations occur like PoST PoRep..., with 2880 epochs being equivalent to a day.
 
-### Appendix: Understanding PoDSI and Deal Info
+### Understanding PoDSI: Getting the PoDSI for your file
 
-#### What is PoDSI?
+Now that you've registered the picture of your puppy, how would you know that it's actually being maintained on the Filecoin network? This is where the PoDSI comes in. The PoDSI is a proof that your file is being maintained on the Filecoin network. 
 
 **Proof of Data Segment Inclusion (PoDSI)** is like a certificate of authenticity. It assures that your file is safely tucked inside a special package, known as a "deal", made by the aggregator node. This aggregator combines several files, gives them a unique ID, offers proof of their inclusion, and even throws in a mini-proof of the entire package's structure.
 
-Recall that you can get podsi and deal information of file using the `get_proof` api
+The time between upload and being able to get your PoDSI should only be a few minutes. You can get the PoDSI for your file by calling the `getProof` function in one of the following ways:
+
+```javascript
+let response = await axios.get("https://api.lighthouse.storage/api/lighthouse/get_proof", {
+    params: {
+        cid: lighthouse_cid,
+        network: "testnet" // Change the network to mainnet when ready
+    }
+})
+```
 
 ```bash
+# Assumes that uploaded your file to mainnet.
+# Alternatively, if you are using testnet, add &network=testnet to the end of the URL.
+curl https://api.lighthouse.storage/api/lighthouse/get_proof?cid=<puppy_CID>
+```
+
+As a quick example of fetching the PoDSI of a file on testnet, you can use the following command:
+
+```bash
+# An example of how to get the PoDSI for a file uploaded to testnet
 curl https://api.lighthouse.storage/api/lighthouse/get_proof?cid=QmS7Do1mDZNBJAVyE8N9r6wYMdg27LiSj5W9mmm9TZoeWp&network=testnet
 ```
 
-**Quick Tip**: Adding `&network=testnet` to the call implies that the CID is on testnet. If you want to check the CID on mainnet, simply remove the `&network=testnet` from the call.
+The response, an example of a PoDSI proof on Calibration, should look something like this:
 
-An output like this will appear
 ```json
 {
     "pieceCID": "baga6ea4seaqgbiszkxkzmaxio5zjucpg2sd4n6abvmcsenah27g4xtjszxtzmia",
@@ -280,10 +213,106 @@ The "proof" contains information that can be used to confirm whether your file w
 The "dealInfo" provides details about the file's storage deal. If the "dealId" is null, it means that the storage deal has been initiated but the miner hasn't started the sealing process yet.
 
 The "previousAggregates" parameter lists older aggregate IDs for the file, if the file's storage deal has been renewed. You can use these IDs to get more details about previous aggregates. To do this, use the provided API link, substituting the appropriate aggregate ID and network information. 
-- For example, to get information about a previous aggregate with the ID '975afcd3-ff3e-4395-a50e-24500ca0bfb7' on the Testnet, you would use the following: 
+- For example, to get information about a previous aggregate with the ID '975afcd3-ff3e-4395-a50e-24500ca0bfb7' on the Testnet, you would use the following:
+   
 ```bash
 curl https://api.lighthouse.storage/api/lighthouse/aggregate_info?aggregateId=975afcd3-ff3e-4395-a50e-24500ca0bfb7&network=testnet
 ```
+
+### Get your deal ID from your upload
+When you upload the picture of your puppy, the on-chain deal that is made to store it on the Filecoin network is assigned a unique deal ID. You can get this deal ID the same way you get the PoDSI for your file. In the above, it would be accessible through `response.data.deal_id`.
+
+Under the hood, the node infrastructure is working hard to ensure that your file is included on-chain. The process can take up to about **an hour**.
+
+### Download your file using the file’s CID
+Now that your file is stored on the Filecoin network, you can retrieve it using the file's CID. You can do this by calling the `download` function in one of the following ways:
+
+```bash
+# Assumes that you have lighthouse-cli installed. If not, feel free to download it using 
+# npm install -g @lighthouse-web3/sdk
+lighthouse-web3 decrypt-file <CID>
+```
+
+```javascript
+let response = await axios({
+    method: 'GET',
+    url: `${lighthouseDealDownloadEndpoint}${lighthouse_cid}`,
+    responseType: 'stream',
+});
+
+try {
+    const filePath = await this.saveResponseToFile(response, downloadPath);
+    console.log(`File saved at ${filePath}`);
+    return filePath
+} catch (err) {
+    console.error(`Error saving file: ${err}`);
+}
+
+saveResponseToFile(response, filePath) {
+    const writer = fs.createWriteStream(filePath);
+
+    // Pipe the response data to the file
+    response.data.pipe(writer);
+
+    return new Promise((resolve, reject) => {
+        writer.on('finish', () => resolve(filePath));
+        writer.on('error', (err) => {
+            console.error(err);
+            reject(err);
+        });
+    });
+}
+```
+
+## Why does all this matter?
+
+We see a bright future in enabling permanent, immutable, decentralized data-storage for developers. 
+
+The interface for the lighthouse SDK is designed to be simple and easy to use. We hope that this will enable developers to easily integrate the Filecoin network as the primary data storage provider for their applications.
+
+More importantly, this enables developers to build novel applications. Imagine a dapp or DAO that can be built to incentivize, analyze and store upload metadata on-chain. There are a couple of examples of this:
+
+- Rewarding $TOKEN based on the upload of a particular file and their CID.
+- Being able to track CIDs and deal IDs onchain for verification and airdropping.
+- Building more advanced, robust DataDAOs (check out the starter kit [here](https://github.com/filecoin-project/fevm-data-dao-kit)!)
+
+For your consideration, here's some pseudocode of how you could build a simple dapp that rewards users for uploading files to the Filecoin network:
+
+```solidity
+function uploadFile(bytes32 fileCID) public {
+    // Check if the file has already been uploaded
+    require(!fileExists(fileCID), "File already exists");
+
+    // Check if the user's file contains the correct data
+    require(verifyPoDSI(fileCID), "File does not contain the correct data");
+
+    // Save the file's CID to prevent against replay attacks
+    saveFile(fileCID);
+
+    // Reward the user for uploading the file
+    rewardUser(msg.sender);
+}
+```
+
+## Appendix
+
+For more information, check out the following code examples to upload files:
+
+1. [NodeJS Code Examples](../lighthouse-sdk/code-examples/nodejs-backend/)
+2. [Frontend(React, Next..) Code Examples](../lighthouse-sdk/code-examples/browser-frontend/)
+3. [Lighthouse File](https://files.lighthouse.storage/)
+
+You can also check out the following documentation to learn more about various other jobs you can register
+
+**Note**: Deal by default using SDK will go to the mainnet unless deal parameters are provided mentioned [here](../javascript/functions/upload.md).
+
+### Appendix: Flow diagram
+
+A full flow diagram of the lighthouse SDK can be found below:
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-07-20 153056.png" alt=""><figcaption></figcaption></figure>
+
+### Appendix: Deal Verification Flow
 
 Deals can be verified on FilFox using the following steps.
 
