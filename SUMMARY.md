@@ -2,6 +2,11 @@
 
 * [👋 Introduction](README.md)
 
+## 💾 Filecoin Virtual Machine
+
+* [Section A: Upload, PoDSI and Deal ID](filecoin-virtual-machine/section-a.md)
+* [Section B: RaaS](filecoin-virtual-machine/section-a.md)
+
 ## CLI Tool
 
 * [📃 Overview](cli-tool/overview.md)
@@ -57,14 +62,6 @@
     * [📁 Create Car File](lighthouse-sdk/code-examples/nodejs-backend/create-car-file.md)
   * [🌐 Chains Supported](lighthouse-sdk/code-examples/chains-supported.md)
   * [📄 Access Control Conditions](lighthouse-sdk/code-examples/access-conditions.md)
-
-## 💾 Filecoin Virtual Machine
-
-* [Lighthouse SDK](filecoin-virtual-machine/lighthouse-sdk.md)
-* [Deal Parameters](filecoin-virtual-machine/deal-parameters.md)
-* [PODSI and Deal Info](filecoin-virtual-machine/podsi-and-deal-info.md)
-* [FVM Contract Overview](filecoin-virtual-machine/fvm-contract-overview.md)
-* [PoDSI: A Simple Overview](filecoin-virtual-machine/podsi-a-simple-overview.md)
 
 ## How to
 
