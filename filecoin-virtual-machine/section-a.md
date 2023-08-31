@@ -284,12 +284,16 @@ function uploadFile(bytes32 fileCID) public {
     require(!fileExists(fileCID), "File already exists");
 
     // Check if the user's file contains the correct data
+    // The logic in verifyPoDSI() depends on your specific application
+    // Check out the various possibilities here https://docs.filecoin.io/smart-contracts/developing-contracts/solidity-libraries/
     require(verifyPoDSI(fileCID), "File does not contain the correct data");
 
     // Save the file's CID to prevent against replay attacks
     saveFile(fileCID);
 
     // Reward the user for uploading the file
+    // You can mint them a token or send them some $FIL 
+    // Read more here: https://docs.filecoin.io/smart-contracts/developing-contracts/ethereum-libraries/#example-using-an-erc20-contract
     rewardUser(msg.sender);
 }
 ```
