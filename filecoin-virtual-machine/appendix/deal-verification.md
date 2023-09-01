@@ -4,8 +4,12 @@ Deals and file inclusion can be verified using the following steps.
 
 #### Step 1: Use the Contract to Verify:
 
-* Dive into the **complete function** located here: `0x6ec8722e6543fB5976a547434c8644b51e24785b`.
-* Submit your proof details, specifically: proofSubtree, proofIndex, and verifierData. \[Todo: add code here calling dealstatus.complete () contract function here and show actual response commP and that its not reverting in response]
+{% hint style="success" %}
+the successful return of calling `complete` (i.e. the call doesn’t revert) means that the deal’s proof is verified successfully by the smart contract and the mapping of the deals between cid and (miner\_id, deal\_id) are updated in the smart contract&#x20;
+{% endhint %}
+
+* You can call the **complete function** located here: `0x6ec8722e6543fB5976a547434c8644b51e24785b` to verify the successful inclusion of your in the live filecoin deal. Code for this smart contract can be found [here](https://github.com/lighthouse-web3/raas-starter-kit/blob/main/contracts/DealStatus.sol)
+* Submit your proof details, specifically: proofSubtree, proofIndex, and verifierData. <mark style="background-color:yellow;">\[Todo: add code here calling dealstatus.complete () contract function here and show actual response commP and that its not reverting in response]</mark>
 * What you'll get in return are two things: "commPa" and "sizePa". Think of these as your file's unique fingerprints.
 * These fingerprints (pieceCID and pieceSize) might look like regular text. You'll need to change them into a code-like format, known as hex, before you compare.
 

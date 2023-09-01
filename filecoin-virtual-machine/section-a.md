@@ -1,15 +1,15 @@
 # 🅰 Upload, PoDSI, and Deal-Making
 
-In this section A, we will discuss the following
+In this **Section A**, we will discuss the following
 
-1. Upload via Lighthouse SDK
-   1. Upload your first file&#x20;
-   2. Set deal parameters
-   3. Understanding PoDSI: Getting the PoDSI for your file
-   4. Get your deal ID from your upload
-   5. Download your file using the file’s CID
-2. Upload via Lighthouse Smart Contract Interaction
-   1. Attach Raas Workers (discussed in [Section B](section-b.md))
+1. [Upload via Lighthouse SDK](section-a.md#1-upload-via-lighthouse-sdk)
+   1. [Upload your first file](section-a.md#step-1-upload-your-first-file-using-lighthouse-sdk)&#x20;
+   2. [Set deal parameters](section-a.md#step-2-set-deal-parameters)
+   3. [Understanding PoDSI: Getting the PoDSI for your file](section-a.md#step-3-understanding-podsi-getting-the-podsi-for-your-file)
+   4. [Get your deal ID from your upload](section-a.md#step-4-get-your-deal-id-from-your-upload)
+   5. [Download your file using the file’s CID](section-a.md#step-5-download-your-file-using-the-files-cid)
+2. [Upload via Lighthouse Smart Contract Interaction](section-a.md#2-upload-via-lighthouse-smart-contract)
+   1. [Attach Raas Workers (discussed in Section B)](section-b.md)
 
 ## <mark style="color:blue;">1) Upload via Lighthouse SDK</mark>
 
@@ -311,6 +311,8 @@ In this method, we will pass a cid to Lighthouse Smart Contract deployed on the 
 
 * **Calibration Testnet**: `0x6ec8722e6543fB5976a547434c8644b51e24785b`
 
+The source code for this contract can be found [here](https://github.com/lighthouse-web3/raas-starter-kit/blob/main/contracts/DealStatus.sol)
+
 ### Smart Contract Interface
 
 Within the smart contract interface, some important features are critical to the RaaS service. These include:
@@ -319,7 +321,7 @@ Within the smart contract interface, some important features are critical to the
 
 ### Calling Submit Function
 
-You can interact with the smart contract by submitting a CID of your choice to the `submit` function. This will create a new deal request that the Lighthouse RaaS services will pick up.
+You can interact with the smart contract by submitting a CID of your choice to the `submit` function. This will create a new deal request that the Lighthouse RaaS Worker will pick up when attached as discussed in [Section B](section-b.md).
 
 {% code lineNumbers="true" %}
 ```javascript
@@ -369,9 +371,5 @@ function uploadFile(bytes32 fileCID) public {
     rewardUser(msg.sender);
 }
 ```
-
-***
-
-
 
 ***
