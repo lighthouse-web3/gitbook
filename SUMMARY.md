@@ -4,8 +4,13 @@
 
 ## 💾 Filecoin Virtual Machine
 
-* [🅰 Method 1: Lighthouse SDK](filecoin-virtual-machine/section-a.md)
-* [🅱 Method 2: RaaS (via Smart Contract)](filecoin-virtual-machine/section-b.md)
+* [🅰 Upload, PoDSI, and Deal-Making](filecoin-virtual-machine/section-a.md)
+* [🅱 Attaching RaaS (renew, repair, replication) Worker](filecoin-virtual-machine/section-b.md)
+* [📄 Appendix](filecoin-virtual-machine/appendix/README.md)
+  * [Flow Diagrams](filecoin-virtual-machine/appendix/flow-diagrams.md)
+  * [PoDSI](filecoin-virtual-machine/appendix/podsi.md)
+  * [Deal Verification](filecoin-virtual-machine/appendix/deal-verification.md)
+  * [Self Hosted RaaS](filecoin-virtual-machine/appendix/self-hosted-raas.md)
 
 ## CLI Tool
 
