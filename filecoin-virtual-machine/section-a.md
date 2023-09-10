@@ -1,33 +1,49 @@
-# Upload Your Data to Filecoin
+# 🅰 Upload Your Data to Filecoin
 
-## Quickstart: Uploading Your First 🐕 Onto Filecoin
+In this **Section A**, we will discuss the following
 
-### Upload your first file through the lighthouse SDK
+1. [Upload via Lighthouse SDK](section-a.md#1-upload-via-lighthouse-sdk)
+   1. [Upload your first file](section-a.md#step-1-upload-your-first-file-using-lighthouse-sdk)&#x20;
+   2. [Set deal parameters](section-a.md#step-2-set-deal-parameters)
+   3. [Understanding PoDSI: Getting the PoDSI for your file](section-a.md#step-3-understanding-podsi-getting-the-podsi-for-your-file)
+   4. [Get your deal ID from your upload](section-a.md#step-4-get-your-deal-id-from-your-upload)
+   5. [Download your file using the file’s CID](section-a.md#step-5-download-your-file-using-the-files-cid)
+2. [Upload via Lighthouse Smart Contract Interaction](section-a.md#2-upload-via-lighthouse-smart-contract)
+   1. [Attach Raas Workers (discussed in Section B)](section-b.md)
 
-Firstly, you'll need to get a picture of your favorite pupper whose picture you'll want to immortalize on the internet.
+## <mark style="color:blue;">1) Upload via Lighthouse SDK</mark>
 
-![Adapted from https://www.tldraw.com/r/v2_c_M7QpjoG42dpa5c2E4N2hG](../.gitbook/assets/DogDiagram.png)
+### Step 1: Upload your first file using Lighthouse SDK
 
-Think of the lighthouse SDK as a doggy daycare and the RaaS (renew, repair, replication) services as its caretaker. The lighthouse SDK provides a place for your puppy to stay while the services take care of your dog and makes sure it's fed and healthy. In this case, lighthouse provides storage while the RaaS takes care of your file and makes sure it's stored on the Filecoin network permanently. 
+Firstly, you'll need to get a picture of your favorite pupper whose picture you'll want to store on the decentralized web.
 
-The lighthouse SDK is a JavaScript library that allows you to upload files to the Filecoin network. It's open source and available [here](https://github.com/lighthouse-web3/lighthouse-package)
+{% hint style="success" %}
+The Lighthouse SDK is a JavaScript library that allows you to upload files to the Filecoin network. It's open source and available [here](https://github.com/lighthouse-web3/lighthouse-package)
+{% endhint %}
 
-Uploading a file is as simple as:
+**A. Uploading a file is as simple as:**
 
+{% code overflow="wrap" lineNumbers="true" %}
 ```javascript
 import lighthouse from "@lighthouse-web3/sdk";
 // ... other code
 const uploadResponse = await lighthouse.upload('/path/to/adorable/dog.jpg', 'YOUR_API_KEY');
 ```
+{% endcode %}
 
-Previously, if the file of your puppy was too small, it would encounter issues being stored on chain due to size minimums enforced by on-chain deal makers. The SDK helps you get around this by adding mock data to your file to meet the minimum size requirements.
+{% hint style="info" %}
+Previously, if the file of your puppy was too small, it would encounter issues being stored on the chain due to size minimums enforced by on-chain deal makers. The SDK helps you get around this by adding mock data (in deal parameters below) to your file to meet the minimum size requirements.
+{% endhint %}
 
-When you upload a file without any RaaS, you've only uploaded one copy of your file to the Filecoin network. There's no guarantee that if the file's deal term expires or is no longer being maintained by the storage provider, that you'll be able to retrieve your file. This is where the RaaS come in.
+**B. To upload a file with replication:**
 
-Replication is the process of making copies of your file and storing them on the Filecoin network. This ensures that if one storage provider goes down, you'll still be able to retrieve your file from another storage provider.
+_Replication_ is the process of making multiple copies of your file and storing them on the Filecoin network. This ensures that if one storage provider goes down, you'll still be able to retrieve your file from another storage provider.
 
-Here's an example of how to upload a file with replication:
+{% hint style="info" %}
+You can get the API key from [https://files.lighthouse.storage/](https://files.lighthouse.storage/) or via [CLI](../cli-tool/cli-commands/api-key.md)&#x20;
+{% endhint %}
 
+{% code lineNumbers="true" %}
 ```javascript
 import lighthouse from "@lighthouse-web3/sdk";
 // ... other code
@@ -39,14 +55,19 @@ const dealParams = {
 // Returns a CID (Content ID) for your file that you can use for provable storage verification.
 const uploadResponse = await lighthouse.upload('/path/to/adorable/dog.jpg', 'YOUR_API_KEY', false, dealParams);
 ```
+{% endcode %}
 
-### Deal Parameters
+### Step 2: Set Deal Parameters
+
+{% hint style="info" %}
+**Note**: Deal parameters are currently supported on the Calibration testnet. If you don't specify deal parameters, then deal is made on Filecoin mainnet
+{% endhint %}
 
 When uploading a file, you can customize how it's stored in Lighthouse using the **deal parameters**:
 
 **num\_copies**: Decide how many backup copies you want for your file. The Max limit is 3. For instance, if set to 3, your file will be stored by 3 different storage providers.
 
-**repair\_threshold**: Determines the time a storage sector is considered "broken" if a provider fails to confirm they still have your file. It's measured in "epochs", with 28800 epochs being roughly 10 days.
+**repair\_threshold**: Determines when a storage sector is considered "broken" if a provider fails to confirm they still have your file. It's measured in "epochs", with 28800 epochs being roughly 10 days.
 
 **renew\_threshold**: Specifies when your storage deal should be renewed. It's also measured in epochs.
 
@@ -55,6 +76,10 @@ When uploading a file, you can customize how it's stored in Lighthouse using the
 **network**: This should always be set to 'calibration' (for RAAS services to function) unless you want to use the mainnet.
 
 **add\_mock\_data**: This field is used to make smaller files reach the minimum file size accepted on the Lighthouse calibration test network (1 MB). If your file is less than the minimum size, `add_mock_data` will append a mock file to ensure it meets the storage requirements. The value indicates the size in MB. For instance, if your file is 256KB, the add\_mock\_data should be set to 2 to the minimum target.
+
+{% hint style="info" %}
+The term "epoch" can be thought of as a time unit in the filecoin network under which various operations occur, like PoST, PoRep, etc., with 2880 epochs equivalent to a day.
+{% endhint %}
 
 Example:
 
@@ -70,22 +95,20 @@ const dealParams = {
 };
 ```
 
-```javascript
-const path = "/path/to/file.jpg"
-const apiKey = "thisisaateststring"
-
-
+<pre class="language-javascript" data-line-numbers><code class="lang-javascript"><strong>const path = "/path/to/file.jpg"
+</strong>const apiKey = "thisisaateststring"
 
 const dealParam_default = {
 	"network":"calibration"
 }
 
-
+// adds mock data for satisfying minimum file size
 const dealParam_mock = {
 	"add_mock_data": 4,
-"network":"calibration"
+	"network":"calibration"
 }
 
+// To ignore a deal parameter set it as null
 const dealParam_ignore = {
 	"replication_num_copies":null,
 	"repair_threshold":null,
@@ -93,7 +116,7 @@ const dealParam_ignore = {
 	"network":"calibration"
 }
 
-//this should do all the correct default things for ODH. All RaaS workers enabled, any miners can take the deal. 2 MiB mock file added.
+// Default parameters set. All RaaS workers enabled, any miners can take the deal. 2 MiB mock file added.
 const response = await lighthouse.upload(path, apiKey, false,dealParam_default);
 
 
@@ -102,18 +125,21 @@ const response = await lighthouse.upload(path, apiKey, false, dealParam_mock);
 
 //this needs to be used by the self hosted RaaS module, and the aggregator SDK after the event gets emitted. Turns off all RaaS workers. 2 MiB mock file added.
 const response = await lighthouse.upload(path, apiKey, false, dealParam_ignore);
-```
+</code></pre>
 
-**Friendly Tip**: The term "epoch" can be thought of as a time unit in filecoin under which various operations occur like PoST PoRep..., with 2880 epochs being equivalent to a day.
+### Step 3: Understanding PoDSI: Getting Storage Proofs for your file
 
-### Understanding PoDSI: Getting the Provable Storage for your file
+Now that you've registered the picture of your puppy, how would you know that it's actually being maintained on the Filecoin network? This is where the PoDSI comes in. The PoDSI is a proof that your file is being maintained on the Filecoin network.
 
-Now that you've registered the picture of your puppy, how would you know that it's actually being maintained on the Filecoin network? This is where the PoDSI comes in. The PoDSI is a proof that your file is being maintained on the Filecoin network. 
+**Proof of Data Segment Inclusion (PoDSI)** is like a certificate of authenticity. It assures that your file is safely tucked inside a special package, known as a "deal", made by the Lighthouse Node. This node combines several files, gives them a unique ID, offers proof of their inclusion, and even throws a mini-proof of the entire package's structure.
 
-**Proof of Data Segment Inclusion (PoDSI)** is like a certificate of authenticity. It assures that your file is safely tucked inside a special package, known as a "deal", made by the aggregator node. This aggregator combines several files, gives them a unique ID, offers proof of their inclusion, and even throws in a mini-proof of the entire package's structure.
+{% hint style="warning" %}
+The time between uploading and being able to get your PoDSI should only be a few minutes. You can get the PoDSI for your file by calling the `getProof` function in one of the following ways:
+{% endhint %}
 
-The time between upload and being able to get your PoDSI should only be a few minutes. You can get the PoDSI for your file by calling the `getProof` function in one of the following ways:
+via Axios in node.js
 
+{% code lineNumbers="true" %}
 ```javascript
 let response = await axios.get("https://api.lighthouse.storage/api/lighthouse/get_proof", {
     params: {
@@ -122,6 +148,9 @@ let response = await axios.get("https://api.lighthouse.storage/api/lighthouse/ge
     }
 })
 ```
+{% endcode %}
+
+or via curl&#x20;
 
 ```bash
 # Assumes that uploaded your file to mainnet.
@@ -129,7 +158,7 @@ let response = await axios.get("https://api.lighthouse.storage/api/lighthouse/ge
 curl https://api.lighthouse.storage/api/lighthouse/get_proof?cid=<puppy_CID>
 ```
 
-As a quick example of fetching the PoDSI of a file on testnet, you can use the following command:
+**curl example:**
 
 ```bash
 # An example of how to get the PoDSI for a file uploaded to testnet
@@ -138,6 +167,7 @@ curl https://api.lighthouse.storage/api/lighthouse/get_proof?cid=QmS7Do1mDZNBJAV
 
 The response, an example of a PoDSI proof on Calibration, should look something like this:
 
+{% code title="PoDSI response" lineNumbers="true" %}
 ```json
 {
     "pieceCID": "baga6ea4seaqgbiszkxkzmaxio5zjucpg2sd4n6abvmcsenah27g4xtjszxtzmia",
@@ -206,34 +236,43 @@ The response, an example of a PoDSI proof on Calibration, should look something 
     ]
 }
 ```
-The "pieceCID" is a content identifier used for referencing data in distributed information systems by it’s contents rather than its location using cryptographic hashing and self-describing formats. A core component of IPFS and IPLD, you can read more about it [here](https://docs.filecoin.io/basics/the-blockchain/proofs/).
+{% endcode %}
 
-The "proof" contains information that can be used to confirm whether your file was included in a specific aggregated data set.
+1. The _**pieceCID**_ is a content identifier used for referencing data in distributed information systems by it’s contents rather than its location using cryptographic hashing and self-describing formats. A core component of IPFS and IPLD, you can read more about it [here](https://docs.filecoin.io/basics/the-blockchain/proofs/).
+2. The _**proof**_ contains information that can be used to confirm whether your file was included in a specific aggregated data bundle.
+3. The _**dealInfo**_ provides details about the file's storage deal. If the "dealId" is null, it means that the storage deal has been initiated but the miner hasn't started the sealing process yet.
+4. The _**previousAggregates**_ parameter lists older aggregate IDs for the file, if the file's storage deal has been renewed. You can use these IDs to get more details about previous aggregates. To do this, use the provided API link, substituting the appropriate aggregate ID and network information.
 
-The "dealInfo" provides details about the file's storage deal. If the "dealId" is null, it means that the storage deal has been initiated but the miner hasn't started the sealing process yet.
+**Previous Aggregates Info**
 
-The "previousAggregates" parameter lists older aggregate IDs for the file, if the file's storage deal has been renewed. You can use these IDs to get more details about previous aggregates. To do this, use the provided API link, substituting the appropriate aggregate ID and network information. 
-- For example, to get information about a previous aggregate with the ID '975afcd3-ff3e-4395-a50e-24500ca0bfb7' on the Testnet, you would use the following:
-   
+To get information about a previous aggregate with the ID '975afcd3-ff3e-4395-a50e-24500ca0bfb7' on the Testnet, you would use the following:
+
 ```bash
 curl https://api.lighthouse.storage/api/lighthouse/aggregate_info?aggregateId=975afcd3-ff3e-4395-a50e-24500ca0bfb7&network=testnet
 ```
 
-### Get your deal ID from your upload
+### Step 4: Get your deal ID from your upload
+
 When you upload the picture of your puppy, the on-chain deal that is made to store it on the Filecoin network is assigned a unique deal ID. You can get this deal ID the same way you get the PoDSI for your file. In the above, it would be accessible through `response.data.deal_id`.
 
-Under the hood, the node infrastructure is working hard to ensure that your file is included on-chain. The process can take up to about **an hour**.
+> Under the hood, the node infrastructure is working hard to ensure that your file is included on-chain. The process of deal making can take up to about **an hour**.
 
-### Download your file using the file’s CID
-Now that your file is stored on the Filecoin network, you can retrieve it using the file's CID. You can do this by calling the `download` function in one of the following ways:
+### Step 5: Download your file using the file’s CID
+
+Now that your file is stored on the Filecoin network, you can retrieve it using its CID. You can do this by calling the `download` function in one of the following ways:
+
+**via CLI:**
 
 ```bash
 # Assumes that you have lighthouse-cli installed. If not, feel free to download it using 
 # npm install -g @lighthouse-web3/sdk
-lighthouse-web3 decrypt-file <CID>
+curl -o fileName https://gateway.lighthouse.storage/ipfs/<cid>
 ```
 
-```javascript
+**or via Code:**
+
+<pre class="language-javascript" data-line-numbers><code class="lang-javascript"><strong>const lighthouseDealDownloadEndpoint = https://gateway.lighthouse.storage/ipfs/'
+</strong>
 let response = await axios({
     method: 'GET',
     url: `${lighthouseDealDownloadEndpoint}${lighthouse_cid}`,
@@ -262,19 +301,54 @@ saveResponseToFile(response, filePath) {
         });
     });
 }
+</code></pre>
+
+***
+
+## <mark style="color:blue;">2) Upload via Lighthouse Smart Contract</mark>
+
+In this method, we will pass a cid to Lighthouse Smart Contract deployed on the following address
+
+* **Calibration Testnet**: `0x6ec8722e6543fB5976a547434c8644b51e24785b`
+
+The source code for this contract can be found [here](https://github.com/lighthouse-web3/raas-starter-kit/blob/main/contracts/DealStatus.sol)
+
+### Smart Contract Interface
+
+Within the smart contract interface, some important features are critical to the RaaS service. These include:
+
+<table><thead><tr><th width="59">#</th><th width="178">Function Name</th><th width="233">Purpose</th><th width="155">Key Parameters</th><th>Outcome</th></tr></thead><tbody><tr><td>1</td><td><code>submit</code></td><td>Function that submits a new deal request to the oracle and will creates a new deal. By default, there will be no renewals and replications for this deal</td><td><code>_cid</code></td><td><code>Event: SubmitAggregatorRequest</code></td></tr><tr><td>2</td><td><code>getAllDeals</code></td><td>Get all deal IDs for a specified cid</td><td><code>_cid</code></td><td><code>Deal[]</code></td></tr><tr><td>3</td><td><code>getActiveDeals</code></td><td>return all the _cid's active dealIds. Critical for replication deals.</td><td><code>_cid</code></td><td><code>Deal[]</code></td></tr><tr><td>4</td><td><code>getExpiringDeals</code></td><td>return all the deals' dealIds if they are expiring within <code>epochs</code>. Critical for renewal and repair jobs.</td><td><code>_cid, epochs</code></td><td><code>Deal[]</code></td></tr></tbody></table>
+
+### Calling Submit Function
+
+You can interact with the smart contract by submitting a CID of your choice to the `submit` function. This will create a new deal request that the Lighthouse RaaS Worker will pick up when attached as discussed in [Section B](section-b.md).
+
+{% code lineNumbers="true" %}
+```javascript
+// contractInstance is the address of the contract you deployed or the aggregator-hosted RaaS address above.
+const dealStatus = await ethers.getContractAt("DealStatus", contractInstance);
+// Submit the CID of the file you want to upload to the Filecoin network in the following way.
+await dealStatus.submit(ethers.utils.toUtf8Bytes(newJob.cid));
 ```
+{% endcode %}
 
-## Why does all this matter?
+{% hint style="warning" %}
+Upload with the submit function will not start deal-making by default on the Filecoin network. To start deal-making for the cid passed through the submit function, refer to [Section B](section-b.md) of Attaching RaaS (renew, repair, replication) Worker
+{% endhint %}
 
-We see a bright future in enabling permanent, immutable, decentralized data-storage for developers. 
+***
 
-The interface for the lighthouse SDK is designed to be simple and easy to use. We hope that this will enable developers to easily integrate the Filecoin network as the primary data storage provider for their applications.
+## <mark style="color:blue;">3) Why does all this matter?</mark>
+
+We see a bright future in enabling programmable, immutable, decentralized data storage for developers.
+
+Lighthouse SDK is designed to be simple and easy to use. We hope that this will enable developers to easily integrate the Filecoin network as the primary data storage layer for their applications.
 
 More importantly, this enables developers to build novel applications. Imagine a dapp or DAO that can be built to incentivize, analyze and store upload metadata on-chain. There are a couple of examples of this:
 
-- Rewarding $TOKEN based on the upload of a particular file and their CID.
-- Being able to track CIDs and deal IDs onchain for verification and airdropping.
-- Building more advanced, robust DataDAOs (check out the starter kit [here](https://github.com/filecoin-project/fevm-data-dao-kit)!)
+* Rewarding $TOKEN based on the upload of a particular file and their CID.
+* Being able to track CIDs and deal IDs onchain for verification and airdropping.
+* Building more advanced, robust DataDAOs (check out the starter kit [here](https://github.com/filecoin-project/fevm-data-dao-kit)!)
 
 For your consideration, here's some pseudocode of how you could build a simple dapp that rewards users for uploading files to the Filecoin network:
 
@@ -298,43 +372,4 @@ function uploadFile(bytes32 fileCID) public {
 }
 ```
 
-## Appendix
-
-For more information, check out the following code examples to upload files:
-
-1. [NodeJS Code Examples](../lighthouse-sdk/code-examples/nodejs-backend/)
-2. [Frontend(React, Next..) Code Examples](../lighthouse-sdk/code-examples/browser-frontend/)
-3. [Lighthouse File](https://files.lighthouse.storage/)
-
-You can also check out the following documentation to learn more about various other jobs you can register
-
-**Note**: Deal by default using SDK will go to the mainnet unless deal parameters are provided mentioned [here](../javascript/functions/upload.md).
-
-### Appendix: Flow diagram
-
-A full flow diagram of the lighthouse SDK can be found below:
-
-<figure><img src="../.gitbook/assets/Screenshot 2023-07-20 153056.png" alt=""><figcaption></figcaption></figure>
-
-### Appendix: Deal Verification Flow
-
-Deals can be verified on FilFox using the following steps.
-
-#### Steps to Confirm Your File's Inclusion:
-
-#### 1. Use the Contract to Verify:
-
-* Dive into the **verify function** located here: `0x27235FbFee0F5519A8786EA7Fc13258234aC1847`.
-* Submit your proof details, specifically: proofSubtree, proofIndex, and verifierData.
-* What you'll get in return are two things: "commPa" and "sizePa". Think of these as your file's unique fingerprints.
-* **Heads up**: These fingerprints (pieceCID and pieceSize) might look like regular text. You'll need to change them into a code-like format, known as hex, before you compare.
-
-#### 2. Double-Check Your File's Data:
-
-* This verifier data is like a mixed salad of your file combined with others. The first step confirmed that the salad has the right ingredients.
-* Now, it's time to be certain that the main ingredient in the salad is indeed your file. Do this by grabbing your file's unique PieceCid and comparing it with the verifier data given.
-
-#### 3. Seal the Deal:
-
-* You're almost done! You've just ensured your file is part of a bigger package that was handed to a miner.
-* Need more peace of mind? Head on over to [FilFox](https://filfox.info/en/deal/23410543). Here, just make sure the package's unique tag (the piece cid) aligns with what you've been provided earlier.
+***
