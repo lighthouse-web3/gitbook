@@ -3,7 +3,7 @@ description: >-
   A concise guide detailing the functionalities and methods within the RaaS service smart contract on the Calibration Testnet.
 ---
 
-# Section B: RaaS Service Overview
+# Renew Storage on Filecoin
 
 ## Aggregator-Hosted RaaS Interfaces
 

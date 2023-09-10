@@ -1,4 +1,4 @@
-# Section A: Upload, PoDSI and Deal ID
+# Upload Your Data to Filecoin
 
 ## Quickstart: Uploading Your First 🐕 Onto Filecoin
 
@@ -36,7 +36,7 @@ const dealParams = {
   num_copies: 2,
 };
 // The `false` indicates that we're uploading a single file.
-// Returns a CID (Content ID) for your file that you can use for PoDSI verification.
+// Returns a CID (Content ID) for your file that you can use for provable storage verification.
 const uploadResponse = await lighthouse.upload('/path/to/adorable/dog.jpg', 'YOUR_API_KEY', false, dealParams);
 ```
 
@@ -106,7 +106,7 @@ const response = await lighthouse.upload(path, apiKey, false, dealParam_ignore);
 
 **Friendly Tip**: The term "epoch" can be thought of as a time unit in filecoin under which various operations occur like PoST PoRep..., with 2880 epochs being equivalent to a day.
 
-### Understanding PoDSI: Getting the PoDSI for your file
+### Understanding PoDSI: Getting the Provable Storage for your file
 
 Now that you've registered the picture of your puppy, how would you know that it's actually being maintained on the Filecoin network? This is where the PoDSI comes in. The PoDSI is a proof that your file is being maintained on the Filecoin network. 
 
