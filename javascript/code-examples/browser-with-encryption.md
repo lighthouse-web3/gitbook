@@ -48,7 +48,7 @@ function App() {
   
       if(!ethereum){
         alert("please install metamask" )
-        }
+                    }
     if (ethereum) {
       const accounts = await ethereum.request({
           method: 'eth_requestAccounts',
@@ -72,7 +72,7 @@ function App() {
       publicKey: address
     });
   }
-
+  }
   const progressCallback = (progressData) => {
     let percentageDone =
       100 - (progressData?.total / progressData?.uploaded)?.toFixed(2);
