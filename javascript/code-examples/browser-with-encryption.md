@@ -76,7 +76,7 @@ function App() {
       "YOUR_API_KEY",
       sig.publicKey,
       sig.signedMessage,
-      null
+      null,
       progressCallback
     );
     console.log(response);
