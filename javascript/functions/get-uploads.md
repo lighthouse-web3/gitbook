@@ -22,7 +22,7 @@ To retrieve a list of your uploaded files, Lighthouse offers a simple function:
 /**
  * This function fetches the list of files uploaded using a particular public key.
  * 
- * @param {string} publicKey - The public key associated with the uploads.
+ * @param {string} apiKey - Your api key.
  * 
  * @return [object] - An array containing details of each uploaded file.
  */
@@ -37,8 +37,8 @@ Follow these steps to view your upload history:
 import lighthouse from '@lighthouse-web3/sdk';
 
 // Use the function to retrieve the list of uploads
-const publicKey = 'YOUR_WALLET_PUBLIC_KEY'; // Make sure to replace with your public key
-const uploads = await lighthouse.getUploads(publicKey);
+const apiKey = 'API_KEY'; // Make sure to replace with your public key
+const uploads = await lighthouse.getUploads(apiKey);
 
 // Display the list of uploaded files
 console.log(uploads);
