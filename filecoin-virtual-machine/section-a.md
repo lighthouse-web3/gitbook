@@ -1,4 +1,4 @@
-# 🅰 Upload, PoDSI, and Deal-Making
+# 🅰 Upload Your Data to Filecoin
 
 In this **Section A**, we will discuss the following
 
@@ -52,7 +52,7 @@ const dealParams = {
   num_copies: 2,
 };
 // The `false` indicates that we're uploading a single file.
-// Returns a CID (Content ID) for your file that you can use for PoDSI verification.
+// Returns a CID (Content ID) for your file that you can use for provable storage verification.
 const uploadResponse = await lighthouse.upload('/path/to/adorable/dog.jpg', 'YOUR_API_KEY', false, dealParams);
 ```
 {% endcode %}
@@ -127,7 +127,7 @@ const response = await lighthouse.upload(path, apiKey, false, dealParam_mock);
 const response = await lighthouse.upload(path, apiKey, false, dealParam_ignore);
 </code></pre>
 
-### Step 3: Understanding PoDSI: Getting the PoDSI for your file
+### Step 3: Understanding PoDSI: Getting Storage Proofs for your file
 
 Now that you've registered the picture of your puppy, how would you know that it's actually being maintained on the Filecoin network? This is where the PoDSI comes in. The PoDSI is a proof that your file is being maintained on the Filecoin network.
 
