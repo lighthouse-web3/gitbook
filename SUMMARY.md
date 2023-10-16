@@ -2,37 +2,6 @@
 
 * [👋 Introduction](README.md)
 
-## 💾 Filecoin Virtual Machine
-
-* [🅰 Upload, PoDSI, and Deal-Making](filecoin-virtual-machine/section-a.md)
-* [🅱 Attaching RaaS (renew, repair, replication) Worker](filecoin-virtual-machine/section-b.md)
-* [📄 Appendix](filecoin-virtual-machine/appendix/README.md)
-  * [Flow Diagrams](filecoin-virtual-machine/appendix/flow-diagrams.md)
-  * [PoDSI](filecoin-virtual-machine/appendix/podsi.md)
-  * [Deal Verification](filecoin-virtual-machine/appendix/deal-verification.md)
-  * [Self Hosted RaaS](filecoin-virtual-machine/appendix/self-hosted-raas.md)
-
-## CLI Tool
-
-* [📃 Overview](cli-tool/overview.md)
-* [📜 CLI Commands](cli-tool/cli-commands/README.md)
-  * [wallet](cli-tool/cli-commands/wallet.md)
-  * [create-wallet](cli-tool/cli-commands/create-wallet.md)
-  * [import-wallet](cli-tool/cli-commands/import-wallet.md)
-  * [wallet-forget](cli-tool/cli-commands/wallet-forget.md)
-  * [reset-password](cli-tool/cli-commands/reset-password.md)
-  * [balance](cli-tool/cli-commands/balance.md)
-  * [upload](cli-tool/cli-commands/upload.md)
-  * [upload-encrypted](cli-tool/cli-commands/upload-encrypted.md)
-  * [decrypt-file](cli-tool/cli-commands/decrypt-file.md)
-  * [share-file](cli-tool/cli-commands/share-file.md)
-  * [revoke-access](cli-tool/cli-commands/revoke-access.md)
-  * [deal-status](cli-tool/cli-commands/deal-status.md)
-  * [get-uploads](cli-tool/cli-commands/get-uploads.md)
-  * [api-key](cli-tool/cli-commands/api-key.md)
-  * [ipns](cli-tool/cli-commands/ipns.md)
-  * [help](cli-tool/cli-commands/help.md)
-
 ## Lighthouse SDK
 
 * [🎯 Overview](javascript/overview.md)
@@ -67,6 +36,37 @@
     * [📁 Create Car File](lighthouse-sdk/code-examples/nodejs-backend/create-car-file.md)
   * [🌐 Chains Supported](lighthouse-sdk/code-examples/chains-supported.md)
   * [📄 Access Control Conditions](lighthouse-sdk/code-examples/access-conditions.md)
+
+## 💾 Filecoin Virtual Machine
+
+* [🅰 Upload, PoDSI, and Deal-Making](filecoin-virtual-machine/section-a.md)
+* [🅱 Attaching RaaS (renew, repair, replication) Worker](filecoin-virtual-machine/section-b.md)
+* [📄 Appendix](filecoin-virtual-machine/appendix/README.md)
+  * [Flow Diagrams](filecoin-virtual-machine/appendix/flow-diagrams.md)
+  * [PoDSI](filecoin-virtual-machine/appendix/podsi.md)
+  * [Deal Verification](filecoin-virtual-machine/appendix/deal-verification.md)
+  * [Self Hosted RaaS](filecoin-virtual-machine/appendix/self-hosted-raas.md)
+
+## CLI Tool
+
+* [📃 Overview](cli-tool/overview.md)
+* [📜 CLI Commands](cli-tool/cli-commands/README.md)
+  * [wallet](cli-tool/cli-commands/wallet.md)
+  * [create-wallet](cli-tool/cli-commands/create-wallet.md)
+  * [import-wallet](cli-tool/cli-commands/import-wallet.md)
+  * [wallet-forget](cli-tool/cli-commands/wallet-forget.md)
+  * [reset-password](cli-tool/cli-commands/reset-password.md)
+  * [balance](cli-tool/cli-commands/balance.md)
+  * [upload](cli-tool/cli-commands/upload.md)
+  * [upload-encrypted](cli-tool/cli-commands/upload-encrypted.md)
+  * [decrypt-file](cli-tool/cli-commands/decrypt-file.md)
+  * [share-file](cli-tool/cli-commands/share-file.md)
+  * [revoke-access](cli-tool/cli-commands/revoke-access.md)
+  * [deal-status](cli-tool/cli-commands/deal-status.md)
+  * [get-uploads](cli-tool/cli-commands/get-uploads.md)
+  * [api-key](cli-tool/cli-commands/api-key.md)
+  * [ipns](cli-tool/cli-commands/ipns.md)
+  * [help](cli-tool/cli-commands/help.md)
 
 ## How to
 
