@@ -12,7 +12,7 @@ The aim is to move users from a rent-based cost model where they rent their file
 
 It uses the miner network and storage capacity of the Filecoin network and IPFS content-addressing system.
 
-#### <mark style="color:blue;">Features</mark> <a href="#docs-internal-guid-b71b2036-7fff-9a19-aed9-151d92819f81" id="docs-internal-guid-b71b2036-7fff-9a19-aed9-151d92819f81"></a>
+### <mark style="color:blue;">Features</mark> <a href="#docs-internal-guid-b71b2036-7fff-9a19-aed9-151d92819f81" id="docs-internal-guid-b71b2036-7fff-9a19-aed9-151d92819f81"></a>
 
 * **Perpetual Storage -** The long-term storage model sets Lighthouse apart from existing protocols that provide recurring payment choices and also from web2 storage systems
 * **Encryption and Private data** - Ability to store private and encrypted data without the hassle of managing private key of the file and build token-gated applications using Smart Contracts on any chain.
