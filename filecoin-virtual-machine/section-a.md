@@ -11,7 +11,7 @@ In this **Section A**, we will discuss the following
 2. [Upload via Lighthouse Smart Contract Interaction](section-a.md#2-upload-via-lighthouse-smart-contract)
    1. [Attach Raas Workers (discussed in Section B)](section-b.md)
 
-<figure><img src="../.gitbook/assets/CID deal.png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/Group 1707478179.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/CID deal.png" alt=""></picture><figcaption></figcaption></figure>
 
 ## <mark style="color:blue;">1) Upload via Lighthouse SDK</mark>
 

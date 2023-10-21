@@ -2,7 +2,7 @@
 
 **Proof of Data Segment Inclusion (PoDSI)** is like a certificate of authenticity. It assures that your file is safely tucked inside a special package, known as a "deal", made by the Lighthouse Node. This node combines several files, gives them a unique ID, offers proof of their inclusion, and even throws a mini-proof of the entire package's structure.
 
-<figure><img src="../.gitbook/assets/Api de.png" alt=""><figcaption></figcaption></figure>
+<figure><picture><source srcset="../.gitbook/assets/Group 1707478178.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/Api de.png" alt=""></picture><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
 The time between uploading and being able to get your PoDSI should only be a few minutes. You can get the PoDSI for your file by calling the `getProof` function in one of the following ways:
