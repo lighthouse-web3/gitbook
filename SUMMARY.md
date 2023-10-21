@@ -37,12 +37,11 @@
 
 ## 💾 Filecoin Virtual Machine
 
-* [🅰 Upload, PoDSI, and Deal-Making](filecoin-virtual-machine/section-a.md)
-* [🅱 Attaching RaaS (renew, repair, replication) Worker](filecoin-virtual-machine/section-b.md)
-* [📄 Appendix](filecoin-virtual-machine/appendix/README.md)
-  * [📖 PoDSI](filecoin-virtual-machine/appendix/podsi.md)
-  * [✅ Deal Verification](filecoin-virtual-machine/appendix/deal-verification.md)
-  * [👮♀ Self Hosted RaaS](filecoin-virtual-machine/appendix/self-hosted-raas.md)
+* [⬆ Upload, PoDSI, and Deal-Making](filecoin-virtual-machine/section-a.md)
+* [👷♂ Attaching RaaS (renew, repair, replication) Worker](filecoin-virtual-machine/section-b.md)
+* [📖 PoDSI](filecoin-virtual-machine/podsi.md)
+* [✅ Deal Verification](filecoin-virtual-machine/deal-verification.md)
+* [👮♀ Self Hosted RaaS](filecoin-virtual-machine/self-hosted-raas.md)
 
 ## Tutorials
 

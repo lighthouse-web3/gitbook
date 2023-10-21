@@ -4,7 +4,7 @@ description: >-
   through the Lighthouse Smart Contract
 ---
 
-# 🅱 Attaching RaaS (renew, repair, replication) Worker
+# 👷♂ Attaching RaaS (renew, repair, replication) Worker
 
 ## <mark style="color:blue;">1) Attaching Lighthouse RaaS Worker</mark>
 

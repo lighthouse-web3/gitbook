@@ -1,4 +1,4 @@
-# 🅰 Upload, PoDSI, and Deal-Making
+# ⬆ Upload, PoDSI, and Deal-Making
 
 In this **Section A**, we will discuss the following
 
@@ -10,6 +10,8 @@ In this **Section A**, we will discuss the following
    5. [Download your file using the file’s CID](section-a.md#step-5-download-your-file-using-the-files-cid)
 2. [Upload via Lighthouse Smart Contract Interaction](section-a.md#2-upload-via-lighthouse-smart-contract)
    1. [Attach Raas Workers (discussed in Section B)](section-b.md)
+
+<figure><img src="../.gitbook/assets/CID deal.png" alt=""><figcaption></figcaption></figure>
 
 ## <mark style="color:blue;">1) Upload via Lighthouse SDK</mark>
 
