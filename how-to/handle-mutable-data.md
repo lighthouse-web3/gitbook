@@ -1,0 +1,137 @@
+---
+description: Using IPNS to handle mutable data
+---
+
+# 🔄 Handle Mutable Data
+
+IPNS (InterPlanetary Name System) is a system that allows you to create mutable pointers to data in the IPFS network. In simpler terms, it's like a dynamic address that always points to the latest version of your content. Using the Lighthouse SDK, you can easily create, publish, fetch, and remove IPNS records.
+
+### 1. What is IPNS?
+
+Think of IPNS as a dynamic domain name for your content on IPFS. While IPFS hashes are static and change when content changes, IPNS provides a static address that can be updated to point to new content.
+
+### 2. Basic steps involved
+
+1. Create an IPNS key
+2. Map the IPNS key with a CID
+3. In case of CID change just update the mapping, the IPNS key remains the same
+4. View the file using: \
+   [https://gateway.lighthouse.storage/ipns/k51qzi5uqu5dlr99jbwpbli7iqtdd60c8hk0wgrsxyvzu3lhymapd1rn4npdd8/](https://gateway.lighthouse.storage/ipns/k51qzi5uqu5dlr99jbwpbli7iqtdd60c8hk0wgrsxyvzu3lhymapd1rn4npdd8/)
+
+{% tabs %}
+{% tab title="JS SDK" %}
+#### Step 1: Create a New IPNS Key
+
+```javascript
+const keyResponse = await lighthouse.generateKey(apiKey)
+/* Sample response
+{
+  data: {
+    "ipnsName": "6cda213e3a534f8388665dee77a26458",
+    "ipnsId": "k51qzi5uqu5dm6uvby6428rfpcv1vcba6hxq6vcu52qtfsx3np4536jkr71gnu"
+  }
+}
+*/
+```
+
+Upon successful creation, you will receive an IPNS name and its corresponding ID.
+
+#### Step 2: Publish an IPFS Hash to IPNS
+
+```javascript
+const pubResponse = await lighthouse.publishRecord(
+  "YOUR_IPFS_HASH", // replace with your IPFS hash
+  keyResponse.data.ipnsName,
+  apiKey
+)
+/* Sample response
+{
+  data: {
+    "Name": "k51qzi5uqu5dm6uvby6428rfpcv1vcba6hxq6vcu52qtfsx3np4536jkr71gnu",
+    "Value": "/ipfs/Qmd5MBBScDUV3Ly8qahXtZFqyRRfYSmUwEcxpYcV4hzKfW"
+  }
+}
+*/
+```
+
+The response will show the IPNS name and the IPFS path it points to.
+
+#### Step 3: Retrieve All IPNS Keys
+
+```javascript
+const allKeys = await lighthouse.getAllKeys(apiKey)
+/* Sample response
+{
+  data: [
+    {
+      "ipnsName": "6cda213e3a534f8388665dee77a26458",
+      "ipnsId": "k51qzi5uqu5dm6uvby6428rfpcv1vcba6hxq6vcu52qtfsx3np4536jkr71gnu",
+      "publicKey": "0xc88c729ef2c18baf1074ea0df537d61a54a8ce7b",
+      "cid": "Qmd5MBBScDUV3Ly8qahXtZFqyRRfYSmUwEcxpYcV4hzKfW",
+      "lastUpdate": 1684855771773
+    }
+  ]
+}
+*/
+```
+
+#### Step 4: Remove an IPNS Key
+
+```javascript
+const removeRes = await lighthouse.removeKey(keyResponse.data.ipnsName, apiKey)
+/* Sample Response
+{
+  data: { 
+    Keys: [
+      {
+        "Name": "3090a315e92c495ea36444f2bbaeefaf",
+        "Id": "k51qzi5uqu5dm8gfelll8own1epd9osmlig49il5mmphkrcxbnhydkmx101x15"
+      }
+    ]
+  }
+}
+*/
+```
+{% endtab %}
+
+{% tab title="API" %}
+```bash
+# Generate Key
+curl -H 'Authorization: Bearer API_KEY' 'https://api.lighthouse.storage/api/ipns/generate_key'
+
+# Publish CID
+curl -H 'Authorization: Bearer API_KEY' 'https://api.lighthouse.storage/api/ipns/publish_record?cid=<cid>&keyName=<key>'
+
+# Get All Keys
+curl -H 'Authorization: Bearer API_KEY' 'https://api.lighthouse.storage/api/ipns/get_ipns_records'
+
+# Remove Key
+curl -H 'Authorization: Bearer API_KEY' 'https://api.lighthouse.storage/api/ipns/remove_key?keyName=<keyName>'
+```
+{% endtab %}
+
+{% tab title="CLI" %}
+```bash
+lighthouse-web3 ipns --generate-key
+#Returns:
+#ipnsName: ca9e19dcf8e54e86a4dce40b155ffcad
+#ipnsId: k51qzi5uqu5dlk72k0t8c80gg8c4lb9bzd0jsd9xtauso88hfkx9ytgm05caao
+
+lighthouse-web3 ipns --publish --key=ca9e19dcf8e54e86a4dce40b155ffcad --cid=QmWC9AkGa6vSbR4yizoJrFMfmZh4XjZXxvRDknk2LdJffc
+#Returns:
+#Published:
+#Visit: https://gateway.lighthouse.storage/ipns/k51qzi5uqu5dlk72k0t8c80gg8c4lb9bzd0jsd9xtauso88hfkx9ytgm05caao
+
+lighthouse-web3 ipns --list
+#Returns:
+#List of ipns records:
+#  Key:     ca9e19dcf8e54e86a4dce40b155ffcad
+#  IPNS ID: k51qzi5uqu5dlk72k0t8c80gg8c4lb9bzd0jsd9xtauso88hfkx9ytgm05caao
+#  CID:     QmWC9AkGa6vSbR4yizoJrFMfmZh4XjZXxvRDknk2LdJffc
+  
+lighthouse-web3 ipns --remove ca9e19dcf8e54e86a4dce40b155ffcad
+#Returns:
+#Record Removed!!!
+```
+{% endtab %}
+{% endtabs %}

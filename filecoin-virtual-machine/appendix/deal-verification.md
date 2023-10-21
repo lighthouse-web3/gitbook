@@ -1,4 +1,4 @@
-# Deal Verification
+# ✅ Deal Verification
 
 Deals and file inclusion can be verified using the following steps.
 

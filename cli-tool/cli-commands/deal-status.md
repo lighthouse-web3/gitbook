@@ -1,7 +1,0 @@
-# deal-status
-
-This command returns the storage status of a file or directory using its CID
-
-```
-lighthouse-web3 deal-status <cid>
-```

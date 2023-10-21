@@ -40,7 +40,7 @@ Previously, if the file of your puppy was too small, it would encounter issues b
 _Replication_ is the process of making multiple copies of your file and storing them on the Filecoin network. This ensures that if one storage provider goes down, you'll still be able to retrieve your file from another storage provider.
 
 {% hint style="info" %}
-You can get the API key from [https://files.lighthouse.storage/](https://files.lighthouse.storage/) or via [CLI](../cli-tool/cli-commands/api-key.md)&#x20;
+You can get the API key from [https://files.lighthouse.storage/](https://files.lighthouse.storage/) or via [CLI](broken-reference)&#x20;
 {% endhint %}
 
 {% code lineNumbers="true" %}
@@ -309,7 +309,7 @@ saveResponseToFile(response, filePath) {
 
 In this method, we will pass a cid to Lighthouse Smart Contract deployed on the following address
 
-* **Calibration Testnet**: `0x6ec8722e6543fB5976a547434c8644b51e24785b`
+* **Calibration Testnet**: `0xD3F41c4474c85454929d84FFB79f626D9aC248aC`
 
 The source code for this contract can be found [here](https://github.com/lighthouse-web3/raas-starter-kit/blob/main/contracts/DealStatus.sol)
 

@@ -1,2 +1,0 @@
-# 📜 SDK Functions
-
