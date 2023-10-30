@@ -311,7 +311,7 @@ saveResponseToFile(response, filePath) {
 
 In this method, we will pass a cid to Lighthouse Smart Contract deployed on the following address
 
-* **Calibration Testnet**: `0xD3F41c4474c85454929d84FFB79f626D9aC248aC`
+* **Calibration Testnet**: `0x94365EAF06BAA16D7c3502FF6fE7dacF0FD14D67`
 
 The source code for this contract can be found [here](https://github.com/lighthouse-web3/raas-starter-kit/blob/main/contracts/DealStatus.sol)
 
@@ -319,7 +319,7 @@ The source code for this contract can be found [here](https://github.com/lightho
 
 Within the smart contract interface, some important features are critical to the RaaS service. These include:
 
-<table><thead><tr><th width="59">#</th><th width="178">Function Name</th><th width="233">Purpose</th><th width="155">Key Parameters</th><th>Outcome</th></tr></thead><tbody><tr><td>1</td><td><code>submit</code></td><td>Function that submits a new deal request to the oracle and will creates a new deal. By default, there will be no renewals and replications for this deal</td><td><code>_cid</code></td><td><code>Event: SubmitAggregatorRequest</code></td></tr><tr><td>2</td><td><code>getAllDeals</code></td><td>Get all deal IDs for a specified cid</td><td><code>_cid</code></td><td><code>Deal[]</code></td></tr><tr><td>3</td><td><code>getActiveDeals</code></td><td>return all the _cid's active dealIds. Critical for replication deals.</td><td><code>_cid</code></td><td><code>Deal[]</code></td></tr><tr><td>4</td><td><code>getExpiringDeals</code></td><td>return all the deals' dealIds if they are expiring within <code>epochs</code>. Critical for renewal and repair jobs.</td><td><code>_cid, epochs</code></td><td><code>Deal[]</code></td></tr></tbody></table>
+<table><thead><tr><th width="59">#</th><th width="178">Function Name</th><th width="233">Purpose</th><th width="229">Key Parameters</th><th>Outcome</th></tr></thead><tbody><tr><td>1</td><td><code>submit</code></td><td>Function that submits a new deal request to the oracle and will creates a new deal. By default, there will be no renewals and replications for this deal</td><td><code>_cid</code></td><td><code>Event: SubmitAggregatorRequest</code></td></tr><tr><td>2</td><td><code>submitRaaS</code></td><td>Function that submits a new deal request to the oracle and will creates a new deal. Here user can define deal parameters.</td><td><code>_cid,</code><br><code>_replication_target,</code><br><code>_repair_threshold,</code><br><code>_renew_threshold</code></td><td><code>Event:SubmitAggregatorRequestWithRaaS</code></td></tr><tr><td>3</td><td><code>getAllDeals</code></td><td>Get all deal IDs for a specified cid</td><td><code>_cid</code></td><td><code>Deal[]</code></td></tr><tr><td>4</td><td><code>getActiveDeals</code></td><td>return all the _cid's active dealIds. Critical for replication deals.</td><td><code>_cid</code></td><td><code>Deal[]</code></td></tr><tr><td>5</td><td><code>getExpiringDeals</code></td><td>return all the deals' dealIds if they are expiring within <code>epochs</code>. Critical for renewal and repair jobs.</td><td><code>_cid, epochs</code></td><td><code>Deal[]</code></td></tr></tbody></table>
 
 ### Calling Submit Function
 
