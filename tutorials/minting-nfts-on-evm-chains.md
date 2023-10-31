@@ -113,19 +113,49 @@ console.log('File uploaded to IPFS via Lighthouse:', uploadResponse);
 uploadFile();
 ```
 
-#### Step 6: Upload Your NFT Metadata
+#### Step 6: Create Your NFT Metadata JSON File
 
-Create a JSON file embedding the file link from the previous step, ensuring your NFT's metadata is well-documented and accessible.
+Using the image URL from Step 5, you'll create a `nft-metadata.json` file containing your NFT's metadata.
+
+Create `nft-metadata.json` with the following content:
 
 ```json
 {
     "name": "My NFT",
     "description": "A description of my NFT",
-    "image": "<https://gateway.lighthouse.storage/ipns/Qm>....."
+    "image": "IMAGE_URL",
+    "attributes": [
+        { "trait_type": "trait1", "value": "trait1_value" },
+        { "trait_type": "trait2", "value": "trait2_value" }
+    ]   
 }
 ```
 
-#### Step 7: Deploy the Contract Using Ethers.js on the Mumbai Testnet
+Replace `<YourImageIPFSHashHere>` with the actual IPFS hash you received after uploading the image.
+
+#### Step 7: Upload Your NFT Metadata JSON File to IPFS using Lighthouse
+
+Now you will upload the `nft-metadata.json` file you created to IPFS using the Lighthouse SDK.
+
+```javascript
+// uploadMetadataToIPFS.js
+
+import lighthouse from '@lighthouse-web3/sdk';
+import fs from 'fs';
+
+async function uploadMetadata() {
+    const apiKey = 'YOUR_API_KEY_HERE';
+    const metadataFilePath = './path/to/your/nft-metadata.json';
+    const metadata = fs.readFileSync(metadataFilePath);
+    const metadataResponse = await lighthouse.upload(metadata, apiKey);
+    console.log('Metadata uploaded to IPFS via Lighthouse:', metadataResponse);
+    return metadataResponse;
+}
+
+uploadMetadata();
+```
+
+#### Step 8: Deploy the Contract Using Ethers.js on the Mumbai Testnet
 
 Here’s a detailed step using ethers.js to deploy your contract on the Mumbai testnet. Replace `'YOUR_INFURA_PROJECT_ENDPOINT'` and `'YOUR_INFURA_PROJECT_ENDPOINT'` appropriately.
 
@@ -162,7 +192,7 @@ async function deployContract() {
 deployContract();
 ```
 
-#### Step 8: Mint Your NFT Using Ethers.js
+#### Step 9: Mint Your NFT Using Ethers.js
 
 This step provides an example code snippet to mint your NFT using ethers.js. Adapt the placeholders with actual values.
 
@@ -188,7 +218,7 @@ async function mintNFT() {
 mintNFT();
 ```
 
-#### Step 9: Verify Your NFT
+#### Step 10: Verify Your NFT
 
 To verify your NFT, use a blockchain explorer like [Etherscan](https://sepolia.etherscan.io/). Input your contract address, and explore the transactions and minted NFTs. Each NFT's distinct token ID and ownership records enhance transparency and authenticity.
 

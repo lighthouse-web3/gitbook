@@ -47,40 +47,102 @@ console.log(response);
 #### Method 2: Browser
 
 ```javascript
-import React from "react";
-import lighthouse from '@lighthouse-web3/sdk';
+import React, { useState } from "react";
+import lighthouse from "@lighthouse-web3/sdk";
 
 function App() {
+  const [file, setFile] = useState(null);
 
-  const progressCallback = (progressData) => {
-    let percentageDone =
-      100 - (progressData?.total / progressData?.uploaded)?.toFixed(2);
-    console.log(percentageDone);
+  // Define your API Key (should be replaced with secure environment variables in production)
+  const apiKey = process.env.REACT_APP_API_KEY;
+
+  // Function to sign the authentication message using Wallet
+  const signAuthMessage = async () => {
+    // Check for Wallet (e.g., MetaMask) integration
+    if (window.ethereum) {
+      try {
+        // Request user's Wallet account
+        const accounts = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        if (accounts.length === 0) {
+          throw new Error("No accounts returned from Wallet.");
+        }
+        const signerAddress = accounts[0];
+
+        // Fetch a message from Lighthouse to sign
+        const { message } = (await lighthouse.getAuthMessage(signerAddress))
+          .data;
+
+        // Use Wallet to sign the fetched message
+        const signature = await window.ethereum.request({
+          method: "personal_sign",
+          params: [message, signerAddress],
+        });
+
+        // Return both the signature and signer's address
+        return { signature, signerAddress };
+      } catch (error) {
+        console.error("Error signing message with Wallet", error);
+        return null;
+      }
+    } else {
+      console.log("Please install Wallet!");
+      return null;
+    }
   };
 
-  const uploadFile = async(file) =>{
-    // Push file to lighthouse node
-    // Both file and folder are supported by upload function
-    // Third parameter is for multiple files, if multiple files are to be uploaded at once make it true
-    // Fourth parameter is the deal parameters, default null
-    const output = await lighthouse.upload(file, "YOUR_API_KEY", false, null, progressCallback);
-    console.log('File Status:', output);
-    /*
-      output:
-        data: {
-          Name: "filename.txt",
-          Size: 88000,
-          Hash: "QmWNmn2gr4ZihNPqaC5oTeePsHvFtkWNpjY3cD6Fd5am1w"
-        }
-      Note: Hash in response is CID.
-    */
+  // Function to upload the encrypted file
+  const uploadEncryptedFile = async () => {
+    if (!file) {
+      console.error("No file selected.");
+      return;
+    }
 
-      console.log('Visit at https://gateway.lighthouse.storage/ipfs/' + output.data.Hash);
-  }
+    try {
+      const authResult = await signAuthMessage();
+      if (!authResult) {
+        console.error("Failed to sign the message.");
+        return;
+      }
+
+      const { signature, signerAddress } = authResult;
+
+      // Upload the encrypted file with the signed message
+      const output = await lighthouse.uploadEncrypted(
+        file, // List of array of files
+        apiKey,
+        signerAddress,
+        signature
+      );
+      console.log("Encrypted File Status:", output);
+
+      // If successful, log the URL for accessing the file
+      if (output.data && output.data[0] && output.data[0].Hash) {
+        console.log(
+          "Visit at https://gateway.lighthouse.storage/ipfs/" +
+            output.data[0].Hash
+        );
+      }
+    } catch (error) {
+      console.error("Error uploading encrypted file:", error);
+    }
+  };
+
+  // Function to handle file selection
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files;
+    if (selectedFile) {
+      setFile(selectedFile);
+    }
+  };
 
   return (
     <div className="App">
-      <input onChange={e=>uploadFile(e.target.files)} type="file" />
+      <input type="file" onChange={handleFileChange} />
+      <button onClick={uploadEncryptedFile} disabled={!file}>
+        Upload Encrypted File
+      </button>
     </div>
   );
 }
