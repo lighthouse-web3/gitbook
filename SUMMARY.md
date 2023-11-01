@@ -52,7 +52,6 @@
 * [📹 Add Video Player in UI](tutorials/video-player.md)
 * [✅ Document Verification with PoDSI](tutorials/document-verification-with-podsi.md)
 * [🎨 Minting NFTs on EVM Chains](tutorials/minting-nfts-on-evm-chains.md)
-* [🪙 Minting NFTs on Solana](tutorials/minting-nfts-on-solana.md)
 * [👩💻 Programmable Storage with Lighthouse SDK and Filecoin](tutorials/programmable-storage-with-lighthouse-sdk-and-filecoin.md)
 
 ## Support
