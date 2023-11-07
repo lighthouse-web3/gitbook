@@ -22,6 +22,7 @@ All uploaded files can be viewed using the given function, the results are pagin
 const getUploads = async() =>{
   /*
     @param {string} apiKey - Your API key.
+    @param {number} [pageNo=1] - The page number for pagination, defaults to 1.
   */
   const response = await lighthouse.getUploads("YOUR_API_KEY")
   console.log(response)

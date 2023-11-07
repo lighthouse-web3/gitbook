@@ -29,11 +29,13 @@
     * [💻 NodeJS Decrypt File](how-to/encryption-features/decrypt-file/nodejs-decrypt-file.md)
 * [🗃 List Files](how-to/list-files.md)
 * [💰 Get Balance](how-to/get-balance.md)
+* [🔁 Retrieve File](how-to/retrieve-file.md)
 * [💾 Check for Filecoin Deals](how-to/check-for-filecoin-deals.md)
 * [🔄 Handle Mutable Data](how-to/handle-mutable-data.md)
 * [📦 Migrate Files](how-to/migrate-files.md)
 * [📌 Pin CID](how-to/pin-cid.md)
 * [🗃 Create Car File](how-to/create-car-file.md)
+* [✂ Resize Image](how-to/resize-image.md)
 * [🖥 Use CLI Tools](how-to/overview.md)
 
 ## 💾 Filecoin Virtual Machine
@@ -52,7 +54,16 @@
 * [📹 Add Video Player in UI](tutorials/video-player.md)
 * [✅ Document Verification with PoDSI](tutorials/document-verification-with-podsi.md)
 * [🎨 Minting NFTs on EVM Chains](tutorials/minting-nfts-on-evm-chains.md)
+* [🪙 Minting NFTs on Solana](tutorials/minting-nfts-on-solana.md)
 * [👩💻 Programmable Storage with Lighthouse SDK and Filecoin](tutorials/programmable-storage-with-lighthouse-sdk-and-filecoin.md)
+* [🔐 Secure File Sharing](tutorials/secure-file-sharing.md)
+* [🛡 Upload Encrypted Files](tutorials/upload-encrypted-files.md)
+* [📄 Token Gating and Custom Contract](tutorials/token-gating-and-custom-contract.md)
+* [🔑 Token Gating NFTs](tutorials/token-gating-nfts.md)
+
+## Concepts
+
+* [Glossary](concepts/glossary.md)
 
 ## Support
 
