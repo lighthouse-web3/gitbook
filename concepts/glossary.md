@@ -6,11 +6,11 @@ A system that allows users to pay once for file storage with the intention that 
 
 ## **IPFS (InterPlanetary File System)**
 
-A peer-to-peer network that facilitates file storage with built-in economic incentives and cryptography to ensure files are stored reliably over time. Filecoin allows users to pay storage providers—computers responsible for storing files and proving their correct and ongoing storage. Unlike centralized storage solutions, Filecoin operates in open markets for storing and retrieving files, allowing anyone to participate. It is built on IPFS but adds an incentive layer to ensure content is stored and accessed reliably. Filecoin supports a range of data types and is used for various applications, such as Web3 NFT storage, permanent incentivized storage, and as a cost-effective archival solution for Web2 datasets ([Link](https://docs.ipfs.tech/concepts/what-is-ipfs/)).
+IPFS, which stands for InterPlanetary File System, is a protocol and peer-to-peer network for storing and sharing data in a distributed file system. IPFS uses content-addressing to uniquely identify each file in a global namespace connecting all computing devices.​ ([Link](https://ipfs.io/)).
 
 ## **Filecoin**
 
-An open-source, public cryptocurrency and digital payment system that aims to provide a blockchain-based cooperative digital storage and data retrieval method. It allows users to rent out unused hard drive space and is backed by a blockchain that records commitments with transactions in its native currency, FIL ([Link](https://docs.filecoin.io/)).
+A peer-to-peer network that facilitates file storage with built-in economic incentives and cryptography to ensure files are stored reliably over time. Filecoin allows users to pay storage providers—computers responsible for storing files and proving their correct and ongoing storage. Unlike centralized storage solutions, Filecoin operates in open markets for storing and retrieving files, allowing anyone to participate. It is built on IPFS but adds an incentive layer to ensure content is stored and accessed reliably. Filecoin supports various data types and is used for various applications, such as Web3 NFT storage, permanent incentivized storage, and as a cost-effective archival solution for Web2 datasets ([Link](https://docs.filecoin.io/)).
 
 ## **Smart Contracts**
 
@@ -18,7 +18,7 @@ Contracts coded to execute automatically when certain conditions are met. In the
 
 ## **Encryption**
 
-The process of converting data into a code to prevent unauthorized access. Lighthouse allows encrypted data storage, maintaining privacy and security.
+Encryption is a process that encodes information or data to prevent unauthorized access. It transforms readable data, known as plaintext, into an unreadable format, called ciphertext. This process is driven by algorithms and is often secured further by keys, which are long strings of data that encode and decode the information.
 
 ## **Token-gated Applications**
 
@@ -50,7 +50,7 @@ A virtual machine similar to the Ethereum Virtual Machine, which will enable sma
 
 ## **Distributed Hash Table (DHT)**
 
-A decentralized system of user-operators in IPFS who hold a portion of the overall data, allowing for resilient file storage and sharing.
+A distributed hash table (DHT) is a distributed system for mapping keys to values. In IPFS, the DHT is used as the fundamental component of the content routing system and acts like a cross between a catalog and a navigation system. It maps what the user is looking for to the peer that is storing the matching content ([LINK](https://docs.ipfs.tech/concepts/dht/)).&#x20;
 
 ## RAAS
 
