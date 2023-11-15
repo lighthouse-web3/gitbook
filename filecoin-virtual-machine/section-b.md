@@ -64,7 +64,7 @@ You'll then be able to query the deal's status using the `deal_status` endpoint
 
 ```bash
 # Example of how to query a job's status using its CID
-curl -X GET "https://calibration.lighthouse.storage/api/deal_status?CID=your_CID_here"
+curl -X GET "https://calibration.lighthouse.storage/api/deal_status?cid=your_CID_here"
 ```
 
 ***
