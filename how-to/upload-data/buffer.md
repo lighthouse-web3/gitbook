@@ -31,7 +31,7 @@ If you're looking to upload raw data, like a buffer or a stream, to Lighthouse, 
  * @return {object} - Returns details about the uploaded data.
 */
  
-const uploadResponse = await lighthouse.uploadBuffer(buffer, apiKey);
+const uploadResponse = await lighthouse.uploadBuffer(buffer, apiKey)
 console.log(uploadResponse)
 
 /* Sample response

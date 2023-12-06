@@ -22,7 +22,7 @@ To understand and get these conditions, Lighthouse provides a simple function:
 /**
  * Use this function to get the access conditions for an encrypted file.
  * 
- * @param {string} cid - The ID of the encrypted file.
+ * @param {string} cid - The CID of the encrypted file.
  * 
  * @return {object} - An object detailing the access conditions.
  */
@@ -44,6 +44,18 @@ const accessConditions = async() => {
 }
 
 accessConditions();
+
+/* Sample Response
+{
+  data: {
+    conditions: [],
+    conditionsSolana: [],
+    sharedTo: [],
+    owner: '0xeaf4e24ffc1a2f53c07839a74966a6611b8cb8a1',
+    cid: 'QmdCHt856NADJDjrPRWapDnwYy1KCGdByYwXPqduFYXVpM'
+  }
+}
+*/
 ```
 
 After running the code, you might get different types of responses:

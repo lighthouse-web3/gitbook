@@ -33,31 +33,31 @@ The following code will decrypt an image file previously uploaded to Lighthouse 
 **Step 3.1:** Paste the CID of the file you want to decrypt in the `decrypt` function below as the _cid_ variable.&#x20;
 
 ```javascript
-import React from "react";
-import {ethers} from 'ethers';
-import lighthouse from '@lighthouse-web3/sdk';
+import React from "react"
+import {ethers} from 'ethers'
+import lighthouse from '@lighthouse-web3/sdk'
 
 function App() {
 
-  const [fileURL, setFileURL] = React.useState(null);
+  const [fileURL, setFileURL] = React.useState(null)
 
   const encryptionSignature = async() =>{
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    const address = await signer.getAddress();
-    const messageRequested = (await lighthouse.getAuthMessage(address)).data.message;
-    const signedMessage = await signer.signMessage(messageRequested);
+    const provider = new ethers.providers.Web3Provider(window.ethereum)
+    const signer = provider.getSigner()
+    const address = await signer.getAddress()
+    const messageRequested = (await lighthouse.getAuthMessage(address)).data.message
+    const signedMessage = await signer.signMessage(messageRequested)
     return({
       signedMessage: signedMessage,
       publicKey: address
-    });
+    })
   }
 
   /* Decrypt file */
   const decrypt = async() =>{
     // Fetch file encryption key
-    const cid = "QmVkbVeTGA7RHgvdt31H3ax1gW3pLi9JfW6i9hDdxTmcGK"; //replace with your IPFS CID
-    const {publicKey, signedMessage} = await encryptionSignature();
+    const cid = "QmVkbVeTGA7RHgvdt31H3ax1gW3pLi9JfW6i9hDdxTmcGK" //replace with your IPFS CID
+    const {publicKey, signedMessage} = await encryptionSignature()
     /*
       fetchEncryptionKey(cid, publicKey, signedMessage)
         Parameters:
@@ -69,7 +69,7 @@ function App() {
       cid,
       publicKey,
       signedMessage
-    );
+    )
 
     // Decrypt file
     /*
@@ -80,17 +80,17 @@ function App() {
           mimeType: default null, mime type of file
     */
    
-    const fileType = "image/jpeg";
-    const decrypted = await lighthouse.decryptFile(cid, keyObject.data.key, fileType);
+    const fileType = "image/jpeg"
+    const decrypted = await lighthouse.decryptFile(cid, keyObject.data.key, fileType)
     console.log(decrypted)
     /*
       Response: blob
     */
 
     // View File
-    const url = URL.createObjectURL(decrypted);
-    console.log(url);
-    setFileURL(url);
+    const url = URL.createObjectURL(decrypted)
+    console.log(url)
+    setFileURL(url)
   }
 
   return (
@@ -103,7 +103,7 @@ function App() {
           null
       }
     </div>
-  );
+  )
 }
 
 export default App;

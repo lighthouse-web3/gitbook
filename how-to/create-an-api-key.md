@@ -27,9 +27,9 @@ import axios from 'axios'
 import { ethers } from 'ethers'
 import lighthouse from '@lighthouse-web3/sdk'
 
-const signAuthMessage = async(privateKey, messageRequested) =>{
-  const signer = new ethers.Wallet(privateKey);
-  const signedMessage = await signer.signMessage(messageRequested);
+const signAuthMessage = async(privateKey, verificationMessage) =>{
+  const signer = new ethers.Wallet(privateKey)
+  const signedMessage = await signer.signMessage(verificationMessage)
   return(signedMessage)
 }
 

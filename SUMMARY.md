@@ -28,6 +28,7 @@
     * [🌐 Browser Decrypt File](how-to/encryption-features/decrypt-file/decrypt-file.md)
     * [💻 NodeJS Decrypt File](how-to/encryption-features/decrypt-file/nodejs-decrypt-file.md)
 * [🗃 List Files](how-to/list-files.md)
+* [ℹ File Info](how-to/file-info.md)
 * [💰 Get Balance](how-to/get-balance.md)
 * [🔁 Retrieve File](how-to/retrieve-file.md)
 * [💾 Check for Filecoin Deals](how-to/check-for-filecoin-deals.md)

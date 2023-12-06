@@ -19,12 +19,17 @@ Users can check their account balance with the given command. It returns the dat
 {% tabs %}
 {% tab title="JS SDK" %}
 ```javascript
-const publicKey = 'YOUR_WALLET_PUBLIC_KEY';
-const balance = await lighthouse.getBalance(publicKey);
-
-/* Sample Response (Unit is Bytes)
-    {data: { dataLimit: 687194767360, dataUsed: 7012827847 }}
-*/
+const getBalance = async() => {
+  /*
+    @param {string} publicKey - your public key.
+  */
+  const publicKey = 'YOUR_WALLET_PUBLIC_KEY';
+  const balance = await lighthouse.getBalance(publicKey);
+  
+  /* Sample Response (Unit is Bytes)
+      {data: { dataLimit: 687194767360, dataUsed: 7012827847 }}
+  */
+}
 ```
 {% endtab %}
 

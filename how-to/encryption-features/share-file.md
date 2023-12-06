@@ -26,23 +26,32 @@ const shareFile = async () => {
     // Only the owner of the file can share it with another wallet address
     const cid = 'YOUR_CID' // Example: "Qma7Na9sEdeM6aQeu6bUFW54HktNnW2k8g226VunXBhrn7";
     const publicKey = 'YOUR_PUBLIC_KEY' // Example: "0xa3c960b3ba29367ecbcaf1430452c6cd7516f588";
-    const encryptionJWT = "";
-    const publicKeyUserB = ["RECEIVER_PUBLIC_KEY"]; //Example: 0x487fc2fE07c593EAb555729c3DD6dF85020B5160
+    const signedMessage = "SIGNATURE/JWT"
+    const publicKeyUserB = ["RECEIVER_PUBLIC_KEY"] //Example: 0x487fc2fE07c593EAb555729c3DD6dF85020B5160
 
     const shareResponse = await lighthouse.shareFile(
       publicKey,
       publicKeyUserB,
       cid,
       signedMessage
-    );
+    )
 
-    console.log(shareResponse);
+    console.log(shareResponse)
+    /* Sample Response
+      {
+        data: {
+          cid: 'QmTsC1UxihvZYBcrA36DGpikiyR8ShosCcygKojHVdjpGd',
+          shareTo: [ '0x487fc2fE07c593EAb555729c3DD6dF85020B5160' ],
+          status: 'Success'
+        }
+      }
+    */
   } catch (error) {
-    console.log(error);
+    console.log(error)
   }
 }
 
-shareFile();
+shareFile()
 ```
 {% endtab %}
 

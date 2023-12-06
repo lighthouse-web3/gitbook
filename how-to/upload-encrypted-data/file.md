@@ -21,121 +21,144 @@ This example demonstrates uploading files to Lighthouse, which are encrypted at 
 #### Method 1: Node JS
 
 ```javascript
-import lighthouse from '@lighthouse-web3/sdk';
+import {ethers} from "ethers"
+import lighthouse from '@lighthouse-web3/sdk'
+import kavach from "@lighthouse-web3/kavach"
 
-/**
- * This function lets you upload a file to Lighthouse with encryption enabled.
- * 
- * @param {string} path - Location of your file.
- * @param {string} apiKey - Your unique Lighthouse API key.
- * @param {string} publicKey - User's public key for encryption.
- * @param {string} signedMessage - A signed message used for authentication at encryption nodes.
- * 
- * @return {object} - Returns details of the encrypted uploaded file.
- */
+const signAuthMessage = async(privateKey) =>{
+  const signer = new ethers.Wallet(privateKey)
+  const authMessage = await kavach.getAuthMessage(signer.address)
+  const signedMessage = await signer.signMessage(authMessage.message)
+  const { JWT, error } = await kavach.getJWT(signer.address, signedMessage)
+  return(JWT)
+}
 
-const pathToFile = '/home/cosmos/Desktop/wow.jpg';
-const apiKey = 'YOUR_API_KEY_HERE';
-const publicKey = 'YOUR_PUBLIC_KEY_HERE';
-const signedMessage = 'YOUR_SIGNED_MESSAGE_HERE';
+const uploadEncrypted = async() =>{
+  /**
+   * This function lets you upload a file to Lighthouse with encryption enabled.
+   * 
+   * @param {string} path - Location of your file.
+   * @param {string} apiKey - Your unique Lighthouse API key.
+   * @param {string} publicKey - User's public key for encryption.
+   * @param {string} signedMessage - A signed message or JWT used for authentication at encryption nodes.
+   * 
+   * @return {object} - Returns details of the encrypted uploaded file.
+   */
+  
+  const pathToFile = '/home/cosmos/Desktop/wow.jpg'
+  const apiKey = 'YOUR_API_KEY_HERE'
+  const publicKey = 'YOUR_PUBLIC_KEY_HERE'
+  const signedMessage = await signAuthMessage(privateKey)
+  
+  const response = await lighthouse.uploadEncrypted(pathToFile, apiKey, publicKey, signedMessage)
+  console.log(response)
+  /* Sample Response
+  {
+    data: [
+      {
+        Name: 'decrypt.js',
+        Hash: 'QmeLFQxitPyEeF9XQEEpMot3gfUgsizmXbLha8F5DLH1ta',
+        Size: '1198'
+      }
+    ]
+  }
+  */
+}
 
-const response = await lighthouse.uploadEncrypted(pathToFile, apiKey, publicKey, signedMessage);
-
-console.log(response);
+uploadEncrypted()
 ```
 
 #### Method 2: Browser
 
 ```javascript
-import React, { useState } from "react";
-import lighthouse from "@lighthouse-web3/sdk";
+import React, { useState } from "react"
+import lighthouse from "@lighthouse-web3/sdk"
 
 function App() {
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState(null)
 
   // Define your API Key (should be replaced with secure environment variables in production)
-  const apiKey = process.env.REACT_APP_API_KEY;
+  const apiKey = process.env.REACT_APP_API_KEY
 
   // Function to sign the authentication message using Wallet
   const signAuthMessage = async () => {
-    // Check for Wallet (e.g., MetaMask) integration
     if (window.ethereum) {
       try {
-        // Request user's Wallet account
         const accounts = await window.ethereum.request({
           method: "eth_requestAccounts",
-        });
+        })
         if (accounts.length === 0) {
-          throw new Error("No accounts returned from Wallet.");
+          throw new Error("No accounts returned from Wallet.")
         }
-        const signerAddress = accounts[0];
-
-        // Fetch a message from Lighthouse to sign
-        const { message } = (await lighthouse.getAuthMessage(signerAddress))
-          .data;
-
-        // Use Wallet to sign the fetched message
+        const signerAddress = accounts[0]
+        const { message } = (await lighthouse.getAuthMessage(signerAddress)).data
         const signature = await window.ethereum.request({
           method: "personal_sign",
           params: [message, signerAddress],
-        });
-
-        // Return both the signature and signer's address
-        return { signature, signerAddress };
+        })
+        return { signature, signerAddress }
       } catch (error) {
-        console.error("Error signing message with Wallet", error);
-        return null;
+        console.error("Error signing message with Wallet", error)
+        return null
       }
     } else {
-      console.log("Please install Wallet!");
-      return null;
+      console.log("Please install Wallet!")
+      return null
     }
-  };
+  }
 
   // Function to upload the encrypted file
   const uploadEncryptedFile = async () => {
     if (!file) {
-      console.error("No file selected.");
-      return;
+      console.error("No file selected.")
+      return
     }
 
     try {
-      const authResult = await signAuthMessage();
-      if (!authResult) {
-        console.error("Failed to sign the message.");
-        return;
+      // This signature is used for authentication with encryption nodes
+      // If you want to avoid signatures on every upload refer to JWT part of encryption authentication section
+      const encryptionAuth = await signAuthMessage()
+      if (!encryptionAuth) {
+        console.error("Failed to sign the message.")
+        return
       }
 
-      const { signature, signerAddress } = authResult;
+      const { signature, signerAddress } = encryptionAuth
 
-      // Upload the encrypted file with the signed message
+      // Upload file with encryption
       const output = await lighthouse.uploadEncrypted(
-        file, // List of array of files
+        file,
         apiKey,
         signerAddress,
-        signature
-      );
-      console.log("Encrypted File Status:", output);
-
+        signature,
+        progressCallback
+      )
+      console.log("Encrypted File Status:", output)
+      /* Sample Response
+        {
+          data: [
+            Hash: "QmbMkjvpG4LjE5obPCcE6p79tqnfy6bzgYLBoeWx5PAcso",
+            Name: "izanami.jpeg",
+            Size: "174111"
+          ]
+        }
+      */
       // If successful, log the URL for accessing the file
-      if (output.data && output.data[0] && output.data[0].Hash) {
-        console.log(
-          "Visit at https://gateway.lighthouse.storage/ipfs/" +
-            output.data[0].Hash
-        );
-      }
+      console.log(
+        `Decrypt at https://decrypt.mesh3.network/evm/${output.data[0].Hash}`
+      )
     } catch (error) {
-      console.error("Error uploading encrypted file:", error);
+      console.error("Error uploading encrypted file:", error)
     }
-  };
+  }
 
   // Function to handle file selection
   const handleFileChange = (e) => {
-    const selectedFile = e.target.files;
+    const selectedFile = e.target.files
     if (selectedFile) {
-      setFile(selectedFile);
+      setFile(selectedFile)
     }
-  };
+  }
 
   return (
     <div className="App">
@@ -144,10 +167,10 @@ function App() {
         Upload Encrypted File
       </button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
 ```
 {% endtab %}
 

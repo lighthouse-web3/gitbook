@@ -36,44 +36,44 @@ _Note: In this example, we are using ES6 so we have to save the file as `filenam
 </details>
 
 ```javascript
-import * as dotenv from 'dotenv';
-dotenv.config();
-import fs from "fs";
-import { ethers } from "ethers";
-import lighthouse from '@lighthouse-web3/sdk';
+import * as dotenv from 'dotenv'
+dotenv.config()
+import fs from "fs"
+import { ethers } from "ethers"
+import lighthouse from '@lighthouse-web3/sdk'
 
 const signAuthMessage = async (publicKey, privateKey) => {
-  const provider = new ethers.JsonRpcProvider();
-  const signer = new ethers.Wallet(privateKey, provider);
-  const messageRequested = (await lighthouse.getAuthMessage(publicKey)).data.message;
-  const signedMessage = await signer.signMessage(messageRequested);
-  return signedMessage;
+  const provider = new ethers.JsonRpcProvider()
+  const signer = new ethers.Wallet(privateKey, provider)
+  const messageRequested = (await lighthouse.getAuthMessage(publicKey)).data.message
+  const signedMessage = await signer.signMessage(messageRequested)
+  return signedMessage
 }
 
 const decrypt = async () => {
-  const cid = "YOUR_CID"; //Example: 'QmbGN1YcBM25s6Ry9V2iMMsBpDEAPzWRiYQQwCTx7PPXRZ'
-  const publicKey = "YOUR_PUBLIC_KEY"; //Example: '0xa3c960b3ba29367ecbcaf1430452c6cd7516f588'
-  const privateKey = process.env.PRIVATE_KEY;
+  const cid = "YOUR_CID" //Example: 'QmbGN1YcBM25s6Ry9V2iMMsBpDEAPzWRiYQQwCTx7PPXRZ'
+  const publicKey = "YOUR_PUBLIC_KEY" //Example: '0xa3c960b3ba29367ecbcaf1430452c6cd7516f588'
+  const privateKey = process.env.PRIVATE_KEY
 
   // Get file encryption key
-  const signedMessage = await signAuthMessage(publicKey, privateKey);
+  const signedMessage = await signAuthMessage(publicKey, privateKey)
   const fileEncryptionKey = await lighthouse.fetchEncryptionKey(
     cid,
     publicKey,
     signedMessage
-  );
+  )
 
   // Decrypt File
   const decrypted = await lighthouse.decryptFile(
     cid,
     fileEncryptionKey.data.key
-  );
+  )
 
   // Save File
-  fs.createWriteStream("fileName.png").write(Buffer.from(decrypted));
+  fs.createWriteStream("fileName.png").write(Buffer.from(decrypted))
 }
 
-decrypt();
+decrypt()
 ```
 
 **Step 4:** **Customize the code:**

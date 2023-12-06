@@ -26,23 +26,30 @@ const revokeAccess = async () => {
     // Only the owner of the file can revoke access to another wallet address
     const cid = 'YOUR_CID' // Example: "Qma7Na9sEdeM6aQeu6bUFW54HktNnW2k8g226VunXBhrn7";
     const publicKey = 'YOUR_PUBLIC_KEY' // Example: "0xa3c960b3ba29367ecbcaf1430452c6cd7516f588";
-    const privateKey = process.env.PRIVATE_KEY;
-
-    const signedMessage = await signAuthMessage(publicKey, privateKey);
-    const publicKeyUserB = 'RECEIVER_PUBLIC_KEY' // Example: "0x487fc2fE07c593EAb555729c3DD6dF85020B5160";
+    const signedMessage = "SIGNATURE/JWT"
+    const publicKeyUserB = ['RECEIVER_PUBLIC_KEY'] // Example: "0x487fc2fE07c593EAb555729c3DD6dF85020B5160";
 
     const revokeResponse = await lighthouse.revokeFileAccess(
       publicKey,
-      [publicKeyUserB],
+      publicKeyUserB,
       cid,
       signedMessage
-    );
-    console.log(revokeResponse);
+    )
+    console.log(revokeResponse)
+    /* Sample Response
+    {
+      data: {
+        cid: 'QmTsC1UxihvZYBcrA36DGpikiyR8ShosCcygKojHVdjpGd',
+        revokeTo: [ '0x487fc2fE07c593EAb555729c3DD6dF85020B5160' ],
+        status: 'Success'
+      }
+    }
+    */
   } catch (error) {
-    console.log(error);
+    console.log(error)
   }
 }
-revokeAccess();
+revokeAccess()
 ```
 {% endtab %}
 
