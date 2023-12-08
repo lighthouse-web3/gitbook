@@ -330,7 +330,7 @@ You can interact with the smart contract by submitting a CID of your choice to t
 // contractInstance is the address of the contract you deployed or the aggregator-hosted RaaS address above.
 const dealStatus = await ethers.getContractAt("DealStatus", contractInstance);
 // Submit the CID of the file you want to upload to the Filecoin network in the following way.
-await dealStatus.submit(ethers.utils.toUtf8Bytes(newJob.cid), 2, 4, 40);
+await dealStatus.submitRaaS(ethers.utils.toUtf8Bytes(newJob.cid), 2, 4, 40);
 ```
 {% endcode %}
 

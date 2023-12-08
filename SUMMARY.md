@@ -35,7 +35,7 @@
 * [🔄 Handle Mutable Data](how-to/handle-mutable-data.md)
 * [📦 Migrate Files](how-to/migrate-files.md)
 * [📌 Pin CID](how-to/pin-cid.md)
-* [🗃 Create Car File](how-to/create-car-file.md)
+* [💸 Pay per use](how-to/pay-per-use.md)
 * [✂ Resize Image](how-to/resize-image.md)
 * [🖥 Use CLI Tools](how-to/overview.md)
 
