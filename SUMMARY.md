@@ -32,7 +32,7 @@
 * [💰 Get Balance](how-to/get-balance.md)
 * [🔁 Retrieve File](how-to/retrieve-file.md)
 * [💾 Check for Filecoin Deals](how-to/check-for-filecoin-deals.md)
-* [🔄 Handle Mutable Data](how-to/handle-mutable-data.md)
+* [🔄 IPNS - Handle Mutable Data](how-to/ipns-handle-mutable-data.md)
 * [📦 Migrate Files](how-to/migrate-files.md)
 * [📌 Pin CID](how-to/pin-cid.md)
 * [💸 Pay per use](how-to/pay-per-use.md)

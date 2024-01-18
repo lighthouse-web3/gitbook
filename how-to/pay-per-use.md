@@ -39,7 +39,7 @@ lighthouse.getPrice(filePathOrSize, network, token)
 /*
 filePathOrSize : file path in strings or file size in bytes.
 network : “filecoin” or “calibration”
-token : “native” or “usdc”
+token : “native” or “usdc” or (usdt for calibration)
 */
 ```
 
@@ -60,7 +60,7 @@ lighthouse.fund(price, network, token, privateKey)
 /*
 price : upload cost of a file in smallest denomination
 network : “filecoin” or “calibration”
-token : “native” or “usdc”
+token : “native” or “usdc” or (usdt for calibration)
 privateKey: private key of the account to transfer from(skip for browser app)
 */
 ```
