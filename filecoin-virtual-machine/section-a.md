@@ -311,6 +311,7 @@ saveResponseToFile(response, filePath) {
 
 In this method, we will pass a cid to Lighthouse Smart Contract deployed on the following address
 
+* **Mainnet:** `0xd928b92E6028463910b2005d118C2edE16C38a2a`
 * **Calibration Testnet**: `0x01ccBC72B2f0Ac91B79Ff7D2280d79e25f745960`
 
 The source code for this contract can be found [here](https://github.com/lighthouse-web3/raas-starter-kit/blob/main/contracts/DealStatus.sol)
