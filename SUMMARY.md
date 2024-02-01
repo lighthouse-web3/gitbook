@@ -41,8 +41,8 @@
 
 ## 💾 Filecoin Virtual Machine
 
-* [⬆ Upload, PoDSI, and Deal-Making](filecoin-virtual-machine/section-a.md)
-* [👷♂ Attaching RaaS (renew, repair, replication) Worker](filecoin-virtual-machine/section-b.md)
+* [⬆ Upload, PoDSI, and Deal-Making via SDK](filecoin-virtual-machine/section-a.md)
+* [👷♂ RaaS (renew, repair, replication) Smart Contracts](filecoin-virtual-machine/section-b.md)
 * [📖 PoDSI](filecoin-virtual-machine/podsi.md)
 * [✅ Deal Verification](filecoin-virtual-machine/deal-verification.md)
 * [👮♀ Self Hosted RaaS](filecoin-virtual-machine/self-hosted-raas.md)
