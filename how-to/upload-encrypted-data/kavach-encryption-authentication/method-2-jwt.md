@@ -11,7 +11,7 @@ This endpoint allows users to retrieve a JWT (JSON Web Token) after they've sign
 **Endpoint:**
 
 ```
-https://encryption.lighthouse.storage/api/message/api/message/get-jwt
+https://encryption.lighthouse.storage/api/message/get-jwt
 ```
 
 **Method:**
