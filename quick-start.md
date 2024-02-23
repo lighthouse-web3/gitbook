@@ -12,7 +12,7 @@ layout:
     visible: true
 ---
 
-# ⛏ Quick Start
+# ⛏️ Quick Start
 
 In this section, we will see how to
 
@@ -27,7 +27,7 @@ This guidance is in Nodejs, but in case you are using any other language, refer 
 ### Create an API Key
 
 \
-1\. Login into files Dapp\
+1\. Login into Lighthouse files dapp ([https://files.lighthouse.storage/](https://files.lighthouse.storage/))\
 2\. Go to the API key section and generate the key
 
 {% hint style="info" %}

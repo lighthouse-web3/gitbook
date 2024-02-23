@@ -1,4 +1,4 @@
-# ⬆ Upload, PoDSI, and Deal-Making via SDK
+# ⬆️ Upload, PoDSI, and Deal-Making via SDK
 
 In this **Section A**, we will discuss the following steps
 
@@ -159,7 +159,7 @@ curl https://api.lighthouse.storage/api/lighthouse/get_proof?cid=<puppy_CID>
 
 ```bash
 # An example of how to get the PoDSI for a file uploaded to testnet
-curl https://api.lighthouse.storage/api/lighthouse/get_proof?cid=QmS7Do1mDZNBJAVyE8N9r6wYMdg27LiSj5W9mmm9TZoeWp&network=testnet
+curl https://api.lighthouse.storage/api/lighthouse/get_proof?cid=QmYTaCnjNrrKCwXzC8ZLiiNJ78rsobXtfKwN8s9qCLBzVA&network=testnet
 ```
 
 The response, an example of a PoDSI proof on Calibration, should look something like this:
@@ -167,109 +167,88 @@ The response, an example of a PoDSI proof on Calibration, should look something 
 {% code title="PoDSI response" lineNumbers="true" %}
 ```json
 {
-    pieceCID:
-      'baga6ea4seaqn6s6n3irnz2ewfwlybhpjzrg6i57fzuwletj5sxcv7hz5rauewli',
-    dealInfo: [
-      {
-        dealId: 53078591,
-        storageProvider: 'f02620',
-        proof: {
-          inclusionProof: {
-            proofIndex: {
-              index: '1ffc08fd',
-              path: [
-                '624c730d13648b9d386948925afbad6980b3a08dd9db7d8d156ffd0d15f1f724',
-                '6f980e8fd5af43732faf137ff24808dc42f15ec07b5671f9c85c899550d7790a',
-                'a2f5e3c55a9ff784cc5f39b63846914caf3f0556a65ef6df5847c69df7f30200',
-                'a46614cbaee2e1c7ed71e43d3f6d8e9ed0ff4e42422f4347fc1ffd0700e24017',
-                'e919844c2aafbfe63ef9dae0990980c66d3f2548b6b3781445055b9221142901',
-                'ecbe60a5baf21f07d8f9ae98805149c6e595d7413fc591a86b06e00a0317fc22',
-                '7455143f0a3424fab9bc576ace3b6fa95bba4ea59e270fc0a1ed06381ddc9e0b',
-                '356e98673a0f1457e405ebe8bb4564cd6b537fde6e22d75d4b986abf2807be05',
-                'd29ee6aca59e9b005e74defa05e3edb54e8ecd448b2834635edb3252b516d122',
-                '77871a87f00a1d260af0050586833a209ce84fce0f783486a2a64a838abebd03',
-                '6eb665702e7b642b5cc4447b6ad5ca7eedb1de773862ca126ad7cc1a81a7fc16',
-                'aba5c7451052da6de12715f3f7943a0c65171cd405f296cfdc689f0ae0da950f',
-                '98d4f4a746d58a5b14be5ec1ed24f99fe25a7caa55769e6abe88f12bdbb79116',
-                '0c90015fc0e88c578510b0be936618deda2cf6e06f41b4f8d386defc6bf39f16',
-                'd99887b973573a96e11393645236c17b1f4c7034d723c7a99f709bb4da61162b',
-                'd0b530dbb0b4f25c5d2f2a28dfee808b53412a02931f18c499f5a254086b1326',
-                '84c0421ba0685a01bf795a2344064fe424bd52a9d24377b394ff4c4b4568e811',
-                '65f29e5d98d246c38b388cfc06db1f6b021303c5a289000bdce832a9c3ec421c',
-                'a2247508285850965b7e334b3127b0c042b1d046dc54402137627cd8799ce13a',
-                'dafdab6da9364453c26d33726b9fefe343be8f81649ec009aad3faff50617508',
-                'd941d5e0d6314a995c33ffbd4fbe69118d73d4e5fd2cd31f0f7c86ebdd14e706',
-                '514c435c3d04d349a5365fbd59ffc713629111785991c1a3c53af22079741a2f',
-                'ad06853969d37d34ff08e09f56930a4ad19a89def60cbfee7e1d3381c1e71c37',
-                '39560e7b13a93b07a243fd2720ffa7cb3e1d2e505ab3629e79f46313512cda06',
-                'ccc3c012f5b05e811a2bbfdd0f6833b84275b47bf229c0052a82484f3c1a5b3d',
-                '7df29b69773199e8f2b40b77919d048509eed768e2c7297b1f1437034fc3c62c',
-                'fa668a0a32942239e35c880bc01f031e87d3dd3d5088a325959ef00a2fe4ed00',
-                '4c4000f3b62fd9999516e7869f3d3e0c7ca983c0749c8b52f702fb1dae87692f',
-                'ec3b81a302915954112ec8a6d455751469252e0ca21319e7215b43d13c7c311c',
-              ],
-            },
-            proofSubtree: {
-              index: '9e3',
-              path: [
-                '1a70519a83a389da68342023f94c0b15bc6f6648bad14e4e27fc2c2d125d3f20',
-                'a3c0174ed523fe92d9ddde004b2edfed748160d039246b3d74afccb9a0b0c519',
-                'dc478492b1d8a2b1ccc39814ab5015f24b7e3a0fc942a3d48dabda78e1ab2a3f',
-                'e3e9663d7b67090385ff0732e29fd20c663e0815c25a11d10da506b248532012',
-                'dafdab6da9364453c26d33726b9fefe343be8f81649ec009aad3faff50617508',
-                'a77eff48b3368c4d75808dcbc0caf1d403abdd8954aeb643fed17527b557ce24',
-                '055300ed6b6526d89f2dcfaf9f59b893bc6cd53c3eaa27876db80830e85b443e',
-                '38c3e42a3376c26ea82e920e5e5b052f712ad376ef7999e9d8af035c55bcf20f',
-                '4b5cbc0110eb00a5fc1722a2f7a474b619df9c498bb80622f879b6471345521b',
-                'db084639887800382d080d44a0fd9818b0344da75a66599e1fc42887ab777035',
-                '08ca66a143b334d38a8829247688e45548bf26005401ba9e6350267fb6a7b424',
-                '60414c8e87371715a022a4f5928d898a19ced0133b90fe3b8b32726334a24b18',
-                'e671e3b30d01a29b2d05632592b36541fa221cb14d9205253896b40b7bcc1700',
-                '07406022b338845ccc7a8750cb2e927c5f2c671cae07897f5deab2e4f1bf8905',
-              ],
-            },
-          },
-          verifierData: {
-            commPc:
-              '0181e203922020df4bcdda22dce8962d97809de9cc4de477e5cd2cb24d3d95c55f9f3d88284b2d',
-            sizePc: '200000',
-          },
-          indexRecord: {
-            checksum: '2dd9de62dd6433725d537f8c43941a1b',
-            proofIndex:
-              'df4bcdda22dce8962d97809de9cc4de477e5cd2cb24d3d95c55f9f3d88284b2d',
-            proofSubtree: 5307891712,
-            size: 2097152,
-          },
-        },
-        aggPieceCID:
-          'baga6ea4seaqgcyx3xz23psubfg2c6qzhffa4fuchmydcwzamtpaf5ct46l5nola',
-        aggPieceSize: 34359738368,
-        aggCarFileSize: 34091302912,
-      },
-    ],
+    "dealInfo": [
+        {
+            "dealId": 177596,
+            "storageProvider": "17840",
+            "proof": {
+                "verifierData": {
+                    "commPc": "0181e20392202075faff211d8024d98d81df87efd40bbabfeb63c7f5200afea342da4429c01a18",
+                    "sizePc": "100"
+                },
+                "inclusionProof": {
+                    "proofIndex": {
+                        "index": "7ff00",
+                        "path": [
+                            "4d44014e19d80119f530dfc878db53c3faab0752e4665693b7a7aeff08b09822",
+                            "f04fb42fcce9613a8eae7c230acbd40d4df6abb01a5ae161f1c462cb96d3660e",
+                            "b9e8cedc33a3aa75b3c8c6c91cbffc273b0511503b6ff21bc74e884818588139",
+                            "c52bebb2782a1fd39348c490be938c2c54ea52225b12ca3e0425abfa9c4a4414",
+                            "2c3626cab40f8f6697d69e2845d8b20ed32f15e10263b291387c573e9ab92731",
+                            "fc7e928296e516faade986b28f92d44a4f24b935485223376a799027bc18f833",
+                            "08c47b38ee13bc43f41b915c0eed9911a26086b3ed62401bf9d58b8d19dff624",
+                            "b2e47bfb11facd941f62af5c750f3ea5cc4df517d5c4f16db2b4d77baec1a32f",
+                            "f9226160c8f927bfdcc418cdf203493146008eaefb7d02194d5e548189005108",
+                            "2c1a964bb90b59ebfe0f6da29ad65ae3e417724a8f7c11745a40cac1e5e74011",
+                            "fee378cef16404b199ede0b13e11b624ff9d784fbbed878d83297e795e024f02",
+                            "8e9e2403fa884cf6237f60df25f83ee40dca9ed879eb6f6352d15084f5ad0d3f",
+                            "752d9693fa167524395476e317a98580f00947afb7a30540d625a9291cc12a07",
+                            "7022f60f7ef6adfa17117a52619e30cea82c68075adf1c667786ec506eef2d19",
+                            "d99887b973573a96e11393645236c17b1f4c7034d723c7a99f709bb4da61162b",
+                            "d0b530dbb0b4f25c5d2f2a28dfee808b53412a02931f18c499f5a254086b1326",
+                            "84c0421ba0685a01bf795a2344064fe424bd52a9d24377b394ff4c4b4568e811",
+                            "8d36a00defd360383041e0f23e37dc65305efe6101af7be541911071f2b92807",
+                            "d42dd81b76df548ff381781e00083cccf43ef55c8b0aa8484d40e24f347a6801"
+                        ]
+                    },
+                    "proofSubtree": {
+                        "index": "0",
+                        "path": [
+                            "642a607ef886b004bf2c1978463ae1d4693ac0f410eb2d1b7a47fe205e5e750f",
+                            "57a2381a28652bf47f6bef7aca679be4aede5871ab5cf3eb2c08114488cb8526",
+                            "1f7ac9595510e09ea41c460b176430bb322cd6fb412ec57cb17d989a4310372f",
+                            "fc7e928296e516faade986b28f92d44a4f24b935485223376a799027bc18f833",
+                            "08c47b38ee13bc43f41b915c0eed9911a26086b3ed62401bf9d58b8d19dff624",
+                            "b2e47bfb11facd941f62af5c750f3ea5cc4df517d5c4f16db2b4d77baec1a32f",
+                            "f9226160c8f927bfdcc418cdf203493146008eaefb7d02194d5e548189005108",
+                            "2c1a964bb90b59ebfe0f6da29ad65ae3e417724a8f7c11745a40cac1e5e74011",
+                            "fee378cef16404b199ede0b13e11b624ff9d784fbbed878d83297e795e024f02",
+                            "8e9e2403fa884cf6237f60df25f83ee40dca9ed879eb6f6352d15084f5ad0d3f",
+                            "752d9693fa167524395476e317a98580f00947afb7a30540d625a9291cc12a07",
+                            "7022f60f7ef6adfa17117a52619e30cea82c68075adf1c667786ec506eef2d19",
+                            "0b8da0a9a8fddd8373c510738dac969b90f6267e84681efc945c6f7b704dd33a",
+                            "55f07e2ab4c4565c37bf8323224d5eea90ad78580e853c6755f9f42e511b740e",
+                            "84c0421ba0685a01bf795a2344064fe424bd52a9d24377b394ff4c4b4568e811",
+                            "1d570841d92d9b0d377a0b3a58fbc96e50be278ccf60b1d8a9511f5ba006233e",
+                            "cf8f34780af2dd659e587b5fffe59a653c631611acb52ce2cce58ed1fac48a39"
+                        ]
+                    }
+                },
+                "indexRecord": {
+                    "checksum": "2f6c39761557bcaac7bddb1845d06501",
+                    "proofIndex": "75faff211d8024d98d81df87efd40bbabfeb63c7f5200afea342da4429c01a18",
+                    "proofSubtree": 0,
+                    "size": 256
+                }
+            }
+        }
+    ]
 }
 ```
 {% endcode %}
 
-1. The _**pieceCID**_ is a content identifier used for referencing data in distributed information systems by it’s contents rather than its location using cryptographic hashing and self-describing formats. A core component of IPFS and IPLD, you can read more about it [here](https://docs.filecoin.io/basics/the-blockchain/proofs/).
-2. The _**proof**_ contains information that can be used to confirm whether your file was included in a specific aggregated data bundle.
-3. The _**dealInfo**_ provides details about the file's storage deal. If the "dealId" is null, it means that the storage deal has been initiated but the miner hasn't started the sealing process yet.
-4. The _**previousAggregates**_ parameter lists older aggregate IDs for the file, if the file's storage deal has been renewed. You can use these IDs to get more details about previous aggregates. To do this, use the provided API link, substituting the appropriate aggregate ID and network information.
+1. The _**proof**_ contains information that can be used to confirm whether your file was included in a specific aggregated data bundle.
+2. The _**dealInfo**_ provides details about the file's storage deal. If the "dealId" is null, it means that the storage deal has been initiated but the miner hasn't started the sealing process yet.
 
-**Previous Aggregates Info**
 
-To get information about a previous aggregate with the ID '975afcd3-ff3e-4395-a50e-24500ca0bfb7' on the Testnet, you would use the following:
 
-```bash
-curl https://api.lighthouse.storage/api/lighthouse/aggregate_info?aggregateId=975afcd3-ff3e-4395-a50e-24500ca0bfb7&network=testnet
-```
+### Step 4: Get your deal ID of your upload
 
-### Step 4: Get your deal ID from your upload
+When you upload the picture of your puppy, the on-chain deal that is made to store it on the Filecoin network is assigned a unique deal ID. You can get this deal ID from the PODSI response above.
 
-When you upload the picture of your puppy, the on-chain deal that is made to store it on the Filecoin network is assigned a unique deal ID. You can get this deal ID the same way you get the PoDSI for your file. In the above, it would be accessible through `response.data.deal_id`.
+> Under the hood, the node infrastructure is working hard to ensure that your file is included on-chain. The process of deal making can take up to about **a day**.
 
-> Under the hood, the node infrastructure is working hard to ensure that your file is included on-chain. The process of deal making can take up to about **an hour**.
+###
 
 ### Step 5: Download your file using the file’s CID
 
