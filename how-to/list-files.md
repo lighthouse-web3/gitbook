@@ -12,7 +12,7 @@ layout:
     visible: true
 ---
 
-# 🗃 List Files
+# 🗃️ List Files
 
 All uploaded files can be viewed using the given function, the results are paginated with 2000 records in one page.
 
@@ -22,7 +22,7 @@ All uploaded files can be viewed using the given function, the results are pagin
 const getUploads = async() =>{
   /*
     @param {string} apiKey - Your API key.
-    @param {number} [pageNo=1] - The page number for pagination, defaults to 1.
+    @param {number} [lastKey=null] - id of last object of previous response, defaults to null.
   */
   const response = await lighthouse.getUploads("YOUR_API_KEY")
   console.log(response)
@@ -54,7 +54,7 @@ const getUploads = async() =>{
 
 {% tab title="API" %}
 ```bash
-curl -H 'Authorization: Bearer API_KEY' 'https://api.lighthouse.storage/api/user/files_uploaded?pageNo=<pageNo>'
+curl -H 'Authorization: Bearer API_KEY' 'https://api.lighthouse.storage/api/user/files_uploaded?lastKey=null'
 ```
 {% endtab %}
 

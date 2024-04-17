@@ -62,7 +62,7 @@ curl https://api.lighthouse.storage/api/auth/get_message?publicKey=<publicKey>
 This will send a message(string) in response that has to be signed by the user, the signature will be required to generate the API key
 
 ```bash
-curl -X POST -d '{"publicKey": "value1", "signedMessage": "value2", "keyName": "value3"}' https://api.lighthouse.storage/api/auth/get_api_key
+curl -X POST -d '{"publicKey": "value1", "signedMessage": "value2", "keyName": "value3"}' https://api.lighthouse.storage/api/auth/create_api_key
 ```
 {% endtab %}
 
