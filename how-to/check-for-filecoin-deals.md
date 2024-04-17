@@ -22,31 +22,44 @@ Filecoin deal is created for all files uploaded to Lighthouse. Here is an exampl
 /*
   @param {string} cid
 */
-const status = await lighthouse.dealStatus('bafkreia4ruswe7ghckleh3lmpujo5asrnd7hrtu5r23zjk2robpcoend34')
+const status = await lighthouse.dealStatus('QmPCM9nLb4CdtWH9M5iD4oi32ARtaFxgUfgr1eMViU8dfZ')
 
 /* Sample Response
 {
   data: [
-    {
-      endEpoch: 3548449,
-      chainDealID: 45479152,
-      publishCID: 'bafy2bzacecy6dvmgluweqnyzouy54gspsec72djz5fghjuzay42cmyfw7rztc',
-      storageProvider: 'f02620',
-      dealStatus: 'Sealing: PreCommit1',
-      dealUUID: '3a03de54-a4ba-4b52-be56-e010135cf530',
-      startEpoch: 3030049,
-      aggregateIn: '63e2cd90-db13-4fdc-a2e4-61ee5bcd4239',
-      providerCollateral: '10.311 mFIL',
-      lastUpdate: 1676160004130,
-      pieceCID: 'baga6ea4seaqjqy5n2ru5n3ip2v6gq6z43qhbpp4jhqjy7unurxiscolooh2vyfq',
-      payloadCid: 'bafybeifgbexa4kg5a3tf5kp5t7m63hr2nifi6rlnnltres4bhjl7u43ljm',
-      pieceSize: 34359738368,
-      carFileSize: 34091302912,
-      dealId: 45479152,
-      miner: 'f02620',
-      content: 239214
-    }
-  ]
+  {
+    "pieceCID": "QmPCM9nLb4CdtWH9M5iD4oi32ARtaFxgUfgr1eMViU8dfZ",
+    "payloadCid": "bafkreiemizfwgot67q5mfsejmgwotaoegd3v536l2liy5oubpjhbaawfku",
+    "pieceSize": 512,
+    "carFileSize": 256,
+    "dealId": 74606268,
+    "miner": "f01771403",
+    "content": 74,
+    "dealStatus": "Sealing: Proving",
+    "startEpoch": 3714464,
+    "endEpoch": 4232864,
+    "publishCid": "bafy2bzacedupiqlo732qxawhctakxtfjyljuwjvndih22wqkkdhon4fsnsopa",
+    "dealUUID": "10ed5a44-1d76-425f-af70-270a78fefb6f",
+    "providerCollateral": "7.568 mFIL",
+    "chainDealID": 74606268
+  },
+  {
+    "pieceCID": "QmPCM9nLb4CdtWH9M5iD4oi32ARtaFxgUfgr1eMViU8dfZ",
+    "payloadCid": "bafkreiemizfwgot67q5mfsejmgwotaoegd3v536l2liy5oubpjhbaawfku",
+    "pieceSize": 512,
+    "carFileSize": 256,
+    "dealId": 75486682,
+    "miner": "f02366527",
+    "content": 74,
+    "dealStatus": "Sealing: Proving",
+    "startEpoch": 3734467,
+    "endEpoch": 7276867,
+    "publishCid": "bafy2bzaceaohycdaye2cxqdgzwhmialv7ncnaqigxgdctkmldparqpjdbiip6",
+    "dealUUID": "1209331c-89b8-43d2-b50f-ecd18b78b1fe",
+    "providerCollateral": "7.505 mFIL",
+    "chainDealID": 75486682
+  }
+]
 }
 */
 ```

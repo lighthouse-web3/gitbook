@@ -5,7 +5,7 @@
 <figure><picture><source srcset="../.gitbook/assets/Group 1707478178.png" media="(prefers-color-scheme: dark)"><img src="../.gitbook/assets/Api de.png" alt=""></picture><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
-The time between uploading and being able to get your PoDSI should only be a few minutes. You can get the PoDSI for your file by calling the `getProof` function in one of the following ways:
+The time between uploading and being able to get your PoDSI varies from testnet from mainnet. Ideally it would be 6hr in testnet and 1 day in mainnet. You can get the PoDSI for your file by calling the `getProof` function in one of the following ways:
 {% endhint %}
 
 via Axios in node.js
@@ -33,7 +33,7 @@ curl https://api.lighthouse.storage/api/lighthouse/get_proof?cid=<puppy_CID>
 
 ```bash
 # An example of how to get the PoDSI for a file uploaded to testnet
-curl https://api.lighthouse.storage/api/lighthouse/get_proof?cid=QmS7Do1mDZNBJAVyE8N9r6wYMdg27LiSj5W9mmm9TZoeWp&network=testnet
+curl https://api.lighthouse.storage/api/lighthouse/get_proof?cid=QmPCM9nLb4CdtWH9M5iD4oi32ARtaFxgUfgr1eMViU8dfZ&network=testnet
 ```
 
 The response, an example of a PoDSI proof on Calibration, should look something like this:
@@ -41,84 +41,87 @@ The response, an example of a PoDSI proof on Calibration, should look something 
 {% code title="PoDSI response" lineNumbers="true" %}
 ```json
 {
-    "pieceCID": "baga6ea4seaqgbiszkxkzmaxio5zjucpg2sd4n6abvmcsenah27g4xtjszxtzmia",
-    "pieceSize": 4194304,
-    "carFileSize": 4161536,
-    "proof": {
-        "pieceCID": "baga6ea4seaqn6s6n3irnz2ewfwlybhpjzrg6i57fzuwletj5sxcv7hz5rauewli",
-        "id": "19845d2a-4fae-426c-893d-491770c317e8",
-        "lastUpdate": 1692888301,
-        "fileProof": {
-            "verifierData": {
-                "commPc": "0181e203922020df4bcdda22dce8962d97809de9cc4de477e5cd2cb24d3d95c55f9f3d88284b2d",
-                "sizePc": "200000"
-            },
-            "inclusionProof": {
-                "proofIndex": {
-                    "index": "ffe0",
-                    "path": [
-                        "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb0b",
-                        "3731bb99ac689f66eef5973e4a94da188f4ddcae580724fc6f3fd60dfd488333",
-                        "642a607ef886b004bf2c1978463ae1d4693ac0f410eb2d1b7a47fe205e5e750f",
-                        "57a2381a28652bf47f6bef7aca679be4aede5871ab5cf3eb2c08114488cb8526",
-                        "1f7ac9595510e09ea41c460b176430bb322cd6fb412ec57cb17d989a4310372f",
-                        "fc7e928296e516faade986b28f92d44a4f24b935485223376a799027bc18f833",
-                        "08c47b38ee13bc43f41b915c0eed9911a26086b3ed62401bf9d58b8d19dff624",
-                        "b2e47bfb11facd941f62af5c750f3ea5cc4df517d5c4f16db2b4d77baec1a32f",
-                        "f9226160c8f927bfdcc418cdf203493146008eaefb7d02194d5e548189005108",
-                        "2c1a964bb90b59ebfe0f6da29ad65ae3e417724a8f7c11745a40cac1e5e74011",
-                        "fee378cef16404b199ede0b13e11b624ff9d784fbbed878d83297e795e024f02",
-                        "8e9e2403fa884cf6237f60df25f83ee40dca9ed879eb6f6352d15084f5ad0d3f",
-                        "752d9693fa167524395476e317a98580f00947afb7a30540d625a9291cc12a07",
-                        "7022f60f7ef6adfa17117a52619e30cea82c68075adf1c667786ec506eef2d19",
-                        "d99887b973573a96e11393645236c17b1f4c7034d723c7a99f709bb4da61162b",
-                        "df4bcdda22dce8962d97809de9cc4de477e5cd2cb24d3d95c55f9f3d88284b2d"
-                    ]
-                },
-                "proofSubtree": {
-                    "index": "0",
-                    "path": [
-                        "83ccb895e53b292546ccda9c45017c247ffa54b406f492605c9148e09aa2f208"
-                    ]
-                }
-            },
-            "indexRecord": {
-                "checksum": "4a8e39cfd5af583596f54f95954a991b",
-                "proofIndex": "df4bcdda22dce8962d97809de9cc4de477e5cd2cb24d3d95c55f9f3d88284b2d",
-                "proofSubtree": 0,
-                "size": 2097152
-            }
-        }
-    },
-    "dealInfo": [
-        {
-            "dealUUID": "f064d4d5-7b35-4647-8df7-91fb8fb99f23",
-            "dealId": 13279,
-            "storageProvider": "t017840"
+  "dealInfo": [
+    {
+      "dealId": 180313,
+      "storageProvider": "17840",
+      "proof": {
+        "verifierData": {
+          "commPc": "0181e203922020ff1684fe9f42dcd606013436d106b3f68a12d8a745bcda239fff0c61a7cf8d00",
+          "sizePc": "200"
         },
-        {
-            "dealUUID": "ae8f6709-5ca0-4944-abb1-cd04cf05e0c3",
-            "dealId": null,
-            "storageProvider": "t017819"
+        "inclusionProof": {
+          "proofIndex": {
+            "index": "ffe08",
+            "path": [
+              "1bbfcc7cee5720e9f54ba23b3def5e2acc29f471eb785fc61bc89bcc85b86109",
+              "6a28d9a48b458c0b7441547968b45dd41f13a97834c88ce5cb70ee8a4801511d",
+              "81b7c84fdaa0b148ccd5f1bfffdb31ebd2e768957431b6f189b441f3ab1a9d28",
+              "63ddfa0ccc8ae6af308a223ab32c35952fcc41c6bf45a546e0ad845861c8b000",
+              "4bed83295e43af494c8d2449e9b41ee4b965487d985dcb4a50f5e7d3be672f3c",
+              "fc7e928296e516faade986b28f92d44a4f24b935485223376a799027bc18f833",
+              "08c47b38ee13bc43f41b915c0eed9911a26086b3ed62401bf9d58b8d19dff624",
+              "b2e47bfb11facd941f62af5c750f3ea5cc4df517d5c4f16db2b4d77baec1a32f",
+              "f9226160c8f927bfdcc418cdf203493146008eaefb7d02194d5e548189005108",
+              "2c1a964bb90b59ebfe0f6da29ad65ae3e417724a8f7c11745a40cac1e5e74011",
+              "fee378cef16404b199ede0b13e11b624ff9d784fbbed878d83297e795e024f02",
+              "8e9e2403fa884cf6237f60df25f83ee40dca9ed879eb6f6352d15084f5ad0d3f",
+              "752d9693fa167524395476e317a98580f00947afb7a30540d625a9291cc12a07",
+              "7022f60f7ef6adfa17117a52619e30cea82c68075adf1c667786ec506eef2d19",
+              "d99887b973573a96e11393645236c17b1f4c7034d723c7a99f709bb4da61162b",
+              "d0b530dbb0b4f25c5d2f2a28dfee808b53412a02931f18c499f5a254086b1326",
+              "84c0421ba0685a01bf795a2344064fe424bd52a9d24377b394ff4c4b4568e811",
+              "65f29e5d98d246c38b388cfc06db1f6b021303c5a289000bdce832a9c3ec421c",
+              "4d30309453ba8162df5fad5ca674bfddbfa77f04a9d34f452dd3f435d1548220",
+              "308b7ac653ca76bf698031d74fd325e72ab4b157d9e93d0f1366be5103f05422"
+            ]
+          },
+          "proofSubtree": {
+            "index": "3800",
+            "path": [
+              "650962983d59cde36b83cf10029fd4a6839afadd4e4e89c001771762252c9b10",
+              "1f7ac9595510e09ea41c460b176430bb322cd6fb412ec57cb17d989a4310372f",
+              "fc7e928296e516faade986b28f92d44a4f24b935485223376a799027bc18f833",
+              "08c47b38ee13bc43f41b915c0eed9911a26086b3ed62401bf9d58b8d19dff624",
+              "b2e47bfb11facd941f62af5c750f3ea5cc4df517d5c4f16db2b4d77baec1a32f",
+              "f9226160c8f927bfdcc418cdf203493146008eaefb7d02194d5e548189005108",
+              "2c1a964bb90b59ebfe0f6da29ad65ae3e417724a8f7c11745a40cac1e5e74011",
+              "fee378cef16404b199ede0b13e11b624ff9d784fbbed878d83297e795e024f02",
+              "8e9e2403fa884cf6237f60df25f83ee40dca9ed879eb6f6352d15084f5ad0d3f",
+              "752d9693fa167524395476e317a98580f00947afb7a30540d625a9291cc12a07",
+              "7022f60f7ef6adfa17117a52619e30cea82c68075adf1c667786ec506eef2d19",
+              "570a9f7de6019f338772c16598597e8028ed889de1b4006dacd0f575312e5a25",
+              "e178f9b57a0d203a06f569eea8c1af23b161a37b6495ca14ccd8fa474fa99113",
+              "fc042755d7bc4bc5a8e674dc61d1792b3e9ddb1506547bdc41c5f11dee3fbc18",
+              "bf3885f14f576c4e82ba97e432e2382d3c5b306020e5cf4a5670dec62cd59b37",
+              "3efc419f4223d704ccc9621fd253b1d63b4f105294d56dc6b70c8ec140cd9f03",
+              "37ea21c10202b87c22436af983948e8ca5773f356e318a0b502ddb5968074a04"
+            ]
+          }
+        },
+        "indexRecord": {
+          "checksum": "54718803470b48fa764f8ede503bbf1b",
+          "proofIndex": "ff1684fe9f42dcd606013436d106b3f68a12d8a745bcda239fff0c61a7cf8d00",
+          "proofSubtree": 7340032,
+          "size": 512
         }
-    ],
-    "previousAggregates": [
-        "975afcd3-ff3e-4395-a50e-24500ca0bfb7"
-    ]
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
 
-1. The _**pieceCID**_ is a content identifier used for referencing data in distributed information systems by it’s contents rather than its location using cryptographic hashing and self-describing formats. A core component of IPFS and IPLD, you can read more about it [here](https://docs.filecoin.io/basics/the-blockchain/proofs/).
-2. The _**proof**_ contains information that can be used to confirm whether your file was included in a specific aggregated data bundle.
-3. The _**dealInfo**_ provides details about the file's storage deal. If the "dealId" is null, it means that the storage deal has been initiated but the miner hasn't started the sealing process yet.
-4. The _**previousAggregates**_ parameter lists older aggregate IDs for the file, if the file's storage deal has been renewed. You can use these IDs to get more details about previous aggregates. To do this, use the provided API link, substituting the appropriate aggregate ID and network information.
+1. The _**dealId**_ provides details about the file's storage deal. If the "dealId" is null, it means that the storage deal has been initiated but the miner hasn't started the sealing process yet.
+2. The **storageProvider** details about SP with which your deal has been made.
+3. The _**proof**_ contains information that can be used to confirm whether your file was included in a specific aggregated data bundle.
 
-**Previous Aggregates Info**
 
-To get information about a previous aggregate with the ID '975afcd3-ff3e-4395-a50e-24500ca0bfb7' on the Testnet, you would use the following:
+
+**CID information**
+
+To get information about cid "QmPCM9nLb4CdtWH9M5iD4oi32ARtaFxgUfgr1eMViU8dfZ", you would use the following:
 
 ```bash
-curl https://api.lighthouse.storage/api/lighthouse/aggregate_info?aggregateId=975afcd3-ff3e-4395-a50e-24500ca0bfb7&network=testnet
+curl https://api.lighthouse.storage/api/lighthouse/deal_status?cid=QmPCM9nLb4CdtWH9M5iD4oi32ARtaFxgUfgr1eMViU8dfZ
 ```
-
