@@ -1,10 +1,14 @@
 ---
-description: Migrating backup files to Lighthouse Storage
+description: Migrating files to Lighthouse Storage
 ---
 
 # 📦 Migrate Files
 
-Migrating files using the Files Dapp to transfer a set of CIDs to the Files Dapp UI can make the process of handling large-scale data transfers more efficient.
+You can easily migrate files to Lighthouse if you are already using any IPFS Provider like NFT Storage Classic, Pinata, Web3 Storage or Filebase usings the steps below.&#x20;
+
+{% hint style="info" %}
+Alternatively, one can write script to [upload directly](upload-data/) via our SDK or CLI&#x20;
+{% endhint %}
 
 ### Step 1: Access the Platform
 
