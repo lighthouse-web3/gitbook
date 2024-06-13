@@ -65,6 +65,7 @@
 ## Concepts
 
 * [Glossary](concepts/glossary.md)
+* [IPFS CID Transition to v1](concepts/ipfs-cid-transition-to-v1.md)
 
 ## Support
 
