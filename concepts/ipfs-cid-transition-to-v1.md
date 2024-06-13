@@ -28,7 +28,7 @@ Existing files with CID v0 will continue to work, but any new content added to t
 
 ### How will the transition affect users?
 
-For the most part, users should experience little to no disruption. However, it is important to update any hardcoded CID references to ensure compatibility with the new standard.
+For the most part, users should experience little to no disruption.&#x20;
 
 ### Additional Resources
 
