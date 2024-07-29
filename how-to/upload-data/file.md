@@ -28,7 +28,6 @@ import lighthouse from '@lighthouse-web3/sdk'
  * 
  * @param {string} path - The location of your file or folder.
  * @param {string} apiKey - Your personal API key for Lighthouse.
- * @param {boolean} multi - Specify if you are uploading multiple files or folders.
  * @param {object} dealParameters - Custom parameters for file storage deals(check FVM section).
  * @return {object} - Returns details about the uploaded file.
 */
@@ -69,7 +68,7 @@ function App() {
     // Both file and folder are supported by upload function
     // Third parameter is for multiple files, if multiple files are to be uploaded at once make it true
     // Fourth parameter is the deal parameters, default null
-    const output = await lighthouse.upload(file, "YOUR_API_KEY", false, null, progressCallback)
+    const output = await lighthouse.upload(file, "YOUR_API_KEY", null, progressCallback)
     console.log('File Status:', output)
     /*
       output:
