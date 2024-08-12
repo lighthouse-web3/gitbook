@@ -2,7 +2,7 @@
 description: List of chains supported for encryption access control.
 ---
 
-# ⛓ Chains Supported
+# ⛓️ Chains Supported
 
 \
 **Mainnet**
@@ -15,6 +15,7 @@ description: List of chains supported for encryption access control.
 6. BSC (binance chain)
 7. AVAX
 8. Fuji
+9. Forma
 
 **Testnets**
 
@@ -28,6 +29,7 @@ description: List of chains supported for encryption access control.
 8. Rinkeby
 9. OptimismGoerli
 10. OptimismKovan
+11. Forma Testnet (Forma\_Sketchpad)
 
 Note: name is not case sensitive.
 
