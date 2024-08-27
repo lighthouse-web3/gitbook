@@ -48,8 +48,10 @@ accessConditions();
 /* Sample Response
 {
   data: {
+    aggregator: "[1]"
     conditions: [],
     conditionsSolana: [],
+    conditionsCoreum: [],
     sharedTo: [],
     owner: '0xeaf4e24ffc1a2f53c07839a74966a6611b8cb8a1',
     cid: 'QmdCHt856NADJDjrPRWapDnwYy1KCGdByYwXPqduFYXVpM'

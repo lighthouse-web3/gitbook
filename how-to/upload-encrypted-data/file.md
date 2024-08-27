@@ -48,6 +48,7 @@ const uploadEncrypted = async() =>{
   const pathToFile = '/home/cosmos/Desktop/wow.jpg'
   const apiKey = 'YOUR_API_KEY_HERE'
   const publicKey = 'YOUR_PUBLIC_KEY_HERE'
+  const privateKey= 'YOUR_PRIVATE_KEY_HERE'
   const signedMessage = await signAuthMessage(privateKey)
   
   const response = await lighthouse.uploadEncrypted(pathToFile, apiKey, publicKey, signedMessage)

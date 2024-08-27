@@ -24,30 +24,34 @@ const getUploads = async() =>{
     @param {string} apiKey - Your API key.
     @param {number} [lastKey=null] - id of last object of previous response, defaults to null.
   */
-  const response = await lighthouse.getUploads("YOUR_API_KEY")
+  const response = await lighthouse.getUploads("YOUR_API_KEY",null)
   console.log(response)
   
   /* Sample response
     {
       data: {
-        fileList: [
+        "fileList": [
           {
-            publicKey: '0x4e6d5be93ab7c1f75e30dd5a7f574f42f675eed3',
-            fileName: 'sample.txt',
-            mimeType: 'text/plain',
-            txHash: '',
-            status: 'queued',
-            createdAt: 1691087810426,
-            fileSizeInBytes: '14',
-            cid: 'QmQK9V46b4vpNUd7pe7EcCqihBEmcSLH4NVNWukLJhGzgN',
-            id: '1b2623bd-64ca-4434-8619-24c9a1eca840',
-            lastUpdate: 1691087810426,
-            encryption: false
-          }
-        ]
+              "sentForDeal": "",
+              "publicKey": "",
+              "fileName": "",
+              "mimeType": "",
+              "createdAt":,
+              "fileSizeInBytes": "",
+              "cid": "",
+              "id": "b5f60ba0-b708-41a3-b0f2-5c808ce63b48",
+              "lastUpdate":,
+              "encryption": true
+          },
+        ],
+        "totalFiles": 2000
       }
     }
   */
+  
+  /* Based on the totalFiles send user can evalutate if the next request needs to be send in the next request id of the last element of the previous response needs to be send.*/
+  const response = await lighthouse.getUploads("YOUR_API_KEY","b5f60ba0-b708-41a3-b0f2-5c808ce63b48")
+
 }
 ```
 {% endtab %}
@@ -65,4 +69,8 @@ lighthouse-web3 get-uploads
 {% endtab %}
 {% endtabs %}
 
-**Note:** To navigate to different pages of results, you need to pass the `id` of the last object from the previous response as the `lastKey` parameter in the function call. This will fetch the next set of records starting from the given `lastKey`.
+**Note:** To navigate to different pages of results, you need to pass the `id` of the last object from the previous response as the `lastKey` parameter in the function call. This will fetch the next set of records starting from the given `lastKey`.&#x20;
+
+
+
+\

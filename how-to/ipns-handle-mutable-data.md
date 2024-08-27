@@ -2,7 +2,7 @@
 description: Using IPNS to handle mutable data
 ---
 
-# 🔄 Handle Mutable Data
+# 🔄 IPNS - Handle Mutable Data
 
 IPNS (InterPlanetary Name System) is a system that allows you to create mutable pointers to data in the IPFS network. In simpler terms, it's like a dynamic address that always points to the latest version of your content. Using the Lighthouse SDK, you can easily create, publish, fetch, and remove IPNS records.
 
@@ -78,6 +78,12 @@ const allKeys = await lighthouse.getAllKeys(apiKey)
 #### Step 4: Remove an IPNS Key
 
 ```javascript
+const pubResponse = await lighthouse.publishRecord("YOUR_IPFS_HASH",ipns_name,apiKey)
+```
+
+#### Step 5: Update an IPNS Key
+
+```javascript
 const removeRes = await lighthouse.removeKey(keyResponse.data.ipnsName, apiKey)
 /* Sample Response
 {
@@ -135,3 +141,6 @@ lighthouse-web3 ipns --remove ca9e19dcf8e54e86a4dce40b155ffcad
 ```
 {% endtab %}
 {% endtabs %}
+
+
+

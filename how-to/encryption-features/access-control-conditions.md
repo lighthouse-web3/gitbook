@@ -14,7 +14,7 @@ description: Type of Access Control conditions supported
 
 Here are examples of how various access conditions can be applied.
 
-
+EVM Conditions
 
 {% code lineNumbers="true" %}
 ```javascript
@@ -82,6 +82,96 @@ Here are examples of how various access conditions can be applied.
         comparator: ">",
             value: "133493"
      },
+}
+```
+{% endcode %}
+
+Solana Conditions
+
+{% code lineNumbers="true" %}
+```javascript
+/*
+    id here represent condition number
+    chain is the blockchain network on which conditions should be applied (DEVNET,TESTNET,MAINNET)
+    method is the name of the function to invoke (  getBlockHeight,getBalance,getLastBlockTime,getTokenAccountsByOwner)
+    standardContractType is the type of contract, can be spl-token or custom.
+
+    In case of spl-token , pdaInterface is also passed to the condition object with parameter (selector and offset)
+    returnValueTest is what to test from functions response >, ==, < 
+    parameters if the function takes any parameter as input mention it
+    inputArrayType type of parameter that the function is taking as input
+    outputType is the type of response returned by the function
+*/
+
+//balance condition
+{
+   id: 1,
+   chain: "DEVNET",
+   method: "getBalance",
+   standardContractType: "",
+   contractAddress: "<address>",
+   returnValueTest: { comparator: ">=", value: "1" },
+   parameters: [":userAddress"],
+}
+
+//spl-token condition
+
+{
+   id: 1,
+   chain: "DEVNET",
+   method: "getTokenAccountsByOwner",
+   standardContractType: "spl-token",
+   contractAddress: "<address>",
+   pdaInterface: { selector: "amount", offset: "0" },
+ returnValueTest: { comparator: ">=", value: "1" },
+   parameters: [":userAddress"],
+}
+```
+{% endcode %}
+
+Coreum Conditions
+
+{% code lineNumbers="true" %}
+```javascript
+/*
+    id here represent condition number
+    chain is the blockchain network on which conditions should be applied (Coreum_Mainnet,Coreum_Testnet,Coreum_Devnet)
+    method is the name of the function to invoke (  getFtsByAddress,getNftsByAddress,getLastBlockTime)
+    standardContractType is the type of contract, can only be custom || "".
+
+    In case of getNftsByAddress, classid is passed instead of contractAddress. 
+    In case of getFtsByAddress, denom is passed instead of contractAddress.
+ 
+    returnValueTest is what to test from functions response >, ==, < 
+    parameters if the function takes any parameter as input mention it
+    inputArrayType type of parameter that the function is taking as input
+    outputType is the type of response returned by the function
+*/
+
+//getFtsByAddress condition
+
+
+{
+   id: 1,
+   chain: "Coreum_Mainnet",
+   method: "getFtsByAddress",
+   standardContractType: "",
+   denom : "ucore",
+   returnValueTest: { comparator: ">=", value: "1" },
+   parameters: [":userAddress"],
+}
+
+//getNftsByAddress condition
+
+
+{
+   id: 1,
+   chain: "Coreum_Mainnet",
+   method: "getNftsByAddress",
+   standardContractType: "",
+   classid: "nft_classid",
+   returnValueTest: { comparator: ">=", value: "1" },
+   parameters: [":userAddress"],
 }
 ```
 {% endcode %}
