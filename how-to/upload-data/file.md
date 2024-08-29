@@ -17,7 +17,7 @@ layout:
 Any kind of file can be uploaded to Lighthouse refer to the code example given below. For developers building on other programming languages use the API directly.
 
 {% hint style="info" %}
-Lighthouse currently allows a maximum file size of 28GB to be uploaded in a single request.
+Lighthouse currently allows a maximum file size of 24GB to be uploaded in a single request.
 {% endhint %}
 
 {% tabs %}

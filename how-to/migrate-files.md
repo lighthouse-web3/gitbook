@@ -23,7 +23,7 @@ Click on the `migration` option in the left panel.
 ### Step 3: Create a New Migration
 
 {% hint style="info" %}
-Maximum 5000 CID migration is possible in a single request and The CID migration process may require approximately 24 hours to fully complete
+Maximum 10000 CID migration is possible in a single request and The CID migration process may require approximately 24 hours to fully complete
 {% endhint %}
 
 Select the `Create Migration` button to start the process.

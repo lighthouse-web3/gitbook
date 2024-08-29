@@ -3,10 +3,9 @@
 In this **Section A**, we will discuss the following steps
 
 1. [Upload your first file](section-a.md#step-1-upload-your-first-file-using-lighthouse-sdk)&#x20;
-2. [Set deal parameters](section-a.md#step-2-set-deal-parameters)
-3. [Understanding PoDSI: Getting the PoDSI for your file](section-a.md#step-3-understanding-podsi-getting-the-podsi-for-your-file)
-4. [Get your deal ID from your upload](section-a.md#step-4-get-your-deal-id-from-your-upload)
-5. [Download your file using the file’s CID](section-a.md#step-5-download-your-file-using-the-files-cid)
+2. [Understanding PoDSI: Getting the PoDSI for your file](section-a.md#step-2-understanding-podsi-getting-the-podsi-for-your-file)
+3. [Get your deal ID from your upload](section-a.md#step-3-get-your-deal-id-of-your-upload)
+4. [Download your file using the file’s CID](section-a.md#step-4-download-your-file-using-the-files-cid)
 
 
 
@@ -28,103 +27,7 @@ const uploadResponse = await lighthouse.upload('/path/to/adorable/dog.jpg', 'YOU
 ```
 {% endcode %}
 
-{% hint style="info" %}
-Previously, if the file of your puppy was too small, it would encounter issues being stored on the chain due to size minimums enforced by on-chain deal makers. The SDK helps you get around this by adding mock data (in deal parameters below) to your file to meet the minimum size requirements.
-{% endhint %}
-
-**B. To upload a file with replication:**
-
-_Replication_ is the process of making multiple copies of your file and storing them on the Filecoin network. This ensures that if one storage provider goes down, you'll still be able to retrieve your file from another storage provider.
-
-{% hint style="info" %}
-You can get the API key from [https://files.lighthouse.storage/](https://files.lighthouse.storage/) or via [CLI](broken-reference)&#x20;
-{% endhint %}
-
-{% code lineNumbers="true" %}
-```javascript
-import lighthouse from "@lighthouse-web3/sdk";
-// ... other code
-// Indicates that the deal to maintain your file will be replicated to a total of two copies on the network.
-const dealParams = {
-  num_copies: 2,
-};
-// The `false` indicates that we're uploading a single file.
-// Returns a CID (Content ID) for your file that you can use for PoDSI verification.
-const uploadResponse = await lighthouse.upload('/path/to/adorable/dog.jpg', 'YOUR_API_KEY', false, dealParams);
-```
-{% endcode %}
-
-### Step 2: Set Deal Parameters
-
-{% hint style="info" %}
-**Note**: Deal parameters are currently supported on the Calibration testnet. If you don't specify deal parameters, then deal is made on Filecoin mainnet
-{% endhint %}
-
-When uploading a file, you can customize how it's stored in Lighthouse using the **deal parameters**:
-
-**num\_copies**: Decide how many backup copies you want for your file. The Max limit is 3. For instance, if set to 3, your file will be stored by 3 different storage providers.
-
-**repair\_threshold**: Determines when a storage sector is considered "broken" if a provider fails to confirm they still have your file. It's measured in "epochs", with 28800 epochs being roughly 10 days.
-
-**renew\_threshold**: Specifies when your storage deal should be renewed. It's also measured in epochs.
-
-**miner**: If you have preferred miners, list their addresses here. For testing, it's recommended to use t017840.
-
-**network**: This should always be set to 'calibration' (for RAAS services to function) unless you want to use the mainnet.
-
-**add\_mock\_data**: This field is used to make smaller files reach the minimum file size accepted on the Lighthouse calibration test network (1 MB). If your file is less than the minimum size, `add_mock_data` will append a mock file to ensure it meets the storage requirements. The value indicates the size in MB. For instance, if your file is 256KB, the add\_mock\_data should be set to 2 to the minimum target.
-
-{% hint style="info" %}
-The term "epoch" can be thought of as a time unit in the filecoin network under which various operations occur, like PoST, PoRep, etc., with 2880 epochs equivalent to a day.
-{% endhint %}
-
-Example:
-
-```javascript
-// Sample JSON of deal parameters
-const dealParams = {
-  num_copies: 2,
-  repair_threshold: 28800,
-  renew_threshold: 240,
-  miner: ["t017840"],
-  network: 'calibration',
-  add_mock_data: 2
-};
-```
-
-<pre class="language-javascript" data-line-numbers><code class="lang-javascript"><strong>const path = "/path/to/file.jpg"
-</strong>const apiKey = "thisisaateststring"
-
-const dealParam_default = {
-	"network":"calibration"
-}
-
-// adds mock data for satisfying minimum file size
-const dealParam_mock = {
-	"add_mock_data": 4,
-	"network":"calibration"
-}
-
-// To ignore a deal parameter set it as null
-const dealParam_ignore = {
-	"replication_num_copies":null,
-	"repair_threshold":null,
-	"renewal_threshold":null,
-	"network":"calibration"
-}
-
-// Default parameters set. All RaaS workers enabled, any miners can take the deal. 2 MiB mock file added.
-const response = await lighthouse.upload(path, apiKey, false,dealParam_default);
-
-
-//this should be used if the user wants to bundle in a 4MiB mock file with their user submission.
-const response = await lighthouse.upload(path, apiKey, false, dealParam_mock);
-
-//this needs to be used by the self hosted RaaS module, and the aggregator SDK after the event gets emitted. Turns off all RaaS workers. 2 MiB mock file added.
-const response = await lighthouse.upload(path, apiKey, false, dealParam_ignore);
-</code></pre>
-
-### Step 3: Understanding PoDSI: Getting the PoDSI for your file
+### Step 2: Understanding PoDSI: Getting the PoDSI for your file
 
 Now that you've registered the picture of your puppy, how would you know that it's actually being maintained on the Filecoin network? This is where the PoDSI comes in. The PoDSI is a proof that your file is being maintained on the Filecoin network.
 
@@ -240,17 +143,13 @@ The response, an example of a PoDSI proof on Calibration, should look something 
 1. The _**proof**_ contains information that can be used to confirm whether your file was included in a specific aggregated data bundle.
 2. The _**dealInfo**_ provides details about the file's storage deal. If the "dealId" is null, it means that the storage deal has been initiated but the miner hasn't started the sealing process yet.
 
-
-
-### Step 4: Get your deal ID of your upload
+### Step 3: Get your deal ID of your upload
 
 When you upload the picture of your puppy, the on-chain deal that is made to store it on the Filecoin network is assigned a unique deal ID. You can get this deal ID from the PODSI response above.
 
 > Under the hood, the node infrastructure is working hard to ensure that your file is included on-chain. The process of deal making can take up to about **a day**.
 
-###
-
-### Step 5: Download your file using the file’s CID
+### Step 4: Download your file using the file’s CID
 
 Now that your file is stored on the Filecoin network, you can retrieve it using its CID. You can do this by calling the `download` function in one of the following ways:
 
