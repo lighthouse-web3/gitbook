@@ -16,6 +16,7 @@ description: List of chains supported for encryption access control.
 7. AVAX
 8. Fuji
 9. Forma
+10. Destra
 
 **Testnets**
 
@@ -30,6 +31,7 @@ description: List of chains supported for encryption access control.
 9. OptimismGoerli
 10. OptimismKovan
 11. Forma Testnet (Forma\_Sketchpad)
+12. Destra\_Testnet
 
 Note: name is not case sensitive.
 
