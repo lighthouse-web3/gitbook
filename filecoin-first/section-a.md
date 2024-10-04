@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # ⬆️ Upload, PoDSI, and Deal-Making via SDK
 
 In this **Section A**, we will discuss the following steps

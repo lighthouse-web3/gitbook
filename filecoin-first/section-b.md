@@ -2,9 +2,10 @@
 description: >-
   Attaching a RaaS worker on-demand to trigger storage deals for files uploaded
   through the Lighthouse Smart Contract
+hidden: true
 ---
 
-# 👷♂ RaaS (renew, repair, replication) Smart Contracts
+# 👷‍♂️ RaaS (renew, repair, replication) Smart Contracts
 
 In this section B, we will discuss following:
 

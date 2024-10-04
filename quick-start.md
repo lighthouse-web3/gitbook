@@ -110,4 +110,4 @@ data: [
 ### Verify Filecoin Deal
 
 \
-Lighthouse aggregates files uploaded by multiple users into a 32GB CAR file and stores this CAR with a storage provider. To verify that your file was part of the Filecoin deal, you can use the PODSI verification. Refer to the [Filecoin Virtual Machine](filecoin-virtual-machine/podsi.md) section for more details.
+Lighthouse aggregates files uploaded by multiple users into a 32GB CAR file and stores this CAR with a storage provider. To verify that your file was part of the Filecoin deal, you can use the PODSI verification. Refer to the [Filecoin Virtual Machine](filecoin-first/podsi.md) section for more details.

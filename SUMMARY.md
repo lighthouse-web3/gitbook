@@ -39,13 +39,15 @@
 * [✂️ Resize Image](how-to/resize-image.md)
 * [🖥️ Use CLI Tools](how-to/overview.md)
 
-## 💾 Filecoin Virtual Machine
+## 💾 Filecoin First
 
-* [⬆️ Upload, PoDSI, and Deal-Making via SDK](filecoin-virtual-machine/section-a.md)
-* [👷‍♂️ RaaS (renew, repair, replication) Smart Contracts](filecoin-virtual-machine/section-b.md)
-* [📖 PoDSI](filecoin-virtual-machine/podsi.md)
-* [✅ Deal Verification](filecoin-virtual-machine/deal-verification.md)
-* [👮‍♀️ Self Hosted RaaS](filecoin-virtual-machine/self-hosted-raas.md)
+* [⚙️ Usage](filecoin-first/usage.md)
+* [💰 Pay Per Deal](filecoin-first/pay-per-deal.md)
+* [⬆️ Upload, PoDSI, and Deal-Making via SDK](filecoin-first/section-a.md)
+* [👷‍♂️ RaaS (renew, repair, replication) Smart Contracts](filecoin-first/section-b.md)
+* [📖 PoDSI](filecoin-first/podsi.md)
+* [✅ Deal Verification](filecoin-first/deal-verification.md)
+* [👮‍♀️ Self Hosted RaaS](filecoin-first/self-hosted-raas.md)
 
 ## Tutorials
 

@@ -1,4 +1,8 @@
-# 👮♀ Self Hosted RaaS
+---
+hidden: true
+---
+
+# 👮‍♀️ Self Hosted RaaS
 
 Alternatively, developers can also self-host their own RaaS (Repair, Replication, Renewal worker).&#x20;
 
