@@ -16,4 +16,4 @@ The integration of zkTLS with decentralized storage enables secure, verifiable a
 
 ## Demo
 
-Checkout how to use zkTLS in lighthouse
+[Checkout how to use zkTLS in lighthouse](https://docs.lighthouse.storage/lighthouse-1/how-to/encryption-features/access-control-with-zktls)
