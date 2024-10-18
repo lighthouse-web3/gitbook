@@ -27,6 +27,7 @@
   * [🔓 Decrypt File](how-to/encryption-features/decrypt-file/README.md)
     * [🌐 Browser Decrypt File](how-to/encryption-features/decrypt-file/decrypt-file.md)
     * [💻 NodeJS Decrypt File](how-to/encryption-features/decrypt-file/nodejs-decrypt-file.md)
+  * [🚪 Access control with zkTLS](how-to/encryption-features/access-control-with-zktls.md)
 * [🗃️ List Files](how-to/list-files.md)
 * [ℹ️ File Info](how-to/file-info.md)
 * [💰 Get Balance](how-to/get-balance.md)
@@ -38,6 +39,10 @@
 * [💸 Pay per use](how-to/pay-per-use.md)
 * [✂️ Resize Image](how-to/resize-image.md)
 * [🖥️ Use CLI Tools](how-to/overview.md)
+
+***
+
+* [🛡️ zkTLS](zktls.md)
 
 ## 💾 Filecoin First
 
