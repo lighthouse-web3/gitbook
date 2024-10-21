@@ -8,30 +8,32 @@ description: List of chains supported for encryption access control.
 **Mainnet**
 
 1. Ethereum (ethereum)
-2. Polygon (polygon)
-3. Solana (solana)
-4. Fantom (fantom)
-5. Optimism (optimism)
-6. BSC (binance chain)
-7. AVAX
-8. Fuji
-9. Forma
-10. Destra
+2. Filecoin
+3. Polygon (polygon)
+4. Solana (solana)
+5. Fantom (fantom)
+6. Optimism (optimism)
+7. BSC (binance chain)
+8. AVAX
+9. Fuji
+10. Forma
+11. Destra
 
 **Testnets**
 
 1. Mumbai (polygon-testnet)
-2. Shardeum\_Lib1
-3. Shardeum\_Lib2
-4. Calibration
-5. Goerli
-6. BSCTest (binance-testnet)
-7. FantomTest
-8. Rinkeby
-9. OptimismGoerli
-10. OptimismKovan
-11. Forma Testnet (Forma\_Sketchpad)
-12. Destra\_Testnet
+2. Filecoin\_Testnet
+3. Shardeum\_Lib1
+4. Shardeum\_Lib2
+5. Calibration
+6. Goerli
+7. BSCTest (binance-testnet)
+8. FantomTest
+9. Rinkeby
+10. OptimismGoerli
+11. OptimismKovan
+12. Forma Testnet (Forma\_Sketchpad)
+13. Destra\_Testnet
 
 Note: name is not case sensitive.
 
