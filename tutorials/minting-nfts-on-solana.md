@@ -26,9 +26,9 @@ Lighthouse stands out in the realm of digital storage, offering a perpetual file
 Install the required libraries:
 
 ```bash
-yarn add @solana/web3.js @metaplex-foundation/js @lighthouse-web3/sdk dotenv fs
+yarn add @solana/web3.js@1 @metaplex-foundation/js @lighthouse-web3/sdk dotenv fs
 # or
-npm install @solana/web3.js @metaplex-foundation/js @lighthouse-web3/sdk dotenv fs
+npm install @solana/web3.js@1 @metaplex-foundation/js @lighthouse-web3/sdk dotenv fs
 ```
 
 **2. Obtain Lighthouse API Key**
