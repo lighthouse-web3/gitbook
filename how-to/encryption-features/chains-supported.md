@@ -34,6 +34,8 @@ description: List of chains supported for encryption access control.
 11. OptimismKovan
 12. Forma Testnet (Forma\_Sketchpad)
 13. Destra\_Testnet
+14. Zircuit\_Testnet
+15. Scroll\_Testnet
 
 Note: name is not case sensitive.
 
