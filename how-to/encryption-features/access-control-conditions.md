@@ -175,3 +175,38 @@ Coreum Conditions
 }
 ```
 {% endcode %}
+
+Radix Conditions
+
+{% code lineNumbers="true" %}
+```javascript
+/*
+    id here represent condition number
+    chain is the blockchain network on which conditions should be applied (Radix_Mainnet)
+    method is the name of the function to invoke (getFtsByAddress,getNftsByAddress)
+    standardContractType is the type of contract, can only be custom || "".
+
+    In case of getNftsByAddress, resourceAddress represents the contract address of the NFT. 
+    In case of getFtsByAddress, resourceAddress represents the contract address of the Token 
+    (eg. resource_rdx1tknxxxxxxxxxradxrdxxxxxxxxx009923554798xxxxxxxxxradxrd
+for xrd mainet )
+ 
+    returnValueTest is what to test from functions response >, ==, < 
+    parameters if the function takes any parameter as input mention it
+    inputArrayType type of parameter that the function is taking as input
+    outputType is the type of response returned by the function
+*/
+
+//getFtsByAddress condition
+
+{
+  id: 1,
+  chain: "Radix_Mainnet",
+  method: "getFtsByAddress",
+  standardContractType: "",
+  resourceAddress : "resource_rdx1tknxxxxxxxxxradxrdxxxxxxxxx009923554798xxxxxxxxxradxrd",
+  returnValueTest: { comparator: ">=", value: "1" },
+}
+
+```
+{% endcode %}

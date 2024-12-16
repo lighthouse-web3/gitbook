@@ -187,6 +187,6 @@ With this code, you can apply access control to a file on the Lighthouse node us
 
 ### Supported Chains
 
-Mainnet: Ethereum (ethereum), Filecoin, Polygon (polygon), Solana (solana), Fantom (fantom), Optimism (optimism), BSC (binance chain), AVAX, Fuji, Forma, Destra\
+Mainnet: Ethereum (ethereum), Filecoin, Polygon (polygon), Solana (solana), Fantom (fantom), Optimism (optimism), BSC (binance chain), AVAX, Fuji, Forma, Destra, Radix\_Mainnet\
 Testnet: Mumbai (polygon-testnet), Filecoin\_Testnet, Shardeum\_Lib1, Shardeum\_Lib2, Calibration, Goerli, BSCTest (binance-testnet), FantomTest, Rinkeby, OptimismGoerli, OptimismKovan, Forma Testnet (Forma\_Sketchpad), Destra\_Testnet,Zircuit\_Testnet,Scroll\_Testnet\
 **Note: N**ame is not case sensitive.

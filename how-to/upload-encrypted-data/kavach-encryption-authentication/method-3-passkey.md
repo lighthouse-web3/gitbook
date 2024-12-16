@@ -38,9 +38,9 @@ https://encryption.lighthouse.storage/passkey/register/start
 
 **Success Response:**
 
-Code**:** `200 OK`
+Cod&#x65;**:** `200 OK`
 
-Content example**:**
+Content exampl&#x65;**:**
 
 ```json
 {
@@ -91,9 +91,9 @@ https://encryption.lighthouse.storage/passkey/register/finish
 
 **Success Response:**
 
-Code**:** `200 OK`
+Cod&#x65;**:** `200 OK`
 
-Content**:**
+Conten&#x74;**:**
 
 ```json
 true
@@ -138,9 +138,9 @@ https://encryption.lighthouse.storage/passkey/login/start
 
 **Success Response:**
 
-Code**:** `200 OK`
+Cod&#x65;**:** `200 OK`
 
-Content example**:**
+Content exampl&#x65;**:**
 
 ```json
 {
@@ -201,9 +201,9 @@ https://encryption.lighthouse.storage/passkey/login/finish
 
 **Success Response:**
 
-Code**:** `200 OK`
+Cod&#x65;**:** `200 OK`
 
-Content**:**
+Conten&#x74;**:**
 
 ```json
 {
@@ -257,7 +257,7 @@ https://encryption.lighthouse.storage/passkey/delete
 
 Code: `200`
 
-Content**:** Successful deletion confirmation.
+Conten&#x74;**:** Successful deletion confirmation.
 
 ***
 

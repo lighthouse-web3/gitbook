@@ -6,7 +6,7 @@ description: >-
 
 # 💸 Pay to View Application
 
-**Step 1:** The user uploads an encrypted file to the Lighthouse IPFS node. Refer to this NodeJS [Encryption Upload](broken-reference) or ReactJS [Browser Encryption Upload](broken-reference) code example**.**&#x20;
+**Step 1:** The user uploads an encrypted file to the Lighthouse IPFS node. Refer to this NodeJS [Encryption Upload](broken-reference) or ReactJS [Browser Encryption Upload](broken-reference) code exampl&#x65;**.**&#x20;
 
 Lighthouse node returns an IPFS CID/Hash for the encrypted file.
 

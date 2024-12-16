@@ -26,9 +26,9 @@ https://encryption.lighthouse.storage/api/message/<walletAddress>
 
 **Success Response:**
 
-Code**:** `200 OK`
+Cod&#x65;**:** `200 OK`
 
-Content**:**
+Conten&#x74;**:**
 
 ```json
 [
@@ -42,9 +42,9 @@ Content**:**
 
 **Error Responses:**
 
-Code**:** `400 Bad Request`
+Cod&#x65;**:** `400 Bad Request`
 
-Content**:**
+Conten&#x74;**:**
 
 ```json
 {

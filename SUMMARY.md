@@ -68,6 +68,7 @@
 * [🛡️ Upload Encrypted Files](tutorials/upload-encrypted-files.md)
 * [📄 Token Gating and Custom Contract](tutorials/token-gating-and-custom-contract.md)
 * [🔑 Token Gating NFTs](tutorials/token-gating-nfts.md)
+* [Use Radix Wallet on Lighthouse Filesdapp](tutorials/use-radix-wallet-on-lighthouse-filesdapp.md)
 
 ## Concepts
 

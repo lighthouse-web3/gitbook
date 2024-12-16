@@ -18,7 +18,7 @@ Navigate to [Files Dapp](https://files.lighthouse.storage/) and either register 
 
 Click on the `migration` option in the left panel.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Step 3: Create a New Migration
 

@@ -18,6 +18,7 @@ description: List of chains supported for encryption access control.
 9. Fuji
 10. Forma
 11. Destra
+12. Radix\_Mainnet
 
 **Testnets**
 
