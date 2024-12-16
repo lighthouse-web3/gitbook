@@ -14,7 +14,7 @@ description: Type of Access Control conditions supported
 
 Here are examples of how various access conditions can be applied.
 
-EVM Conditions
+### 1. EVM Conditions
 
 {% code lineNumbers="true" %}
 ```javascript
@@ -86,7 +86,7 @@ EVM Conditions
 ```
 {% endcode %}
 
-Solana Conditions
+### 2. Solana Conditions
 
 {% code lineNumbers="true" %}
 ```javascript
@@ -129,7 +129,7 @@ Solana Conditions
 ```
 {% endcode %}
 
-Coreum Conditions
+### 3. Coreum Conditions
 
 {% code lineNumbers="true" %}
 ```javascript
@@ -176,7 +176,7 @@ Coreum Conditions
 ```
 {% endcode %}
 
-Radix Conditions
+### 4. Radix Conditions
 
 {% code lineNumbers="true" %}
 ```javascript
