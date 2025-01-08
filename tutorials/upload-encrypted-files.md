@@ -1,8 +1,9 @@
 ---
 description: How to Upload Encrypted Files on Lighthouse
+icon: binary-lock
 ---
 
-# 🛡 Upload Encrypted Files
+# Upload Encrypted Files
 
 When it comes to storing files on a public network like IPFS (InterPlanetary File System), security is a paramount concern. Anyone across the globe can view files uploaded to IPFS due to its public nature. But what if you could secure your files on this public network? Lighthouse, along with its encryption SDK called **Kavach**, makes this possible. This tutorial will guide you through the steps to securely upload your files to IPFS with encryption.
 

@@ -1,8 +1,9 @@
 ---
 description: List of chains supported for encryption access control.
+icon: link
 ---
 
-# ⛓️ Chains Supported
+# Chains Supported
 
 \
 **Mainnet**
@@ -37,6 +38,7 @@ description: List of chains supported for encryption access control.
 13. Destra\_Testnet
 14. Zircuit\_Testnet
 15. Scroll\_Testnet
+16. Abstract\_Testnet
 
 Note: name is not case sensitive.
 

@@ -1,4 +1,8 @@
-# 🛡️ zkTLS
+---
+icon: shield-quartered
+---
+
+# zkTLS
 
 ## Introduction to zkTLS
 

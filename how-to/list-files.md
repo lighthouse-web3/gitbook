@@ -12,7 +12,7 @@ layout:
     visible: true
 ---
 
-# 🗃️ List Files
+# 📂 List Files
 
 All uploaded files can be viewed using the given function, the results are paginated with 2000 records in one page.
 

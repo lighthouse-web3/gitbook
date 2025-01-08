@@ -1,4 +1,5 @@
 ---
+icon: hammer
 layout:
   title:
     visible: true
@@ -12,7 +13,7 @@ layout:
     visible: true
 ---
 
-# ⛏️ Quick Start
+# Quick Start
 
 In this section, we will see how to
 

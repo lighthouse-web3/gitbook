@@ -12,7 +12,7 @@ layout:
     visible: true
 ---
 
-# 〰 Buffer
+# 🔀 Buffer
 
 * **Buffer**: A temporary storage spot for data. Think of it like a digital clipboard where you can keep data until you use it.
 * **Stream**: A sequence of data elements that can be accessed in a sequential manner. It's like a conveyor belt of data items.

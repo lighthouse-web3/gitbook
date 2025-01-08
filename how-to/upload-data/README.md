@@ -12,7 +12,7 @@ layout:
     visible: true
 ---
 
-# ⬆ Upload Data
+# 🔼 Upload Data
 
 This section covers the steps to upload a file to Lighthouse, three types of data can be uploaded file, buffer, and text/JSON.
 

@@ -1,5 +1,6 @@
 ---
 description: Getting Started with Lighthouse Python SDK - Store Files Permanently
+icon: python
 cover: ../.gitbook/assets/Python_6 (1).png
 coverY: 0
 layout:
@@ -18,7 +19,7 @@ layout:
     visible: true
 ---
 
-# 🗃 Use Python SDK
+# Use Python SDK
 
 ## Introduction
 

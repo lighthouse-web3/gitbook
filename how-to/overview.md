@@ -2,7 +2,7 @@
 description: Lighthouse CLI tool to interact with the protocol
 ---
 
-# 🖥 Use CLI Tools
+# 💻 Use CLI Tools
 
 :tools:**Installation**
 

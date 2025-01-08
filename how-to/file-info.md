@@ -12,7 +12,7 @@ layout:
     visible: true
 ---
 
-# ℹ File Info
+# 💁 File Info
 
 Use file info API to get metadata of your file stored at Lighthouse.
 

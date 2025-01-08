@@ -3,9 +3,10 @@ description: >-
   For resizing an image stored on the IPFS network via the Lighthouse gateway,
   you can use the image's Content Identifier (CID) along with specific query
   parameters to define the desired dimensions.
+icon: image-landscape
 ---
 
-# ✂ Resize Image
+# Resize Image
 
 
 

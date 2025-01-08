@@ -1,4 +1,8 @@
-# ⚙️ Usage
+---
+icon: gear-complex
+---
+
+# Usage
 
 Filecoin first service will allow users to directly create deal with filecoin miner without uploading file to Lighthouse IPFS. Users need not pay for IPFS usage and directly store their files with Filecoin miners just by providing us with CID.
 
