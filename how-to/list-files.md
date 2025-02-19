@@ -49,7 +49,7 @@ const getUploads = async() =>{
     }
   */
   
-  /* Based on the totalFiles send user can evalutate if the next request needs to be send in the next request id of the last element of the previous response needs to be send.*/
+  /* Based on the totalFiles send user can evaluate if the next request needs to be send in the next request id of the last element of the previous response needs to be send.*/
   const response = await lighthouse.getUploads("YOUR_API_KEY","b5f60ba0-b708-41a3-b0f2-5c808ce63b48")
 
 }

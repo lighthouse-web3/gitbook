@@ -189,7 +189,7 @@ Here are examples of how various access conditions can be applied.
     In case of getNftsByAddress, resourceAddress represents the contract address of the NFT. 
     In case of getFtsByAddress, resourceAddress represents the contract address of the Token 
     (eg. resource_rdx1tknxxxxxxxxxradxrdxxxxxxxxx009923554798xxxxxxxxxradxrd
-for xrd mainet )
+for xrd mainnet )
  
     returnValueTest is what to test from functions response >, ==, < 
     parameters if the function takes any parameter as input mention it
