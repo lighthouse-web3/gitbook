@@ -1,4 +1,4 @@
-# Web Sockets \[depreceated]
+# Web Sockets \[deprecated]
 
 All Lighthouse node interactions can be done using web sockets which allows users and applications to upload files to IPFS to get CIDs, calculate cost of storage to filecoin, get storage info for a file on the filecoin network, get file size etc.
 

@@ -67,7 +67,7 @@ contract NFT is ERC721URIStorage, Ownable {
 
 #### Step 3: Compile the Contract
 
-Use Solidity compiler (solc) to compile the contract. Install Solc and other dependecies via npm:
+Use Solidity compiler (solc) to compile the contract. Install Solc and other dependencies via npm:
 
 ```bash
 npm install -g solc npm install @openzeppelin/contracts@4.9.0
