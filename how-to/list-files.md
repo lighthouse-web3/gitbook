@@ -69,8 +69,4 @@ lighthouse-web3 get-uploads
 {% endtab %}
 {% endtabs %}
 
-**Note:** To navigate to different pages of results, you need to pass the `id` of the last object from the previous response as the `lastKey` parameter in the function call. This will fetch the next set of records starting from the given `lastKey`.&#x20;
-
-
-
-\
+**Note:** To navigate to different pages of results, you need to pass the `id` of the last object from the previous response as the `lastKey` parameter in the function call. This will fetch the next set of records starting from the given `lastKey`.
