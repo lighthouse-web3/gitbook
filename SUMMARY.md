@@ -28,6 +28,7 @@
     * [🌐 Browser Decrypt File](how-to/encryption-features/decrypt-file/decrypt-file.md)
     * [💻 NodeJS Decrypt File](how-to/encryption-features/decrypt-file/nodejs-decrypt-file.md)
   * [🚪 Access control with zkTLS](how-to/encryption-features/access-control-with-zktls.md)
+  * [👬 Account Delegation Tutorial](how-to/encryption-features/account-delegation-tutorial.md)
 * [📂 List Files](how-to/list-files.md)
 * [💁 File Info](how-to/file-info.md)
 * [💰 Get Balance](how-to/get-balance.md)
@@ -43,6 +44,7 @@
 ***
 
 * [zkTLS](zktls.md)
+* [🤝 Account Delegation](account-delegation.md)
 
 ## 💾 Filecoin First
 
