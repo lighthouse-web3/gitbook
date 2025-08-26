@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # 📁 File
 
 Any kind of file can be uploaded to Lighthouse refer to the code example given below. For developers building on other programming languages use the API directly.
@@ -101,7 +87,7 @@ export default App
 {% tab title="API" %}
 {% code overflow="wrap" %}
 ```bash
-curl -X POST -H 'Authorization: Bearer API_KEY' -F 'file=@/mnt/c/Users/ravis/Desktop/unnamed.jpeg' 'https://node.lighthouse.storage/api/v0/add'
+curl -X POST -H 'Authorization: Bearer API_KEY' -F 'file=@/mnt/c/Users/ravis/Desktop/unnamed.jpeg' 'https://upload.lighthouse.storage/api/v0/add'
 ```
 {% endcode %}
 {% endtab %}
