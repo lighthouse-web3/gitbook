@@ -7,7 +7,7 @@ You can delete any uploaded file using the given function.
 ```
 curl -X DELETE
 -H "Authorization: Bearer API_KEY"
-"https://api.lighthouse.storage/api/delete_file?id=FILE_ID"
+"https://api.lighthouse.storage/api/user/delete_file?id=FILE_ID"
 ```
 {% endtab %}
 {% endtabs %}
