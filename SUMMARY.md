@@ -30,6 +30,7 @@
   * [🚪 Access control with zkTLS](how-to/encryption-features/access-control-with-zktls.md)
   * [👬 Account Delegation Tutorial](how-to/encryption-features/account-delegation-tutorial.md)
 * [📂 List Files](how-to/list-files.md)
+* [🗑️ Delete File](how-to/delete-file.md)
 * [💁 File Info](how-to/file-info.md)
 * [💰 Get Balance](how-to/get-balance.md)
 * [🔁 Retrieve File](how-to/retrieve-file.md)
