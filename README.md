@@ -4,26 +4,72 @@ description: An overview to Lighthouse
 
 # 👋 Introduction
 
-![](<.gitbook/assets/Screenshot 2023-10-21 at 9.41.08 AM.png>)
+<img src=".gitbook/assets/Screenshot 2023-10-21 at 9.41.08 AM.png" alt="" data-size="original">
 
-Lighthouse is a perpetual file storage protocol that allows you to pay once for your files and store them long-term.
+***
 
-The aim is to move users from a rent-based cost model where they rent their files on cloud storage to a perpetual storage model. It is built on IPFS and Filecoin, with smart contracts to be deployed on multiple chains like FVM, Optimism, Polygon, Solana, etc.
+### What is Lighthouse?
 
-It uses the miner network and storage capacity of the Filecoin network and IPFS content-addressing system.
+Lighthouse is a **permanent, decentralized storage protocol** powered by **Filecoin and IPFS**.\
+It allows individuals, developers, and enterprises to store data **forever** with a simple, one-time payment model—eliminating recurring cloud costs while ensuring verifiable, tamper-proof security.
 
-### Features <a href="#docs-internal-guid-b71b2036-7fff-9a19-aed9-151d92819f81" id="docs-internal-guid-b71b2036-7fff-9a19-aed9-151d92819f81"></a>
+With Lighthouse, your files are stored across a decentralized network of Filecoin miners and can be accessed anytime through **dedicated IPFS gateways** optimized for speed, media delivery, and scalability.
 
-* **Perpetual Storage -** The long-term storage model sets Lighthouse apart from existing protocols that provide recurring payment choices and also from web2 storage systems
-* **Encryption and Private data** - Ability to store private and encrypted data without the hassle of managing private key of the file and build token-gated applications using Smart Contracts on any chain.
-* **Dedicated custom IPFS Gateway** - This gateway serves and retrieves your files quickly. It even delivers multimedia content like 4k videos with speed.
-* **Pay using any token** - Smart contracts will be on popular EVM-based chains like ethereum, polygon, optimism, bsc, etc. hence direct integration with dapps of these ecosystems. Users can pay for storage via any token on the chain of their choice and get verifiable proof. Supporting Non-EVM-based chains like Solana as well.
-* **Image Optimization** - Users can set the height and width of files when retrieving images from the IPFS and get image thumbnails, etc saving a lot of bandwidth and optimizing images to any size
-* **Low cost** - With the open market of Filecoin miners who earn block rewards from the network,  Lighthouse can provide low-cost storage.
-* **Verifiable storage** - Provides users with verifiable storage proofs to know which miners are storing your data.
-* **No Vendor Lock-in** - The benefit of using a storage system like Lighthouse is that it doesn't lock you in, and users can still easily control and move data
+***
 
-### Leveraging IPFS and Filecoin
+### Why Lighthouse?
+
+* **Perpetual Storage**\
+  Pay once and preserve your files permanently without renewals.
+* **Decentralized Security**\
+  Your data is stored on IPFS + Filecoin, ensuring immutability and reliability.
+* **Encryption & Access Control**\
+  Use **Kavach Threshold Encryption** and token-gating to keep data private and grant access via tokens, NFTs, passkeys, or zkTLS.
+* **Dedicated IPFS Gateways**\
+  Fast retrieval for files, including **4K video streaming** at scale.
+* **Decentralized Image Resizing**\
+  Optimize images on retrieval—save bandwidth without losing quality.
+* **Flexible Payments**\
+  Choose annual or lifetime plans, pay with credit/debit cards or on-chain tokens.
+* **No Vendor Lock-In**\
+  Retrieve and migrate data anytime with full user control.
+
+***
+
+### Tools for Developers
+
+* **Lighthouse SDK** – Libraries, APIs, and docs to integrate decentralized storage into apps.
+* **Lighthouse CLI** – Manage files directly from your terminal with simple commands.
+* **Encryption SDK** – Easily secure and token-gate private files across chains and networks.
+
+***
+
+### Expanding the Data Economy
+
+Lighthouse doesn’t just store data—it powers new ecosystems:
+
+* **Data DAOs** – Create decentralized organizations to preserve, govern, and monetize data.
+* **AI Data Monetization** – Store datasets, apply access control, and enable AI model training.
+* **Private Processing** – Compute over private data while keeping it encrypted.
+* **Cross-Ecosystem Support** – Built for AI, DePIN, NFTs, gaming, L1/L2 blockchains, and more.
+
+***
+
+### Backed by Trusted Partners
+
+Lighthouse is already integrated into leading ecosystems like **SingularityNet, Cardano, and OKContract**, and is trusted for secure storage in the **NFT, modular blockchain, and AI data markets**.
+
+***
+
+### Why It Matters
+
+Traditional cloud providers rent your data back to you. Lighthouse redefines storage with **permanent, affordable, and verifiable solutions**, enabling the next generation of apps, DAOs, and AI systems to thrive on **secure and censorship-resistant infrastructure**.
+
+**With Lighthouse, your data doesn’t expire—it lives forever.**
+
+***
+
+### IPFS and Filecoin
 
 While both IPFS (InterPlanetary File System) and Filecoin are pivotal technologies in decentralized storage, they serve distinct but complementary roles:
 
