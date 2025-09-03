@@ -2,7 +2,7 @@
 
 **Discord** - [https://discord.com/invite/c4a4CGCdJG](https://discord.com/invite/c4a4CGCdJG)
 
-**Email** - nandit@lighthouse.storage
+**Email** - mail@lighthouse.storage
 
 **Twitter** - [https://twitter.com/LighthouseWeb3](https://twitter.com/LighthouseWeb3)&#x20;
 
