@@ -1,16 +1,5 @@
 ---
 icon: hammer
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Quick Start
@@ -21,15 +10,17 @@ In this section, we will see how to
 2. [Upload a file](quick-start.md#upload-a-file)
 3. [View the file](quick-start.md#view-file)
 4. [Get Filecoin deals](quick-start.md#get-filecoin-deal)
-5. [Verify a Filecoin deal](quick-start.md#verify-filecoin-deal)
+5. #### [What’s Next?](quick-start.md#id-5.-whats-next)
 
-This guidance is in Nodejs, but in case you are using any other language, refer to the [how-to](broken-reference) section to get APIs that can be called directly.
+This Quick Start guide walks you through the essentials: creating an API key, uploading a file, viewing it, and tracking its storage status. While the examples below use Node.js, you can easily adapt them for other environments using our How-To section
 
-### Create an API Key
+### 1. Create an API Key
 
 \
-1\. Login into Lighthouse files dapp ([https://files.lighthouse.storage/](https://files.lighthouse.storage/))\
-2\. Go to the API key section and generate the key
+1\. Login into Lighthouse files dapp ([https://files.lighthouse.storage/](https://files.lighthouse.storage/))
+
+\
+2\. Go to the API key section and generate the API key as shown in image below
 
 {% hint style="info" %}
 You can also generate the API key from CLI
@@ -37,10 +28,16 @@ You can also generate the API key from CLI
 
 <figure><img src=".gitbook/assets/api key.png" alt=""><figcaption></figcaption></figure>
 
-### Upload File
+### 2. Upload a File
 
 \
-1\. Install the lighthouse package in your Node application\
+1\. Install the lighthouse package in your Node application
+
+```
+npm i @lighthouse-web3/sdk
+```
+
+\
 2\. Run the following script
 
 ```javascript
@@ -55,7 +52,7 @@ const uploadResponse = await lighthouse.upload(
 console.log(uploadResponse);
 ```
 
-You will get a response like this once file is successfully uploaded:
+On success, you'll receive an object containing the file name, its CID (“Hash”), and size—example shown below:
 
 ```
 {
@@ -67,16 +64,16 @@ You will get a response like this once file is successfully uploaded:
 }
 ```
 
-### View File
+### 3. View the File
 
-\
 The file can be viewed from an IPFS gateway\
 [https://gateway.lighthouse.storage/ipfs/QmWC9AkGa6vSbR4yizoJrFMfmZh4XjZXxvRDknk2LdJff](https://gateway.lighthouse.storage/ipfs/QmWC9AkGa6vSbR4yizoJrFMfmZh4XjZXxvRDknk2LdJffc)
 
-### Get Filecoin Deal
+### 4. Get Filecoin Deal
 
-\
-The Filecoin deal can take up to 2 days to show up once the file is uploaded. To get Filecoin deal use the following function of the SDK
+{% hint style="info" %}
+Filecoin deals can take up to couple of hours to 1 day to appear—this is expected. Use the `dealStatus` function as shown below to monitor progress. Once sealed, files are verifiably stored
+{% endhint %}
 
 ```javascript
 const status = await lighthouse.dealStatus('bafkreia4ruswe7ghckleh3lmpujo5asrnd7hrtu5r23zjk2robpcoend34')
@@ -108,7 +105,12 @@ data: [
 ]
 ```
 
-### Verify Filecoin Deal
+### 5. What’s Next?
 
-\
-Lighthouse aggregates files uploaded by multiple users into a 32GB CAR file and stores this CAR with a storage provider. To verify that your file was part of the Filecoin deal, you can use the PODSI verification. Refer to the [Filecoin Virtual Machine](filecoin-first/podsi.md) section for more details.
+Explore further with:
+
+* CLI tools
+* Python SDK examples
+* Encrypted uploads (Kavach)
+* Token gating & access control
+* Image resizing, IPNS, and more…
