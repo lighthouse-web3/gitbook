@@ -1,8 +1,9 @@
 ---
 description: Dive into Programmable storage with Lighthouse & FVM and its use cases
+hidden: true
 ---
 
-# 👩💻 Programmable Storage with Lighthouse SDK and Filecoin
+# 👩‍💻 Programmable Storage with Lighthouse SDK and Filecoin
 
 #### **Introduction to Programmable Storage**
 

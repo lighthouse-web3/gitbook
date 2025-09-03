@@ -1,5 +1,6 @@
 ---
 description: 'Seal It with PoDSI: Verifying Document Authenticity on Lighthouse SDK'
+hidden: true
 ---
 
 # ✅ Document Verification with PoDSI
