@@ -10,7 +10,7 @@ In this section, we will see how to
 2. [Upload a file](quick-start.md#upload-a-file)
 3. [View the file](quick-start.md#view-file)
 4. [Get Filecoin deals](quick-start.md#get-filecoin-deal)
-5. #### [What’s Next?](quick-start.md#id-5.-whats-next)
+5. [What's Next?](quick-start.md#id-5.-whats-next)
 
 This Quick Start guide walks you through the essentials: creating an API key, uploading a file, viewing it, and tracking its storage status. While the examples below use Node.js, you can easily adapt them for other environments using our How-To section
 
