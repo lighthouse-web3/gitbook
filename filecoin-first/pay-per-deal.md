@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # 💰 Pay Per Deal
 
 All deals created by Filecoin First are perpetual imply, deals are renewed with miner before it gets expired for long term storage of data. Users can pay once and store the files for long duration of time.
