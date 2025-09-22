@@ -21,6 +21,7 @@ icon: link
 11. Forma
 12. Destra
 13. Radix\_Mainnet
+14. World\_Chain
 
 **Testnets**
 
