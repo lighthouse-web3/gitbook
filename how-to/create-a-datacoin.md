@@ -48,7 +48,7 @@ All fields are optional—you can fill in whichever ones you prefer.
 
 ***
 
-### **Step 4: Configure Tokenomics**y of your choice.
+### **Step 4: Configure Tokenomics** of your choice.
 
 <figure><img src="../.gitbook/assets/Screenshot_2025-09-26_at_9.04.07_AM.webp" alt=""><figcaption></figcaption></figure>
 
