@@ -2,17 +2,6 @@
 description: >-
   Lighthouse offers a pay-per-use functionality for users who prefer a flexible
   and consumption-based approach to uploading data to Filecoin.
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # 💸 Pay per use

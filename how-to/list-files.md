@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # 📂 List Files
 
 All uploaded files can be viewed using the given function, the results are paginated with 2000 records in one page.

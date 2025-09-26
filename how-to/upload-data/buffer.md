@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # 🔀 Buffer
 
 * **Buffer**: A temporary storage spot for data. Think of it like a digital clipboard where you can keep data until you use it.

@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # 📁 File
 
 This example demonstrates uploading files to Lighthouse, which are encrypted at the user's end while it's getting uploaded. The encryption key is split into five parts using BLS cryptography and stored independently in five nodes.

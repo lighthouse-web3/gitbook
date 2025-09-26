@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # 🔐 Encryption Authentication
 
 Encryption nodes require authentication to accept incoming requests. Users can use three ways to authenticate:

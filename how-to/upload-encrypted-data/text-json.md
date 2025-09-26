@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # 🔤 Text/JSON
 
 If you've ever wanted to securely save a piece of text, maybe a note or a secret, on the InterPlanetary File System (IPFS) with encryption, Lighthouse makes it easy. Here's a step-by-step guide to help

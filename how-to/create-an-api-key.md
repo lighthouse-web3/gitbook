@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # 🔑 Create an API Key
 
 An API key is required to use Lighthouse, it can be generated using [Files Dapp UI](https://files.lighthouse.storage/) (check [quick start](../quick-start.md) for more detail), CLI, and SDK. Refer to the given code examples to generate an API key based on your preferred environment.&#x20;

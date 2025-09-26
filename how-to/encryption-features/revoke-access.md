@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # ❌ Revoke Access
 
 The owner of the file can revoke the access of an encrypted file that was shared by him previously, this code example demonstrates the same.

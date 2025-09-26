@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # 🔼 Upload Data
 
 This section covers the steps to upload a file to Lighthouse, three types of data can be uploaded file, buffer, and text/JSON.

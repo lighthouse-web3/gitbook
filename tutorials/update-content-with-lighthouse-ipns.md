@@ -2,20 +2,6 @@
 description: A Comprehensive Guide to Publishing and Updating Content with Lighthouse IPNS
 cover: ../.gitbook/assets/IPNS_8.png
 coverY: 0
-layout:
-  cover:
-    visible: true
-    size: hero
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # 📝 Update Content with Lighthouse IPNS

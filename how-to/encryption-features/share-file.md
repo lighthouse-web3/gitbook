@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # 👯 Share File
 
 The owner of the file can share an encrypted file to any other wallet address, this code example demonstrates the same.

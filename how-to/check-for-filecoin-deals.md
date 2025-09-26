@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # 💾 Check for Filecoin Deals
 
 Filecoin deal is created for all files uploaded to Lighthouse. Here is an example of how to view the deal status. A Filecoin deal refers to an agreement between a client and a storage miner to store data in the Filecoin network. Once a deal is made, the storage miner receives the data to store and must repeatedly prove to the chain that they are still storing the data according to the agreement in order to receive rewards
