@@ -32,7 +32,7 @@
 * [📂 List Files](how-to/list-files.md)
 * [🗑️ Delete File](how-to/delete-file.md)
 * [💁 File Info](how-to/file-info.md)
-* [Create a Datacoin](how-to/create-a-datacoin.md)
+* [🪙 Create a Datacoin](how-to/create-a-datacoin.md)
 * [💰 Get Balance](how-to/get-balance.md)
 * [🔁 Retrieve File](how-to/retrieve-file.md)
 * [💾 Check for Filecoin Deals](how-to/check-for-filecoin-deals.md)

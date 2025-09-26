@@ -1,4 +1,4 @@
-# Create a Datacoin
+# 🪙 Create a Datacoin
 
 ## **🌐 What are DataCoins?**
 
