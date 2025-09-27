@@ -33,7 +33,7 @@
 * [🗑️ Delete File](how-to/delete-file.md)
 * [💁 File Info](how-to/file-info.md)
 * [🪙 Create a Datacoin](how-to/create-a-datacoin.md)
-* [Untitled](how-to/untitled.md)
+* [Using PDP with lighthouse](how-to/using-pdp-with-lighthouse.md)
 * [💰 Get Balance](how-to/get-balance.md)
 * [🔁 Retrieve File](how-to/retrieve-file.md)
 * [💾 Check for Filecoin Deals](how-to/check-for-filecoin-deals.md)
