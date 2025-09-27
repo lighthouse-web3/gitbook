@@ -1,4 +1,4 @@
-# Using PDP with lighthouse
+# 📷 Using PDP with lighthouse
 
 PDP enables storage providers to cryptographically prove they possess an immediately available copy of user data. Unlike Filecoin’s first storage tier backed by Proof of Replication (PoRep), which focuses on long-term cold storage of distinct replicas sealed in cryptographically unique sectors, PDP is designed specifically for hot storage scenarios such as retrieval services, dApp frontends, AI datasets, and digital assets where data needs to be ready at a moment’s notice.
 
