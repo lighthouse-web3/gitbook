@@ -30,18 +30,17 @@ icon: link
 3. Base\_Testnet
 4. Shardeum\_Lib1
 5. Shardeum\_Lib2
-6. Calibration
-7. Goerli
-8. BSCTest (binance-testnet)
-9. FantomTest
-10. Rinkeby
-11. OptimismGoerli
-12. OptimismKovan
-13. Forma Testnet (Forma\_Sketchpad)
-14. Destra\_Testnet
-15. Zircuit\_Testnet
-16. Scroll\_Testnet
-17. Abstract\_Testnet
+6. Goerli
+7. BSCTest (binance-testnet)
+8. FantomTest
+9. Rinkeby
+10. OptimismGoerli
+11. OptimismKovan
+12. Forma Testnet (Forma\_Sketchpad)
+13. Destra\_Testnet
+14. Zircuit\_Testnet
+15. Scroll\_Testnet
+16. Abstract\_Testnet
 
 Note: name is not case sensitive.
 
