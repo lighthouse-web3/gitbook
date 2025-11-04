@@ -63,7 +63,10 @@
 
 * [💸 Pay to View Application](tutorials/create-pay-to-view-media.md)
 * [Use Python SDK](tutorials/use-python-sdk.md)
-* [📝 Update Content with Lighthouse IPNS](tutorials/update-content-with-lighthouse-ipns.md)
+* [Use Go SDK](tutorials/use-python-sdk-1.md)
+* [📝 Update Content with Lighthouse IPNS](tutorials/update-content-with-lighthouse-ipns/README.md)
+  * [Using Node.js SDK](tutorials/update-content-with-lighthouse-ipns/using-node.js-sdk.md)
+  * [Using Go SDK](tutorials/update-content-with-lighthouse-ipns/using-go-sdk.md)
 * [📹 Add Video Player in UI](tutorials/video-player.md)
 * [✅ Document Verification with PoDSI](tutorials/document-verification-with-podsi.md)
 * [🎨 Minting NFTs on EVM Chains](tutorials/minting-nfts-on-evm-chains.md)

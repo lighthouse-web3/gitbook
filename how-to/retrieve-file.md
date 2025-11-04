@@ -7,8 +7,6 @@ description: >-
 
 # 🔁 Retrieve File
 
-
-
 {% tabs %}
 {% tab title="JS" %}
 ```javascript
@@ -51,5 +49,67 @@ To retrieve a file using a web browser, simply navigate to the following URL:
 [https://gateway.lighthouse.storage/ipfs/CID](https://gateway.lighthouse.storage/ipfs/CID)
 
 Replace `CID` with the actual Content Identifier of the file you wish to access.
+{% endtab %}
+
+{% tab title="Go SDK" %}
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "io"
+    "log"
+    "net/http"
+    "os"
+
+    "github.com/lighthouse-web3/lighthouse-go-sdk/lighthouse"
+)
+
+func main() {
+    client := lighthouse.NewClient(nil,
+        lighthouse.WithAPIKey(os.Getenv("LIGHTHOUSE_API_KEY")),
+    )
+
+    ctx := context.Background()
+
+    cid := "YOUR_CID_HERE"
+    
+    // Get file info first
+    fileInfo, err := client.Files().Info(ctx, cid)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // Retrieve file from IPFS gateway
+    destinationPath := "./downloaded_file"
+    ipfsGatewayURL := fmt.Sprintf("https://gateway.lighthouse.storage/ipfs/%s", cid)
+
+    req, err := http.NewRequestWithContext(ctx, "GET", ipfsGatewayURL, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    
+    resp, err := http.DefaultClient.Do(req)
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer resp.Body.Close()
+
+    out, err := os.Create(destinationPath)
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer out.Close()
+
+    _, err = io.Copy(out, resp.Body)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    fmt.Printf("File retrieved successfully! Saved to: %s\n", destinationPath)
+    fmt.Printf("File Name: %s, Size: %d bytes\n", fileInfo.FileName, fileInfo.FileSizeInBytes)
+}
+```
 {% endtab %}
 {% endtabs %}

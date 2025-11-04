@@ -62,6 +62,48 @@ curl https://api.lighthouse.storage/api/lighthouse/deal_status?cid=<cid>
 lighthouse-web3 deal-status <cid>
 ```
 {% endtab %}
+
+{% tab title="Go SDK" %}
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "log"
+    "os"
+
+    "github.com/lighthouse-web3/lighthouse-go-sdk/lighthouse"
+)
+
+func main() {
+    client := lighthouse.NewClient(nil,
+        lighthouse.WithAPIKey(os.Getenv("LIGHTHOUSE_API_KEY")),
+    )
+
+    ctx := context.Background()
+
+    cid := "QmPCM9nLb4CdtWH9M5iD4oi32ARtaFxgUfgr1eMViU8dfZ"
+    
+    // Get deal status
+    dealStatus, err := client.Deals().Status(ctx, cid)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    fmt.Println("Deal Status:")
+    for _, deal := range dealStatus {
+        fmt.Printf("Deal ID: %d\n", deal.DealID)
+        fmt.Printf("Status: %s\n", deal.DealStatus)
+        fmt.Printf("Storage Provider: %s\n", deal.StorageProvider)
+        fmt.Printf("Start Epoch: %d\n", deal.StartEpoch)
+        fmt.Printf("End Epoch: %d\n", deal.EndEpoch)
+        fmt.Printf("Chain Deal ID: %d\n", deal.ChainDealID)
+        fmt.Println("---")
+    }
+}
+```
+{% endtab %}
 {% endtabs %}
 
 Let's see what response parameters actually mean:

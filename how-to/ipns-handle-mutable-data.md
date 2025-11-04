@@ -140,6 +140,93 @@ lighthouse-web3 ipns --remove ca9e19dcf8e54e86a4dce40b155ffcad
 #Record Removed!!!
 ```
 {% endtab %}
+
+{% tab title="Go SDK" %}
+**Step 1: Create a New IPNS Key**
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "log"
+    "os"
+
+    "github.com/lighthouse-web3/lighthouse-go-sdk/lighthouse"
+)
+
+func main() {
+    client := lighthouse.NewClient(nil,
+        lighthouse.WithAPIKey(os.Getenv("LIGHTHOUSE_API_KEY")),
+    )
+
+    ctx := context.Background()
+
+    // Generate a new IPNS key
+    k, err := client.IPNS().GenerateKey(ctx, "my-key")
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("IPNS Name: %s\n", k.IPNSName)
+    fmt.Printf("IPNS ID: %s\n", k.IPNSId)
+}
+```
+
+Upon successful creation, you will receive an IPNS name and its corresponding ID.
+
+**Step 2: Publish an IPFS Hash to IPNS**
+
+```go
+// Publish a CID to the key (use k.IPNSName, not the original keyName)
+pub, err := client.IPNS().PublishRecord(ctx, "YOUR_IPFS_HASH", k.IPNSName)
+if err != nil {
+    log.Fatal(err)
+}
+fmt.Printf("IPNS Name: %s\n", pub.Name)
+fmt.Printf("IPFS Path: %s\n", pub.Value)
+```
+
+The response will show the IPNS name and the IPFS path it points to.
+
+**Step 3: Retrieve All IPNS Keys**
+
+```go
+// List all IPNS keys
+keys, err := client.IPNS().ListKeys(ctx)
+if err != nil {
+    log.Fatal(err)
+}
+fmt.Printf("Total keys: %d\n", len(keys))
+for _, key := range keys {
+    fmt.Printf("IPNS Name: %s, IPNS ID: %s\n", key.IPNSName, key.IPNSId)
+}
+```
+
+**Step 4: Update an IPNS Key**
+
+To update an IPNS key, simply publish a new CID to the same IPNS name:
+
+```go
+// Update the IPNS key to point to a new CID
+pub, err := client.IPNS().PublishRecord(ctx, "NEW_IPFS_HASH", k.IPNSName)
+if err != nil {
+    log.Fatal(err)
+}
+fmt.Printf("Updated IPNS: %s -> %s\n", pub.Name, pub.Value)
+```
+
+**Step 5: Remove an IPNS Key**
+
+```go
+// Remove a key (use k.IPNSName, not the original keyName)
+_, err = client.IPNS().RemoveKey(ctx, k.IPNSName)
+if err != nil {
+    log.Fatal(err)
+}
+fmt.Println("IPNS key removed successfully")
+```
+{% endtab %}
 {% endtabs %}
 
 

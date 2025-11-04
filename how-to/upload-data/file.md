@@ -96,5 +96,38 @@ curl -X POST -H 'Authorization: Bearer API_KEY' -F 'file=@/mnt/c/Users/ravis/Des
 The given command can be used to upload a file or directory on Lighthouse\
 `lighthouse-web3 upload <path>`
 {% endtab %}
+
+{% tab title="Go SDK" %}
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "log"
+    "os"
+
+    "github.com/lighthouse-web3/lighthouse-go-sdk/lighthouse"
+)
+
+func main() {
+    client := lighthouse.NewClient(nil,
+        lighthouse.WithAPIKey(os.Getenv("LIGHTHOUSE_API_KEY")),
+    )
+
+    ctx := context.Background()
+
+    // Upload a file
+    upload, err := client.Storage().UploadFile(ctx, "/path/to/your/file.jpg")
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("File uploaded successfully!\n")
+    fmt.Printf("CID: %s\n", upload.Hash)
+    fmt.Printf("Name: %s\n", upload.Name)
+    fmt.Printf("Size: %s\n", upload.Size)
+}
+```
+{% endtab %}
 {% endtabs %}
 

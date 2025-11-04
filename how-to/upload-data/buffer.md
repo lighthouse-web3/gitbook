@@ -31,4 +31,43 @@ console.log(uploadResponse)
 */
 ```
 {% endtab %}
+
+{% tab title="Go SDK" %}
+```go
+package main
+
+import (
+    "bytes"
+    "context"
+    "fmt"
+    "log"
+    "os"
+
+    "github.com/lighthouse-web3/lighthouse-go-sdk/lighthouse"
+)
+
+func main() {
+    client := lighthouse.NewClient(nil,
+        lighthouse.WithAPIKey(os.Getenv("LIGHTHOUSE_API_KEY")),
+    )
+
+    ctx := context.Background()
+
+    // Create a buffer (byte slice)
+    buffer := []byte("your buffer data here")
+
+    // Upload buffer using UploadReader
+    bufferReader := bytes.NewReader(buffer)
+    response, err := client.Storage().UploadReader(ctx, "buffer.bin", int64(len(buffer)), bufferReader)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    fmt.Printf("Uploaded successfully!\n")
+    fmt.Printf("Name: %s\n", response.Name)
+    fmt.Printf("Hash (CID): %s\n", response.Hash)
+    fmt.Printf("Size: %s\n", response.Size)
+}
+```
+{% endtab %}
 {% endtabs %}

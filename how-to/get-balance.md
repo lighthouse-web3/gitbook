@@ -30,4 +30,36 @@ curl https://api.lighthouse.storage/api/user/user_data_usage?publicKey=<publicKe
 lighthouse-web3 balance
 ```
 {% endtab %}
+
+{% tab title="Go SDK" %}
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "log"
+    "os"
+
+    "github.com/lighthouse-web3/lighthouse-go-sdk/lighthouse"
+)
+
+func main() {
+    client := lighthouse.NewClient(nil,
+        lighthouse.WithAPIKey(os.Getenv("LIGHTHOUSE_API_KEY")),
+    )
+
+    ctx := context.Background()
+
+    balance, err := client.User().Balance(ctx)
+    if err != nil {
+        log.Fatal(err)
+    }
+    
+    fmt.Printf("Data Limit: %d bytes\n", balance.DataLimit)
+    fmt.Printf("Data Used: %d bytes\n", balance.DataUsed)
+    fmt.Printf("Remaining: %d bytes\n", balance.DataLimit-balance.DataUsed)
+}
+```
+{% endtab %}
 {% endtabs %}

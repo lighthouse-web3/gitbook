@@ -49,6 +49,37 @@ curl -X DELETE
 lighthouse-web3 delete-file <fileID>
 ```
 {% endtab %}
+
+{% tab title="Go SDK" %}
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "log"
+    "os"
+
+    "github.com/lighthouse-web3/lighthouse-go-sdk/lighthouse"
+)
+
+func main() {
+    client := lighthouse.NewClient(nil,
+        lighthouse.WithAPIKey(os.Getenv("LIGHTHOUSE_API_KEY")),
+    )
+
+    ctx := context.Background()
+
+    // Delete a file by ID
+    fileID := "b5f60ba0-b708-41a3-b0f2-5c808ce63b48"
+    err := client.Files().Delete(ctx, fileID)
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Println("File deleted successfully")
+}
+```
+{% endtab %}
 {% endtabs %}
 
 **Note:**

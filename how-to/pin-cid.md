@@ -12,4 +12,37 @@ curl -X POST -H 'Authorization: Bearer API_KEY' -H "Content-Type: application/js
 ```
 {% endcode %}
 {% endtab %}
+
+{% tab title="Go SDK" %}
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "log"
+    "os"
+
+    "github.com/lighthouse-web3/lighthouse-go-sdk/lighthouse"
+)
+
+func main() {
+    client := lighthouse.NewClient(nil,
+        lighthouse.WithAPIKey(os.Getenv("LIGHTHOUSE_API_KEY")),
+    )
+
+    ctx := context.Background()
+
+    cid := "QmWC9AkGa6vSbR4yizoJrFMfmZh4XjZXxvRDknk2LdJffc"
+    fileName := "abc.png" // Optional
+
+    // Pin a CID with a display name
+    err := client.Files().Pin(ctx, cid, fileName)
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("CID %s pinned successfully with name: %s\n", cid, fileName)
+}
+```
+{% endtab %}
 {% endtabs %}

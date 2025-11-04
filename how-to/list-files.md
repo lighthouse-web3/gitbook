@@ -53,6 +53,49 @@ curl -H 'Authorization: Bearer API_KEY' 'https://api.lighthouse.storage/api/user
 lighthouse-web3 get-uploads
 ```
 {% endtab %}
+
+{% tab title="Go SDK" %}
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "log"
+    "os"
+
+    "github.com/lighthouse-web3/lighthouse-go-sdk/lighthouse"
+)
+
+func main() {
+    client := lighthouse.NewClient(nil,
+        lighthouse.WithAPIKey(os.Getenv("LIGHTHOUSE_API_KEY")),
+    )
+
+    ctx := context.Background()
+
+    // List all files (first page)
+    listUploads, err := client.Files().List(ctx, nil)
+    if err != nil {
+        log.Fatal(err)
+    }
+    
+    fmt.Printf("Total Files: %d\n", listUploads.TotalFiles)
+    for _, file := range listUploads.Data {
+        fmt.Printf("ID: %s, CID: %s, Name: %s\n", file.ID, file.CID, file.Name)
+    }
+
+    // Get next page using lastKey
+    if listUploads.LastKey != nil {
+        nextPage, err := client.Files().List(ctx, listUploads.LastKey)
+        if err != nil {
+            log.Fatal(err)
+        }
+        fmt.Printf("\nNext page - %d files\n", len(nextPage.Data))
+    }
+}
+```
+{% endtab %}
 {% endtabs %}
 
 **Note:** To navigate to different pages of results, you need to pass the `id` of the last object from the previous response as the `lastKey` parameter in the function call. This will fetch the next set of records starting from the given `lastKey`.

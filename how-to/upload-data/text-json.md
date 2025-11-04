@@ -26,4 +26,43 @@ console.log(response)
 
 Note: The name parameter is optional, it's just used to give a name to text that will appear in the response, if not provided Name parameter in the response will be the same as Hash.
 {% endtab %}
+
+{% tab title="Go SDK" %}
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "log"
+    "os"
+    "strings"
+
+    "github.com/lighthouse-web3/lighthouse-go-sdk/lighthouse"
+)
+
+func main() {
+    client := lighthouse.NewClient(nil,
+        lighthouse.WithAPIKey(os.Getenv("LIGHTHOUSE_API_KEY")),
+    )
+
+    ctx := context.Background()
+
+    text := "Sometimes, I Wish I Was A Cloud, Just Floating Along"
+    name := "shikamaru" // Optional
+
+    // Upload text using UploadReader
+    textReader := strings.NewReader(text)
+    response, err := client.Storage().UploadReader(ctx, name, int64(len(text)), textReader)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    fmt.Printf("Uploaded successfully!\n")
+    fmt.Printf("Name: %s\n", response.Name)
+    fmt.Printf("Hash (CID): %s\n", response.Hash)
+    fmt.Printf("Size: %s\n", response.Size)
+}
+```
+{% endtab %}
 {% endtabs %}
