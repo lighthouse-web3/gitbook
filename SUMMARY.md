@@ -63,7 +63,7 @@
 
 * [💸 Pay to View Application](tutorials/create-pay-to-view-media.md)
 * [Use Python SDK](tutorials/use-python-sdk.md)
-* [Use Go SDK](tutorials/use-python-sdk-1.md)
+* [Use Go SDK](tutorials/use-go-sdk.md)
 * [📝 Update Content with Lighthouse IPNS](tutorials/update-content-with-lighthouse-ipns/README.md)
   * [Using Node.js SDK](tutorials/update-content-with-lighthouse-ipns/using-node.js-sdk.md)
   * [Using Go SDK](tutorials/update-content-with-lighthouse-ipns/using-go-sdk.md)

@@ -9,11 +9,11 @@ coverY: 0
 
 ## Introduction
 
-Welcome to the beginner's tutorial on using the Lighthouse Python SDK for perpetual and decentralized file storage. Lighthouse is a cutting-edge file storage protocol that revolutionizes the traditional rent-based cost model of cloud storage by enabling users to pay once for their files and store them forever. With the integration of IPFS, Filecoin, and smart contracts on various blockchain networks, Lighthouse ensures data permanence, enhanced security, and cost-efficiency. This tutorial will guide you through the essential steps of leveraging the Lighthouse Python SDK to manage files perpetually on the decentralized network.
+Welcome to the beginner's tutorial on using the Lighthouse Python SDK for perpetual and decentralized file storage. With the integration of IPFS, Filecoin, and smart contracts on various blockchain networks, Lighthouse ensures data permanence, enhanced security, and cost-efficiency. This tutorial will guide you through the essential steps of leveraging the Lighthouse Python SDK to manage files perpetually on the decentralized network.
 
 ## Why Lighthouse Python SDK?
 
-Traditional file storage models require users to periodically renew their storage subscription, leading to recurring costs and management efforts. Lighthouse Python SDK eliminates these hassles by offering a perpetual storage model, where users pay once and store files indefinitely. This innovative approach utilizes the robustness of IPFS and the storage capacity of Filecoin's miner network, guaranteeing file permanence and redundancy. Let's dive into the Lighthouse Python SDK to harness the power of perpetual decentralized file storage.
+This innovative approach utilizes the robustness of IPFS and the storage capacity of Filecoin's miner network, file permanence and redundancy. Let's dive into the Lighthouse Python SDK to harness the power of perpetual decentralized file storage.
 
 ## Prerequisites
 

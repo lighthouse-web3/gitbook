@@ -9,11 +9,11 @@ coverY: 0
 
 ## Introduction
 
-Welcome to the beginner's tutorial on using the Lighthouse Go SDK for perpetual and decentralized file storage. Lighthouse is a cutting-edge file storage protocol that revolutionizes the traditional rent-based cost model of cloud storage by enabling users to pay once for their files and store them forever. With the integration of IPFS, Filecoin, and smart contracts on various blockchain networks, Lighthouse ensures data permanence, enhanced security, and cost-efficiency. This tutorial will guide you through the essential steps of leveraging the Lighthouse Go SDK to manage files perpetually on the decentralized network.
+Welcome to the beginner's tutorial on using the Lighthouse Go SDK for perpetual and decentralized file storage. With the integration of IPFS, Filecoin, and smart contracts on various blockchain networks, Lighthouse ensures data permanence, enhanced security, and cost-efficiency. This tutorial will guide you through the essential steps of leveraging the Lighthouse Go SDK to manage files perpetually on the decentralized network.
 
 ## Why Lighthouse Go SDK?
 
-Traditional file storage models require users to periodically renew their storage subscription, leading to recurring costs and management efforts. Lighthouse Go SDK eliminates these hassles by offering a perpetual storage model, where users pay once and store files indefinitely. This innovative approach utilizes the robustness of IPFS and the storage capacity of Filecoin's miner network, guaranteeing file permanence and redundancy. Let's dive into the Lighthouse Go SDK to harness the power of perpetual decentralized file storage.
+This innovative approach utilizes the robustness of IPFS and the storage capacity of Filecoin's miner network, file permanence and redundancy. Let's dive into the Lighthouse Go SDK to harness the power of perpetual decentralized file storage.
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ Before starting with the Lighthouse Go SDK, ensure you have the following:
 2. Go installed on your computer (version 1.23 or higher).
 3. A Lighthouse API token. If you haven't obtained one yet, sign up on the Lighthouse website to get your API token.
 
-_**Note: If you already have Lighthouse API key, skip Step 0 and go to**_ [#step-1-install-the-lighthouse-python-sdk](use-python-sdk-1.md#step-1-install-the-lighthouse-python-sdk "mention")
+_**Note: If you already have Lighthouse API key, skip Step 0 and go to**_ [#step-1-install-the-lighthouse-python-sdk](use-go-sdk.md#step-1-install-the-lighthouse-python-sdk "mention")
 
 #### **Step 0:** Getting your lighthouse API key [Files-Lighthouse-storage](https://files.lighthouse.storage/):
 

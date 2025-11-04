@@ -148,11 +148,11 @@ This step allows you to remove an IPNS record if needed.
 
 ### **Method 2: Using Node.js**
 
-For detailed instructions on using Node.js SDK, see the [Node.js subpage](using-node.js-sdk.md).
+For detailed instructions on using Node.js SDK, see the [Node.js section](using-node.js-sdk.md).
 
 ### **Method 3:** Using Go SDK
 
-For detailed instructions on using Go SDK, see the [Go SDK subpage](using-go-sdk.md).
+For detailed instructions on using Go SDK, see the [Go SDK section](using-go-sdk.md).
 
 ## **Conclusion**
 
