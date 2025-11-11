@@ -80,5 +80,9 @@ lighthouse-web3 api-key --new
 {% tab title="Go SDK" %}
 The Go SDK requires an API key to be created first. You can create an API key using the [Files Dapp UI](https://files.lighthouse.storage/), CLI, or API methods shown above. Once you have an API key, you can use it with the Go SDK
 {% endtab %}
+
+{% tab title="Untitled" %}
+
+{% endtab %}
 {% endtabs %}
 

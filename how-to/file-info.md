@@ -33,6 +33,39 @@ curl https://api.lighthouse.storage/api/lighthouse/file_info?cid=QmeMsykMDyD76zp
 ```
 {% endtab %}
 
+{% tab title="Python SDK" %}
+```python
+from lighthouseweb3 import Lighthouse
+
+# Initialize Lighthouse (token not required for getFileInfo)
+lh = Lighthouse(token="YOUR_API_KEY")
+
+# Get file information
+cid = "QmeMsykMDyD76zpAbinCy1cjb1KL6CVNBfB44am15U1XHh"
+file_info = lh.getFileInfo(cid)
+
+print(file_info)
+# Sample Response
+# {
+#   'data': {
+#     'fileSizeInBytes': '95077',
+#     'cid': 'QmeMsykMDyD76zpAbinCy1cjb1KL6CVNBfB44am15U1XHh',
+#     'encryption': False,
+#     'fileName': 'itachi.jpg',
+#     'mimeType': 'image/jpeg',
+#     'txHash': ''
+#   }
+# }
+
+# Access individual values
+print(f"File Name: {file_info['data']['fileName']}")
+print(f"File Size: {file_info['data']['fileSizeInBytes']} bytes")
+print(f"CID: {file_info['data']['cid']}")
+print(f"MIME Type: {file_info['data']['mimeType']}")
+print(f"Encryption: {file_info['data']['encryption']}")
+```
+{% endtab %}
+
 {% tab title="Go SDK" %}
 ```go
 package main

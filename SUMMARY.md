@@ -38,11 +38,15 @@
 * [🔁 Retrieve File](how-to/retrieve-file.md)
 * [💾 Check for Filecoin Deals](how-to/check-for-filecoin-deals.md)
 * [🔄 IPNS - Handle Mutable Data](how-to/ipns-handle-mutable-data.md)
-* [📦 Migrate Files](how-to/migrate-files.md)
+* [📦 Migrations](how-to/migrations/README.md)
+  * [🔗 IPFS Provider](how-to/migrations/ipfs-provider.md)
+  * [☁️ Google Drive](how-to/migrations/google-drive.md)
 * [📌 Pin CID](how-to/pin-cid.md)
 * [💸 Pay per use](how-to/pay-per-use.md)
 * [Resize Image](how-to/resize-image.md)
 * [💻 Use CLI Tools](how-to/overview.md)
+* [🧠 AI](how-to/ai/README.md)
+  * [MCP Protocol](how-to/ai/mcp-protocol.md)
 
 ***
 

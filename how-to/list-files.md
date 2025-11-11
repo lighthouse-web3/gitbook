@@ -54,6 +54,54 @@ lighthouse-web3 get-uploads
 ```
 {% endtab %}
 
+{% tab title="Python SDK" %}
+```python
+from lighthouseweb3 import Lighthouse
+
+# Initialize Lighthouse with your API token
+lh = Lighthouse(token="YOUR_API_KEY")
+
+# Get all uploads (first page)
+response = lh.getUploads()
+print(response)
+
+# Sample response
+# {
+#   'data': {
+#     'fileList': [
+#       {
+#         'sentForDeal': '',
+#         'publicKey': '',
+#         'fileName': '',
+#         'mimeType': '',
+#         'createdAt': 1234567890,
+#         'fileSizeInBytes': '',
+#         'cid': '',
+#         'id': 'b5f60ba0-b708-41a3-b0f2-5c808ce63b48',
+#         'lastUpdate': 1234567890,
+#         'encryption': True
+#       },
+#     ],
+#     'totalFiles': 2000
+#   }
+# }
+
+# Access file list
+file_list = response['data']['fileList']
+total_files = response['data']['totalFiles']
+
+print(f"Total Files: {total_files}")
+for file in file_list:
+    print(f"ID: {file['id']}, CID: {file['cid']}, Name: {file['fileName']}")
+
+# Get next page using lastKey (id of last element from previous response)
+if file_list:
+    last_key = file_list[-1]['id']
+    next_page = lh.getUploads(last_key)
+    print(f"\nNext page - {len(next_page['data']['fileList'])} files")
+```
+{% endtab %}
+
 {% tab title="Go SDK" %}
 ```go
 package main

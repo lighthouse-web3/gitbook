@@ -97,6 +97,51 @@ The given command can be used to upload a file or directory on Lighthouse\
 `lighthouse-web3 upload <path>`
 {% endtab %}
 
+{% tab title="Python SDK" %}
+```python
+from lighthouseweb3 import Lighthouse
+
+# Initialize Lighthouse with your API token
+lh = Lighthouse(token="YOUR_API_KEY")
+
+# Upload a file
+source_file_path = "/path/to/your/file.jpg"
+upload_response = lh.upload(source=source_file_path)
+
+print(upload_response)
+# Sample response
+# {
+#   'data': {
+#     'Name': 'wow.jpg',
+#     'Hash': 'QmUHDKv3NNL1mrg4NTW4WwJqetzwZbGNitdjr2G6Z5Xe6s',
+#     'Size': '31735'
+#   }
+# }
+
+print(f"File uploaded successfully!")
+print(f"CID: {upload_response['data']['Hash']}")
+print(f"Name: {upload_response['data']['Name']}")
+print(f"Size: {upload_response['data']['Size']} bytes")
+print(f"Visit at https://gateway.lighthouse.storage/ipfs/{upload_response['data']['Hash']}")
+
+# Upload a file with a tag
+tag = "my-tag"
+upload_with_tag = lh.upload(source=source_file_path, tag=tag)
+print(f"File uploaded with tag: {tag}")
+
+# Upload a directory
+directory_path = "/path/to/your/directory"
+upload_dir = lh.upload(source=directory_path)
+print(f"Directory uploaded! Root CID: {upload_dir['data']['Hash']}")
+
+# Upload from a file-like object (BufferedReader)
+import io
+with open(source_file_path, 'rb') as file_obj:
+    upload_blob = lh.uploadBlob(file_obj, "filename.jpg")
+    print(f"Blob uploaded! CID: {upload_blob['data']['Hash']}")
+```
+{% endtab %}
+
 {% tab title="Go SDK" %}
 ```go
 package main
@@ -127,7 +172,7 @@ func main() {
     fmt.Printf("Name: %s\n", upload.Name)
     fmt.Printf("Size: %s\n", upload.Size)
 }
+    
 ```
 {% endtab %}
 {% endtabs %}
-

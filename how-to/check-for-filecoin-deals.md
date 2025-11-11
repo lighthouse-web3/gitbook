@@ -63,6 +63,52 @@ lighthouse-web3 deal-status <cid>
 ```
 {% endtab %}
 
+{% tab title="Python SDK" %}
+```python
+from lighthouseweb3 import Lighthouse
+
+# Initialize Lighthouse
+lh = Lighthouse(token="YOUR_API_KEY")
+
+# Get deal status
+cid = "QmPCM9nLb4CdtWH9M5iD4oi32ARtaFxgUfgr1eMViU8dfZ"
+deal_status = lh.getDealStatus(cid)
+
+print(deal_status)
+# Sample Response
+# {
+#   'data': [
+#     {
+#       'pieceCID': 'QmPCM9nLb4CdtWH9M5iD4oi32ARtaFxgUfgr1eMViU8dfZ',
+#       'payloadCid': 'bafkreiemizfwgot67q5mfsejmgwotaoegd3v536l2liy5oubpjhbaawfku',
+#       'pieceSize': 512,
+#       'carFileSize': 256,
+#       'dealId': 74606268,
+#       'miner': 'f01771403',
+#       'content': 74,
+#       'dealStatus': 'Sealing: Proving',
+#       'startEpoch': 3714464,
+#       'endEpoch': 4232864,
+#       'publishCid': 'bafy2bzacedupiqlo732qxawhctakxtfjyljuwjvndih22wqkkdhon4fsnsopa',
+#       'dealUUID': '10ed5a44-1d76-425f-af70-270a78fefb6f',
+#       'providerCollateral': '7.568 mFIL',
+#       'chainDealID': 74606268
+#     }
+#   ]
+# }
+
+# Access deal information
+for deal in deal_status['data']:
+    print(f"Deal ID: {deal['dealId']}")
+    print(f"Status: {deal['dealStatus']}")
+    print(f"Storage Provider: {deal['miner']}")
+    print(f"Start Epoch: {deal['startEpoch']}")
+    print(f"End Epoch: {deal['endEpoch']}")
+    print(f"Chain Deal ID: {deal['chainDealID']}")
+    print("---")
+```
+{% endtab %}
+
 {% tab title="Go SDK" %}
 ```go
 package main

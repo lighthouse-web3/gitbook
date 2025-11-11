@@ -50,6 +50,33 @@ lighthouse-web3 delete-file <fileID>
 ```
 {% endtab %}
 
+{% tab title="Python SDK" %}
+```python
+import requests
+from lighthouseweb3 import Lighthouse
+
+lh = Lighthouse(token="YOUR_API_KEY")
+file_id = "b5f60ba0-b708-41a3-b0f2-5c808ce63b48"
+
+url = f"https://api.lighthouse.storage/api/user/delete_file?id={file_id}"
+headers = {
+    "Authorization": f"Bearer {lh.token}"
+}
+
+response = requests.delete(url, headers=headers)
+response.raise_for_status()
+
+result = response.json()
+print(result)
+# Sample response
+# {
+#   "message": "File deleted successfully"
+# }
+```
+
+**Note:** The Python SDK doesn't have a built-in `deleteFile` method, so you need to use the API directly as shown above. The `fileId` parameter is required and should be the unique identifier (UUID) of the file, not the CID. You can get the file ID from `lh.getUploads()`.
+{% endtab %}
+
 {% tab title="Go SDK" %}
 ```go
 package main

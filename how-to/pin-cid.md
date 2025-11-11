@@ -13,6 +13,33 @@ curl -X POST -H 'Authorization: Bearer API_KEY' -H "Content-Type: application/js
 {% endcode %}
 {% endtab %}
 
+{% tab title="Python SDK" %}
+```python
+import requests
+from lighthouseweb3 import Lighthouse
+
+lh = Lighthouse(token="YOUR_API_KEY")
+cid = "QmWC9AkGa6vSbR4yizoJrFMfmZh4XjZXxvRDknk2LdJffc"
+fileName = "abc.png"  # Optional
+
+url = "https://api.lighthouse.storage/api/lighthouse/pin"
+headers = {
+    "Authorization": f"Bearer {lh.token}",
+    "Content-Type": "application/json"
+}
+data = {
+    "cid": cid,
+    "fileName": fileName
+}
+
+response = requests.post(url, json=data, headers=headers)
+response.raise_for_status()
+
+result = response.json()
+print(result)
+```
+{% endtab %}
+
 {% tab title="Go SDK" %}
 ```go
 package main

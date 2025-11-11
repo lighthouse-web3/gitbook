@@ -57,4 +57,33 @@ To resize an image using a web browser, navigate to the URL with the appropriate
 
 Adjust the height (h) and width (w) parameters as needed.
 {% endtab %}
+
+{% tab title="Python SDK" %}
+```python
+import requests
+
+def resize_image(cid, height, width, path):
+    """
+    Resize an image stored on IPFS via Lighthouse gateway.
+    
+    :param cid: str, Content Identifier of the image
+    :param height: int, Desired height in pixels
+    :param width: int, Desired width in pixels
+    :param path: str, Path where resized image will be saved
+    """
+    url = f"https://gateway.lighthouse.storage/ipfs/{cid}?h={height}&w={width}"
+    
+    response = requests.get(url)
+    response.raise_for_status()
+    
+    # Save the resized image
+    with open(path, 'wb') as f:
+        f.write(response.content)
+    
+    print(f"Resized image saved to {path}")
+
+# Replace 'CID' with the actual Content Identifier of your image, and 'path' with your desired file path.
+resize_image('CID', 200, 800, 'path/to/your/directory/filename.ext')
+```
+{% endtab %}
 {% endtabs %}

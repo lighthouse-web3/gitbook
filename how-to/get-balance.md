@@ -31,6 +31,24 @@ lighthouse-web3 balance
 ```
 {% endtab %}
 
+{% tab title="Python SDK" %}
+```python
+from lighthouseweb3 import Lighthouse
+
+lh = Lighthouse(token="YOUR_API_KEY")
+balance = lh.getBalance()
+
+print(balance)
+# Sample Response (Unit is Bytes)
+# {
+#   'data': {
+#     'dataLimit': 687194767360,
+#     'dataUsed': 7012827847
+#   }
+# }
+```
+{% endtab %}
+
 {% tab title="Go SDK" %}
 ```go
 package main

@@ -141,6 +141,98 @@ lighthouse-web3 ipns --remove ca9e19dcf8e54e86a4dce40b155ffcad
 ```
 {% endtab %}
 
+{% tab title="Python SDK" %}
+
+
+**Step 1: Create a New IPNS Key**
+
+```python
+from lighthouseweb3 import Lighthouse
+
+lh = Lighthouse(token="YOUR_API_KEY")
+key_response = lh.generateKey()
+
+print(key_response)
+# Sample response
+# {
+#   'data': {
+#     'ipnsName': '6cda213e3a534f8388665dee77a26458',
+#     'ipnsId': 'k51qzi5uqu5dm6uvby6428rfpcv1vcba6hxq6vcu52qtfsx3np4536jkr71gnu'
+#   }
+# }
+```
+
+Upon successful creation, you will receive an IPNS name and its corresponding ID.
+
+**Step 2: Publish an IPFS Hash to IPNS**
+
+```python
+ipfs_hash = "YOUR_IPFS_HASH"
+pub_response = lh.publishRecord(cid=ipfs_hash, keyName=key_response['data']['ipnsName'])
+
+print(pub_response)
+# Sample response
+# {
+#   'data': {
+#     'Name': 'k51qzi5uqu5dm6uvby6428rfpcv1vcba6hxq6vcu52qtfsx3np4536jkr71gnu',
+#     'Value': '/ipfs/Qmd5MBBScDUV3Ly8qahXtZFqyRRfYSmUwEcxpYcV4hzKfW'
+#   }
+# }
+```
+
+The response will show the IPNS name and the IPFS path it points to.
+
+**Step 3: Retrieve All IPNS Keys**
+
+```python
+all_keys = lh.getAllKeys()
+
+print(all_keys)
+# Sample response
+# {
+#   'data': [
+#     {
+#       'ipnsName': '6cda213e3a534f8388665dee77a26458',
+#       'ipnsId': 'k51qzi5uqu5dm6uvby6428rfpcv1vcba6hxq6vcu52qtfsx3np4536jkr71gnu',
+#       'publicKey': '0xc88c729ef2c18baf1074ea0df537d61a54a8ce7b',
+#       'cid': 'Qmd5MBBScDUV3Ly8qahXtZFqyRRfYSmUwEcxpYcV4hzKfW',
+#       'lastUpdate': 1684855771773
+#     }
+#   ]
+# }
+```
+
+**Step 4: Update an IPNS Key**
+
+To update an IPNS key, simply publish a new CID to the same IPNS name:
+
+```python
+new_ipfs_hash = "NEW_IPFS_HASH"
+pub_response = lh.publishRecord(cid=new_ipfs_hash, keyName=key_response['data']['ipnsName'])
+
+print(pub_response)
+```
+
+**Step 5: Remove an IPNS Key**
+
+```python
+remove_response = lh.removeKey(keyName=key_response['data']['ipnsName'])
+
+print(remove_response)
+# Sample Response
+# {
+#   'data': { 
+#     'Keys': [
+#       {
+#         'Name': '3090a315e92c495ea36444f2bbaeefaf',
+#         'Id': 'k51qzi5uqu5dm8gfelll8own1epd9osmlig49il5mmphkrcxbnhydkmx101x15'
+#       }
+#     ]
+#   }
+# }
+```
+{% endtab %}
+
 {% tab title="Go SDK" %}
 **Step 1: Create a New IPNS Key**
 
