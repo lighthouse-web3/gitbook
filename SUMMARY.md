@@ -82,6 +82,7 @@
 * [🔑 Token Gating NFTs](tutorials/token-gating-nfts.md)
 * [🏖️ Pushing File Metadata Onchain](tutorials/pushing-file-metadata-onchain.md)
 * [Use Radix Wallet on Lighthouse Filesdapp](tutorials/use-radix-wallet-on-lighthouse-filesdapp.md)
+* [🔗 x402 Pay-Per-Use File Upload](tutorials/x402-pay-per-use-file-upload.md)
 
 ## Concepts
 
