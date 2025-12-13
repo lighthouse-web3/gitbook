@@ -49,7 +49,7 @@ The following commands are available with the Lighthouse CLI tool
 
 :frame\_photo:**CLI Commands**
 
-<figure><img src="/img/Screenshot 2023-10-20 195553.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/img/Screenshot 2023-10-20 195553.png" alt="" /><figcaption></figcaption></figure>
 
 ## Go SDK CLI Tool
 
@@ -159,4 +159,4 @@ Run the following command to see all available commands:
 lhctl --help
 ```
 
-<figure><img src="/img/go-cli.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/img/go-cli.png" alt="" /><figcaption></figcaption></figure>

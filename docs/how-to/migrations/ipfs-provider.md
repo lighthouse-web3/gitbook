@@ -18,7 +18,7 @@ Navigate to [Files Dapp](https://files.lighthouse.storage/) and either register 
 
 Click on the `migration` option in the left panel.
 
-<figure><img src="/img/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/img/image (2).png" alt="" /><figcaption></figcaption></figure>
 
 ### Step 3: Create a New Migration
 
@@ -32,7 +32,7 @@ Select the `Create Migration` button to start the process.
 
 Enter the CID (Content Identifier) for your content. Alternatively, if you have multiple CIDs, you can upload a CSV file with all the CIDs listed.
 
-<figure><img src="/img/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/img/image (4).png" alt="" /><figcaption></figcaption></figure>
 
 ### Step 5: Execute Migration
 

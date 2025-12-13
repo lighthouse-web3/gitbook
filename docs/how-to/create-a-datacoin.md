@@ -16,7 +16,7 @@ In short: **DataCoins turn raw data into a tradable, liquid asset.**
 
 ### **Step 1: Connect Wallet**
 
-<figure><img src="/img/Screenshot_2025-09-26_at_8.56.13_AM.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="/img/Screenshot_2025-09-26_at_8.56.13_AM.webp" alt="" /><figcaption></figcaption></figure>
 
 Connect wallet and click on create data coin.
 
@@ -24,7 +24,7 @@ Connect wallet and click on create data coin.
 
 ### **Step 2: Enter Personal Information**
 
-<figure><img src="/img/Screenshot_2025-09-26_at_8.58.04_AM.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="/img/Screenshot_2025-09-26_at_8.58.04_AM.webp" alt="" /><figcaption></figcaption></figure>
 
 Fill out the form with the following details:
 
@@ -40,7 +40,7 @@ The website link should point to your **DataDAO app**, which defines the logic f
 
 ### **Step 3: Add Social Information**
 
-<figure><img src="/img/Screenshot_2025-09-26_at_9.01.40_AM.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="/img/Screenshot_2025-09-26_at_9.01.40_AM.webp" alt="" /><figcaption></figcaption></figure>
 
 Provide your social links such as **Telegram, Farcaster, X, GitHub, and LinkedIn**.
 
@@ -50,7 +50,7 @@ All fields are optional—you can fill in whichever ones you prefer.
 
 ### **Step 4: Configure Tokenomics** of your choice.
 
-<figure><img src="/img/Screenshot_2025-09-26_at_9.04.07_AM.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="/img/Screenshot_2025-09-26_at_9.04.07_AM.webp" alt="" /><figcaption></figcaption></figure>
 
 Set up the economics of your data coin:
 
@@ -76,7 +76,7 @@ Once configured, click **Submit Data Coin**. Two transactions will follow:
 
 ### **Step 5: View and Manage Your Coin**
 
-<figure><img src="/img/Screenshot_2025-09-26_at_9.17.17_AM.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src="/img/Screenshot_2025-09-26_at_9.17.17_AM.webp" alt="" /><figcaption></figcaption></figure>
 
 After successful creation, you’ll be able to view your coin’s details.
 

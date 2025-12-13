@@ -42,23 +42,23 @@ PoDSI is a proof mechanism that confirms a specific piece of data is included an
 
 1. Go on [https://files.lighthouse.storage/](https://files.lighthouse.storage/) and Click on Login
 
-<figure><img src="/img/Python_2.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="/img/Python_2.png" alt="" width="563" /><figcaption></figcaption></figure>
 
 2. Select any of the login method and perform verification steps
 
-<figure><img src="/img/Python_3.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="/img/Python_3.png" alt="" width="563" /><figcaption></figcaption></figure>
 
 3. Click on API Key on the left side panel on the dashboard.
 
-<figure><img src="/img/Python_4.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="/img/Python_4.png" alt="" width="563" /><figcaption></figcaption></figure>
 
 4. Insert name for your API
 
-<figure><img src="/img/Python_5.png" alt="" width="494"><figcaption></figcaption></figure>
+<figure><img src="/img/Python_5.png" alt="" width="494" /><figcaption></figcaption></figure>
 
 5. Copy the API Key
 
-<figure><img src="/img/Python_6.png" alt="" width="368"><figcaption></figcaption></figure>
+<figure><img src="/img/Python_6.png" alt="" width="368" /><figcaption></figcaption></figure>
 
 ***
 

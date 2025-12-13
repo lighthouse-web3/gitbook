@@ -27,7 +27,7 @@ This Quick Start guide walks you through the essentials: creating an API key, up
 You can also generate the API key from CLI
 {% endhint %}
 
-<figure><img src="/img/api key.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/img/api key.png" alt="" /><figcaption></figcaption></figure>
 
 ### 2. Upload a File
 

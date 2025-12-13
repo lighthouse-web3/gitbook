@@ -23,7 +23,7 @@ icon: square-root
     * Upon successful login, users can access all Lighthouse features as described below.\
 
 
-    <figure><img src="/img/image.png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="/img/image.png" alt="" /><figcaption></figcaption></figure>
 2.  **Features Accessible After Login**
 
     \
@@ -34,7 +34,7 @@ icon: square-root
     * **Generate API** **Keys**: Generate API keys for programmatic access to Lighthouse features.\
       &#x20;
 
-    <figure><img src="/img/image (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="/img/image (1).png" alt="" /><figcaption></figcaption></figure>
 3.  **Using the Encryption Module (Lighthouse Kavach)**\
     \
     To access Lighthouse’s **encryption module** for advanced file management, users must generate a **JWT key** by signing an authentication message via their Radix Mobile Wallet.\
@@ -51,7 +51,7 @@ icon: square-root
 
 
 
-    <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdl0wgUts3y4MDVekN_j0pxix4ysNGAhgOqYtgvtW7hYJnsHEDu-ccuIzvVOiOivY_76P3CNhLh87gZjIZxdNirvDdQ6Ch8fhnw6R3dOi7t4u6jXI_E601YrRqWa2_N9J8ZBH3yzw?key=MFacNzw0LEM42HocoKk85YsR" alt="" data-size="original">
+    <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdl0wgUts3y4MDVekN_j0pxix4ysNGAhgOqYtgvtW7hYJnsHEDu-ccuIzvVOiOivY_76P3CNhLh87gZjIZxdNirvDdQ6Ch8fhnw6R3dOi7t4u6jXI_E601YrRqWa2_N9J8ZBH3yzw?key=MFacNzw0LEM42HocoKk85YsR" alt="" data-size="original" />
 
 
 

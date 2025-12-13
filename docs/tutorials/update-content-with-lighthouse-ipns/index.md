@@ -36,23 +36,23 @@ _**Note: Skip to**_ [#store-and-update-content-on-ipns-using-lighthouse](./#stor
 
 1. Go on [https://files.lighthouse.storage/](https://files.lighthouse.storage/) and Click on Login
 
-<figure><img src="/img/Python_2.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="/img/Python_2.png" alt="" width="563" /><figcaption></figcaption></figure>
 
 2. Select any of the login method and perform verification steps
 
-<figure><img src="/img/Python_3.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="/img/Python_3.png" alt="" width="563" /><figcaption></figcaption></figure>
 
 3. Click on API Key on the left side panel on the dashboard.
 
-<figure><img src="/img/Python_4.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="/img/Python_4.png" alt="" width="563" /><figcaption></figcaption></figure>
 
 4. Insert name for your API
 
-<figure><img src="/img/Python_5.png" alt="" width="494"><figcaption></figcaption></figure>
+<figure><img src="/img/Python_5.png" alt="" width="494" /><figcaption></figcaption></figure>
 
 5. Copy the API Key
 
-<figure><img src="/img/Python_6.png" alt="" width="368"><figcaption></figcaption></figure>
+<figure><img src="/img/Python_6.png" alt="" width="368" /><figcaption></figcaption></figure>
 
 ## Store and Update content on IPNS using Lighthouse
 
@@ -66,7 +66,7 @@ _**Note: Skip to**_ [#store-and-update-content-on-ipns-using-lighthouse](./#stor
 
     This command will return an IPNS name and ID, which we will use later to publish the content.
 
-<figure><img src="/img/IPNS_2.png" alt="" width="536"><figcaption></figcaption></figure>
+<figure><img src="/img/IPNS_2.png" alt="" width="536" /><figcaption></figcaption></figure>
 
 
 
@@ -84,7 +84,7 @@ _**Note: Skip to**_ [#store-and-update-content-on-ipns-using-lighthouse](./#stor
     lighthouse-web3 upload ./text.txt
     ```
 
-<figure><img src="/img/IPNS_5.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="/img/IPNS_5.png" alt="" width="563" /><figcaption></figcaption></figure>
 
 
 
@@ -96,7 +96,7 @@ _**Note: Skip to**_ [#store-and-update-content-on-ipns-using-lighthouse](./#stor
 
     You will receive a link that can be used to access the published content. This link will remain valid even if the content's IPFS hash changes.
 
-<figure><img src="/img/IPNS_4.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="/img/IPNS_4.png" alt="" width="563" /><figcaption></figcaption></figure>
 
 #### **Updating CID:**
 
@@ -114,7 +114,7 @@ _**Note: Skip to**_ [#store-and-update-content-on-ipns-using-lighthouse](./#stor
     lighthouse-web3 upload ./text2.txt
     ```
 
-<figure><img src="/img/IPNS_5.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="/img/IPNS_5.png" alt="" width="563" /><figcaption></figcaption></figure>
 
 
 
@@ -134,7 +134,7 @@ lighthouse-web3 ipns --list
 
 This will display a list of IPNS records with their corresponding keys and CIDs.
 
-<figure><img src="/img/IPNS_6.png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="/img/IPNS_6.png" alt="" width="563" /><figcaption></figcaption></figure>
 
 **Remove** an IPNS record:
 
@@ -144,7 +144,7 @@ lighthouse-web3 ipns --remove 8f4f116282a24cec99bcad73a317a3f4
 
 This step allows you to remove an IPNS record if needed.
 
-<figure><img src="/img/IPNS_7.png" alt="" width="509"><figcaption></figcaption></figure>
+<figure><img src="/img/IPNS_7.png" alt="" width="509" /><figcaption></figcaption></figure>
 
 ### **Method 2: Using Node.js**
 
