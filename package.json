@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.4.0",
-    "@tsconfig/docusaurus": "^3.0.0",
+    "@tsconfig/docusaurus": "^2.0.0",
     "typescript": "^5.4.0"
   }
 }
