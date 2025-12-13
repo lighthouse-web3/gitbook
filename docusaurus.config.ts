@@ -6,7 +6,7 @@ const config: Config = {
   tagline: 'Permanent, decentralized storage protocol documentation',
   favicon: 'img/favicon.svg',
 
-  url: 'https://example.com',
+  url: 'https://lighthouse-docs.vercel.app',
   baseUrl: '/',
 
   organizationName: 'lighthouse-web3',

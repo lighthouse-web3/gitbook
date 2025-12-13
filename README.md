@@ -22,6 +22,14 @@ This repository now uses [Docusaurus](https://docusaurus.io/) to render the Ligh
    npm run serve
    ```
 
+## Deploying to Vercel
+
+This Docusaurus site can be deployed as a static export on Vercel:
+
+- The provided `vercel.json` config uses `npm install` and `npm run build` and outputs to the `build/` directory.
+- Set the **Framework Preset** to **Docusaurus** (or leave as "Other" while respecting the same build/output values) in the Vercel dashboard.
+- Connect this repository to Vercel, then trigger a deployment. The production URL should match the value configured in `docusaurus.config.ts` (e.g., `https://lighthouse-docs.vercel.app`).
+
 ## Project structure
 
 - `docs/` contains all documentation content (migrated from GitBook).
