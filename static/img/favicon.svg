@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Lighthouse">
+  <defs>
+    <linearGradient id="beam" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#77aef0" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#3a7bd5" stop-opacity="0.45" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="16" fill="#0c1c3f" />
+  <path d="M16 72h58l-10 36H26z" fill="#12376f" />
+  <path d="M48 20l-18 14v12l18 6 18-6V34z" fill="#f4f7fb" />
+  <path d="M42 32h12v64H42z" fill="#3a7bd5" />
+  <path d="M54 40h12v56H54z" fill="#4e8de1" />
+  <path d="M18 40h70l34 16-34 16H18z" fill="url(#beam)" />
+  <circle cx="48" cy="34" r="6" fill="#0c1c3f" />
+  <circle cx="54" cy="46" r="3" fill="#0c1c3f" />
+</svg>
