@@ -22,6 +22,15 @@ This repository now uses [Docusaurus](https://docusaurus.io/) to render the Ligh
    npm run serve
    ```
 
+### Troubleshooting installs/builds
+
+- If `npm install` fails with a 403 from the registry, ensure any corporate proxy variables are unset (`npm config delete proxy` and `npm config delete https-proxy`) and retry.
+- Set an explicit registry if needed:
+  ```bash
+  npm config set registry https://registry.npmjs.org
+  ```
+- Some environments block the default registry outright. You can also try the included `.npmrc` mirror (`https://registry.npmmirror.com`), but if the registry itself is blocked you will need network access to an allowed npm mirror before running `npm run build`.
+
 ## Deploying to Vercel
 
 The repository already includes `vercel.json` with the correct defaults for Docusaurus. Use either the dashboard or the CLI:
