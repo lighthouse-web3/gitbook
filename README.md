@@ -24,11 +24,34 @@ This repository now uses [Docusaurus](https://docusaurus.io/) to render the Ligh
 
 ## Deploying to Vercel
 
-This Docusaurus site can be deployed as a static export on Vercel:
+The repository already includes `vercel.json` with the correct defaults for Docusaurus. Use either the dashboard or the CLI:
 
-- The provided `vercel.json` config uses `npm install` and `npm run build` and outputs to the `build/` directory.
-- Set the **Framework Preset** to **Docusaurus** (or leave as "Other" while respecting the same build/output values) in the Vercel dashboard.
-- Connect this repository to Vercel, then trigger a deployment. The production URL should match the value configured in `docusaurus.config.ts` (e.g., `https://lighthouse-docs.vercel.app`).
+### Deploy from the Vercel dashboard (recommended)
+
+1. Create a new project and connect this Git repository.
+2. In **Project Settings → General** set:
+   - **Framework Preset:** `Docusaurus` (or `Other` if unavailable)
+   - **Install Command:** `npm install`
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `build`
+3. Save the settings and trigger a new deployment. The site will be served from the URL shown in the Vercel dashboard and should match the `url` in `docusaurus.config.ts` (currently `https://lighthouse-docs.vercel.app`).
+
+### Deploy from the Vercel CLI (alternative)
+
+1. Install the Vercel CLI if needed:
+   ```bash
+   npm install -g vercel
+   ```
+2. Log in and link the project (requires a Vercel account):
+   ```bash
+   vercel login
+   vercel link
+   ```
+3. Deploy using the configuration in `vercel.json`:
+   ```bash
+   vercel --prod
+   ```
+   The CLI will build the site, upload the `build/` directory, and print the production URL.
 
 ## Project structure
 
